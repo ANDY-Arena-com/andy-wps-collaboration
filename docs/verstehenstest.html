@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ANDY verstehen – unvorbereiteter Lesetest V0.1</title>
+<style>
+:root{--bg:#f7f7f5;--ink:#212327;--muted:#60666d;--paper:#fff;--line:#d1d2d1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:#111a24;color:#fff;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+header strong{font-size:20px}header a{color:white;text-decoration:underline;font-size:13px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1400px;margin:auto;min-height:calc(100vh - 65px)}
+aside{background:#e8e8e6;border-right:1px solid #d0d0d0;padding:25px 15px;position:sticky;top:0;align-self:start;min-height:80vh}
+aside h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#626262}
+aside a{display:block;border-radius:7px;padding:11px 12px;color:#2b2b2b;text-decoration:none;font-size:14px}
+aside a.active{background:#222832;color:#fff}
+main{padding:24px clamp(18px,4vw,60px);max-width:1050px;width:100%}
+.top{position:sticky;top:0;z-index:12;padding:12px 0;background:rgba(247,247,245,.96);border-bottom:1px solid var(--line);margin-bottom:20px}
+.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}h1{font-size:clamp(27px,3vw,38px);line-height:1.17;margin:9px 0 15px}
+.lede{font-size:18px;max-width:700px}
+.workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);gap:24px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);padding:20px;border-radius:12px;margin:10px 0}
+.question{margin:0 0 16px;font-size:18px;font-weight:700}
+button{font:inherit;cursor:pointer}.option{display:block;border:1px solid #bbb;background:#fff;padding:11px 13px;border-radius:8px;width:100%;margin:8px 0;text-align:left;color:#222}
+.option.chosen{background:#2a2f37;color:#fff;border-color:#2a2f37}.action{background:#252b33;color:white;border:0;border-radius:8px;padding:12px 17px;cursor:pointer}
+.action:disabled{opacity:.5;cursor:default}.note{background:#f0f0ee;border-left:3px solid #595959;padding:12px 14px;margin-top:14px;font-size:14px}
+.small{font-size:13px;color:#62656b}.board-wrap{width:100%;max-width:510px}.board{display:grid;grid-template-columns:repeat(13,1fr);aspect-ratio:1;border:2px solid #333;position:relative;background:#e5e5e4}
+.sq{min-width:0;min-height:0;border:.4px solid #999;position:relative;display:grid;place-items:center;background:#e5e5e4}
+.sq.chess.light{background:#f9f9f8}.sq.chess.dark{background:#a0a1a2}
+.piece{font-family:"DejaVu Sans","Arial Unicode MS",serif;font-size:clamp(13px,2.2vw,29px);font-weight:normal;line-height:1;z-index:3}
+.piece.white{color:#fff;-webkit-text-fill-color:#fff;-webkit-text-stroke:1px #242424;text-shadow:0 1px 0 #222}
+.piece.black{color:#151515;-webkit-text-fill-color:#151515;-webkit-text-stroke:.65px #efefef;text-shadow:1px 1px 2px #333}
+.marked{box-shadow:inset 0 0 0 3px #222}.board-overlay{position:absolute;inset:0;pointer-events:none;z-index:6}
+.dot{position:absolute;transform:translate(-50%,-50%);width:7px;height:7px;background:#1d1d1d;border:1px solid white;border-radius:100%}
+.stone{position:absolute;transform:translate(-50%,-50%);width:5%;height:5%;border-radius:50%;box-shadow:0 1px 2px #333}
+.stone.black{background:#111;border:1px solid #fff}.stone.white{background:#fff;border:1px solid #111}
+.coordinate{position:absolute;font-size:11px;font-weight:700;z-index:4;color:#1d1d1d;line-height:1}
+.topaxis,.bottomaxis{display:grid;grid-template-columns:repeat(13,1fr);padding-right:0;margin:0 0 5px}.topaxis span{text-align:center;font-size:11px}
+.rightaxis{position:absolute;right:-22px;top:0;height:100%;display:grid;grid-template-rows:repeat(13,1fr);align-items:center;font-size:10px;color:#333}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.controls button{padding:7px 12px;border:1px solid #aaa;background:white;color:#222;border-radius:7px;font-size:13px}
+.controls button[aria-pressed=true]{background:#252b33;color:white}
+.result{display:grid;gap:8px}.result div{padding:10px;background:#f1f1f0;border-radius:6px}
+#report{white-space:pre-wrap;font-size:13px;background:#f1f1f0;border-radius:8px;padding:12px}
+@media(max-width:880px){.layout{display:block}aside{position:static;min-height:auto;padding:10px}aside h2{display:none}aside nav{display:flex;overflow-x:auto}aside a{white-space:nowrap}.workspace{grid-template-columns:1fr}main{padding:18px}.board-wrap{max-width:540px}.piece{font-size:clamp(13px,4vw,30px)}}
+</style></head><body>
+<header><strong>ANDY <span style="font-weight:400">/ Verständnistest</span></strong><a href="durchmarsch.html#geometry">Zum vollständigen Handbuch</a></header>
+<div class="layout"><aside><h2>Teststationen</h2><nav>
+<a class="active" href="#test">Test: Ohne Vorwissen</a><a href="durchmarsch.html#geometry">Brett & Koordinaten</a><a href="durchmarsch.html#setup">Startaufstellung</a><a href="../WPS-02-CHECKLIST.md">Arbeitscheckliste</a>
+</nav><p class="small">Dieser Test fragt zuerst nach deinem Verständnis und erklärt erst danach. Keine Prüfung deiner Spielstärke.</p></aside>
+<main><div class="top"><span id="counter">Schritt 1 von 5</span> <span class="small"> · Nur du entscheidest, was verständlich ist.</span></div>
+<div class="eyebrow">WPS-02 · Testlauf 01 · keine Regelabnahme</div>
+<h1 id="heading">Was erkennst du auf diesem Brett?</h1>
+<p class="lede" id="lead"></p>
+<div class="workspace"><section>
+<div class="board-wrap"><div class="topaxis" id="axis"></div><div class="board" id="board"></div></div>
+<div class="controls" id="boardControls"></div>
+<p class="small" id="boardCaption"></p>
+</section>
+<section><div class="card"><div id="question" class="question"></div><div id="choices"></div><div id="explanation" hidden class="note"></div><div style="margin-top:17px"><button class="action" id="next" disabled>Erklärung anzeigen</button></div></div>
+<div class="card"><strong>Dein Eindruck</strong><p class="small">Nach der Erklärung bitte anklicken – auch „unklar“ ist ein wichtiges Testergebnis.</p><div class="controls"><button id="clear">Verstanden</button><button id="unclear">Noch unklar</button></div><p class="small" id="feedback"></p></div></section></div>
+<div class="card" id="finish" hidden><h2>Was hat funktioniert – und wo hakt es?</h2><p>Das ist keine automatische Bewertung. Dein Verständnis ist der Maßstab. Die Notiz kannst du uns direkt im Chat zurückgeben.</p><div id="report"></div><div class="controls"><button class="action" id="copy">Ergebnis kopieren</button></div></div>
+</main></div>
+<script>
+(()=>{'use strict';
+const data=[
+{title:'Was erkennst du auf diesem Brett?',lead:'Schau dir die Ausgangsstellung an, bevor du etwas über die Regeln liest.',q:'Welche Beschreibung passt zu dem Bild?',options:['Ein normales Schachbrett mit zusätzlichen grauen Randflächen.','Ein Brett mit einer karierten Schachzone und einem größeren Gitter.','Ich kann die Bereiche noch nicht auseinanderhalten.'],answer:1,explain:'Das gesamte Brett hat 13 × 13 Rasterpositionen. Im Inneren liegt eine karierte 8 × 8-Schachzone. Schachfiguren stehen auf Feldern. Die weitere Ebene wird für Go verwendet.',mode:'all'},
+{title:'Feld oder Knoten?',lead:'Jetzt blenden wir die Figuren aus und markieren zwei verschiedene Arten von Orten.',q:'Worin liegt der wichtige Unterschied?',options:['Beide Markierungen stehen für ein Schachfeld.','Ein Schachfeld ist eine Fläche, ein Go-Knoten ein Schnittpunkt.','Beide bedeuten dasselbe, nur unterschiedlich beschriftet.'],answer:1,explain:'Bei Schach ist das Feld die besetzbare Fläche. Bei Go liegt der Stein auf einem Schnittpunkt des Gitters. Diese Elemente sind nicht austauschbar.',mode:'compare'},
+{title:'Warum zwei Koordinatensysteme?',lead:'Die Perspektive bleibt Weiß unten. Vergleiche die Schachbeschriftung mit den Go-Buchstaben und -Zahlen.',q:'Was ist der Unterschied zwischen A1 und a1?',options:['Beides ist dieselbe Stelle.','A1 bezeichnet ein Schachfeld, a1 einen Go-Knoten.','A1 ist immer Schwarz und a1 immer Weiß.'],answer:1,explain:'Großbuchstaben A–H und Reihen 1–8 benennen die Schachzone, Kleinbuchstaben a–m und Reihen 1–13 das Go-Gitter. A1 und a1 gehören unterschiedlichen geometrischen Ebenen an. Die exakte Zuordnung in der Engine wird noch überprüft.',mode:'coordinates'},
+{title:'Was passiert vor dem ersten Schachzug?',lead:'Starte die kleine Vorführung. Du musst keine Steine selbst setzen.',q:'Was geschieht zuerst?',options:['Weiß zieht sofort einen Bauern.','Erst werden acht schwarze und acht weiße Go-Steine gesetzt.','Schach und Go werden als zwei getrennte Partien gespielt.'],answer:1,explain:'In der beschriebenen ANDY-Eröffnung stehen alle 32 Schachfiguren bereits auf ihren Feldern. Das Setup ergänzt zunächst acht schwarze und acht weiße Go-Steine. Erst danach folgen in der Demo drei Schach-Bewegungen. Die Beispielknoten sind nicht engineverifiziert.',mode:'setup'},
+{title:'Was verstehst du unter „doppelt zählen“?',lead:'Betrachte die Kombination aus Schachfiguren und gesetzten Go-Steinen.',q:'Welche Aussage können wir an dieser Stelle tatsächlich erklären?',options:['Jeder Go-Stein zählt automatisch zwei Go-Punkte.','Die Go-Steine sind für beide Spielebenen relevant; die genaue Wirkung müssen wir noch zeigen.','Jeder Go-Stein blockiert automatisch einen Turm.'],answer:1,explain:'Die Kopplung beider Ebenen ist die Idee von ANDY. Welche konkreten Zugmöglichkeiten ein Go-Stein verändert, ist in dieser Demo noch nicht technisch nachgewiesen. Wenn dir das zu wenig erklärt ist, wähle unbedingt „Noch unklar“. Genau das wollen wir herausfinden.',mode:'both'}
+];
+const letters='abcdefghijklm',piecesB=['♜','♞','♝','♛','♚','♝','♞','♜'];
+const goMoves=[[1,1],[10,1],[1,10],[10,10],[3,1],[8,1],[3,10],[8,10],[1,3],[10,3],[1,8],[10,8],[0,5],[11,5],[5,0],[5,11]];
+let idx=0,choice=-1,shown=false,notes=Array(5).fill('Nicht beurteilt'),mode='all',timer=null,phase=0;
+const $=id=>document.getElementById(id);
+function stop(){if(timer!==null){clearInterval(timer);timer=null}}
+function board(){
+ const b=$('board'),a=$('axis');b.replaceChildren();a.replaceChildren();const q=data[idx];
+ for(let c=0;c<13;c++){const label=document.createElement('span');label.textContent=(mode==='coordinates'||mode==='all'||mode==='both'||mode==='setup')?letters[c]:'';a.append(label)}
+ for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+  const cell=document.createElement('div'),inside=r>=2&&r<10&&c>=2&&c<10;
+  cell.className='sq'+(inside?' chess '+((r+c)%2?'dark':'light'):'');
+  if(idx===1&&r===6&&c===6)cell.className+=' marked';
+  if((mode==='coordinates'||mode==='all'||mode==='both'||mode==='setup')&&inside){
+   if(r===9&&c>=2&&c<10){const lb=document.createElement('span');lb.className='coordinate';lb.style.bottom='-15px';lb.textContent='ABCDEFGH'[c-2];cell.append(lb)}
+   if(c===2){const lb=document.createElement('span');lb.className='coordinate';lb.style.left='-13px';lb.textContent=String(10-r);cell.append(lb)}
+  }
+  const showPieces=['all','setup','both'].includes(mode);
+  if(showPieces&&inside){let p='',side='';
+   if(r===2){p=piecesB[c-2];side='black'}if(r===3){p='♟';side='black'}
+   if(r===8){p='♟';side='white'}if(r===9){p=piecesB[c-2];side='white'}
+   if(p){const t=document.createElement('span');t.className='piece '+side;t.textContent=p;cell.append(t)}
+  }
+  b.append(cell);
+ }
+ const overlay=document.createElement('div');overlay.className='board-overlay';b.append(overlay);
+ const points=[[3,3],[9,3],[6,6],[3,9],[9,9]];
+ if(['all','compare','coordinates','setup','both'].includes(mode))for(const [c,r] of points){const dot=document.createElement('span');dot.className='dot';dot.style.left=(100*(c+1)/13)+'%';dot.style.top=(100*(r+1)/13)+'%';overlay.append(dot)}
+ if(idx===1){const node=document.createElement('span');node.className='stone black';node.style.width='3%';node.style.height='3%';node.style.left=(100*4/13)+'%';node.style.top=(100*6/13)+'%';overlay.append(node)}
+ if(['setup','both'].includes(mode))for(let n=0;n<phase;n++){const [c,r]=goMoves[n],stone=document.createElement('span');stone.className='stone '+(n%2?'white':'black');stone.style.left=(100*(c+1)/13)+'%';stone.style.top=(100*(r+1)/13)+'%';overlay.append(stone)}
+}
+function setupAnimation(){stop();phase=0;board();timer=setInterval(()=>{phase=Math.min(16,phase+1);board();$('boardCaption').textContent='Go-Setzungen: '+phase+' / 16 · '+(phase===16?'Setup abgeschlossen, erst jetzt beginnt Schach.':'Schwarz und Weiß abwechselnd');if(phase===16)stop()},450)}
+function load(){stop();choice=-1;shown=false;phase=0;const d=data[idx];mode=d.mode;$('heading').textContent=d.title;$('lead').textContent=d.lead;$('question').textContent=d.q;$('counter').textContent='Schritt '+(idx+1)+' von '+data.length;$('explanation').hidden=true;$('explanation').textContent=d.explain;$('next').textContent='Erklärung anzeigen';$('next').disabled=true;$('finish').hidden=true;$('boardCaption').textContent=idx===3?'Startet erst auf deinen Klick; du setzt keine Steine selbst.':'Monochrome Lernansicht · keine verifizierte Hybrid-Engine-Simulation';$('feedback').textContent=notes[idx]==='Nicht beurteilt'?'':notes[idx];$('choices').replaceChildren();
+ d.options.forEach((label,j)=>{const btn=document.createElement('button');btn.className='option';btn.textContent=label;btn.addEventListener('click',()=>{choice=j;$('choices').querySelectorAll('button').forEach((b,k)=>b.classList.toggle('chosen',k===j));$('next').disabled=false});$('choices').append(btn)});
+ $('boardControls').replaceChildren();if(idx===3){const b=document.createElement('button');b.textContent='▶ 16 Go-Setzungen zeigen';b.onclick=setupAnimation;$('boardControls').append(b)}
+ if(idx===1){const b=document.createElement('button');b.textContent='Figuren wieder zeigen';b.onclick=()=>{mode=mode==='all'?'compare':'all';board()};$('boardControls').append(b)}
+ board()}
+function explain(){shown=true;$('explanation').hidden=false;$('next').textContent=idx===data.length-1?'Test beenden':'Nächster Schritt →'}
+$('next').onclick=()=>{if(!shown){explain();return}if(idx<data.length-1){idx++;load()}else finish()};
+function mark(label){notes[idx]=label;$('feedback').textContent=label}
+$('clear').onclick=()=>mark('Verstanden');$('unclear').onclick=()=>mark('Noch unklar');
+function finish(){stop();$('next').disabled=true;$('finish').hidden=false;const report='ANDY-Verständnistest V0.1\n'+data.map((d,i)=>(i+1)+'. '+d.title+' — '+notes[i]).join('\n')+'\n\nWas ich beim Lesen nicht verstanden habe:\n';$('report').textContent=report;window.scrollTo(0,document.body.scrollHeight)}
+$('copy').onclick=()=>{const txt=$('report').textContent;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>$('copy').textContent='Kopiert ✓').catch(()=>{$('copy').textContent='Text bitte markieren und kopieren'})}else{$('copy').textContent='Text bitte markieren und kopieren'}};
+load();
+})();
+</script></body></html>
