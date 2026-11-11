@@ -5,7 +5,7 @@
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{background:#191d24;color:#fff;padding:16px 26px;display:flex;justify-content:space-between;gap:20px;align-items:center}
-header b{font-size:19px}header small{color:#c5c7cc}.shell{display:grid;grid-template-columns:275px minmax(0,1fr);max-width:1450px;min-height:calc(100vh - 67px);margin:auto}
+header b{font-size:19px}header small{color:#c5c7cc}.header-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.header-links a{color:#fff;font-size:13px;text-decoration:underline;text-underline-offset:3px}.shell{display:grid;grid-template-columns:275px minmax(0,1fr);max-width:1450px;min-height:calc(100vh - 67px);margin:auto}
 aside{background:var(--side);border-right:1px solid var(--line);padding:25px 17px;position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;z-index:5}aside p{font-size:12px;color:var(--muted)}aside h2{font-size:12px;letter-spacing:.09em;color:#5f646b;text-transform:uppercase}
 nav button{display:block;width:100%;padding:10px 12px;border:0;border-radius:7px;background:transparent;text-align:left;font:inherit;font-size:14px;cursor:pointer;color:#252932}
 nav button[aria-current="page"]{background:var(--accent);color:#fff}main{padding:40px clamp(24px,5vw,78px);max-width:1100px}
@@ -43,7 +43,7 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .setup-info{font-size:14px;font-weight:600;flex-basis:100%;margin-top:3px}
 
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.1</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.1</small></div></div><div class="header-links"><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
