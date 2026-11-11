@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V0.5</title>
+<title>ANDY verstehen – Durchmarsch V0.6</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -37,7 +37,7 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .board-stage{position:relative;min-width:0}.main-nodes{position:absolute;inset:0;pointer-events:none}.main-node{position:absolute;transform:translate(-50%,-50%);width:clamp(7px,1vw,11px);height:clamp(7px,1vw,11px);border-radius:50%;background:#141414;box-shadow:0 0 0 1px #f7f7f7}.sq.outer{border-color:#9a9a9a}
 .legend{font-size:13px;color:#454545;margin-top:10px}.hint{font-size:12px;color:var(--muted)}
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.5</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.6</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -65,12 +65,12 @@ const chapters=[
 {key:'geometry',short:'03 · Das Brett',title:'Ein Brett – zwei Geometrien.',tag:'Spielfläche',body:`<p class="lede">Hier treffen zwei verschiedene Geometrien aufeinander: <strong>Schach wird auf Feldern</strong> gespielt, <strong>Go auf Knoten</strong>.</p>
 <div id="diagram"></div>
 <div class="grid"><div class="card"><h3>1 · Schachfelder</h3><p>Nur die innere 8×8-Fläche ist kariert. Ein Schachzug führt von einem Feld zu einem anderen Feld.</p></div><div class="card"><h3>2 · Go-Knoten</h3><p>Die Go-Notation bezieht sich auf das 13×13-Gitter. Fünf Hauptpunkte sind zur Orientierung schwarz markiert.</p></div></div>
-<p>Schalte am Brett zwischen <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> um. Die Figuren lassen sich separat ausblenden, damit die beiden Strukturen leichter zu erkennen sind.</p>
+<p>Schalte am Brett zwischen <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> um. Auf dieser Geometrieseite bleiben die Schachfiguren bewusst vollständig ausgeblendet.</p>
 <div class="note">Die aktuelle HTML-Grafik ist ein didaktischer Demonstrator. Die exakte Geometrie und Knotenlage werden vor einer offiziellen Veröffentlichung mit der Engine abgeglichen.</div>`},
-{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">ANDY beginnt mit <strong>allen 32 Schachfiguren</strong>. Weiß steht unten, Schwarz oben.</p>
+{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Beim Spielbeginn stehen <strong>alle 32 Schachfiguren</strong> bereits auf ihren Ausgangsfeldern. <strong>Der erste Spielzug gehört jedoch zur Go-Ebene.</strong> Weiß ist unten, Schwarz oben.</p>
 <div id="diagram"></div>
 <div class="card"><h3>Die Startposition lesen</h3><p>Auf der untersten Schachreihe stehen aus Sicht von Weiß – von links nach rechts – <strong>Turm, Springer, Läufer, Dame, König, Läufer, Springer, Turm</strong>. Direkt davor stehen die acht weißen Bauern.</p><p>Schwarz steht auf den gegenüberliegenden Reihen spiegelbildlich mit den schwarzen Figuren und Bauern. Die beiden Könige stehen sich auf derselben Schachlinie gegenüber.</p><p>Eine wichtige Orientierung: <strong>Die weiße Dame steht auf D1, die schwarze auf D8.</strong> Das ist die bekannte Schach-Startordnung; die Lage dieser 8×8-Zone innerhalb von ANDY muss noch verifiziert werden.</p></div>
-<p>Erst wenn diese Grundstellung klar ist, gehen wir zur Koordinatenseite und anschließend zu den ersten Schachbeispielen.</p>`},
+<div class="card"><h3>Warum beginnen wir mit Go?</h3><p>Die Schachfiguren bilden von Beginn an die vollständige Ausgangsstellung. Das bedeutet aber nicht, dass der erste ausgeführte Zug ein Schachzug ist: <strong>Die Eröffnung beginnt mit einer Go-Aktion.</strong> Die genaue erste Zugberechtigung, mögliche Startknoten und der anschließende Aktionsrhythmus werden noch mit der Engine abgeglichen.</p></div><p>Als Nächstes zeigen wir die beiden Koordinatensysteme. Erst danach gehen wir einzelne Aktionen durch.</p>`},
 {key:'coords',short:'05 · Koordinaten',title:'Wie benennen wir einen Ort?',tag:'Orientierung',body:`<p class="lede">Beide Systeme werden von <strong>Weiß unten</strong> aus gelesen. Buchstaben wachsen nach rechts, Zahlen nach oben.</p>
 <div id="diagram"></div>
 <div class="grid"><div class="card"><h3>Schach · A–H / 1–8</h3><p><strong>A1:</strong> unten links im Schachbereich. <strong>H8:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Feldern</strong>.</p></div><div class="card"><h3>Go · a–m / 1–13</h3><p><strong>a1:</strong> unten links im Go-Gitter. <strong>m13:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Knoten</strong>.</p></div></div>
@@ -101,11 +101,19 @@ const chapters=[
 let current='intro',coordMode='both',showPieces=true,exampleStep=0;
 const nav=document.getElementById('nav'),content=document.getElementById('content');
 chapters.forEach(c=>{const b=document.createElement('button');b.textContent=c.short;b.dataset.key=c.key;b.addEventListener('click',()=>open(c.key));nav.append(b)});
-function boardHTML(){return '<div class="board-frame"><div class="controls"><button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button><button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button></div><div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="controls" id="moveControls"></div><div class="caption">Monochromer Demonstrator · Schachfelder und Go-Knoten mit getrennter Notation · Lage der 8×8-Schachzone noch mit Engine zu prüfen</div></div>'}
+function boardHTML(){
+ const geometry=current==='geometry',setup=current==='setup';
+ const modeButtons='<button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button>';
+ const piecesButton='<button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button>';
+ const controls=setup?'':geometry?modeButtons:modeButtons+piecesButton;
+ return '<div class="board-frame">'+(controls?'<div class="controls">'+controls+'</div>':'')+'<div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="controls" id="moveControls"></div><div class="caption">13×13-Hybridbrett · Schach A–H/1–8 und Go a–m/1–13 · Graustufen-Demonstrator</div></div>';
+}
 function draw(){
  const board=document.getElementById('board');if(!board)return;
  board.replaceChildren();
- const isChess=coordMode==='chess'||coordMode==='both',isGo=coordMode==='go'||coordMode==='both';
+ const mode=current==='setup'?'both':coordMode;
+ const isChess=mode==='chess'||mode==='both',isGo=mode==='go'||mode==='both';
+ const visiblePieces=current==='geometry'?false:current==='setup'?true:showPieces;
  const goTop=document.getElementById('goTop'),goRight=document.getElementById('goRight');
  goTop.replaceChildren();goRight.replaceChildren();
  const letters='abcdefghijklm',files='ABCDEFGH';
@@ -120,7 +128,7 @@ function draw(){
    const label=document.createElement('span');label.className='chess-label';label.textContent=r===10?files[c-2]:String(10-r);d.append(label);
   }
   
-  if(showPieces&&c>=2&&c<10){
+  if(visiblePieces&&c>=2&&c<10){
    let glyph='',side='';
    if(r===2){glyph=blacks[c-2];side='black'}
    if(r===3){glyph='♟';side='black'}
@@ -134,7 +142,7 @@ function draw(){
  const mainNodes=document.getElementById('mainNodes');mainNodes.replaceChildren();
  if(isGo){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
  const moves=document.getElementById('moveControls');moves.replaceChildren();if(current==='opening'){const btn=document.createElement('button');btn.className='pill';btn.textContent=exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen';btn.addEventListener('click',()=>{exampleStep=1-exampleStep;draw()});moves.append(btn)}
- document.getElementById('legend').textContent=coordMode==='chess'?'SCHACH: Großbuchstaben A–H, Reihen 1–8; Felder im 8×8-Bereich.':coordMode==='go'?'GO: Kleinbuchstaben a–m, Reihen 1–13; fünf Hauptknoten sind hervorgehoben.':'BEIDES: Nur die innere 8×8-Schachfläche ist kariert. Ihre Koordinaten stehen am Rand; die fünf Go-Hauptknoten sind schwarz markiert.';
+ document.getElementById('legend').textContent=mode==='chess'?'SCHACH: Großbuchstaben A–H, Reihen 1–8; Felder im 8×8-Bereich.':mode==='go'?'GO: Kleinbuchstaben a–m, Reihen 1–13; fünf Hauptknoten sind hervorgehoben.':'BEIDES: Nur die innere 8×8-Schachfläche ist kariert. Ihre Koordinaten stehen am Rand; die fünf Go-Hauptknoten sind schwarz markiert.';
 }
 function open(key){
  const c=chapters.find(x=>x.key===key)||chapters[0];if(current!==c.key)exampleStep=0;current=c.key;
@@ -143,7 +151,7 @@ function open(key){
  if(box){
   box.innerHTML=boardHTML();draw();
   box.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{coordMode=b.dataset.mode;open(current)}));
-  document.getElementById('pieces').addEventListener('click',()=>{showPieces=!showPieces;open(current)});
+  const piecesButton=document.getElementById('pieces');if(piecesButton)piecesButton.addEventListener('click',()=>{showPieces=!showPieces;open(current)});
  }
  nav.querySelectorAll('button').forEach(b=>{if(b.dataset.key===current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
  const i=chapters.findIndex(x=>x.key===current);
