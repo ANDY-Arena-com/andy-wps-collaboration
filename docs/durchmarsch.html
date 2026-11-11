@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V0.6</title>
+<title>ANDY verstehen – Durchmarsch V0.7</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -36,8 +36,17 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .sq .chess-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(9px,1.4vw,13px);font-weight:700;z-index:2;color:#303030}
 .board-stage{position:relative;min-width:0}.main-nodes{position:absolute;inset:0;pointer-events:none}.main-node{position:absolute;transform:translate(-50%,-50%);width:clamp(7px,1vw,11px);height:clamp(7px,1vw,11px);border-radius:50%;background:#141414;box-shadow:0 0 0 1px #f7f7f7}.sq.outer{border-color:#9a9a9a}
 .legend{font-size:13px;color:#454545;margin-top:10px}.hint{font-size:12px;color:var(--muted)}
+
+.setup-layer{position:absolute;inset:0;z-index:9;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));grid-template-rows:repeat(13,minmax(0,1fr));pointer-events:none}
+.setup-point{pointer-events:auto;cursor:crosshair;border:0;background:transparent;padding:0;display:grid;place-items:center;min-width:0;min-height:0}
+.setup-point:disabled{cursor:default}.setup-point:focus-visible{outline:2px solid #171717;outline-offset:-2px}
+.setup-stone{display:block;width:75%;height:75%;border-radius:50%;box-shadow:0 1px 3px #555}
+.setup-stone.black{background:#181818;border:1px solid #fafafa}.setup-stone.white{background:#fafafa;border:1.5px solid #111}
+.setup-star{display:block;width:7px;height:7px;border-radius:50%;background:#171717}
+.setup-info{font-size:14px;font-weight:600;flex-basis:100%;margin-top:3px}
+.board-frame.setup-chapter .main-nodes{display:none}
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.6</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.7</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -67,10 +76,10 @@ const chapters=[
 <div class="grid"><div class="card"><h3>1 · Schachfelder</h3><p>Nur die innere 8×8-Fläche ist kariert. Ein Schachzug führt von einem Feld zu einem anderen Feld.</p></div><div class="card"><h3>2 · Go-Knoten</h3><p>Die Go-Notation bezieht sich auf das 13×13-Gitter. Fünf Hauptpunkte sind zur Orientierung schwarz markiert.</p></div></div>
 <p>Schalte am Brett zwischen <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> um. Auf dieser Geometrieseite bleiben die Schachfiguren bewusst vollständig ausgeblendet.</p>
 <div class="note">Die aktuelle HTML-Grafik ist ein didaktischer Demonstrator. Die exakte Geometrie und Knotenlage werden vor einer offiziellen Veröffentlichung mit der Engine abgeglichen.</div>`},
-{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Beim Spielbeginn stehen <strong>alle 32 Schachfiguren</strong> bereits auf ihren Ausgangsfeldern. <strong>Der erste Spielzug gehört jedoch zur Go-Ebene.</strong> Weiß ist unten, Schwarz oben.</p>
+{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Zu Beginn stehen bereits alle 32 Schachfiguren auf dem Brett. <strong>Jetzt beginnt das freie Go-Setup:</strong> Klicke Knoten an und setze abwechselnd Schwarz und Weiß. Erst wenn du das Setup abschließt, werden Schach-Demozüge freigeschaltet.</p>
 <div id="diagram"></div>
-<div class="card"><h3>Die Startposition lesen</h3><p>Auf der untersten Schachreihe stehen aus Sicht von Weiß – von links nach rechts – <strong>Turm, Springer, Läufer, Dame, König, Läufer, Springer, Turm</strong>. Direkt davor stehen die acht weißen Bauern.</p><p>Schwarz steht auf den gegenüberliegenden Reihen spiegelbildlich mit den schwarzen Figuren und Bauern. Die beiden Könige stehen sich auf derselben Schachlinie gegenüber.</p><p>Eine wichtige Orientierung: <strong>Die weiße Dame steht auf D1, die schwarze auf D8.</strong> Das ist die bekannte Schach-Startordnung; die Lage dieser 8×8-Zone innerhalb von ANDY muss noch verifiziert werden.</p></div>
-<div class="card"><h3>Warum beginnen wir mit Go?</h3><p>Die Schachfiguren bilden von Beginn an die vollständige Ausgangsstellung. Das bedeutet aber nicht, dass der erste ausgeführte Zug ein Schachzug ist: <strong>Die Eröffnung beginnt mit einer Go-Aktion.</strong> Die genaue erste Zugberechtigung, mögliche Startknoten und der anschließende Aktionsrhythmus werden noch mit der Engine abgeglichen.</p></div><p>Als Nächstes zeigen wir die beiden Koordinatensysteme. Erst danach gehen wir einzelne Aktionen durch.</p>`},
+<div class="card"><h3>Selbst ausprobieren</h3><p><strong>1.</strong> Auf einen freien Go-Knoten klicken – Schwarz beginnt, dann folgt Weiß.<br><strong>2.</strong> Beliebig viele Steine setzen; der Status zeigt den nächsten Spieler.<br><strong>3.</strong> Mit <strong>„Go-Setup abschließen“</strong> die Setzphase beenden.<br><strong>4.</strong> Danach mit <strong>„Nächster Schach-Demozug“</strong> einige Bewegungen nachvollziehen. Mit <strong>„Neustart“</strong> beginnt alles von vorn.</p></div>
+<div class="note"><strong>Wichtig:</strong> Dieser freie Setzmodus ist ein <strong>didaktischer Spielplatz</strong>, nicht das verbindliche ANDY-Reglement. Weder Setzgrenze noch Schachzüge werden hier von der Hybrid-Engine auf Legalität geprüft.</div>`},
 {key:'coords',short:'05 · Koordinaten',title:'Wie benennen wir einen Ort?',tag:'Orientierung',body:`<p class="lede">Beide Systeme werden von <strong>Weiß unten</strong> aus gelesen. Buchstaben wachsen nach rechts, Zahlen nach oben.</p>
 <div id="diagram"></div>
 <div class="grid"><div class="card"><h3>Schach · A–H / 1–8</h3><p><strong>A1:</strong> unten links im Schachbereich. <strong>H8:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Feldern</strong>.</p></div><div class="card"><h3>Go · a–m / 1–13</h3><p><strong>a1:</strong> unten links im Go-Gitter. <strong>m13:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Knoten</strong>.</p></div></div>
@@ -99,6 +108,8 @@ const chapters=[
 <div class="note">Die Bezeichnungen sind noch nicht gegen die tatsächlich implementierten Statuscodes verifiziert. Insbesondere illegale Aktionen, Parserfehler, Aufgabe, Patt und Remis bleiben offen.</div>`}
 ];
 let current='intro',coordMode='both',showPieces=true,exampleStep=0;
+const placedGo=new Map();let setupComplete=false,setupChessIndex=0;
+const chessDemo=[{from:[6,8],to:[6,6],glyph:'♙',side:'white',name:'E2 → E4'},{from:[6,3],to:[6,5],glyph:'♟',side:'black',name:'E7 → E5'},{from:[8,9],to:[7,7],glyph:'♘',side:'white',name:'G1 → F3'}];
 const nav=document.getElementById('nav'),content=document.getElementById('content');
 chapters.forEach(c=>{const b=document.createElement('button');b.textContent=c.short;b.dataset.key=c.key;b.addEventListener('click',()=>open(c.key));nav.append(b)});
 function boardHTML(){
@@ -106,43 +117,59 @@ function boardHTML(){
  const modeButtons='<button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button>';
  const piecesButton='<button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button>';
  const controls=setup?'':geometry?modeButtons:modeButtons+piecesButton;
- return '<div class="board-frame">'+(controls?'<div class="controls">'+controls+'</div>':'')+'<div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="controls" id="moveControls"></div><div class="caption">13×13-Hybridbrett · Schach A–H/1–8 und Go a–m/1–13 · Graustufen-Demonstrator</div></div>';
+ return '<div class="board-frame'+(setup?' setup-chapter':'')+'">'+(controls?'<div class="controls">'+controls+'</div>':'')+'<div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="setup-layer" id="setupLayer"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="controls" id="moveControls"></div><div class="caption">13×13-Hybridbrett · Schach A–H/1–8 und Go a–m/1–13 · Graustufen-Demonstrator</div></div>';
 }
 function draw(){
  const board=document.getElementById('board');if(!board)return;
  board.replaceChildren();
- const mode=current==='setup'?'both':coordMode;
+ const setup=current==='setup',mode=setup?'both':coordMode;
  const isChess=mode==='chess'||mode==='both',isGo=mode==='go'||mode==='both';
- const visiblePieces=current==='geometry'?false:current==='setup'?true:showPieces;
+ const visiblePieces=current==='geometry'?false:setup?true:showPieces;
  const goTop=document.getElementById('goTop'),goRight=document.getElementById('goRight');
  goTop.replaceChildren();goRight.replaceChildren();
  const letters='abcdefghijklm',files='ABCDEFGH';
- for(let i=0;i<13;i++){
-  const a=document.createElement('span');a.textContent=isGo?letters[i]:'';goTop.append(a);
-  const b=document.createElement('span');b.textContent=isGo?String(13-i):'';goRight.append(b);
- }
+ for(let i=0;i<13;i++){const a=document.createElement('span');a.textContent=isGo?letters[i]:'';goTop.append(a);const b=document.createElement('span');b.textContent=isGo?String(13-i):'';goRight.append(b)}
  const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'],whites=['♖','♘','♗','♕','♔','♗','♘','♖'];
  for(let r=0;r<13;r++)for(let c=0;c<13;c++){
-  const d=document.createElement('div');const inside=(c>=2&&c<10&&r>=2&&r<10);d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');if(current==='opening'&&exampleStep===1&&c===6&&(r===8||r===6))d.className+=' highlight';
-  if(isChess&&((r===10&&c>=2&&c<10)||(c===1&&r>=2&&r<10))){
-   const label=document.createElement('span');label.className='chess-label';label.textContent=r===10?files[c-2]:String(10-r);d.append(label);
-  }
-  
-  if(visiblePieces&&c>=2&&c<10){
-   let glyph='',side='';
-   if(r===2){glyph=blacks[c-2];side='black'}
-   if(r===3){glyph='♟';side='black'}
-   if(r===8){glyph='♙';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
-   if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♙';side='white'}
-   if(r===9){glyph=whites[c-2];side='white'}
-   if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
-  }
-  board.append(d);
+   const d=document.createElement('div'),inside=c>=2&&c<10&&r>=2&&r<10;
+   d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');
+   if(current==='opening'&&exampleStep===1&&c===6&&(r===8||r===6))d.className+=' highlight';
+   if(isChess&&((r===10&&c>=2&&c<10)||(c===1&&r>=2&&r<10))){const label=document.createElement('span');label.className='chess-label';label.textContent=r===10?files[c-2]:String(10-r);d.append(label)}
+   if(visiblePieces&&c>=2&&c<10){
+     let glyph='',side='';
+     if(r===2){glyph=blacks[c-2];side='black'}if(r===3){glyph='♟';side='black'}
+     if(r===8){glyph='♙';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
+     if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♙';side='white'}
+     if(r===9){glyph=whites[c-2];side='white'}
+     if(setup){for(const mv of chessDemo.slice(0,setupChessIndex)){if(mv.from[0]===c&&mv.from[1]===r)glyph='';if(mv.to[0]===c&&mv.to[1]===r){glyph=mv.glyph;side=mv.side}}}
+     if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
+   }
+   board.append(d);
  }
+ const stars=[[3,3],[9,3],[6,6],[3,9],[9,9]];
  const mainNodes=document.getElementById('mainNodes');mainNodes.replaceChildren();
- if(isGo){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
- const moves=document.getElementById('moveControls');moves.replaceChildren();if(current==='opening'){const btn=document.createElement('button');btn.className='pill';btn.textContent=exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen';btn.addEventListener('click',()=>{exampleStep=1-exampleStep;draw()});moves.append(btn)}
- document.getElementById('legend').textContent=mode==='chess'?'SCHACH: Großbuchstaben A–H, Reihen 1–8; Felder im 8×8-Bereich.':mode==='go'?'GO: Kleinbuchstaben a–m, Reihen 1–13; fünf Hauptknoten sind hervorgehoben.':'BEIDES: Nur die innere 8×8-Schachfläche ist kariert. Ihre Koordinaten stehen am Rand; die fünf Go-Hauptknoten sind schwarz markiert.';
+ if(isGo&&!setup){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
+ const layer=document.getElementById('setupLayer');layer.replaceChildren();layer.style.display=setup?'grid':'none';
+ if(setup){for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+   const k=c+','+r,stone=placedGo.get(k),btn=document.createElement('button');
+   btn.type='button';btn.className='setup-point';btn.disabled=setupComplete||!!stone;
+   btn.title='Go '+letters[c]+(13-r)+(stone?' · '+stone:' · frei');btn.setAttribute('aria-label',btn.title);
+   if(stone){const dot=document.createElement('span');dot.className='setup-stone '+stone;btn.append(dot)}
+   else if(stars.some(([x,y])=>x===c&&y===r)){const dot=document.createElement('span');dot.className='setup-star';btn.append(dot)}
+   btn.addEventListener('click',()=>{if(setupComplete||placedGo.has(k))return;placedGo.set(k,placedGo.size%2===0?'black':'white');draw()});
+   layer.append(btn);
+ }}
+ const moves=document.getElementById('moveControls');moves.replaceChildren();
+ const add=(label,handler,disabled=false)=>{const b=document.createElement('button');b.className='pill';b.textContent=label;b.disabled=disabled;b.addEventListener('click',handler);moves.append(b)};
+ if(current==='opening')add(exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen',()=>{exampleStep=1-exampleStep;draw()});
+ if(setup){
+   const info=document.createElement('div');info.className='setup-info';info.setAttribute('role','status');info.textContent=setupComplete?'Go-Setup abgeschlossen · '+setupChessIndex+' von '+chessDemo.length+' Schach-Demozügen gezeigt':placedGo.size+' Go-Steine gesetzt · Nächster Stein: '+(placedGo.size%2?'Weiß':'Schwarz');moves.append(info);
+   add('Go-Setup abschließen',()=>{setupComplete=true;draw()},setupComplete);
+   add('Letzten Go-Stein zurück',()=>{const k=Array.from(placedGo.keys()).pop();if(k!==undefined)placedGo.delete(k);draw()},setupComplete||!placedGo.size);
+   add(setupChessIndex<chessDemo.length?'Schach-Demozug: '+chessDemo[setupChessIndex].name:'Schach-Demo abgeschlossen',()=>{setupChessIndex++;draw()},!setupComplete||setupChessIndex>=chessDemo.length);
+   add('Neustart',()=>{placedGo.clear();setupComplete=false;setupChessIndex=0;draw()});
+ }
+ document.getElementById('legend').textContent=setup?'Freier Go-Setup-Modus. Schwarz setzt zuerst. Nach Abschluss folgen klassische Schach-Bewegungsbeispiele.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
 }
 function open(key){
  const c=chapters.find(x=>x.key===key)||chapters[0];if(current!==c.key)exampleStep=0;current=c.key;
