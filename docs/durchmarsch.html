@@ -102,7 +102,7 @@ const chapters=[
 <div class="card"><div class="eyebrow" id="mechanicCount">Bild 1 von 4</div><h2 id="mechanicTitle">1 · Die Ausgangslage</h2><p id="mechanicText">Ein weißer Läufer steht auf E4. Seine klassische Schachdiagonale in Richtung F5 ist zunächst frei.</p>
 <div class="controls"><button class="pill" id="mechanicBack" type="button">← Vorheriges Bild</button><button class="pill" id="mechanicNext" type="button">Nächstes Bild →</button></div></div>
 <div id="diagram"></div>
-<div class="card"><h3>Warum ist das spannend?</h3><p>Ein Go-Stein liegt auf einem <strong>Gitterkreuz</strong>, der Läufer auf einem <strong>Schachfeld</strong>. Wenn Go-Knoten die möglichen Schachzüge verändern, entstehen zwei Wirkungen aus einer einzigen Setzung.</p><p>Du kannst oben vier Zustände miteinander vergleichen. **Der gestrichene Zug in Bild 3 ist vorerst eine Darstellung von Qwens Hypothese H1 und keine bestätigte illegale Aktion.**</p></div>
+<div class="card"><h3>Warum ist das spannend?</h3><p>Ein Go-Stein liegt auf einem <strong>Gitterkreuz</strong>, der Läufer auf einem <strong>Schachfeld</strong>. Wenn Go-Knoten die möglichen Schachzüge verändern, entstehen zwei Wirkungen aus einer einzigen Setzung.</p><p>Du kannst oben vier Zustände miteinander vergleichen. <strong>Der gestrichene Zug in Bild 3 stellt Qwens Hypothese H1 dar – keine bestätigte illegale Aktion.</strong></p></div>
 <div class="note"><strong>Mechanik-Hypothese, kein Regelbeleg:</strong> Qwen und DeepSeek haben die Engine-Wirkung nicht geprüft. Auch die exakte Go-Koordinate des gezeigten Kreuzungspunktes muss mit der Arena abgeglichen werden. Bis dahin zeigen wir das Prinzip ausdrücklich im Konjunktiv.</div>`},
 {key:'opening',short:'06 · Anfang',title:'Anfang: Das erste Spannungsfeld.',tag:'Spielphase 1',body:`<p class="lede">Ein erster konkreter Schritt: Wir sehen die Anfangsstellung und verfolgen die Bewegung eines weißen Bauern <strong>vom Schachfeld E2 nach E4</strong>.</p>
 <div id="diagram"></div>
@@ -196,6 +196,7 @@ function draw(){
    stone.title='Go-Knoten '+item.name;layer.append(stone)
  }}
  if(current==='turns'){
+ const oldScene=document.querySelector('.board-stage .mechanic-overlay');if(oldScene)oldScene.remove();
  const scene=document.createElement('div');scene.className='mechanic-overlay';
  const path=document.createElement('div');path.className='mechanic-arrow';path.style.left=(6.5/13*100)+'%';path.style.top=(6.5/13*100)+'%';path.style.width='10.87%';scene.append(path);
  if(mechanicStep>=1){const stone=document.createElement('span');stone.className='mechanic-stone';stone.title='Beispiel-Go-Stein auf Kreuzung';scene.append(stone)}
