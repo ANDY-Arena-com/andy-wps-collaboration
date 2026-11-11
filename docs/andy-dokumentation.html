@@ -45,7 +45,7 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 @media(max-width:950px){.layout{grid-template-columns:1fr}aside{height:auto;position:relative;padding:9px 12px;overflow-x:auto;border-right:0;border-bottom:1px solid #d8dddd}.sideheading,.sidefoot{display:none}.menu{flex-direction:row;min-width:max-content}.menu button{width:auto;padding:9px 11px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:22px 18px 50px}}
 @media(max-width:650px){.toplinks a{display:none}.hero{min-height:225px}.hero:before{opacity:.35}.grid,.grid.three,.preview{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.status{grid-template-columns:1fr 1fr}.miniboard{max-width:350px}.mpiece{font-size:clamp(12px,4.2vw,22px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.section{animation:none}}
-</style></head>
+.table-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:15px 0 22px}.docs-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.45;min-width:620px}.docs-table th{text-align:left;background:#253642;color:#fff;font-size:12px;font-weight:750;padding:12px 13px;white-space:nowrap}.docs-table td{padding:12px 13px;border-bottom:1px solid #e0e5e7;vertical-align:top}.docs-table tbody tr:last-child td{border-bottom:0}.docs-table tbody tr:nth-child(even){background:#f6f8f8}.docs-table .docs-emphasis{background:#fff1e8!important}.docs-table .docs-emphasis td:first-child{border-left:3px solid var(--accent)}#challenge .sectionhead{margin-top:35px}#challenge .sectionhead h3{font-size:23px}#challenge>p{max-width:860px}</style></head>
 <body>
 <header class="topbar"><a class="brand" href="#intro"><span class="mark">A</span><span><strong>ANDY / Docs</strong><small>Arena · Lab · Regelwerk</small></span></a><div class="toplinks"><span class="draft">DEMO · v0.1</span><a href="durchmarsch.html">Bisheriger Durchmarsch</a><a href="verstehenstest.html">Bisheriger Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration" target="_blank" rel="noopener">GitHub</a></div></header>
 <div class="layout">
@@ -149,18 +149,63 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 </section>
 
 <section class="section" id="challenge">
-<div class="eyebrow">05 / Hintergründe & Forschungsfrage</div><h2>Warum vielleicht das schwerste Spiel der Welt?</h2><p class="lede">Weil ANDY zwei komplexe Strategiewelten verbindet – und wir noch nicht wissen, wie anspruchsvoll diese Kombination wirklich ist.</p>
-<div class="grid three">
-<div class="card feature"><div class="index">Komplexität</div><h3>Ein Brett, zwei Logiken</h3><p>Schach und Go verlangen unterschiedliche Arten von Planung. Ihre Kopplung kann die Bewertung einer Stellung verändern.</p></div>
-<div class="card feature"><div class="index">Interdependenz</div><h3>Entscheidungen wirken zusammen</h3><p>Eine Entscheidung in einer Ebene kann Folgen in der anderen haben. Welche Mechanismen tatsächlich gelten, dokumentiert die geprüfte Regelreferenz.</p></div>
-<div class="card feature"><div class="index">Knappheit</div><h3>Denken kostet Ressourcen</h3><p>KI-Spieler müssen unter vorgegebenen Ressourcenlimits Entscheidungen treffen. Nicht allein die Spielstärke entscheidet über einen Matchausgang.</p></div>
+<div class="eyebrow">05 / Hintergrunddossier · abgestimmter Langtext</div>
+<h2>ANDY – Das vielleicht schwerste Brettspiel der Welt</h2>
+<p class="lede">Das vielleicht schwerste Brettspiel der Welt – ein Dossier über Komplexität, KI und die Grenzen der Token-Ökonomie.</p>
+<div class="note warning"><strong>Einordnung:</strong> Abgestimmtes Dossier mit heuristischen Schätzungen, konzeptionellen Vergleichen und einer theoretischen 19×19-Vision. Die Zahlen und Prognosen sind keine unabhängig verifizierten Forschungsergebnisse oder implementierten ANDY-Regeln.</div>
+
+<div class="sectionhead"><h3>1. Was heißt „schwer“? Die doppelte Herausforderung</h3></div>
+<p>ANDY erzeugt zwei Arten von Schwierigkeit gleichzeitig, die strikt getrennt werden müssen:</p>
+<div class="grid">
+<div class="card feature"><div class="index">a · Mensch</div><h3>Wahrnehmung &amp; Kognition</h3><p>Für den Menschen ist ANDY ein Vexierbild. Das Gehirn kann immer nur eine Logik fokussieren – Schach (Flächen, Bedrohungen) oder Go (Knoten, Freiheitsgrade). Beide gleichzeitig zu halten überfordert das Arbeitsgedächtnis. Das ist keine Frage von Intelligenz, sondern der Grenzen menschlicher Wahrnehmung.</p></div>
+<div class="card feature"><div class="index">b · KI</div><h3>Daten &amp; Token-Ökonomie</h3><p>Für ein GPAI-Modell ist ANDY ein Verifikationsproblem. Es hat keine eingebaute Suche wie AlphaZero. Es muss die Kopplung beider Spiele im Kontextfenster verwalten. Jeder Zug erfordert die Prüfung zweier Regelwerke. Das kostet Output-Tokens und führt bei zu viel Nachdenken in den Token-Kollaps.</p></div>
 </div>
-<div class="sectionhead"><h3>Was bedeutet „vielleicht“?</h3></div>
-<div class="callout"><div class="symbol">?</div><div><strong>Eine Forschungsfrage – kein Weltrekord</strong><p>Dass ANDY das „schwerste“ Brettspiel ist, ist nicht bewiesen. Wir verwenden diese Formulierung als Einladung, Schwierigkeit, Spielqualität und Ressourcenverbrauch zu untersuchen.</p></div></div>
-<div class="sectionhead"><h3>Was wir untersuchen wollen</h3><span class="pill">Offene Fragen</span></div>
-<details open><summary>Wie lassen sich Schwierigkeit und Spielstärke überhaupt messen?</summary><div class="details-body"><p>Etwa über legale Aktionen, erreichbare Spielziele, Entscheidungssituationen und reproduzierbare Vergleiche. Eine einzige Kennzahl reicht vermutlich nicht aus.</p></div></details>
-<details><summary>Welche Rolle spielt das Tokenbudget?</summary><div class="details-body"><p>Eine KI kann eine gute Entscheidung planen, aber dafür zu viele Ressourcen verbrauchen. Die Trennung zwischen Effektivität, Effizienz und weiteren Forschungsdimensionen benötigt klare Messdefinitionen.</p></div></details>
-<details><summary>Warum spielen mehrere KI-Modelle gegeneinander?</summary><div class="details-body"><p>Der Vergleich macht Unterschiede sichtbar – sofern Modellversion, Regeln, Budget, Farbausrichtung und Matchbedingungen dokumentiert sind.</p></div></details>
+
+<div class="sectionhead"><h3>2. Wie man „schwer“ messen und vergleichen kann</h3></div>
+<div class="table-scroll"><table class="docs-table"><thead><tr><th>Messgröße</th><th>Fokus</th><th>Definition</th><th>Schätzmethode</th></tr></thead><tbody>
+<tr><td>Visuelle Wahrnehmungskomplexität</td><td>Mensch</td><td>Wie viele Logiken muss das Auge trennen?</td><td>Qualitativ (1–10)</td></tr>
+<tr><td>Arbeitsgedächtnis-Last</td><td>Mensch</td><td>Wie viele Optionen simultan halten?</td><td>Qualitativ (1–10)</td></tr>
+<tr><td>Regel-Interdependenz</td><td>Beide</td><td>Wie stark blockieren sich die Regeln?</td><td>Qualitativ (1–10)</td></tr>
+<tr><td>Verifikations-Overhead (Token)</td><td>KI</td><td>Output-Tokens pro Zugprüfung</td><td>Messung im Lab</td></tr>
+<tr><td>Zustandsraum (Spielbaum)</td><td>Beide</td><td>Anzahl möglicher Stellungen</td><td>Mathematische Schätzung</td></tr>
+</tbody></table></div>
+
+<div class="sectionhead"><h3>3. Der Vergleich: Klassiker vs. ANDY</h3></div>
+<div class="table-scroll"><table class="docs-table"><thead><tr><th>Spiel</th><th>Spielbaum</th><th>Verzweigung</th><th>Regel-Interdependenz</th><th>Wahrnehmung Mensch</th><th>Kognitive Last KI</th></tr></thead><tbody>
+<tr><td>Schach</td><td>~10¹²⁰</td><td>35</td><td>6/10 (statisch)</td><td>5/10</td><td>4/10</td></tr>
+<tr><td>Go (13×13)</td><td>~10⁸⁰</td><td>169</td><td>2/10 (kontextabhängig)</td><td>4/10</td><td>5/10</td></tr>
+<tr><td>Shogi</td><td>~10²²⁶</td><td>80</td><td>7/10 (Drops)</td><td>6/10</td><td>6/10</td></tr>
+<tr class="docs-emphasis"><td><strong>ANDY (13×13)</strong></td><td>~10¹⁰⁰</td><td>80–120</td><td><strong>10/10 (koppelnd)</strong></td><td><strong>10/10 (Vexierbild)</strong></td><td><strong>10/10 (Verifikation)</strong></td></tr>
+</tbody></table></div>
+<div class="note"><strong>Interpretation:</strong> Go hat den größten Spielbaum, aber die geringste Interdependenz. ANDY hat nicht den größten Spielbaum – aber die höchste Interdependenz und die höchste kognitive Last auf beiden Seiten. Das ist der Unterschied.</div>
+
+<div class="sectionhead"><h3>4. Der ANDY-Komplexitäts-Score (AKS)</h3></div>
+<p>Heuristisches Bewertungsmodell (0–100), Gewichtung: Regel-Interdependenz 30 %, Kognitive Last KI 30 %, Overthinking-Risiko 15 %, Wahrnehmung Mensch 10 %, Verzweigung 10 %, Zustandsraum 5 %.</p>
+<div class="table-scroll"><table class="docs-table"><thead><tr><th>Spiel</th><th>AKS</th><th>Kategorie</th></tr></thead><tbody>
+<tr><td>Dame (8×8)</td><td>20</td><td>Gelöst</td></tr>
+<tr><td>Schach (8×8)</td><td>48</td><td>Taktisch komplex</td></tr>
+<tr><td>Go (13×13)</td><td>55</td><td>Strategisch komplex</td></tr>
+<tr><td>Shogi</td><td>62</td><td>Regelkomplex</td></tr>
+<tr class="docs-emphasis"><td><strong>ANDY (13×13)</strong></td><td><strong>88</strong></td><td><strong>Kognitiv komplex</strong></td></tr>
+<tr><td>ANDY (19×19, theoretisch)</td><td>100</td><td>Token-Kollaps</td></tr>
+</tbody></table></div>
+<p class="small">Der AKS ist kein Naturgesetz, sondern ein von uns entwickeltes Modell mit Schätzwerten. Er strukturiert die Diskussion, er beendet sie nicht.</p>
+
+<div class="sectionhead"><h3>5. Die 19×19-Vision: Das unerreichbare Octagon</h3></div>
+<div class="card"><p>13×13 ist das, was wir heute spielen – ein bewusst reduziertes Trainingslager. Das <em>echte</em> ANDY ist 19×19: keine Schutzzonen, Schachfiguren und Go-Steine auf allen 361 Feldern. Der Zustandsraum steigt auf ~10²⁰⁰, der Verifikations-Overhead wird so groß, dass aktuelle Modelle im Token-Kollaps sterben, bevor sie den ersten Zug machen. Wir bauen 13×13 als Leiter, um das zu erreichen.</p></div>
+
+<div class="sectionhead"><h3>6. Warum GPAI anders scheitert als AlphaZero</h3></div>
+<div class="table-scroll"><table class="docs-table"><thead><tr><th></th><th>AlphaZero (spezialisiert)</th><th>GPAI (GPT, DeepSeek, Gemini)</th></tr></thead><tbody>
+<tr><td>Training</td><td>Millionen Partien</td><td>Regeln im Prompt, keine Vorbereitung</td></tr>
+<tr><td>Suche</td><td>Eingebaute Suchmaschine</td><td>Keine, nur Reasoning in Textform</td></tr>
+<tr><td>Gegner</td><td>Fester Algorithmus</td><td>Nicht-deterministisches LLM</td></tr>
+<tr><td>Ressourcen</td><td>Unbegrenzt (Trainingszeit)</td><td>Knapp (Token-Budget)</td></tr>
+</tbody></table></div>
+<p>Daraus folgen die typischen Fehler im Lab: illegale Züge (Wembley-Ecke), Overthinking (Concorde-Effekt), Verlust der Kalibrierung.</p>
+
+<div class="sectionhead"><h3>7. Die ehrliche Grenze</h3></div>
+<p>ANDY misst ein Bündel realer Fähigkeiten (Regelanwendung, Zustandsverfolgung, Token-Effizienz), nicht „Intelligenz“. Wir kennen Goodharts Gesetz und die Verzerrungen durch Formatabhängigkeit und Prompt-Passung. Deshalb zeigen wir keine glatte Rangliste, sondern Konfidenzintervalle und Fehleranalysen. Und deshalb heißt es „vielleicht das schwerste“ – nicht „das schwerste“.</p>
+<div class="callout"><div class="symbol">?</div><div><strong>ANDY ist ein Labor. Ein Experimentierfeld.</strong><p>Ein Ort, an dem wir herausfinden, wie weit KI-Systeme unter zunehmender, wechselseitig erzeugter Komplexität gehen können.</p></div></div>
 <div class="linkrow"><button class="button" data-go="intro">Zur Übersicht zurück ↗</button><button class="button secondary" data-go="rules">Zur Regelreferenz →</button></div>
 </section>
 <div class="bottomnav"><button id="previous" type="button">← Zurück</button><span id="position" class="small">01 / 05</span><button id="following" type="button">Weiter →</button></div>
