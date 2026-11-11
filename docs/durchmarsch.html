@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V1.5</title>
+<title>ANDY verstehen – Durchmarsch V1.6</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -58,7 +58,7 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
  #toc .chapter-link{flex:0 0 auto;white-space:nowrap;background:#f5f5f3;padding:8px 11px}
  .navtop{top:92px}
 }</style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.5</small></div></div><div class="header-links"><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.6</small></div></div><div class="header-links"><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
 <div class="shell"><aside id="toc" aria-label="Inhaltsverzeichnis"><h2>Inhaltsverzeichnis</h2><nav id="nav"><a class="chapter-link" data-key="intro" href="#intro">00 · Pitch</a><a class="chapter-link" data-key="contents" href="#contents">01 · Überblick</a><a class="chapter-link" data-key="goals" href="#goals">02 · Ziele & Sieg</a><a class="chapter-link" data-key="geometry" href="#geometry">03 · Brett & Koordinaten</a><a class="chapter-link" data-key="setup" href="#setup">04 · Startaufstellung</a><a class="chapter-link" data-key="turns" href="#turns">05 · Zugablauf</a><a class="chapter-link" data-key="opening" href="#opening">06 · Anfang</a><a class="chapter-link" data-key="middle" href="#middle">07 · Mitte</a><a class="chapter-link" data-key="ending" href="#ending">08 · Ende</a><a class="chapter-link" data-key="results" href="#results">09 · Ergebnisarten</a></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -87,13 +87,13 @@ const chapters=[
 <div id="diagram"></div>
 <div class="grid"><div class="card"><h3>Schach · Felder A–H / 1–8</h3><p>Nur die innere <strong>8×8-Fläche</strong> ist kariert. Die Figuren stehen auf Feldern. <strong>A1</strong> liegt unten links in dieser Schachzone, <strong>H8</strong> oben rechts. Die Schachbuchstaben stehen an ihrem unteren, die Zahlen an ihrem linken Rand.</p></div>
 <div class="card"><h3>Go · Knoten a–m / 1–13</h3><p>Die Go-Ebene umfasst das <strong>gesamte 13×13-Gitter</strong>. Go-Steine liegen auf Schnittpunkten, nicht auf Schachfeldern. <strong>a1</strong> liegt unten links im Go-Gitter, <strong>m13</strong> oben rechts. Fünf Hauptknoten dienen zur Orientierung. <strong>Die Go-Steine zählen doppelt:</strong> Sie betreffen Go und beeinflussen zugleich die Schach-Ebene.</p></div></div>
-<div class="card"><h3>Zwei Bezeichnungen – zwei verschiedene Orte</h3><p><strong>E4</strong> ist ein Schachfeld. <strong>e4</strong> ist ein Go-Knoten. Die Groß- und Kleinschreibung unterscheiden beide Ebenen. Sie sind nicht austauschbar.</p><p>Teste die drei Ansichten <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> direkt über dem Brett. Auf dieser Seite bleiben alle Figuren ausgeblendet, damit du dich auf das Koordinatensystem konzentrieren kannst.</p></div>
-<div class="note">Arbeitsdarstellung: Die genaue geometrische Zuordnung der Schachzone und der fünf Go-Hauptknoten muss für die verbindliche Spielanleitung noch am Engine-State abgeglichen werden.</div>`},
+<div class="card"><h3>Zwei Bezeichnungen – zwei verschiedene Orte</h3><p><strong>E4</strong> ist ein Feld innerhalb der 8×8-Schachzone; <strong>e4</strong> bezeichnet einen Schnittpunkt des 13×13-Go-Gitters. Sie haben ähnliche Namen, sind aber <strong>weder dasselbe Spielelement noch automatisch derselbe räumliche Ort</strong>. Die Groß- und Kleinschreibung trennt beide Notationen.</p><p>Teste die drei Ansichten <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> direkt über dem Brett. Auf dieser Seite bleiben alle Figuren ausgeblendet, damit du dich auf das Koordinatensystem konzentrieren kannst.</p></div>
+<div class="note">Vorläufige Koordinatendarstellung für dieses Handbuch: Die Bezeichnungen A–H / 1–8 (Schach) und a–m / 1–13 (Go) sowie die geometrische Zuordnung zur laufenden Engine müssen vor G1 anhand der Arena-Implementierung geprüft werden.</div>`},
 {key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">ANDY beginnt mit allen 32 Schachfiguren. <strong>Bevor Schach gezogen wird, werden im Go-Setup 16 Steine gesetzt: acht schwarze und acht weiße.</strong></p>
-<div class="card"><h3>Wichtig: Die Steine zählen doppelt</h3><p>Die Go-Steine sind nicht nur für das Go-Spiel relevant: Sie haben auch Bedeutung für die Schach-Ebene. Genau diese Doppelrolle verbindet beide Spielwelten. Die einzelnen Regelwirkungen erläutern wir beim Zugablauf.</p></div>
+<div class="card"><h3>Wichtig: Die Steine zählen doppelt</h3><p>Die Go-Steine gehören zur Go-Ebene und beeinflussen zugleich das Geschehen auf der Schach-Ebene. <strong>Das bedeutet nicht, dass ihr Go-Punktwert einfach verdoppelt wird.</strong> Welche Schachzüge oder Felder durch einen Stein konkret beeinflusst werden, ist hier noch nicht erklärt und muss anhand der ANDY-Engine mit einem Vorher-Nachher-Beispiel belegt werden.</p></div>
 <div id="diagram"></div>
 <div class="card"><h3>Eine vollständige Vorführung</h3><p>Einmal <strong>„Demo starten“</strong> drücken. Anschließend erscheinen automatisch <strong>16 Go-Steine</strong> – Schwarz und Weiß abwechselnd, jeweils acht. <strong>Erst danach</strong> folgen drei beispielhafte Schachzüge: E2–E4, E7–E5, G1–F3. Am Ende bleibt die Stellung stehen.</p></div>
-<div class="note">Die Demo zeigt Reihenfolge und Brettdarstellung. Die 16 gewählten Go-Knoten und drei Schachzüge sind didaktische Beispiele, keine engineverifizierte Partie. Die konkrete Doppelwirkung der Go-Steine muss noch mit den aktuellen ANDY-Regeln abgeglichen werden.</div>`},
+<div class="note">Diese Zugfolge ist eine didaktische Illustration, <strong>keine engineverifizierte ANDY-Partie</strong>. Echte Replay-Stellungen mit Positions- und Matchreferenz folgen nach fachlicher Prüfung. Die konkrete Doppelwirkung der Go-Steine ist noch offen.</div>`},
 {key:'turns',short:'05 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Jede Partiestellung lässt sich in drei Fragen zerlegen: <strong>Was liegt vor?</strong> – <strong>Was wird getan?</strong> – <strong>Was ist danach anders?</strong></p>
 <div class="grid"><div class="card"><h3>1 · Zustand lesen</h3><p>Welche Schachfiguren stehen auf welchen Feldern? Welche Go-Knoten sind besetzt? Wer ist am Zug?</p></div><div class="card"><h3>2 · Aktion beobachten</h3><p>Welche der vorgesehenen Aktionen wählt der Spieler? Was meldet die Engine als gültig oder ungültig?</p></div><div class="card"><h3>3 · Folgezustand prüfen</h3><p>Welche Figuren- oder Steinpositionen ändern sich? Entsteht eine unmittelbare Wirkung auf die jeweils andere Ebene?</p></div></div>
 <div id="diagram"></div>
@@ -194,8 +194,8 @@ function draw(){
    const info=document.createElement('div');info.className='setup-info';info.setAttribute('role','status');
    if(demoStep===0)info.textContent='Bereit · Automatische Vorführung mit einem Klick';
    else if(demoStep<goDemo.length)info.textContent='Go-Phase · '+demoStep+' / '+goDemo.length+' Steine';
-   else if(demoStep===goDemo.length)info.textContent='Go-Phase abgeschlossen · '+goDemo.length+' Steine';
-   else if(demoStep<goDemo.length+chessDemo.length)info.textContent='Schach-Phase · '+(demoStep-goDemo.length)+' / 3 Züge';
+   else if(demoStep===goDemo.length)info.textContent='Go-Setup abgeschlossen: 8 schwarze + 8 weiße Steine. Jetzt beginnt die Schach-Demo; alle Go-Steine bleiben liegen.';
+   else if(demoStep<goDemo.length+chessDemo.length)info.textContent='Schach-Phase · '+(demoStep-goDemo.length)+' / 3 Züge · Go-Steine bleiben liegen';
    else info.textContent='Ende · 16 Go-Steine (8 + 8) und drei Schach-Demozüge gezeigt';
    moves.append(info);
    if(demoStep===0)add('▶ Demo starten',startDemo);
