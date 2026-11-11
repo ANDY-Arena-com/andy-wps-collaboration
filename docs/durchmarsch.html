@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V0.9</title>
+<title>ANDY verstehen – Durchmarsch V1.0</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -37,16 +37,13 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .board-stage{position:relative;min-width:0}.main-nodes{position:absolute;inset:0;pointer-events:none}.main-node{position:absolute;transform:translate(-50%,-50%);width:clamp(7px,1vw,11px);height:clamp(7px,1vw,11px);border-radius:50%;background:#141414;box-shadow:0 0 0 1px #f7f7f7}.sq.outer{border-color:#9a9a9a}
 .legend{font-size:13px;color:#454545;margin-top:10px}.hint{font-size:12px;color:var(--muted)}
 
-.setup-layer{position:absolute;inset:0;width:100%;height:100%;z-index:20;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));grid-template-rows:repeat(13,minmax(0,1fr));pointer-events:auto}
-.setup-point{pointer-events:auto;cursor:crosshair;border:0;background:transparent;padding:0;margin:0;display:grid;place-items:center;width:100%;height:100%;min-width:0;min-height:0;touch-action:manipulation}
-.setup-point:disabled{cursor:default}.setup-point:focus-visible{outline:2px solid #171717;outline-offset:-2px}
-.setup-stone{display:block;width:75%;height:75%;border-radius:50%;box-shadow:0 1px 3px #555}
-.setup-stone.black{background:#181818;border:1px solid #fafafa}.setup-stone.white{background:#fafafa;border:1.5px solid #111}
-.setup-star{display:block;width:7px;height:7px;border-radius:50%;background:#171717}
+.demo-stones{position:absolute;inset:0;z-index:12;pointer-events:none}
+.demo-stone{position:absolute;transform:translate(-50%,-50%);width:clamp(12px,2.5vw,28px);height:clamp(12px,2.5vw,28px);border-radius:50%;box-shadow:0 1px 3px #333;pointer-events:none}
+.demo-stone.black{background:#161616;border:1px solid #fafafa}.demo-stone.white{background:#fafafa;border:1.5px solid #222}
 .setup-info{font-size:14px;font-weight:600;flex-basis:100%;margin-top:3px}
 .board-frame.setup-chapter .main-nodes{display:none}
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.9</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.0</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -77,10 +74,10 @@ const chapters=[
 <div class="card"><h3>Go · Knoten a–m / 1–13</h3><p>Die Go-Ebene umfasst das <strong>gesamte 13×13-Gitter</strong>. Go-Steine liegen auf Schnittpunkten, nicht auf Schachfeldern. <strong>a1</strong> liegt unten links im Go-Gitter, <strong>m13</strong> oben rechts. Fünf Hauptknoten dienen zur Orientierung.</p></div></div>
 <div class="card"><h3>Zwei Bezeichnungen – zwei verschiedene Orte</h3><p><strong>E4</strong> ist ein Schachfeld. <strong>e4</strong> ist ein Go-Knoten. Die Groß- und Kleinschreibung unterscheiden beide Ebenen. Sie sind nicht austauschbar.</p><p>Teste die drei Ansichten <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> direkt über dem Brett. Auf dieser Seite bleiben alle Figuren ausgeblendet, damit du dich auf das Koordinatensystem konzentrieren kannst.</p></div>
 <div class="note">Arbeitsdarstellung: Die genaue geometrische Zuordnung der Schachzone und der fünf Go-Hauptknoten muss für die verbindliche Spielanleitung noch am Engine-State abgeglichen werden.</div>`},
-{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Alle 32 Schachfiguren stehen bereits auf ihren Ausgangsfeldern. <strong>Jetzt probierst du Go aus:</strong> Klicke nacheinander beliebige freie Knoten an. Schwarz und Weiß setzen abwechselnd.</p>
+{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Alle 32 Schachfiguren stehen bereits auf dem Brett. Mit <strong>einem Klick auf „Demo starten“</strong> siehst du, wie zuerst schwarze und weiße Go-Steine auf freien <strong>Gitterkreuzungen außerhalb der Schachzone</strong> erscheinen. Anschließend folgen automatisch drei Schachzüge.</p>
 <div id="diagram"></div>
-<div class="card"><h3>Ein Ablauf – nur vorwärts</h3><p><strong>1.</strong> Setze durch Anklicken beliebig viele Go-Steine. Jeder Stein bleibt auf seinem Knoten sichtbar.<br><strong>2.</strong> Drücke oben über dem Brett auf <strong>„Go-Setup abschließen“</strong>.<br><strong>3.</strong> Danach erscheinen nacheinander genau <strong>drei Schach-Demozüge</strong>: E2–E4, E7–E5 und G1–F3.<br><strong>4.</strong> Nach Zug 3 erscheint <strong>„Ende“</strong>; weitere Eingaben sind gesperrt.</p></div>
-<div class="note">Freier Demonstrationsmodus: Die gewählte Go-Setzfolge und die Schachzüge werden hier <strong>nicht</strong> auf ANDY-Regelkonformität geprüft. Dies ist eine verständliche Bedienprobe, kein offizielles Setup-Reglement.</div>`},
+<div class="card"><h3>Die Vorführung</h3><p><strong>Phase 1 – Go:</strong> Vier beispielhafte Steine erscheinen nacheinander, abwechselnd Schwarz und Weiß.<br><strong>Phase 2 – Schach:</strong> E2–E4, E7–E5, G1–F3 werden schrittweise gezeigt.<br><strong>Phase 3 – Ende:</strong> Die Demonstration stoppt automatisch; die Schlussstellung bleibt stehen.</p></div>
+<div class="note"><strong>Didaktische Simulation:</strong> Die Go-Knoten sind frei gewählte Beispiele auf Kreuzungspunkten, nicht mitten in Schachfeldern. Die gesamte Abfolge ist <strong>keine geprüfte ANDY-Partie</strong> und sagt nichts über die verbindliche Setup-Dauer oder die tatsächliche Zugfolge aus.</div>`},
 {key:'turns',short:'05 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Jede Partiestellung lässt sich in drei Fragen zerlegen: <strong>Was liegt vor?</strong> – <strong>Was wird getan?</strong> – <strong>Was ist danach anders?</strong></p>
 <div class="grid"><div class="card"><h3>1 · Zustand lesen</h3><p>Welche Schachfiguren stehen auf welchen Feldern? Welche Go-Knoten sind besetzt? Wer ist am Zug?</p></div><div class="card"><h3>2 · Aktion beobachten</h3><p>Welche der vorgesehenen Aktionen wählt der Spieler? Was meldet die Engine als gültig oder ungültig?</p></div><div class="card"><h3>3 · Folgezustand prüfen</h3><p>Welche Figuren- oder Steinpositionen ändern sich? Entsteht eine unmittelbare Wirkung auf die jeweils andere Ebene?</p></div></div>
 <div id="diagram"></div>
@@ -104,16 +101,23 @@ const chapters=[
 <div class="note">Die Bezeichnungen sind noch nicht gegen die tatsächlich implementierten Statuscodes verifiziert. Insbesondere illegale Aktionen, Parserfehler, Aufgabe, Patt und Remis bleiben offen.</div>`}
 ];
 let current='intro',coordMode='both',showPieces=true,exampleStep=0;
-const placedGo=new Map();let setupComplete=false,setupChessIndex=0;
+let demoStep=0,demoTimer=null,demoRunning=false;
+const goDemo=[
+ {c:1,r:1,color:'black',name:'b12'},
+ {c:11,r:1,color:'white',name:'l12'},
+ {c:1,r:11,color:'black',name:'b2'},
+ {c:11,r:11,color:'white',name:'l2'}
+];
 const chessDemo=[{from:[6,8],to:[6,6],glyph:'♙',side:'white',name:'E2 → E4'},{from:[6,3],to:[6,5],glyph:'♟',side:'black',name:'E7 → E5'},{from:[8,9],to:[7,7],glyph:'♘',side:'white',name:'G1 → F3'}];
-const nav=document.getElementById('nav'),content=document.getElementById('content');
-chapters.forEach(c=>{const b=document.createElement('button');b.textContent=c.short;b.dataset.key=c.key;b.addEventListener('click',()=>open(c.key));nav.append(b)});
+function stopDemo(){if(demoTimer!==null){clearInterval(demoTimer);demoTimer=null}demoRunning=false}
+function advanceDemo(){if(current!=='setup'){stopDemo();return}demoStep=Math.min(demoStep+1,goDemo.length+chessDemo.length);if(demoStep>=goDemo.length+chessDemo.length)stopDemo();draw()}
+function startDemo(){if(demoRunning||demoStep>0)return;demoRunning=true;advanceDemo();if(demoRunning)demoTimer=setInterval(advanceDemo,1100)}
 function boardHTML(){
  const geometry=current==='geometry',setup=current==='setup';
  const modeButtons='<button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button>';
  const piecesButton='<button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button>';
  const controls=setup?'':geometry?modeButtons:modeButtons+piecesButton;
- return '<div class="board-frame'+(setup?' setup-chapter':'')+'">'+(controls?'<div class="controls">'+controls+'</div>':'')+'<div class="controls" id="moveControls"></div><div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="setup-layer" id="setupLayer"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="caption">13×13-Hybridbrett · Schach A–H/1–8 und Go a–m/1–13 · Graustufen-Demonstrator</div></div>';
+ return '<div class="board-frame'+(setup?' setup-chapter':'')+'">'+(controls?'<div class="controls">'+controls+'</div>':'')+'<div class="controls" id="moveControls"></div><div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="demo-stones" id="setupLayer"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="caption">13×13-Hybridbrett · Schach A–H/1–8 und Go a–m/1–13 · Graustufen-Demonstrator</div></div>';
 }
 function draw(){
  const board=document.getElementById('board');if(!board)return;
@@ -137,7 +141,7 @@ function draw(){
      if(r===8){glyph='♙';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
      if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♙';side='white'}
      if(r===9){glyph=whites[c-2];side='white'}
-     if(setup){for(const mv of chessDemo.slice(0,setupChessIndex)){if(mv.from[0]===c&&mv.from[1]===r)glyph='';if(mv.to[0]===c&&mv.to[1]===r){glyph=mv.glyph;side=mv.side}}}
+     if(setup){for(const mv of chessDemo.slice(0,Math.max(0,demoStep-goDemo.length))){if(mv.from[0]===c&&mv.from[1]===r)glyph='';if(mv.to[0]===c&&mv.to[1]===r){glyph=mv.glyph;side=mv.side}}}
      if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
    }
    board.append(d);
@@ -145,37 +149,32 @@ function draw(){
  const stars=[[3,3],[9,3],[6,6],[3,9],[9,9]];
  const mainNodes=document.getElementById('mainNodes');mainNodes.replaceChildren();
  if(isGo&&!setup){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
- const layer=document.getElementById('setupLayer');layer.replaceChildren();layer.style.display=setup?'grid':'none';
- if(setup){for(let r=0;r<13;r++)for(let c=0;c<13;c++){
-   const k=c+','+r,stone=placedGo.get(k),btn=document.createElement('button');
-   btn.type='button';btn.className='setup-point';btn.disabled=setupComplete||!!stone;
-   btn.title='Go '+letters[c]+(13-r)+(stone?' · '+stone:' · frei');btn.setAttribute('aria-label',btn.title);
-   if(stone){const dot=document.createElement('span');dot.className='setup-stone '+stone;btn.append(dot)}
-   else if(stars.some(([x,y])=>x===c&&y===r)){const dot=document.createElement('span');dot.className='setup-star';btn.append(dot)}
-   btn.addEventListener('click',()=>{if(setupComplete||placedGo.has(k))return;placedGo.set(k,placedGo.size%2===0?'black':'white');draw()});
-   layer.append(btn);
+ const layer=document.getElementById('setupLayer');layer.replaceChildren();layer.style.display=setup?'block':'none';
+ if(setup){for(const item of goDemo.slice(0,Math.min(demoStep,goDemo.length))){
+   const stone=document.createElement('span');stone.className='demo-stone '+item.color;
+   // Use actual grid LINE intersections, not centers of chess squares.
+   stone.style.left=((item.c+1)/13*100)+'%';stone.style.top=((item.r+1)/13*100)+'%';
+   stone.title='Go-Knoten '+item.name;layer.append(stone)
  }}
  const moves=document.getElementById('moveControls');moves.replaceChildren();
  const add=(label,handler,disabled=false)=>{const b=document.createElement('button');b.className='pill';b.textContent=label;b.disabled=disabled;b.addEventListener('click',handler);moves.append(b)};
  if(current==='opening')add(exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen',()=>{exampleStep=1-exampleStep;draw()});
  if(setup){
    const info=document.createElement('div');info.className='setup-info';info.setAttribute('role','status');
-   if(!setupComplete)info.textContent=placedGo.size+' Go-Steine gesetzt · Nächster Stein: '+(placedGo.size%2?'Weiß':'Schwarz');
-   else if(setupChessIndex<chessDemo.length)info.textContent='Go-Setup abgeschlossen · Schach-Demozug '+(setupChessIndex+1)+' / 3';
-   else info.textContent='Ende · Drei Schach-Demozüge vollständig gezeigt';
+   if(demoStep===0)info.textContent='Bereit · Automatische Vorführung mit einem Klick';
+   else if(demoStep<goDemo.length)info.textContent='Go-Phase · '+demoStep+' / '+goDemo.length+' Steine';
+   else if(demoStep===goDemo.length)info.textContent='Go-Phase abgeschlossen · '+goDemo.length+' Steine';
+   else if(demoStep<goDemo.length+chessDemo.length)info.textContent='Schach-Phase · '+(demoStep-goDemo.length)+' / 3 Züge';
+   else info.textContent='Ende · Vier Go-Steine und drei Schach-Demozüge gezeigt';
    moves.append(info);
-   if(!setupComplete){
-     add('Go-Setup abschließen',()=>{setupComplete=true;draw()},placedGo.size===0);
-   }else if(setupChessIndex<chessDemo.length){
-     add('Schach-Demozug '+(setupChessIndex+1)+': '+chessDemo[setupChessIndex].name,()=>{setupChessIndex++;draw()});
-   }else{
-     const end=document.createElement('strong');end.textContent='Ende';end.setAttribute('aria-label','Demonstration beendet');moves.append(end);
-   }
+   if(demoStep===0)add('▶ Demo starten',startDemo);
+   if(demoStep===goDemo.length+chessDemo.length){const tag=document.createElement('strong');tag.textContent='Ende';moves.append(tag)}
+
  }
- document.getElementById('legend').textContent=setup?'Freier Go-Setup-Modus. Schwarz setzt zuerst. Nach Abschluss folgen klassische Schach-Bewegungsbeispiele.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
+ document.getElementById('legend').textContent=setup?'Automatische Demo: Go-Steine liegen auf Gitterkreuzungen außerhalb der Schachzone; danach drei Schachzüge.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
 }
 function open(key){
- const c=chapters.find(x=>x.key===(key==='coords'?'geometry':key))||chapters[0];if(current!==c.key)exampleStep=0;current=c.key;
+ const c=chapters.find(x=>x.key===(key==='coords'?'geometry':key))||chapters[0];if(current==='setup'&&c.key!=='setup')stopDemo();if(current!==c.key)exampleStep=0;current=c.key;
  content.innerHTML='<div class="eyebrow">'+c.tag+' · Arbeitsstand / nicht G1-freigegeben</div><h1>'+c.title+'</h1>'+c.body;
  const box=document.getElementById('diagram');
  if(box){
