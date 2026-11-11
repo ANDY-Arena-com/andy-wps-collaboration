@@ -7,6 +7,15 @@
 
 > **So arbeiten wir:** Oliver und GPT machen zunächst einen schnellen gemeinsamen Durchmarsch. Wir führen Änderungswünsche hier dauerhaft zusammen, setzen sie direkt im HTML um und prüfen die Darstellung im Browser. Qwen und DeepSeek kommen bei konkreten Fachfragen hinzu. **Ein Häkchen bedeutet „umgesetzt“, nicht automatisch „im Browser geprüft“ oder „als offizielle ANDY-Regel bestätigt“.**
 
+## Neue Dokumentationsstruktur · 11.11.2026
+
+- [x] **DOC-01 · Neue HTML-Demo mit fünf Hauptbereichen:** [ANDY / Docs](https://andy-arena-com.github.io/andy-wps-collaboration/andy-dokumentation.html) (Intro, Arena, Lab, Regeln, Schwierigkeit). Separat unter `docs/andy-dokumentation.html`.
+- [x] **DOC-02 · Bisherige Prototypen erhalten:** `docs/durchmarsch.html` und `docs/verstehenstest.html` nicht gelöscht; Links in der neuen Demo vorhanden.
+- [x] **DOC-03 · Erste Demobefüllung vorhanden:** responsive Seitenleiste, Überblick, Start-/Replay-Anleitungen, Cockpit-Orientierung, Lab-Begriffe, APS-Struktur und Schwierigkeitsthema.
+- [ ] **DOC-04 · Oliver prüft neue Struktur im Browser:** Reihenfolge, Informationsmenge und Auffindbarkeit testen.
+- [ ] **DOC-05 · Bedienungsseiten an aktuelle Arena/Lab-Oberfläche angleichen:** konkrete Schaltflächen, Ansichten und Screenshots verifizieren.
+- [ ] **DOC-06 · Kanonisches, engineverifiziertes Markdown-Regelwerk erstellen und inhaltsgleich als HTML veröffentlichen.**
+
 ## Direkte Integration der Qwen-/DeepSeek-Inputs
 
 - [x] **I01 · Kapitel 03 mit Rosetta-Eckenbeispielen ergänzt:** A1 ↔ c3/d3/c4/d4 und E4 ↔ g6/h6/g7/h7 als Qwens vorläufige Koordinatenhypothese; noch nicht Engine-bestätigt.
