@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ANDY – Dokumentationsportal. Entdecken, Arena bedienen, Lab nutzen und Regeln nachlesen.">
-<title>ANDY · Dokumentation · Entwurf 0.1</title>
+<title>ANDY Arena · Docs · Entwurf 0.5</title>
 <style>
 :root{--bg:#f4f5f5;--paper:#fff;--ink:#1b2229;--muted:#627078;--line:#dbe0e2;--accent:#e97432;--nav:#131b24;--blue:#263847}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
@@ -45,9 +45,33 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 @media(max-width:950px){.layout{grid-template-columns:1fr}aside{height:auto;position:relative;padding:9px 12px;overflow-x:auto;border-right:0;border-bottom:1px solid #d8dddd}.sideheading,.sidefoot{display:none}.menu{flex-direction:row;min-width:max-content}.menu button{width:auto;padding:9px 11px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:22px 18px 50px}}
 @media(max-width:650px){.toplinks a{display:none}.hero{min-height:225px}.hero:before{opacity:.35}.grid,.grid.three,.preview{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.status{grid-template-columns:1fr 1fr}.miniboard{max-width:350px}.mpiece{font-size:clamp(12px,4.2vw,22px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.section{animation:none}}
-.table-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:15px 0 22px}.docs-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.45;min-width:620px}.docs-table th{text-align:left;background:#253642;color:#fff;font-size:12px;font-weight:750;padding:12px 13px;white-space:nowrap}.docs-table td{padding:12px 13px;border-bottom:1px solid #e0e5e7;vertical-align:top}.docs-table tbody tr:last-child td{border-bottom:0}.docs-table tbody tr:nth-child(even){background:#f6f8f8}.docs-table .docs-emphasis{background:#fff1e8!important}.docs-table .docs-emphasis td:first-child{border-left:3px solid var(--accent)}#challenge .sectionhead{margin-top:35px}#challenge .sectionhead h3{font-size:23px}#challenge>p{max-width:860px}</style></head>
+.table-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:15px 0 22px}.docs-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.45;min-width:620px}.docs-table th{text-align:left;background:#253642;color:#fff;font-size:12px;font-weight:750;padding:12px 13px;white-space:nowrap}.docs-table td{padding:12px 13px;border-bottom:1px solid #e0e5e7;vertical-align:top}.docs-table tbody tr:last-child td{border-bottom:0}.docs-table tbody tr:nth-child(even){background:#f6f8f8}.docs-table .docs-emphasis{background:#fff1e8!important}.docs-table .docs-emphasis td:first-child{border-left:3px solid var(--accent)}#challenge .sectionhead{margin-top:35px}#challenge .sectionhead h3{font-size:23px}#challenge>p{max-width:860px}
+/* ANDY Arena editorial theme: dossier-inspired */
+:root{--bg:#f7f9fb;--ink:#10273a;--muted:#617583;--line:#d7e6ed;--accent:#e77c39;--nav:#071e32;--blue:#0d405e}
+.topbar{background:#081624;padding:9px clamp(18px,3vw,45px);min-height:79px;border-bottom:2px solid #1c526e}
+.brand{gap:15px}.brand .andy-logo{height:60px;width:64px;object-fit:contain;border-radius:3px}.brand strong{font-size:26px;font-weight:800;letter-spacing:-.02em;color:#f5fbff}.brand small{color:#9fcddd;letter-spacing:.02em}.draft{color:#9fdaed;border-color:#34677b}
+aside{background:#ebf3f8;border-color:#cddfe9}.menu button.active{background:#103752}.menu button.active .num{color:#71d9f7}
+.hero{background:linear-gradient(115deg,#061a30,#092c46 66%,#135276);border:1px solid #215c78;box-shadow:0 12px 26px #0d2c3b12}.hero:before{border-color:#23627e;box-shadow:0 0 0 44px #0a2945,0 0 0 45px #2d7a9c,0 0 0 90px #0a2f4b}
+.kicker,.eyebrow{color:#1395c7}.hero .kicker{color:#7fdfff}
+.feature{border-top-color:#1d9dcd}.card{box-shadow:0 2px 6px #092d4310}.card .index,.step .n{color:#087eaa}
+.card:nth-child(3n+2){background:#f0f8fd}.grid.three .card:nth-child(3){background:#fff4eb}
+.callout{background:#09243a;border:1px solid #20516b}.callout p{color:#d3e9f4}
+.button{background:#ef894b}.note{background:#eaf4fa;border-left-color:#1595c8}.note.warning{background:#fff3e9;border-left-color:#eb7d38}
+.sectionhead h3{color:#0c344e}.pill{border-color:#a9d9e9;color:#22789e;background:#f2fbff}
+.docs-table th{background:#0b3853}.table-scroll{box-shadow:0 5px 14px #10364c0a}
+.dossier-figure{margin:19px 0 28px;background:#091d30;padding:15px;border-radius:15px;border:1px solid #245571;box-shadow:0 14px 26px #0b2b431b}
+.dossier-figure figcaption{color:#d6e9f3;font-size:13px;padding:11px 8px 4px;line-height:1.45}
+.dossier-figure figcaption strong{color:#85d9f4}
+.dossier-figure .board-visual{display:block;width:100%;max-width:680px;margin:0 auto;background:#0b2740;aspect-ratio:1;position:relative;overflow:hidden;box-shadow:0 0 0 2px #236c8d,0 0 26px #00baff55}
+.dossier-figure .board-visual.landscape{max-width:790px;aspect-ratio:1.8}
+.board-visual svg{width:100%;height:100%;display:block}
+.dossier-figure .vision-tag{color:#f9f3ef;display:block;margin-bottom:8px;letter-spacing:.12em;font-weight:800;font-size:12px}
+.editorial-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:15px 0 25px}.editorial-cards .card{padding:18px;background:#f0f6fa}.editorial-cards .card:nth-child(2){background:#eaf7fa}.editorial-cards .card:nth-child(3){background:#fff3e8}
+#challenge .dossier-figure{margin-top:14px}
+@media(max-width:690px){.editorial-cards{grid-template-columns:1fr}.brand .andy-logo{width:48px;height:48px}.brand strong{font-size:21px}.topbar{padding:9px 12px}.hero{min-height:235px}}
+</style></head>
 <body>
-<header class="topbar"><a class="brand" href="#intro"><span class="mark">A</span><span><strong>ANDY / Docs</strong><small>Arena · Lab · Regelwerk</small></span></a><div class="toplinks"><span class="draft">DEMO · v0.1</span><a href="durchmarsch.html">Bisheriger Durchmarsch</a><a href="verstehenstest.html">Bisheriger Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration" target="_blank" rel="noopener">GitHub</a></div></header>
+<header class="topbar"><a class="brand" href="#intro" aria-label="ANDY Arena – Dokumentation"><img class="andy-logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsHCAkIBwsJCQkMCwsNEBoREA8PECAXGBMaJiIoKCYiJSQqMD0zKi05LiQlNUg1OT9BREVEKTNLUEpCTz1DREH/2wBDAQsMDBAOEB8RER9BLCUsQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUH/wAARCABGAEgDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAUGAQMEAgf/xAA4EAABAwIEAgYIBAcAAAAAAAABAAIDBBEFEiExE1EGIkFhgcEHFSMyVHGS0RSRoaIzUlNicoLC/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAIDAQQFBgf/xAAuEQACAgEBBQUIAwAAAAAAAAAAAQIDBBEFEyExQRIUMlBhUiI3GBobHB0fD/2gAMAwEAAhEDEQA/APmS9RxukNh8yeS8qRwGphpcRp5p4RNHFMyR8Rt7RrXAluumqmQON8DmtuCHAb2N7LXlPIq/9O+kmE9I66kdRQz0kcDXMmqHRNBJNiGka6DU371EDBWOAcK2Ug6ghrNf0UJTUPEat2VVU9JMq+U8imU8irT6kb8ZN9LPsnqRnxc30s+yjvolXvCjz/BVsp5FemRPebAK0epWfFzfSz7LQW02H11P1pK1zJWSSU1m2cwOBIcbaXATfRLacqF9irrTbfkiAfA5rcwLXAb2N7Irv6Rek+FdIW0UmH0skQhY8OkkYGF17WaLbgWvfbkitXE2mtChoDYoiyYJOhqA17JHHqvtFJf9p8lJxcajN6XrR7uhcdP9T2H9FX6Z4Dix/uPGVynaKZ0sNnn2kZyP+fPxGq38ZQui6bF9Dm51enxrk+ZKUlZDVtJjJDm+8x2jm/MLc9zWNLnkNaBckmwCi44KaWupDUzOpojMxstQw2dGwnU35Kb6d4RgeH4hRQ4TVOmY+Nz5oeOZWttbK4kk6nXTuXKzMXu8nx1RVg7JedbGFctNXoQk9fLVdSkJii7ZiNXf4jzXFUNZTQiGLqulJu69zbtcTzXZsFDVtRnzSA/xOqzuYPufJc+lO6fHkj6NbhYuwsNxoXzJcO0+fq/Q5aiTiSaaNGjRyCLUi6x5AIiIApOgqMr2SHZ1o5P+T5eKjFupntDix/uPGVylCbhJSXQjOCnFxfUslr6FcWFta2B+VoHtX7D+4rdQymWGzzeSM5X955+O61YcQKd5Og4sh/cVbtqSnRCS6s6XsfFxzrFLpH+UMQk6ggBsZL5jyaNz5eKhaiTiSEgWaNAOQXVV1BeHS9suje5g2/PdcK0Merdw482XbXze95La8K4L+/uERFsHJCIiAIiICToagMcyZxs02jkJ7P5T5Jxmvpfw7Hj2j3ueQfdZmJP57eKz0eqaelxGnlq4ePAyVj5Yv6jQbka7/LuVm9I+P4PjVVTzYVA5gjhcySR0XDL7kWbbc2sde9Yse8jGD5J6l+Na8aU5w5yj2f8AfopNRJxZC7YbAcgtaIslAREQBERAEREABtsslxduSURAYREQBERAf//Z" width="65" height="64" alt="ANDY Dreieckslogo"><span><strong>ANDY Arena</strong><small>Dokumentation · Arena · Lab · Regeln</small></span></a><div class="toplinks"><span class="draft">ENTWURF · v0.5</span><a href="durchmarsch.html">Bisheriger Durchmarsch</a><a href="verstehenstest.html">Bisheriger Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration" target="_blank" rel="noopener">GitHub</a></div></header>
 <div class="layout">
 <aside><div class="sideheading">Dokumentation</div><nav class="menu" aria-label="Dokumentationsbereiche">
 <button class="active" data-page="intro" aria-current="page"><span class="num">01</span> ANDY entdecken</button>
@@ -77,7 +101,7 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 <div class="card feature"><div class="index">03 · Forschung</div><h3>Entscheidungen sichtbar machen</h3><p>Nicht nur das Ergebnis interessiert: Auch Fehlversuche, Ressourcenverbrauch und unterschiedliche Spielweisen sind spannend.</p></div>
 </div>
 <div class="sectionhead"><h3>So sieht die Idee aus</h3><span class="pill">Schematische Vorschau</span></div>
-<div class="preview"><div class="miniboard" id="miniboard" aria-label="Schematisches 13 mal 13 Brett mit einer inneren Schachzone"></div><div class="panel">
+<div class="dossier-figure"><span class="vision-tag">ANDY · 13 × 13 · AKTUELLE LIGHT-VERSION</span><div class="board-visual landscape" id="arena13" role="img" aria-label="Schematische aktuelle 13-mal-13-ANDY-Arena"></div><figcaption><strong>ANDY 13×13:</strong> Das heute spielbare Hybridbrett. Schachfiguren und Go-Steine gehören zu derselben Partie.</figcaption></div><div class="preview"><div class="miniboard" id="miniboard" aria-label="Schematisches 13 mal 13 Brett mit einer inneren Schachzone"></div><div class="panel">
 <div class="fakepanel"><strong>Ein Brett, zwei Ebenen</strong>13×13-Gitter als Gesamtfläche. Im Inneren liegt die karierte 8×8-Schachzone.</div>
 <div class="fakepanel"><strong>Du musst nicht selbst spielen</strong>Du kannst ANDY zunächst einfach beobachten – etwa über ein Live-Match oder im Replay.</div>
 <div class="fakepanel"><strong>Mehr wissen?</strong>Die vollständigen Regeln werden separat als überprüfbare Referenz veröffentlicht.</div></div></div>
@@ -191,7 +215,7 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 </tbody></table></div>
 <p class="small">Der AKS ist kein Naturgesetz, sondern ein von uns entwickeltes Modell mit Schätzwerten. Er strukturiert die Diskussion, er beendet sie nicht.</p>
 
-<div class="sectionhead"><h3>5. Die 19×19-Vision: Das unerreichbare Octagon</h3></div>
+<div class="sectionhead"><h3>5. Die 19×19-Vision: Das unerreichbare Octagon</h3></div><figure class="dossier-figure"><span class="vision-tag">ANDY · 19 × 19 · MAX-VISION</span><div class="board-visual" id="arena19" role="img" aria-label="Konzeptionelle 19-mal-19-Vision mit vielen Go-Steinen und Schachfiguren"></div><figcaption><strong>19×19 · Token-Kollaps als Frage:</strong> Konzeptionelle Verdichtung, keine regelgeprüfte Spielstellung. Das Bild veranschaulicht die Vision; es beweist keine Komplexitätswerte.</figcaption></figure>
 <div class="card"><p>13×13 ist das, was wir heute spielen – ein bewusst reduziertes Trainingslager. Das <em>echte</em> ANDY ist 19×19: keine Schutzzonen, Schachfiguren und Go-Steine auf allen 361 Feldern. Der Zustandsraum steigt auf ~10²⁰⁰, der Verifikations-Overhead wird so groß, dass aktuelle Modelle im Token-Kollaps sterben, bevor sie den ersten Zug machen. Wir bauen 13×13 als Leiter, um das zu erreichen.</p></div>
 
 <div class="sectionhead"><h3>6. Warum GPAI anders scheitert als AlphaZero</h3></div>
@@ -209,7 +233,7 @@ footer{font-size:12px;color:#7a878d;margin-top:40px}
 <div class="linkrow"><button class="button" data-go="intro">Zur Übersicht zurück ↗</button><button class="button secondary" data-go="rules">Zur Regelreferenz →</button></div>
 </section>
 <div class="bottomnav"><button id="previous" type="button">← Zurück</button><span id="position" class="small">01 / 05</span><button id="following" type="button">Weiter →</button></div>
-<footer>ANDY / Docs · Demo v0.1 · Stand 11.11.2026 · Konzeptstruktur und Beispieltexte · Keine fachliche G1-Freigabe</footer>
+<footer>ANDY Arena / Docs · Demo v0.5 · Stand 11.11.2026 · Konzeptstruktur und Beispieltexte · Keine fachliche G1-Freigabe</footer>
 </main></div>
 <script>
 (()=>{"use strict";
@@ -235,6 +259,20 @@ sq.className="msq"+(inside?" chess "+((r+c)%2?"dark":"light"):"");let piece="",s
 if(inside){if(r===2){piece=black[c-2];side="black"}else if(r===3){piece="♟";side="black"}else if(r===8){piece="♟";side="white"}else if(r===9){piece=black[c-2];side="white"}}
 if(piece){const el=document.createElement("span");el.className="mpiece "+side;el.textContent=piece;sq.append(el)}
 board.append(sq)}
+function renderBoardArt(target,n,dense){
+ const root=document.getElementById(target);if(!root)return;
+ const chess=dense?10:8, offset=Math.floor((n-chess)/2),cell=100/n;
+ let out='<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg'+n+'" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#326f91"/><stop offset="1" stop-color="#104261"/></linearGradient></defs><rect width="100" height="100" fill="url(#bg'+n+')"/>';
+ for(let r=0;r<n;r++)for(let c=0;c<n;c++){const inside=r>=offset&&r<offset+chess&&c>=offset&&c<offset+chess;if(inside)out+='<rect x="'+(c*cell).toFixed(3)+'" y="'+(r*cell).toFixed(3)+'" width="'+cell.toFixed(3)+'" height="'+cell.toFixed(3)+'" fill="'+((r+c)%2?'#356e96':'#afd7ed')+'"/>';}
+ for(let i=0;i<=n;i++){const x=(i*cell).toFixed(3);out+='<path d="M'+x+' 0V100 M0 '+x+'H100" stroke="#c1e6f4" stroke-width=".13" opacity=".8"/>';}
+ if(dense){for(let r=0;r<n;r++)for(let c=0;c<n;c++){const outside=r<offset||r>=offset+chess||c<offset||c>=offset+chess;const pick=((c*7+r*13+c*r*3)%11)<5;if(outside&&pick){const cx=(c+.5)*cell,cy=(r+.5)*cell;out+='<circle cx="'+cx.toFixed(2)+'" cy="'+cy.toFixed(2)+'" r="'+(cell*.32).toFixed(2)+'" fill="'+((r+c)%3?'#10151e':'#f8ffff')+'" stroke="#bfe9ff" stroke-width=".15"/>';}}}
+ const ranks=dense?[offset+2,offset+3,offset+chess-3,offset+chess-2]:[offset,offset+1,offset+chess-2,offset+chess-1];
+ const majors=['♜','♞','♝','♛','♚','♝','♞','♜'];
+ for(let j=0;j<ranks.length;j++)for(let k=0;k<8;k++){const r=ranks[j],c=offset+Math.round((chess-8)/2)+k;let ch=(j===0||j===3)?majors[k]:'♟';let color=j<2?'#0e1420':'white';out+='<text x="'+((c+.5)*cell).toFixed(2)+'" y="'+((r+.76)*cell).toFixed(2)+'" text-anchor="middle" font-size="'+(cell*.75).toFixed(2)+'" font-family="DejaVu Sans,serif" fill="'+color+'" stroke="'+(j<2?'#c9ebfa':'#26313b')+'" stroke-width=".12" paint-order="stroke">'+ch+'</text>';}
+ if(!dense){for(const [c,r] of [[3,3],[9,3],[6,6],[3,9],[9,9]])out+='<circle cx="'+((c+1)*cell).toFixed(2)+'" cy="'+((r+1)*cell).toFixed(2)+'" r=".4" fill="#101b23"/>';}
+ out+='</svg>';root.innerHTML=out;
+}
+renderBoardArt('arena13',13,false);renderBoardArt('arena19',19,true);
 openPage(location.hash.slice(1)||"intro",false);
 })();
 </script></body></html>
