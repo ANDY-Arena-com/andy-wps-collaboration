@@ -2,7 +2,7 @@
 
 **Projekt:** ANDY verstehen – interaktives HTML-Handbuch  
 **Quelle der Wahrheit für geplante Änderungen:** diese Datei  
-**Stand:** 11. November 2026 · HTML-Durchmarsch V1.1  
+**Stand:** 11. November 2026 · HTML-Durchmarsch V1.6  
 **Status:** Arbeitsfassung / keine fachliche G1-Freigabe
 
 > **So arbeiten wir:** Oliver und GPT machen zunächst einen schnellen gemeinsamen Durchmarsch. Wir führen Änderungswünsche hier dauerhaft zusammen, setzen sie direkt im HTML um und prüfen die Darstellung im Browser. Qwen und DeepSeek kommen bei konkreten Fachfragen hinzu. **Ein Häkchen bedeutet „umgesetzt“, nicht automatisch „im Browser geprüft“ oder „als offizielle ANDY-Regel bestätigt“.**
@@ -10,9 +10,20 @@
 ## Laufender gemeinsamer Test
 
 - [x] **T01 · Review-Auftrag an Qwen und DeepSeek vorbereitet:** [T01 – HTML V1.5, Kapitel 03/04](reviews/T01-QWEN-DEEPSEEK.md)
-- [ ] **T01-Q · Qwen-Feedback erhalten:** Setup 8+8, Leitpunkte, Doppelwirkung, drei Demo-Schachzüge
-- [ ] **T01-D · DeepSeek-Feedback erhalten:** Verständlichkeit, didaktische Führung und fehlende Visualisierung
-- [ ] **T01-I · Rückmeldungen mit Oliver priorisieren und in HTML + Checkliste übernehmen**
+- [x] **T01-Q · Qwen-Feedback erhalten:** Quelltextzugriff nur eingeschränkt; keine Engine-Verifikation oder tatsächliche Demo-Bedienung. Hinweis zu vorläufigen Koordinaten und Doppelrolle.
+- [x] **T01-D · DeepSeek-Feedback erhalten:** Website-Text und Quelltext gelesen, keine Bedienung der Demo; Vorschläge für visuelle Koordinatenerklärung, Vorher-Nachher-Wirkung und Übergang Go → Schach.
+- [ ] **T01-I · Rückmeldungen mit Oliver priorisieren und in HTML + Checkliste übernehmen:** V1.6 enthält vorläufige Koordinatenkennzeichnung, präzisierte Doppelrolle und sichtbaren Ebenenübergang; regelgeprüfte Diagramme sind noch offen.**
+
+### Erkenntnisse aus T01 · 11.11.2026
+
+- [x] **T01-01 · Transparenz des Zugriffs:** Beide Reviewer haben weder die animierte Seite bedient noch die Demo im Browser vollständig getestet. Qwens Zugriff bezog sich teils auf frühere/andere Inhalte; daraus folgt **keine** Bestätigung von V1.5.
+- [x] **T01-02 · Koordinaten vorsichtig formulieren:** In HTML V1.6 als vorläufig gekennzeichnet; `E4` (Schachfeld) und `e4` (Go-Knoten) nicht als identischer räumlicher Ort darstellen.
+- [x] **T01-03 · Demo-Übergang beschriften:** In V1.6 ab 16/16 Steinen sichtbare Statuszeile Go-Setup abgeschlossen → Schachphase, Go-Steine bleiben.
+- [x] **T01-04 · Quelle der Demo transparent machen:** In V1.6 am Kapitel 04 ausdrücklich als nicht engineverifizierte Illustration erläutert.
+- [ ] **T01-05 · Exaktes Doppelwirkungsbeispiel:** Verifiziertes Vorher-Nachher-Diagramm zeigen; **keine** ungeprüfte Annahme „Go-Stein blockiert Turmzug“.
+- [ ] **T01-06 · Koordinaten direkt am Diagramm illustrieren:** Eine konkrete Feld-/Knoten-Markierung auf *tatsächlich unterschiedlichen geometrischen Elementen*. DeepSeeks Formulierung „gleicher Ort“ ist ungeprüft und potenziell falsch.
+- [ ] **T01-07 · Technische Fachbestätigung:** Qwen braucht die tatsächlichen Engine-/Controller-Quellen oder getestete Zustandsdaten; HTML-Lesezugriff allein reicht nicht.
+- [ ] **T01-08 · Browser-Durchlauf:** Oliver und GPT müssen die tatsächliche 16+3-Demo anhand der gerenderten Website prüfen; reine Syntax- und Source-Checks reichen nicht.
 
 ## A · Jetzt prüfen und korrigieren (höchste Priorität)
 
