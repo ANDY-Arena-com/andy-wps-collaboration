@@ -25,6 +25,15 @@
 - [ ] **T01-07 · Technische Fachbestätigung:** Qwen braucht die tatsächlichen Engine-/Controller-Quellen oder getestete Zustandsdaten; HTML-Lesezugriff allein reicht nicht.
 - [ ] **T01-08 · Browser-Durchlauf:** Oliver und GPT müssen die tatsächliche 16+3-Demo anhand der gerenderten Website prüfen; reine Syntax- und Source-Checks reichen nicht.
 
+### Arena-Referenz · 11.11.2026
+
+Zwei Screenshots der **laufenden ANDY-Arena** zeigen die Standardansicht mit Weiß unten und die um 180° gedrehte Ansicht. Sie dienen ab jetzt als visuelle Referenz für die HTML-Koordinaten.
+
+- [x] **R01 · Schach-A1 / Go-a1 klar unterscheiden:** In Standardansicht liegen beide aus Weiß-Perspektive links unten, aber **A1** ist das untere linke Schachfeld innerhalb der 8×8-Zone, **a1** der untere linke Go-Gitterknoten. Groß-/Kleinschreibung trennt die Geometrien.
+- [x] **R02 · Brettdrehen ändert nur Ansicht, nicht Adresse:** Bei 180°-Drehung erscheinen A1 und a1 auf dem Bildschirm oben rechts; ihre festen logischen Adressen bleiben unverändert.
+- [ ] **R03 · Kapitel 03: Drehbutton als didaktische Ergänzung:** Erst nach korrekter Standardansicht einbauen; bei Drehung Schach- und Go-Koordinaten samt Figuren/Leitpunkten gemeinsam transformieren.
+- [ ] **R04 · Screenshot-Abgleich:** Aktuelle HTML-Standardansicht mit beiden Arena-Screenshots vergleichen, insbesondere fünf Leitpunkte, Schachzone, Abstand der Beschriftungen und Ausrichtung. Bildreferenzen liegen in Olivers Chat, nicht im Repository.
+
 ## A · Jetzt prüfen und korrigieren (höchste Priorität)
 
 - [ ] **A01 · Hauptnavigation im Browser prüfen:** Linke Kapitel-Navigation muss auf Desktop sichtbar bleiben; auf Mobilgeräten gut bedienbar. In V1.1 im Code vorhanden, aber nach Olivers Meldung über eine verschwundene Navigation noch nicht visuell bestätigt.
