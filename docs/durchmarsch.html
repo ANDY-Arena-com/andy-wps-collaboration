@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V1.0</title>
+<title>ANDY verstehen – Durchmarsch V1.1</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{background:#191d24;color:#fff;padding:16px 26px;display:flex;justify-content:space-between;gap:20px;align-items:center}
 header b{font-size:19px}header small{color:#c5c7cc}.shell{display:grid;grid-template-columns:275px minmax(0,1fr);max-width:1450px;min-height:calc(100vh - 67px);margin:auto}
-aside{background:var(--side);border-right:1px solid var(--line);padding:25px 17px}aside p{font-size:12px;color:var(--muted)}aside h2{font-size:12px;letter-spacing:.09em;color:#5f646b;text-transform:uppercase}
+aside{background:var(--side);border-right:1px solid var(--line);padding:25px 17px;position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;z-index:5}aside p{font-size:12px;color:var(--muted)}aside h2{font-size:12px;letter-spacing:.09em;color:#5f646b;text-transform:uppercase}
 nav button{display:block;width:100%;padding:10px 12px;border:0;border-radius:7px;background:transparent;text-align:left;font:inherit;font-size:14px;cursor:pointer;color:#252932}
 nav button[aria-current="page"]{background:var(--accent);color:#fff}main{padding:40px clamp(24px,5vw,78px);max-width:1100px}
 article{max-width:940px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}h1{font-size:clamp(30px,4vw,46px);line-height:1.15;margin:10px 0 23px}h2{margin:25px 0 9px;font-size:22px}
@@ -28,7 +28,7 @@ button.pill[aria-pressed=true]{background:#222;color:white}button:disabled{opaci
 pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .navbottom{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:22px;margin-top:45px}
 [hidden]{display:none!important}footer{font-size:12px;color:var(--muted);margin-top:32px}
-@media(max-width:780px){header{padding:13px 16px}.shell{display:block}aside{padding:10px 14px}aside h2,aside p{display:none}nav{display:flex;overflow:auto;gap:5px}nav button{width:auto;white-space:nowrap}main{padding:25px 18px}.sq .piece{font-size:clamp(10px,3.8vw,22px)}}@media print{header,aside,.controls,.navbottom{display:none}.shell{display:block}main{max-width:none}.card{break-inside:avoid}}
+@media(max-width:780px){header{padding:13px 16px}.shell{display:block}aside{position:sticky;top:0;max-height:none;overflow:visible;padding:10px 14px;z-index:30;box-shadow:0 2px 6px #0001}aside h2,aside p{display:none}nav{display:flex;overflow-x:auto;gap:5px}nav button{width:auto;white-space:nowrap}main{padding:25px 18px}.sq .piece{font-size:clamp(10px,3.8vw,22px)}}@media print{header,aside,.controls,.navbottom{display:none}.shell{display:block}main{max-width:none}.card{break-inside:avoid}}
 
 .navtop{position:sticky;top:0;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(247,247,245,.97);border-bottom:1px solid var(--line);padding:12px 0 14px;margin:-12px 0 24px;backdrop-filter:blur(10px)}.navtop span{font-size:12px;color:var(--muted);text-align:center}
 .board-frame{max-width:640px}.board-wrap{display:block}.axis-top{display:grid;grid-template-columns:repeat(13,1fr);margin:0 24px 4px 22px}.axis-top span{text-align:center;font-size:10px;font-weight:600}
@@ -41,9 +41,9 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .demo-stone{position:absolute;transform:translate(-50%,-50%);width:clamp(12px,2.5vw,28px);height:clamp(12px,2.5vw,28px);border-radius:50%;box-shadow:0 1px 3px #333;pointer-events:none}
 .demo-stone.black{background:#161616;border:1px solid #fafafa}.demo-stone.white{background:#fafafa;border:1.5px solid #222}
 .setup-info{font-size:14px;font-weight:600;flex-basis:100%;margin-top:3px}
-.board-frame.setup-chapter .main-nodes{display:none}
+
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.0</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.1</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -62,22 +62,23 @@ const chapters=[
 <p><strong>Wir wissen es nicht. Aber wir wollen es herausfinden.</strong></p>
 <p><strong>Komm in die Arena.</strong></p>`},
 {key:'contents',short:'01 · Überblick',title:'So ist dieses Handbuch aufgebaut.',tag:'Inhaltsverzeichnis',body:`<p class="lede">Dieses Handbuch führt dich Schritt für Schritt vom Spielziel zur Partie – ohne vorauszusetzen, dass du die ANDY-Sonderregeln bereits kennst.</p>
-<div class="grid"><div class="card"><h3>Verstehen</h3><p><strong>Ziele:</strong> Was entscheidet eine Partie? <strong>Brett:</strong> Was sind Schachfelder, was Go-Knoten? <strong>Grundstellung:</strong> Wo beginnen die 32 Schachfiguren?</p></div><div class="card"><h3>Nachvollziehen</h3><p><strong>Koordinaten:</strong> A–H / 1–8 und a–m / 1–13. <strong>Aktion:</strong> Was ändert sich an der Stellung? <strong>Spielphasen:</strong> Wie unterscheiden sich Anfang, Mitte und Ende?</p></div><div class="card"><h3>Einordnen</h3><p><strong>Ergebnis:</strong> Was ist ein Brettsieg, was eine Ressourcenentscheidung und was ein technischer Abbruch?</p></div></div>
+<div class="grid"><div class="card"><h3>Verstehen</h3><p><strong>Ziele:</strong> Was entscheidet eine Partie? <strong>Brett:</strong> Was sind Schachfelder, was Go-Knoten? <strong>Grundstellung:</strong> Wo beginnen die 32 Schachfiguren, und wie werden 2 × 8 Go-Steine gesetzt?</p></div><div class="card"><h3>Nachvollziehen</h3><p><strong>Koordinaten:</strong> A–H / 1–8 und a–m / 1–13. <strong>Aktion:</strong> Was ändert sich an der Stellung? <strong>Spielphasen:</strong> Wie unterscheiden sich Anfang, Mitte und Ende?</p></div><div class="card"><h3>Einordnen</h3><p><strong>Ergebnis:</strong> Was ist ein Brettsieg, was eine Ressourcenentscheidung und was ein technischer Abbruch?</p></div></div>
 <p>Die Buttons <strong>Zurück / Weiter</strong> bleiben oben sichtbar. Über die linke Navigation kann jedes Kapitel direkt geöffnet werden.</p>`},
 {key:'goals',short:'02 · Ziele & Sieg',title:'Worum spielen wir?',tag:'Spielziel',body:`<p class="lede">ANDY verbindet Schach und Go zu <strong>einer Gesamtpartie</strong>. Der Leser muss deshalb zwei Dinge auseinanderhalten: die Entscheidung <strong>auf dem Brett</strong> und die Wettkampfbedingungen <strong>der KI-Arena</strong>.</p>
 <div class="grid"><div class="card"><h3>♚ Schachentscheidung</h3><p>Ein Schachmatt ist ein möglicher Endzustand. Eine dokumentierte Partie, <code>andy_cc11a6598bcf</code>, endete durch Matt.</p></div><div class="card"><h3>● Go-Entscheidung</h3><p>Die Architekturbeiträge nennen eine territoriale Siegschwelle. <strong>Ob und wie sie aktuell ausgewertet wird, ist unbestätigt.</strong> „72“ ist kein bestätigter Wert.</p></div><div class="card"><h3>◷ Budget und Zeit</h3><p>KI-Modelle arbeiten unter Ressourcenlimits. Eine Überschreitung kann einen Wettkampf beenden, ohne dass das Brett bereits entschieden ist.</p></div></div>
-<div class="card"><h3>Die entscheidende Trennung</h3><p><strong>Brettzustand</strong> → <strong>Match-Endgrund</strong> → <strong>Arena-Anzeige (KO/TKO/TECH)</strong> → <strong>Ranglistenwertung</strong>. Das sind vier unterschiedliche Ebenen, die wir später mit den tatsächlichen Engine-Codes belegen.</p></div>
+<div class="card"><h3>Was bedeutet „doppelt zählen“?</h3><p>Die im Go-Setup gesetzten Steine spielen nicht nur in der Go-Ebene eine Rolle. Sie wirken ebenso auf das Schachspiel. Diese Kopplung ist die Besonderheit von ANDY; die exakte Regelwirkung wird in der Fachfassung noch konkretisiert.</p></div><div class="card"><h3>Die entscheidende Trennung</h3><p><strong>Brettzustand</strong> → <strong>Match-Endgrund</strong> → <strong>Arena-Anzeige (KO/TKO/TECH)</strong> → <strong>Ranglistenwertung</strong>. Das sind vier unterschiedliche Ebenen, die wir später mit den tatsächlichen Engine-Codes belegen.</p></div>
 <div class="note"><strong>Noch nicht G1-freigegeben:</strong> genaue Go-Schwelle, Priorität gleichzeitig eintretender Bedingungen, Remis, Aufgabe, Retry-Fehler und technische Statuscodes.</div>`},
 {key:'geometry',short:'03 · Brett & Koordinaten',title:'Das Brett und seine Koordinaten.',tag:'Spielfläche und Notation',body:`<p class="lede">Bevor wir eine Partie beginnen, klären wir <strong>beide Spielflächen und ihre Koordinaten</strong>. Weiß steht unten – Buchstaben zählen von links nach rechts, Zahlen von unten nach oben.</p>
 <div id="diagram"></div>
 <div class="grid"><div class="card"><h3>Schach · Felder A–H / 1–8</h3><p>Nur die innere <strong>8×8-Fläche</strong> ist kariert. Die Figuren stehen auf Feldern. <strong>A1</strong> liegt unten links in dieser Schachzone, <strong>H8</strong> oben rechts. Die Schachbuchstaben stehen an ihrem unteren, die Zahlen an ihrem linken Rand.</p></div>
-<div class="card"><h3>Go · Knoten a–m / 1–13</h3><p>Die Go-Ebene umfasst das <strong>gesamte 13×13-Gitter</strong>. Go-Steine liegen auf Schnittpunkten, nicht auf Schachfeldern. <strong>a1</strong> liegt unten links im Go-Gitter, <strong>m13</strong> oben rechts. Fünf Hauptknoten dienen zur Orientierung.</p></div></div>
+<div class="card"><h3>Go · Knoten a–m / 1–13</h3><p>Die Go-Ebene umfasst das <strong>gesamte 13×13-Gitter</strong>. Go-Steine liegen auf Schnittpunkten, nicht auf Schachfeldern. <strong>a1</strong> liegt unten links im Go-Gitter, <strong>m13</strong> oben rechts. Fünf Hauptknoten dienen zur Orientierung. <strong>Die Go-Steine zählen doppelt:</strong> Sie betreffen Go und beeinflussen zugleich die Schach-Ebene.</p></div></div>
 <div class="card"><h3>Zwei Bezeichnungen – zwei verschiedene Orte</h3><p><strong>E4</strong> ist ein Schachfeld. <strong>e4</strong> ist ein Go-Knoten. Die Groß- und Kleinschreibung unterscheiden beide Ebenen. Sie sind nicht austauschbar.</p><p>Teste die drei Ansichten <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> direkt über dem Brett. Auf dieser Seite bleiben alle Figuren ausgeblendet, damit du dich auf das Koordinatensystem konzentrieren kannst.</p></div>
 <div class="note">Arbeitsdarstellung: Die genaue geometrische Zuordnung der Schachzone und der fünf Go-Hauptknoten muss für die verbindliche Spielanleitung noch am Engine-State abgeglichen werden.</div>`},
-{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Alle 32 Schachfiguren stehen bereits auf dem Brett. Mit <strong>einem Klick auf „Demo starten“</strong> siehst du, wie zuerst schwarze und weiße Go-Steine auf freien <strong>Gitterkreuzungen außerhalb der Schachzone</strong> erscheinen. Anschließend folgen automatisch drei Schachzüge.</p>
+{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">ANDY beginnt mit allen 32 Schachfiguren. <strong>Bevor Schach gezogen wird, werden im Go-Setup 16 Steine gesetzt: acht schwarze und acht weiße.</strong></p>
+<div class="card"><h3>Wichtig: Die Steine zählen doppelt</h3><p>Die Go-Steine sind nicht nur für das Go-Spiel relevant: Sie haben auch Bedeutung für die Schach-Ebene. Genau diese Doppelrolle verbindet beide Spielwelten. Die einzelnen Regelwirkungen erläutern wir beim Zugablauf.</p></div>
 <div id="diagram"></div>
-<div class="card"><h3>Die Vorführung</h3><p><strong>Phase 1 – Go:</strong> Vier beispielhafte Steine erscheinen nacheinander, abwechselnd Schwarz und Weiß.<br><strong>Phase 2 – Schach:</strong> E2–E4, E7–E5, G1–F3 werden schrittweise gezeigt.<br><strong>Phase 3 – Ende:</strong> Die Demonstration stoppt automatisch; die Schlussstellung bleibt stehen.</p></div>
-<div class="note"><strong>Didaktische Simulation:</strong> Die Go-Knoten sind frei gewählte Beispiele auf Kreuzungspunkten, nicht mitten in Schachfeldern. Die gesamte Abfolge ist <strong>keine geprüfte ANDY-Partie</strong> und sagt nichts über die verbindliche Setup-Dauer oder die tatsächliche Zugfolge aus.</div>`},
+<div class="card"><h3>Eine vollständige Vorführung</h3><p>Einmal <strong>„Demo starten“</strong> drücken. Anschließend erscheinen automatisch <strong>16 Go-Steine</strong> – Schwarz und Weiß abwechselnd, jeweils acht. <strong>Erst danach</strong> folgen drei beispielhafte Schachzüge: E2–E4, E7–E5, G1–F3. Am Ende bleibt die Stellung stehen.</p></div>
+<div class="note">Die Demo zeigt Reihenfolge und Brettdarstellung. Die 16 gewählten Go-Knoten und drei Schachzüge sind didaktische Beispiele, keine engineverifizierte Partie. Die konkrete Doppelwirkung der Go-Steine muss noch mit den aktuellen ANDY-Regeln abgeglichen werden.</div>`},
 {key:'turns',short:'05 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Jede Partiestellung lässt sich in drei Fragen zerlegen: <strong>Was liegt vor?</strong> – <strong>Was wird getan?</strong> – <strong>Was ist danach anders?</strong></p>
 <div class="grid"><div class="card"><h3>1 · Zustand lesen</h3><p>Welche Schachfiguren stehen auf welchen Feldern? Welche Go-Knoten sind besetzt? Wer ist am Zug?</p></div><div class="card"><h3>2 · Aktion beobachten</h3><p>Welche der vorgesehenen Aktionen wählt der Spieler? Was meldet die Engine als gültig oder ungültig?</p></div><div class="card"><h3>3 · Folgezustand prüfen</h3><p>Welche Figuren- oder Steinpositionen ändern sich? Entsteht eine unmittelbare Wirkung auf die jeweils andere Ebene?</p></div></div>
 <div id="diagram"></div>
@@ -104,9 +105,21 @@ let current='intro',coordMode='both',showPieces=true,exampleStep=0;
 let demoStep=0,demoTimer=null,demoRunning=false;
 const goDemo=[
  {c:1,r:1,color:'black',name:'b12'},
- {c:11,r:1,color:'white',name:'l12'},
- {c:1,r:11,color:'black',name:'b2'},
- {c:11,r:11,color:'white',name:'l2'}
+ {c:10,r:1,color:'white',name:'k12'},
+ {c:1,r:10,color:'black',name:'b3'},
+ {c:10,r:10,color:'white',name:'k3'},
+ {c:3,r:1,color:'black',name:'d12'},
+ {c:8,r:1,color:'white',name:'i12'},
+ {c:3,r:10,color:'black',name:'d3'},
+ {c:8,r:10,color:'white',name:'i3'},
+ {c:1,r:3,color:'black',name:'b10'},
+ {c:10,r:3,color:'white',name:'k10'},
+ {c:1,r:8,color:'black',name:'b5'},
+ {c:10,r:8,color:'white',name:'k5'},
+ {c:0,r:5,color:'black',name:'a8'},
+ {c:11,r:5,color:'white',name:'l8'},
+ {c:5,r:0,color:'black',name:'f13'},
+ {c:5,r:11,color:'white',name:'f2'}
 ];
 const chessDemo=[{from:[6,8],to:[6,6],glyph:'♙',side:'white',name:'E2 → E4'},{from:[6,3],to:[6,5],glyph:'♟',side:'black',name:'E7 → E5'},{from:[8,9],to:[7,7],glyph:'♘',side:'white',name:'G1 → F3'}];
 function stopDemo(){if(demoTimer!==null){clearInterval(demoTimer);demoTimer=null}demoRunning=false}
@@ -148,7 +161,8 @@ function draw(){
  }
  const stars=[[3,3],[9,3],[6,6],[3,9],[9,9]];
  const mainNodes=document.getElementById('mainNodes');mainNodes.replaceChildren();
- if(isGo&&!setup){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
+ if(isGo){for(const [c,r] of stars){const dot=document.createElement('span');dot.className='main-node';
+ dot.style.left=((c+1)/13*100)+'%';dot.style.top=((r+1)/13*100)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
  const layer=document.getElementById('setupLayer');layer.replaceChildren();layer.style.display=setup?'block':'none';
  if(setup){for(const item of goDemo.slice(0,Math.min(demoStep,goDemo.length))){
    const stone=document.createElement('span');stone.className='demo-stone '+item.color;
@@ -165,13 +179,13 @@ function draw(){
    else if(demoStep<goDemo.length)info.textContent='Go-Phase · '+demoStep+' / '+goDemo.length+' Steine';
    else if(demoStep===goDemo.length)info.textContent='Go-Phase abgeschlossen · '+goDemo.length+' Steine';
    else if(demoStep<goDemo.length+chessDemo.length)info.textContent='Schach-Phase · '+(demoStep-goDemo.length)+' / 3 Züge';
-   else info.textContent='Ende · Vier Go-Steine und drei Schach-Demozüge gezeigt';
+   else info.textContent='Ende · 16 Go-Steine (8 + 8) und drei Schach-Demozüge gezeigt';
    moves.append(info);
    if(demoStep===0)add('▶ Demo starten',startDemo);
    if(demoStep===goDemo.length+chessDemo.length){const tag=document.createElement('strong');tag.textContent='Ende';moves.append(tag)}
 
  }
- document.getElementById('legend').textContent=setup?'Automatische Demo: Go-Steine liegen auf Gitterkreuzungen außerhalb der Schachzone; danach drei Schachzüge.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
+ document.getElementById('legend').textContent=setup?'Automatische Demo: zuerst acht schwarze und acht weiße Go-Steine auf Gitterkreuzungen; danach drei Schachzüge.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
 }
 function open(key){
  const c=chapters.find(x=>x.key===(key==='coords'?'geometry':key))||chapters[0];if(current==='setup'&&c.key!=='setup')stopDemo();if(current!==c.key)exampleStep=0;current=c.key;
