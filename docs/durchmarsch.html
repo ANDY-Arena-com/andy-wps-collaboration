@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V1.3</title>
+<title>ANDY verstehen – Durchmarsch V1.4</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -19,8 +19,9 @@ button.pill[aria-pressed=true]{background:#222;color:white}button:disabled{opaci
 .board-frame{max-width:590px}.board-wrap{display:grid;grid-template-columns:26px minmax(0,1fr);gap:4px;align-items:center}
 .board{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));border:2px solid #272727;width:100%;aspect-ratio:1}
 .sq{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:#f1f1ef;border:.4px solid #777}
-.sq.dark{background:#bababa}.sq.outer{background:#e8e8e6}.sq.chess.light{background:#f6f6f4}.sq.chess.dark{background:#999a9b}.sq .piece{font-family:"DejaVu Sans","Arial Unicode MS",serif;font-size:clamp(15px,2.7vw,31px);line-height:1;text-shadow:0 0 1px #000}
-.sq .piece.white{color:#fff!important;-webkit-text-fill-color:#fff!important;-webkit-text-stroke:1px #171717;text-shadow:none!important}.sq .piece.black{color:#1d1d1d}
+.sq.dark{background:#bababa}.sq.outer{background:#e8e8e6}.sq.chess.light{background:#f6f6f4}.sq.chess.dark{background:#999a9b}.sq .piece{font-family:"DejaVu Sans","Arial Unicode MS",serif;font-size:clamp(15px,2.7vw,31px);line-height:1;font-variant-emoji:text;paint-order:stroke fill}
+.sq .piece.white{color:#fff!important;-webkit-text-fill-color:#fff!important;-webkit-text-stroke:1.15px #191919;text-shadow:0 1px 0 #191919}
+.sq .piece.black{color:#171717!important;-webkit-text-fill-color:#171717!important;-webkit-text-stroke:.55px #eee;text-shadow:0 1px 0 #222}
 .sq.highlight{outline:3px solid #252525;outline-offset:-3px}.sq .index{position:absolute;top:1px;left:3px;font-size:9px;color:#595959}
 .sq .stone{position:absolute;right:-9%;bottom:-9%;width:25%;height:25%;background:#151515;border-radius:100%;border:1px solid white;z-index:2}
 .sq .stone.white{background:#fff;border:1px solid #222}
@@ -57,7 +58,7 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
  #toc .chapter-link{flex:0 0 auto;white-space:nowrap;background:#f5f5f3;padding:8px 11px}
  .navtop{top:92px}
 }</style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.3</small></div></div><div class="header-links"><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.4</small></div></div><div class="header-links"><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
 <div class="shell"><aside id="toc" aria-label="Inhaltsverzeichnis"><h2>Inhaltsverzeichnis</h2><nav id="nav"><a class="chapter-link" data-key="intro" href="#intro">00 · Pitch</a><a class="chapter-link" data-key="contents" href="#contents">01 · Überblick</a><a class="chapter-link" data-key="goals" href="#goals">02 · Ziele & Sieg</a><a class="chapter-link" data-key="geometry" href="#geometry">03 · Brett & Koordinaten</a><a class="chapter-link" data-key="setup" href="#setup">04 · Startaufstellung</a><a class="chapter-link" data-key="turns" href="#turns">05 · Zugablauf</a><a class="chapter-link" data-key="opening" href="#opening">06 · Anfang</a><a class="chapter-link" data-key="middle" href="#middle">07 · Mitte</a><a class="chapter-link" data-key="ending" href="#ending">08 · Ende</a><a class="chapter-link" data-key="results" href="#results">09 · Ergebnisarten</a></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -137,7 +138,7 @@ const goDemo=[
  {c:5,r:0,color:'black',name:'f13'},
  {c:5,r:11,color:'white',name:'f2'}
 ];
-const chessDemo=[{from:[6,8],to:[6,6],glyph:'♙',side:'white',name:'E2 → E4'},{from:[6,3],to:[6,5],glyph:'♟',side:'black',name:'E7 → E5'},{from:[8,9],to:[7,7],glyph:'♘',side:'white',name:'G1 → F3'}];
+const chessDemo=[{from:[6,8],to:[6,6],glyph:'♟',side:'white',name:'E2 → E4'},{from:[6,3],to:[6,5],glyph:'♟',side:'black',name:'E7 → E5'},{from:[8,9],to:[7,7],glyph:'♞',side:'white',name:'G1 → F3'}];
 function stopDemo(){if(demoTimer!==null){clearInterval(demoTimer);demoTimer=null}demoRunning=false}
 function advanceDemo(){if(current!=='setup'){stopDemo();return}demoStep=Math.min(demoStep+1,goDemo.length+chessDemo.length);if(demoStep>=goDemo.length+chessDemo.length)stopDemo();draw()}
 function startDemo(){if(demoRunning||demoStep>0)return;demoRunning=true;advanceDemo();if(demoRunning)demoTimer=setInterval(advanceDemo,1100)}
@@ -158,7 +159,7 @@ function draw(){
  goTop.replaceChildren();goRight.replaceChildren();
  const letters='abcdefghijklm',files='ABCDEFGH';
  for(let i=0;i<13;i++){const a=document.createElement('span');a.textContent=isGo?letters[i]:'';goTop.append(a);const b=document.createElement('span');b.textContent=isGo?String(13-i):'';goRight.append(b)}
- const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'],whites=['♖','♘','♗','♕','♔','♗','♘','♖'];
+ const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'],whites=['♜','♞','♝','♛','♚','♝','♞','♜'];
  for(let r=0;r<13;r++)for(let c=0;c<13;c++){
    const d=document.createElement('div'),inside=c>=2&&c<10&&r>=2&&r<10;
    d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');
@@ -167,8 +168,8 @@ function draw(){
    if(visiblePieces&&c>=2&&c<10){
      let glyph='',side='';
      if(r===2){glyph=blacks[c-2];side='black'}if(r===3){glyph='♟';side='black'}
-     if(r===8){glyph='♙';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
-     if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♙';side='white'}
+     if(r===8){glyph='♟';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
+     if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♟';side='white'}
      if(r===9){glyph=whites[c-2];side='white'}
      if(setup){for(const mv of chessDemo.slice(0,Math.max(0,demoStep-goDemo.length))){if(mv.from[0]===c&&mv.from[1]===r)glyph='';if(mv.to[0]===c&&mv.to[1]===r){glyph=mv.glyph;side=mv.side}}}
      if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
