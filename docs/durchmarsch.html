@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V0.2</title>
+<title>ANDY verstehen – Durchmarsch V0.3</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -29,11 +29,18 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .navbottom{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:22px;margin-top:45px}
 [hidden]{display:none!important}footer{font-size:12px;color:var(--muted);margin-top:32px}
 @media(max-width:780px){header{padding:13px 16px}.shell{display:block}aside{padding:10px 14px}aside h2,aside p{display:none}nav{display:flex;overflow:auto;gap:5px}nav button{width:auto;white-space:nowrap}main{padding:25px 18px}.sq .piece{font-size:clamp(10px,3.8vw,22px)}}@media print{header,aside,.controls,.navbottom{display:none}.shell{display:block}main{max-width:none}.card{break-inside:avoid}}
+
+.navtop{position:sticky;top:0;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(247,247,245,.97);border-bottom:1px solid var(--line);padding:12px 0 14px;margin:-12px 0 24px;backdrop-filter:blur(10px)}.navtop span{font-size:12px;color:var(--muted);text-align:center}
+.board-frame{max-width:640px}.board-wrap{display:block}.axis-top{display:grid;grid-template-columns:repeat(13,1fr);margin:0 24px 4px 22px}.axis-top span{text-align:center;font-size:10px;font-weight:600}
+.board-and-axis{display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:3px}.axis-right{display:grid;grid-template-rows:repeat(13,1fr);align-items:center;justify-items:center;font-size:10px;font-weight:600}
+.sq .chess-label{position:absolute;top:0;left:2px;font-size:clamp(7px,1vw,10px);font-weight:700;z-index:2;color:#303030}
+.sq .go-node{position:absolute;top:-4px;left:-4px;width:7px;height:7px;border-radius:50%;background:#222;z-index:4;box-shadow:0 0 0 1px white}
+.legend{font-size:13px;color:#454545;margin-top:10px}.hint{font-size:12px;color:var(--muted)}
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.2</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.3</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
-<main><article id="content" aria-live="polite"></article>
-<div class="navbottom"><button class="pill" id="prev">← Vorheriges Kapitel</button><button class="pill" id="next">Nächstes Kapitel →</button></div>
+<main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
+
 <footer>ANDY Working Paper Series · Durchmarschfassung · kein offizielles Regelwerk</footer>
 </main></div>
 <script>
@@ -56,10 +63,10 @@ const chapters=[
 <div class="note">Der 13×13-Demonstrator ist in Graustufen. Eine markierte Zelle ist ein Feld; das Go-Gitter muss in der verbindlichen Fassung als separate Schnittpunkt-Ebene vektoriell korrekt eingezeichnet werden.</div>`},
 {key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Eine ANDY-Partie beginnt mit allen Schachfiguren. Diese vollständige Grundstellung steht vor jedem Zugbeispiel.</p>
 <div id="diagram"></div>
-<p>Die 32 Schachfiguren sind in diesem <strong>noch nicht regelbestätigten Platzhalter</strong> nach einer symmetrischen Standardanordnung auf zentralen acht Spalten dargestellt. Die korrekte ANDY-Position, Blickrichtung und Go-Startbelegung werden im nächsten Arbeitsschritt aus dem Engine-State übernommen.</p>`},
+<p>Die 32 Schachfiguren sind in diesem <strong>noch nicht regelbestätigten Platzhalter</strong> auf einer zusammenhängenden 8×8-Fläche dargestellt. Die korrekte ANDY-Position, Blickrichtung und Go-Startbelegung werden im nächsten Arbeitsschritt aus dem Engine-State übernommen.</p>`},
 {key:'coords',short:'05 · Koordinaten',title:'Wie benennen wir einen Ort?',tag:'Orientierung',body:`<p class="lede">Jede Erklärung braucht eindeutige Positionen. Wir müssen Schachfelder und Go-Schnittpunkte ohne Verwechslung benennen können.</p>
-<div id="diagram"></div><p>Mit dem Schalter <strong>Rasterindizes</strong> lassen sich vorläufige Zeilen-/Spaltennummern einblenden. Dies sind absichtlich <strong>keine offiziellen ANDY-Koordinaten</strong>.</p>
-<div class="note">Offen: tatsächliche Feldnotation, Knoten-Notation, Blickrichtung und die Null-/Einsbasis des Systems. Erst nach Codeprüfung werden echte Zugkoordinaten gezeigt.</div>`},
+<div id="diagram"></div><p>Mit den Schaltern <strong>Schach / Go / Beides</strong> lassen sich die beiden Notationen separat oder gemeinsam sehen. Schach: klassische Felder <strong>A–H / 1–8</strong>; Go: Knoten <strong>a–m / 1–13</strong>. Die genaue Zuordnung der Schachzone auf dem Hybridbrett bleibt bis zum Engine-Abgleich ein Layoutbeispiel.</p>
+<div class="note">Die beiden Notationsarten sind getrennt; die exakte Lage, Orientierung und Umsetzung auf dem ANDY-Brett werden noch mit der aktuellen Engine geprüft.</div>`},
 {key:'turns',short:'06 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Die Spielmechanik muss zuerst als klare Abfolge sichtbar werden. Erst dann erklären wir komplexe Wechselwirkungen.</p>
 <div class="grid"><div class="card"><h3>1 · Zustand</h3><p>Die aktuelle Stellung beider Ebenen ist bekannt.</p></div><div class="card"><h3>2 · Aktion</h3><p>Eine legale Aktion verändert den Zustand.</p></div><div class="card"><h3>3 · Prüfung</h3><p>Engine prüft Folgewirkungen, nächste Zugberechtigung und gegebenenfalls das Ende.</p></div></div>
 <div class="note">Diese drei Kästen erklären nur die Lernlogik, <strong>nicht den bestätigten ANDY-Aktionsrhythmus</strong>. Reihenfolge und zulässige Aktionstypen müssen aus der Engine folgen.</div>`},
@@ -74,12 +81,56 @@ const chapters=[
 <div class="grid"><div class="card"><h3>KO · vorgeschlagen</h3><p>Ergebnis durch eine Brettregel.</p></div><div class="card"><h3>TKO · vorgeschlagen</h3><p>Ergebnis durch festgelegte Wettkampf-/Ressourcengrenzen.</p></div><div class="card"><h3>TECH · vorgeschlagen</h3><p>Abbruch ohne sportliche Entscheidung bei Infrastrukturfehler.</p></div></div>
 <p><strong>Noch offen:</strong> tatsächliche Controller-Endcodes, illegale Aktionen, Parserfehler, Patt, Remis, Aufgabe und Ranglistenwertung.</p>`}
 ];
-let current='intro',showIndexes=false,showPieces=true;
+let current='intro',coordMode='both',showPieces=true;
 const nav=document.getElementById('nav'),content=document.getElementById('content');
 chapters.forEach(c=>{const b=document.createElement('button');b.textContent=c.short;b.dataset.key=c.key;b.addEventListener('click',()=>open(c.key));nav.append(b)});
-function boardHTML(){return '<div class="board-frame"><div class="controls"><button class="pill" id="idx" aria-pressed="'+showIndexes+'">Rasterindizes</button><button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button></div><div class="board-wrap"><div></div><div class="board" id="board"></div></div><div class="caption">13×13 · Monochromer Layout-Demonstrator · Grundstellung/Koordinaten noch nicht enginebestätigt</div></div>'}
-function draw(){const board=document.getElementById('board');if(!board)return;board.replaceChildren();const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'];const whites=['♖','♘','♗','♕','♔','♗','♘','♖'];for(let r=0;r<13;r++)for(let c=0;c<13;c++){const d=document.createElement('div');d.className='sq '+((r+c)%2?'dark':'light');if(showIndexes){const label=document.createElement('span');label.className='index';label.textContent=(c+1)+','+(r+1);d.append(label)}if(showPieces&&c>=2&&c<=9){let glyph='',side='';if(r===2){glyph=blacks[c-2];side='black'}if(r===3){glyph='♟';side='black'}if(r===9){glyph='♙';side='white'}if(r===10){glyph=whites[c-2];side='white'}if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}}board.append(d)}}
-function open(key){const c=chapters.find(x=>x.key===key)||chapters[0];current=c.key;let hasBoard=['geometry','setup','coords','opening'].includes(current);content.innerHTML='<div class="eyebrow">'+c.tag+' · Arbeitsstand / nicht G1-freigegeben</div><h1>'+c.title+'</h1>'+c.body+(hasBoard?'':'');const box=document.getElementById('diagram');if(box){box.innerHTML=boardHTML();draw();document.getElementById('idx').addEventListener('click',()=>{showIndexes=!showIndexes;open(current)});document.getElementById('pieces').addEventListener('click',()=>{showPieces=!showPieces;open(current)})}nav.querySelectorAll('button').forEach(b=>{if(b.dataset.key===current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});const i=chapters.findIndex(x=>x.key===current);document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===chapters.length-1;location.hash=current;window.scrollTo(0,0)}
+function boardHTML(){return '<div class="board-frame"><div class="controls"><button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button><button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button></div><div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board" id="board"></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="caption">Monochromer Demonstrator · Schachfelder und Go-Knoten mit getrennter Notation · Lage der 8×8-Schachzone noch mit Engine zu prüfen</div></div>'}
+function draw(){
+ const board=document.getElementById('board');if(!board)return;
+ board.replaceChildren();
+ const isChess=coordMode==='chess'||coordMode==='both',isGo=coordMode==='go'||coordMode==='both';
+ const goTop=document.getElementById('goTop'),goRight=document.getElementById('goRight');
+ goTop.replaceChildren();goRight.replaceChildren();
+ const letters='abcdefghijklm',files='ABCDEFGH';
+ for(let i=0;i<13;i++){
+  const a=document.createElement('span');a.textContent=isGo?letters[i]:'';goTop.append(a);
+  const b=document.createElement('span');b.textContent=isGo?String(13-i):'';goRight.append(b);
+ }
+ const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'],whites=['♖','♘','♗','♕','♔','♗','♘','♖'];
+ for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+  const d=document.createElement('div');d.className='sq '+((r+c)%2?'dark':'light');
+  if(isChess&&c>=2&&c<10&&r>=2&&r<10){
+   const label=document.createElement('span');label.className='chess-label';label.textContent=files[c-2]+(10-r);d.append(label);
+  }
+  if(isGo){const node=document.createElement('span');node.className='go-node';node.title='Go-Knoten '+letters[c]+(13-r);node.setAttribute('aria-label','Go-Knoten '+letters[c]+(13-r));d.append(node)}
+  if(showPieces&&c>=2&&c<10){
+   let glyph='',side='';
+   if(r===2){glyph=blacks[c-2];side='black'}
+   if(r===3){glyph='♟';side='black'}
+   if(r===8){glyph='♙';side='white'}
+   if(r===9){glyph=whites[c-2];side='white'}
+   if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
+  }
+  board.append(d);
+ }
+ document.getElementById('legend').textContent=coordMode==='chess'?'SCHACH: Großbuchstaben A–H, Reihen 1–8; Felder im 8×8-Bereich.':coordMode==='go'?'GO: Kleinbuchstaben a–m, Reihen 1–13; Knoten an Gitterkreuzungen.':'BEIDES: Schachfelder sind mit Großbuchstaben bezeichnet, Go-Knoten mit Kleinbuchstaben am Außenrand und Punktmarken.';
+}
+function open(key){
+ const c=chapters.find(x=>x.key===key)||chapters[0];current=c.key;
+ content.innerHTML='<div class="eyebrow">'+c.tag+' · Arbeitsstand / nicht G1-freigegeben</div><h1>'+c.title+'</h1>'+c.body;
+ const box=document.getElementById('diagram');
+ if(box){
+  box.innerHTML=boardHTML();draw();
+  box.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{coordMode=b.dataset.mode;open(current)}));
+  document.getElementById('pieces').addEventListener('click',()=>{showPieces=!showPieces;open(current)});
+ }
+ nav.querySelectorAll('button').forEach(b=>{if(b.dataset.key===current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ const i=chapters.findIndex(x=>x.key===current);
+ document.getElementById('prev').disabled=i===0;
+ document.getElementById('next').disabled=i===chapters.length-1;
+ document.getElementById('progress').textContent=(i+1)+' / '+chapters.length;
+ location.hash=current;window.scrollTo(0,0);
+}
 document.getElementById('prev').addEventListener('click',()=>open(chapters[Math.max(0,chapters.findIndex(x=>x.key===current)-1)].key));
 document.getElementById('next').addEventListener('click',()=>open(chapters[Math.min(chapters.length-1,chapters.findIndex(x=>x.key===current)+1)].key));
 window.addEventListener('hashchange',()=>{const k=location.hash.slice(1);if(k!==current)open(k)});open(location.hash.slice(1)||'intro');
