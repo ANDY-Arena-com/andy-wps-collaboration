@@ -2,10 +2,18 @@
 
 **Projekt:** ANDY verstehen – interaktives HTML-Handbuch  
 **Quelle der Wahrheit für geplante Änderungen:** diese Datei  
-**Stand:** 11. November 2026 · HTML-Durchmarsch V1.6  
+**Stand:** 11. November 2026 · HTML-Durchmarsch V1.7  
 **Status:** Arbeitsfassung / keine fachliche G1-Freigabe
 
 > **So arbeiten wir:** Oliver und GPT machen zunächst einen schnellen gemeinsamen Durchmarsch. Wir führen Änderungswünsche hier dauerhaft zusammen, setzen sie direkt im HTML um und prüfen die Darstellung im Browser. Qwen und DeepSeek kommen bei konkreten Fachfragen hinzu. **Ein Häkchen bedeutet „umgesetzt“, nicht automatisch „im Browser geprüft“ oder „als offizielle ANDY-Regel bestätigt“.**
+
+## Direkte Integration der Qwen-/DeepSeek-Inputs
+
+- [x] **I01 · Kapitel 03 mit Rosetta-Eckenbeispielen ergänzt:** A1 ↔ c3/d3/c4/d4 und E4 ↔ g6/h6/g7/h7 als Qwens vorläufige Koordinatenhypothese; noch nicht Engine-bestätigt.
+- [x] **I02 · Kapitel 05 als vierteilige Mechanik-Demo erweitert:** Ausgangslage (Läufer E4), Go-Stein, mögliche Diagonalwirkung, ANDY-Synthese; vor/zurück innerhalb der Beispielsequenz.
+- [x] **I03 · Geprüfte vs. hypothetische Inhalte sichtbar getrennt:** Diagonalblockade ausdrücklich **nicht** als gültige ANDY-Regel ausgegeben.
+- [ ] **I04 · Oliver testet Verständlichkeit direkt am überarbeiteten HTML-Durchmarsch V1.7** und benennt Unklarheiten an konkreten Bildern/Erklärungen.
+- [ ] **I05 · Vor fachlicher Veröffentlichung:** Ecken-Koordinaten und die Go-Schach-Diagonalwirkung am Engine-State prüfen; Verifikationsprotokoll [TEST-KOPPEL-01](tests/TEST-KOPPEL-01.md).
 
 ## Verständnistest für unvorbereitete Leser
 
