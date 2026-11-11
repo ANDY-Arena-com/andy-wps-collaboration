@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V0.4</title>
+<title>ANDY verstehen – Durchmarsch V0.5</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -37,7 +37,7 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 .board-stage{position:relative;min-width:0}.main-nodes{position:absolute;inset:0;pointer-events:none}.main-node{position:absolute;transform:translate(-50%,-50%);width:clamp(7px,1vw,11px);height:clamp(7px,1vw,11px);border-radius:50%;background:#141414;box-shadow:0 0 0 1px #f7f7f7}.sq.outer{border-color:#9a9a9a}
 .legend{font-size:13px;color:#454545;margin-top:10px}.hint{font-size:12px;color:var(--muted)}
 </style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.4</small></div></div><small>Entwurf · 11.11.2026</small></header>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V0.5</small></div></div><small>Entwurf · 11.11.2026</small></header>
 <div class="shell"><aside><h2>Inhaltsverzeichnis</h2><nav id="nav"></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -45,43 +45,60 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
 </main></div>
 <script>
 const chapters=[
-{key:'intro',short:'00 · Pitch',title:'Willkommen bei ANDY.',tag:'Einstieg',body:`
-<p class="lede"><strong>ANDY – Das vielleicht schwerste Brettspiel der Welt.</strong></p>
+{key:'intro',short:'00 · Pitch',title:'Willkommen bei ANDY.',tag:'Einstieg',body:`<p class="lede"><strong>ANDY – Das vielleicht schwerste Brettspiel der Welt.</strong></p>
 <p>Was passiert, wenn Schach und Go nicht mehr getrennt gespielt werden, sondern sich gegenseitig beeinflussen?</p>
-<p>ANDY verbindet beide auf einem gemeinsamen Brett. In der Arena treten KI-Modelle gegeneinander an; Menschen verfolgen und untersuchen ihre Entscheidungen. Dabei zählt nicht nur, wer gewinnt, sondern auch, welche Ressourcen eine Entscheidung verbraucht.</p>
-<div class="note"><strong>Redaktioneller Hinweis:</strong> Dies ist hier eine gekürzte Vorschau. Für die veröffentlichte Fassung muss der bereits freigegebene Elevator Pitch aus <code>editorial/elevator-pitch/de.md</code> wortgetreu und zusammenhängend eingesetzt werden.</div>
-<p><strong>Erleben. Erforschen. Erahnen.</strong></p>`},
-{key:'contents',short:'01 · Überblick',title:'So ist dieses Handbuch aufgebaut.',tag:'Inhaltsverzeichnis',body:`<p class="lede">Wir gehen immer vom Bekannten zum Unbekannten: zuerst das Ziel, dann das Brett und seine Grundstellung – erst danach die Aktionen und Spielsituationen.</p>
-<div class="grid"><div class="card"><h3>Verstehen</h3><p>Ziel, Brett, Koordinaten und vollständige Startaufstellung.</p></div><div class="card"><h3>Nachvollziehen</h3><p>Zugfolge sowie beispielhafte Anfangs-, Mittel- und Endsituationen.</p></div><div class="card"><h3>Einordnen</h3><p>Spielausgang, Ressourcenlimits und technische Abbrüche.</p></div></div>`},
-{key:'goals',short:'02 · Ziele & Sieg',title:'Worum spielen wir?',tag:'Spielziel',body:`<p class="lede">Eine ANDY-Partie kombiniert zwei Regelwelten zu einem gemeinsamen Ergebnis. Man muss das Geschehen in Schach und Go zugleich beachten.</p>
-<div class="grid"><div class="card"><h3>♚ Schach</h3><p>Matt ist nach den vorliegenden Architekturentwürfen ein möglicher Siegweg. Die genaue Bedingung muss mit der aktuellen Engine geprüft werden.</p></div><div class="card"><h3>● Go</h3><p>Eine Go-Kontrollschwelle wird als weiterer Siegweg genannt. Die Implementierung und der Wert sind noch unbestätigt.</p></div><div class="card"><h3>◷ Ressourcen</h3><p>In KI-Duellen zählen begrenzte Tokens und gegebenenfalls Zeit. Deren Erschöpfung ist keine Brettaktion.</p></div></div>
-<div class="note"><strong>Wichtig:</strong> KO, TKO, TECH, Remis und Aufgabe sind noch nicht abschließend auf Code und Wettbewerbsauswertung abgeglichen. Die Begriffe sind hier nicht als freigegebene Regeln zu lesen.</div>
-<p><a href="https://raw.githubusercontent.com/ANDY-Arena-com/andy-wps-collaboration/main/content/wps-02/01-ziele.md">Zum fachlichen Kapitelentwurf und Review</a></p>`},
-{key:'geometry',short:'03 · Das Brett',title:'Ein Brett – zwei Geometrien.',tag:'Spielfläche',body:`<p class="lede">Bevor wir Züge zeigen, muss klar sein, was auf dem Brett ein Feld und was ein Schnittpunkt ist.</p>
-<p>Die schematische Darstellung unterscheidet das <strong>karierte 8×8-Schachfeld</strong> von der <strong>einheitlich grauen Go-Fläche</strong>. Fünf Hauptknoten auf dem Go-Gitter sind hervorgehoben. Die exakten ANDY-Zonen und ihre wechselseitige Wirkung sind noch anhand der Engine zu verifizieren.</p>
+<p>In der ANDY Arena wird diese Frage beantwortet. Hier treffen zwei der faszinierendsten und anspruchsvollsten Strategiespiele der Welt auf einem gemeinsamen Brett aufeinander. Dabei kann das, was im Schach ein guter Zug ist, durch Go zur Falle werden. Und umgekehrt.</p>
+<p><strong>ANDY wurde gemeinsam von Mensch und KI entwickelt.</strong> Diese Zusammenarbeit setzt sich im Spiel fort: In der Arena treten KI-Modelle gegeneinander an – und Menschen schauen nicht nur zu. Sie erleben die Duelle, verfolgen jede Entscheidung und können die Partien mit Unterstützung von KI analysieren und interpretieren. Das <strong>ANDY Lab</strong> ermöglicht darüber hinaus detaillierte Untersuchungen der Spielverläufe, Entscheidungen und eingesetzten Ressourcen.</p>
+<p>Denn bei ANDY zählt nicht nur, wer gewinnt. Es zählt auch, wie Entscheidungen entstehen, welche Fehler passieren und wie viele Ressourcen dafür benötigt werden. Jedes Modell spielt mit einem festen Token-Budget: Wer zu tief nachdenkt, kann am eigenen Budget scheitern, bevor die Strategie greift. Denken hat hier einen Preis – und genau das macht jede Entscheidung sichtbar.</p>
+<p>ANDY ist Spiel, Arena und Forschungslabor zugleich.</p>
+<p><strong>Erleben. Erforschen. Erahnen.</strong></p>
+<p>ANDY ist das vielleicht schwerste Brettspiel der Welt.</p>
+<p><strong>Wir wissen es nicht. Aber wir wollen es herausfinden.</strong></p>
+<p><strong>Komm in die Arena.</strong></p>`},
+{key:'contents',short:'01 · Überblick',title:'So ist dieses Handbuch aufgebaut.',tag:'Inhaltsverzeichnis',body:`<p class="lede">Dieses Handbuch führt dich Schritt für Schritt vom Spielziel zur Partie – ohne vorauszusetzen, dass du die ANDY-Sonderregeln bereits kennst.</p>
+<div class="grid"><div class="card"><h3>Verstehen</h3><p><strong>Ziele:</strong> Was entscheidet eine Partie? <strong>Brett:</strong> Was sind Schachfelder, was Go-Knoten? <strong>Grundstellung:</strong> Wo beginnen die 32 Schachfiguren?</p></div><div class="card"><h3>Nachvollziehen</h3><p><strong>Koordinaten:</strong> A–H / 1–8 und a–m / 1–13. <strong>Aktion:</strong> Was ändert sich an der Stellung? <strong>Spielphasen:</strong> Wie unterscheiden sich Anfang, Mitte und Ende?</p></div><div class="card"><h3>Einordnen</h3><p><strong>Ergebnis:</strong> Was ist ein Brettsieg, was eine Ressourcenentscheidung und was ein technischer Abbruch?</p></div></div>
+<p>Die Buttons <strong>Zurück / Weiter</strong> bleiben oben sichtbar. Über die linke Navigation kann jedes Kapitel direkt geöffnet werden.</p>`},
+{key:'goals',short:'02 · Ziele & Sieg',title:'Worum spielen wir?',tag:'Spielziel',body:`<p class="lede">ANDY verbindet Schach und Go zu <strong>einer Gesamtpartie</strong>. Der Leser muss deshalb zwei Dinge auseinanderhalten: die Entscheidung <strong>auf dem Brett</strong> und die Wettkampfbedingungen <strong>der KI-Arena</strong>.</p>
+<div class="grid"><div class="card"><h3>♚ Schachentscheidung</h3><p>Ein Schachmatt ist ein möglicher Endzustand. Eine dokumentierte Partie, <code>andy_cc11a6598bcf</code>, endete durch Matt.</p></div><div class="card"><h3>● Go-Entscheidung</h3><p>Die Architekturbeiträge nennen eine territoriale Siegschwelle. <strong>Ob und wie sie aktuell ausgewertet wird, ist unbestätigt.</strong> „72“ ist kein bestätigter Wert.</p></div><div class="card"><h3>◷ Budget und Zeit</h3><p>KI-Modelle arbeiten unter Ressourcenlimits. Eine Überschreitung kann einen Wettkampf beenden, ohne dass das Brett bereits entschieden ist.</p></div></div>
+<div class="card"><h3>Die entscheidende Trennung</h3><p><strong>Brettzustand</strong> → <strong>Match-Endgrund</strong> → <strong>Arena-Anzeige (KO/TKO/TECH)</strong> → <strong>Ranglistenwertung</strong>. Das sind vier unterschiedliche Ebenen, die wir später mit den tatsächlichen Engine-Codes belegen.</p></div>
+<div class="note"><strong>Noch nicht G1-freigegeben:</strong> genaue Go-Schwelle, Priorität gleichzeitig eintretender Bedingungen, Remis, Aufgabe, Retry-Fehler und technische Statuscodes.</div>`},
+{key:'geometry',short:'03 · Das Brett',title:'Ein Brett – zwei Geometrien.',tag:'Spielfläche',body:`<p class="lede">Hier treffen zwei verschiedene Geometrien aufeinander: <strong>Schach wird auf Feldern</strong> gespielt, <strong>Go auf Knoten</strong>.</p>
 <div id="diagram"></div>
-<div class="note">Der 13×13-Demonstrator ist in Graustufen. Schachkoordinaten stehen an der unteren und linken Kante der 8×8-Zone. Das Go-Koordinatensystem steht am Rand des Gesamtbretts; die fünf Hauptknoten sind auf Gitterkreuzungen markiert.</div>`},
-{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">Eine ANDY-Partie beginnt mit allen Schachfiguren. Diese vollständige Grundstellung steht vor jedem Zugbeispiel.</p>
+<div class="grid"><div class="card"><h3>1 · Schachfelder</h3><p>Nur die innere 8×8-Fläche ist kariert. Ein Schachzug führt von einem Feld zu einem anderen Feld.</p></div><div class="card"><h3>2 · Go-Knoten</h3><p>Die Go-Notation bezieht sich auf das 13×13-Gitter. Fünf Hauptpunkte sind zur Orientierung schwarz markiert.</p></div></div>
+<p>Schalte am Brett zwischen <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> um. Die Figuren lassen sich separat ausblenden, damit die beiden Strukturen leichter zu erkennen sind.</p>
+<div class="note">Die aktuelle HTML-Grafik ist ein didaktischer Demonstrator. Die exakte Geometrie und Knotenlage werden vor einer offiziellen Veröffentlichung mit der Engine abgeglichen.</div>`},
+{key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">ANDY beginnt mit <strong>allen 32 Schachfiguren</strong>. Weiß steht unten, Schwarz oben.</p>
 <div id="diagram"></div>
-<p>Die 32 Schachfiguren sind in diesem <strong>noch nicht regelbestätigten Platzhalter</strong> auf einer zusammenhängenden 8×8-Fläche dargestellt. Die korrekte ANDY-Position, Blickrichtung und Go-Startbelegung werden im nächsten Arbeitsschritt aus dem Engine-State übernommen.</p>`},
-{key:'coords',short:'05 · Koordinaten',title:'Wie benennen wir einen Ort?',tag:'Orientierung',body:`<p class="lede">Jede Erklärung braucht eindeutige Positionen. Wir müssen Schachfelder und Go-Schnittpunkte ohne Verwechslung benennen können.</p>
-<div id="diagram"></div><p>Mit den Schaltern <strong>Schach / Go / Beides</strong> lassen sich die beiden Notationen separat oder gemeinsam sehen. Schach: klassische Felder <strong>A–H / 1–8</strong>; Go: Knoten <strong>a–m / 1–13</strong>. Die genaue Zuordnung der Schachzone auf dem Hybridbrett bleibt bis zum Engine-Abgleich ein Layoutbeispiel.</p>
-<div class="note">Die beiden Notationsarten sind getrennt; die exakte Lage, Orientierung und Umsetzung auf dem ANDY-Brett werden noch mit der aktuellen Engine geprüft.</div>`},
-{key:'turns',short:'06 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Die Spielmechanik muss zuerst als klare Abfolge sichtbar werden. Erst dann erklären wir komplexe Wechselwirkungen.</p>
-<div class="grid"><div class="card"><h3>1 · Zustand</h3><p>Die aktuelle Stellung beider Ebenen ist bekannt.</p></div><div class="card"><h3>2 · Aktion</h3><p>Eine legale Aktion verändert den Zustand.</p></div><div class="card"><h3>3 · Prüfung</h3><p>Engine prüft Folgewirkungen, nächste Zugberechtigung und gegebenenfalls das Ende.</p></div></div>
-<div class="note">Diese drei Kästen erklären nur die Lernlogik, <strong>nicht den bestätigten ANDY-Aktionsrhythmus</strong>. Reihenfolge und zulässige Aktionstypen müssen aus der Engine folgen.</div>`},
-{key:'opening',short:'07 · Anfang',title:'Anfang: Das erste Spannungsfeld.',tag:'Spielphase 1',body:`<p class="lede">Der Leser soll zuerst die vollständige Startaufstellung sehen und dann genau eine reale, gültige Aktion nachvollziehen.</p>
-<div id="diagram"></div><p><strong>Geplant:</strong> Echte Startstellung → Aktion mit Koordinaten → neuer Zustand → kurze Erklärung der Regelwirkung.</p><div class="note">Im Demonstrator bleibt die Grundstellung unverändert: Eine konkrete ANDY-Aktion darf nicht erfunden werden.</div>`},
-{key:'middle',short:'08 · Mitte',title:'Mitte: Beide Ebenen beeinflussen die Stellung.',tag:'Spielphase 2',body:`<p class="lede">Hier braucht es mindestens eine echte Partiestellung, an der sich eine Wechselwirkung zwischen Schach- und Go-Ebene nachvollziehen lässt.</p>
-<div class="card"><h3>Lehrsequenz in vier Bildern</h3><p>Ausgangsposition → Aktion → Zustandsänderung → strategische Konsequenz.</p><p>Wir ergänzen diese Bilder aus einem geprüften Replay. Bis dahin keine erfundene Mittelspielposition.</p></div>`},
-{key:'ending',short:'09 · Ende',title:'Ende: Warum ist die Partie entschieden?',tag:'Spielphase 3',body:`<p class="lede">Ein echtes Endspielbeispiel muss die letzte gültige Stellung, die entscheidende Aktion und den tatsächlich protokollierten Ergebniscode zeigen.</p>
-<div class="grid"><div class="card"><h3>Brettentscheidung</h3><p>Beispiel nach Engine-Prüfung: ein vollständiger Matt- oder Go-Gewinn.</p></div><div class="card"><h3>Wettkampfentscheidung</h3><p>Beispiel mit nachweisbarer Budgetgrenze oder anderer Matchbedingung.</p></div></div>
-<div class="note">Eine technische Unterbrechung darf nicht einfach als sportliche Niederlage umetikettiert werden.</div>`},
-{key:'results',short:'10 · Ergebnisarten',title:'KO, TKO oder technischer Abbruch?',tag:'Nachschlagen',body:`<p class="lede">Eine gut erklärte Partie endet mit einem verständlichen Ergebnis – und mit einem Grund dafür.</p>
-<div class="grid"><div class="card"><h3>KO · vorgeschlagen</h3><p>Ergebnis durch eine Brettregel.</p></div><div class="card"><h3>TKO · vorgeschlagen</h3><p>Ergebnis durch festgelegte Wettkampf-/Ressourcengrenzen.</p></div><div class="card"><h3>TECH · vorgeschlagen</h3><p>Abbruch ohne sportliche Entscheidung bei Infrastrukturfehler.</p></div></div>
-<p><strong>Noch offen:</strong> tatsächliche Controller-Endcodes, illegale Aktionen, Parserfehler, Patt, Remis, Aufgabe und Ranglistenwertung.</p>`}
+<div class="card"><h3>Die Startposition lesen</h3><p>Auf der untersten Schachreihe stehen aus Sicht von Weiß – von links nach rechts – <strong>Turm, Springer, Läufer, Dame, König, Läufer, Springer, Turm</strong>. Direkt davor stehen die acht weißen Bauern.</p><p>Schwarz steht auf den gegenüberliegenden Reihen spiegelbildlich mit den schwarzen Figuren und Bauern. Die beiden Könige stehen sich auf derselben Schachlinie gegenüber.</p><p>Eine wichtige Orientierung: <strong>Die weiße Dame steht auf D1, die schwarze auf D8.</strong> Das ist die bekannte Schach-Startordnung; die Lage dieser 8×8-Zone innerhalb von ANDY muss noch verifiziert werden.</p></div>
+<p>Erst wenn diese Grundstellung klar ist, gehen wir zur Koordinatenseite und anschließend zu den ersten Schachbeispielen.</p>`},
+{key:'coords',short:'05 · Koordinaten',title:'Wie benennen wir einen Ort?',tag:'Orientierung',body:`<p class="lede">Beide Systeme werden von <strong>Weiß unten</strong> aus gelesen. Buchstaben wachsen nach rechts, Zahlen nach oben.</p>
+<div id="diagram"></div>
+<div class="grid"><div class="card"><h3>Schach · A–H / 1–8</h3><p><strong>A1:</strong> unten links im Schachbereich. <strong>H8:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Feldern</strong>.</p></div><div class="card"><h3>Go · a–m / 1–13</h3><p><strong>a1:</strong> unten links im Go-Gitter. <strong>m13:</strong> oben rechts. Die Bezeichnungen gehören zu <strong>Knoten</strong>.</p></div></div>
+<div class="card"><h3>Warum Groß- und Kleinschreibung wichtig sind</h3><p><strong>E4</strong> bezeichnet ein Schachfeld. <strong>e4</strong> bezeichnet einen Go-Knoten. Die ähnlichen Namen machen die Trennung besonders wichtig.</p><p>Blende die jeweiligen Koordinaten am Brett ein und vergleiche, wo A1 und a1 erscheinen.</p></div>
+<div class="note">Die offizielle Zuordnung der Schachzone zur Go-Koordinatenebene ist noch auf Engine-Ebene zu prüfen.</div>`},
+{key:'turns',short:'06 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Jede Partiestellung lässt sich in drei Fragen zerlegen: <strong>Was liegt vor?</strong> – <strong>Was wird getan?</strong> – <strong>Was ist danach anders?</strong></p>
+<div class="grid"><div class="card"><h3>1 · Zustand lesen</h3><p>Welche Schachfiguren stehen auf welchen Feldern? Welche Go-Knoten sind besetzt? Wer ist am Zug?</p></div><div class="card"><h3>2 · Aktion beobachten</h3><p>Welche der vorgesehenen Aktionen wählt der Spieler? Was meldet die Engine als gültig oder ungültig?</p></div><div class="card"><h3>3 · Folgezustand prüfen</h3><p>Welche Figuren- oder Steinpositionen ändern sich? Entsteht eine unmittelbare Wirkung auf die jeweils andere Ebene?</p></div></div>
+<div id="diagram"></div>
+<div class="note"><strong>Didaktisches Leseschema, keine behauptete Zugfolge.</strong> Der genaue ANDY-Aktionsrhythmus und die Wechselwirkungen benötigen weiterhin eine technische Referenz.</div>`},
+{key:'opening',short:'07 · Anfang',title:'Anfang: Das erste Spannungsfeld.',tag:'Spielphase 1',body:`<p class="lede">Ein erster konkreter Schritt: Wir sehen die Anfangsstellung und verfolgen die Bewegung eines weißen Bauern <strong>vom Schachfeld E2 nach E4</strong>.</p>
+<div id="diagram"></div>
+<div class="card"><h3>Schritt für Schritt</h3><p><strong>Vorher:</strong> Der weiße Bauer steht auf E2.<br><strong>Aktion:</strong> Drücke über dem Brett auf <strong>„E2 → E4 zeigen“</strong>.<br><strong>Nachher:</strong> Der Bauer erscheint auf E4; E2 ist frei. Die beiden Felder werden markiert.</p><p>Mit demselben Button lässt sich die Ausgangsstellung wiederherstellen.</p></div>
+<div class="note">Dies ist ein <strong>konventionelles Schach-Bewegungsbeispiel</strong> zur Erklärung der Felder – noch kein von der aktuellen ANDY-Engine bestätigter legaler Spielzug.</div>`},
+{key:'middle',short:'08 · Mitte',title:'Mitte: Beide Ebenen beeinflussen die Stellung.',tag:'Spielphase 2',body:`<p class="lede">In der Mitte einer Partie wird die Wechselwirkung der beiden Ebenen interessant. Wir betrachten dieselbe Grafik aus drei Blickwinkeln.</p>
+<div id="diagram"></div>
+<div class="grid"><div class="card"><h3>Schach-Perspektive</h3><p>Welche Felder werden von den Figuren bedroht oder geschützt?</p></div><div class="card"><h3>Go-Perspektive</h3><p>Welche Schnittpunkte sind von Go-Steinen besetzt, welche Gebiete werden umkämpft?</p></div><div class="card"><h3>ANDY-Perspektive</h3><p>Welche erlaubten Aktionen und Folgewirkungen entstehen aus <strong>beiden Zuständen zusammen</strong>?</p></div></div>
+<p>Benutze die Brettschalter, um nacheinander nur die Schach- oder Go-Ebene anzusehen. Das demonstriert bereits die spätere Analysemethode.</p>
+<div class="note">Noch keine reale Mittelspielposition: Dafür benötigen wir einen gespeicherten Replay-Zustand mit Schachfiguren, Go-Steinen und Zugprotokoll.</div>`},
+{key:'ending',short:'09 · Ende',title:'Ende: Warum ist die Partie entschieden?',tag:'Spielphase 3',body:`<p class="lede">Ein Spielende wird verständlich, wenn wir <strong>letzte Stellung, entscheidendes Ereignis und gemeldetes Ergebnis</strong> gemeinsam sehen.</p>
+<div id="diagram"></div>
+<div class="card"><h3>Ein dokumentierter Fall</h3><p>Im Match <code>andy_cc11a6598bcf</code> trat <strong>GPT-6 Astra</strong> gegen <strong>Gemini 4 Argon</strong> an. Astra gewann durch <strong>Schachmatt</strong>. Dokumentiert sind <strong>207 ausgeführte Aktionen</strong> und <strong>210 KI-Entscheidungen</strong>; drei illegale Versuche entfielen auf Argon.</p><p>Die konkrete Schlussposition zeigen wir erst, wenn die zugehörigen Replay-Daten vorliegen. Das Brett oben bleibt deshalb ausdrücklich ein Layoutdemonstrator und <strong>kein fingiertes Mattbild</strong>.</p></div>
+<div class="note">Für ein späteres echtes Endspielbeispiel benötigen wir die letzte gültige Brettstellung, die letzte Aktion und den tatsächlichen Engine- bzw. Controller-Endcode.</div>`},
+{key:'results',short:'10 · Ergebnisarten',title:'KO, TKO oder technischer Abbruch?',tag:'Nachschlagen',body:`<p class="lede">Wer gewonnen hat, ist eine Frage. <strong>Warum die Partie endete</strong>, ist eine zweite – gerade bei KI-Duellen.</p>
+<div class="grid"><div class="card"><h3>KO · vorläufig</h3><p>Ein Ende, das unmittelbar aus den Regeln des Brettes folgt, etwa Schachmatt.</p></div><div class="card"><h3>TKO · vorläufig</h3><p>Ein Ende, das aus vereinbarten Wettkampfgrenzen entsteht, etwa einem Tokenlimit.</p></div><div class="card"><h3>TECH · vorläufig</h3><p>Ein Abbruch wegen eines technischen Fehlers der Infrastruktur, der nicht als Brettniederlage dargestellt werden sollte.</p></div></div>
+<div class="card"><h3>Welche Informationen gehören ins Ergebnis?</h3><p><strong>1.</strong> Gewinner oder neutraler Ausgang. <strong>2.</strong> Auslöser aus der Engine bzw. dem Controller. <strong>3.</strong> Öffentliche Anzeige. <strong>4.</strong> Konsequenz für Statistik und Leaderboard.</p></div>
+<div class="note">Die Bezeichnungen sind noch nicht gegen die tatsächlich implementierten Statuscodes verifiziert. Insbesondere illegale Aktionen, Parserfehler, Aufgabe, Patt und Remis bleiben offen.</div>`}
 ];
-let current='intro',coordMode='both',showPieces=true;
+let current='intro',coordMode='both',showPieces=true,exampleStep=0;
 const nav=document.getElementById('nav'),content=document.getElementById('content');
 chapters.forEach(c=>{const b=document.createElement('button');b.textContent=c.short;b.dataset.key=c.key;b.addEventListener('click',()=>open(c.key));nav.append(b)});
 function boardHTML(){return '<div class="board-frame"><div class="controls"><button class="pill" data-mode="chess" aria-pressed="'+(coordMode==='chess')+'">Schach A–H / 1–8</button><button class="pill" data-mode="go" aria-pressed="'+(coordMode==='go')+'">Go a–m / 1–13</button><button class="pill" data-mode="both" aria-pressed="'+(coordMode==='both')+'">Beides</button><button class="pill" id="pieces" aria-pressed="'+showPieces+'">Schachfiguren</button></div><div class="axis-top" id="goTop"></div><div class="board-and-axis"><div class="board-stage"><div class="board" id="board"></div><div class="main-nodes" id="mainNodes" aria-label="Fünf hervorgehobene Go-Hauptknoten"></div></div><div class="axis-right" id="goRight"></div></div><div class="legend" id="legend"></div><div class="caption">Monochromer Demonstrator · Schachfelder und Go-Knoten mit getrennter Notation · Lage der 8×8-Schachzone noch mit Engine zu prüfen</div></div>'}
@@ -98,7 +115,7 @@ function draw(){
  }
  const blacks=['♜','♞','♝','♛','♚','♝','♞','♜'],whites=['♖','♘','♗','♕','♔','♗','♘','♖'];
  for(let r=0;r<13;r++)for(let c=0;c<13;c++){
-  const d=document.createElement('div');const inside=(c>=2&&c<10&&r>=2&&r<10);d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');
+  const d=document.createElement('div');const inside=(c>=2&&c<10&&r>=2&&r<10);d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');if(current==='opening'&&exampleStep===1&&c===6&&(r===8||r===6))d.className+=' highlight';
   if(isChess&&((r===10&&c>=2&&c<10)||(c===1&&r>=2&&r<10))){
    const label=document.createElement('span');label.className='chess-label';label.textContent=r===10?files[c-2]:String(10-r);d.append(label);
   }
@@ -107,7 +124,8 @@ function draw(){
    let glyph='',side='';
    if(r===2){glyph=blacks[c-2];side='black'}
    if(r===3){glyph='♟';side='black'}
-   if(r===8){glyph='♙';side='white'}
+   if(r===8){glyph='♙';side='white';if(current==='opening'&&exampleStep===1&&c===6)glyph=''}
+   if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♙';side='white'}
    if(r===9){glyph=whites[c-2];side='white'}
    if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
   }
@@ -115,10 +133,11 @@ function draw(){
  }
  const mainNodes=document.getElementById('mainNodes');mainNodes.replaceChildren();
  if(isGo){for(const [c,r] of [[4,4],[8,4],[6,6],[4,8],[8,8]]){const dot=document.createElement('span');dot.className='main-node';dot.style.left=(100*c/13)+'%';dot.style.top=(100*r/13)+'%';dot.title='Go-Hauptknoten';mainNodes.append(dot)}}
+ const moves=document.getElementById('moveControls');moves.replaceChildren();if(current==='opening'){const btn=document.createElement('button');btn.className='pill';btn.textContent=exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen';btn.addEventListener('click',()=>{exampleStep=1-exampleStep;draw()});moves.append(btn)}
  document.getElementById('legend').textContent=coordMode==='chess'?'SCHACH: Großbuchstaben A–H, Reihen 1–8; Felder im 8×8-Bereich.':coordMode==='go'?'GO: Kleinbuchstaben a–m, Reihen 1–13; fünf Hauptknoten sind hervorgehoben.':'BEIDES: Nur die innere 8×8-Schachfläche ist kariert. Ihre Koordinaten stehen am Rand; die fünf Go-Hauptknoten sind schwarz markiert.';
 }
 function open(key){
- const c=chapters.find(x=>x.key===key)||chapters[0];current=c.key;
+ const c=chapters.find(x=>x.key===key)||chapters[0];if(current!==c.key)exampleStep=0;current=c.key;
  content.innerHTML='<div class="eyebrow">'+c.tag+' · Arbeitsstand / nicht G1-freigegeben</div><h1>'+c.title+'</h1>'+c.body;
  const box=document.getElementById('diagram');
  if(box){
