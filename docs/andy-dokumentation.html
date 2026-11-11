@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ANDY – Dokumentationsportal. Entdecken, Arena bedienen, Lab nutzen und Regeln nachlesen.">
+<title>ANDY · Dokumentation · Entwurf 0.1</title>
+<style>
+:root{--bg:#f4f5f5;--paper:#fff;--ink:#1b2229;--muted:#627078;--line:#dbe0e2;--accent:#e97432;--nav:#131b24;--blue:#263847}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.topbar{background:#101820;color:#f9faf9;padding:13px clamp(18px,3vw,40px);display:flex;gap:20px;justify-content:space-between;align-items:center;position:relative;z-index:2;border-bottom:1px solid #39444a}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{display:grid;place-items:center;width:35px;height:35px;background:var(--accent);color:#111;font-weight:900;border-radius:9px;letter-spacing:-.09em}.brand strong{font-size:18px;letter-spacing:.02em}.brand small{display:block;font-size:11px;color:#aebdc5;line-height:1.3}.toplinks{display:flex;align-items:center;gap:15px;flex-wrap:wrap}.toplinks a{color:#d7e0e4;font-size:12px;text-decoration:none}.toplinks a:hover{text-decoration:underline}.draft{color:#ffbd8e;border:1px solid #875337;padding:3px 9px;border-radius:50px;font-size:11px;letter-spacing:.04em}
+.layout{display:grid;grid-template-columns:265px minmax(0,1fr);min-height:calc(100vh - 63px);max-width:1550px;margin:auto}
+aside{background:#e9ecec;border-right:1px solid #d8dddd;position:sticky;top:0;height:100vh;padding:27px 15px 20px;overflow-y:auto}
+.sideheading{font-weight:800;letter-spacing:.12em;color:#68757b;font-size:11px;text-transform:uppercase;padding:0 12px 12px}
+.menu{display:flex;flex-direction:column;gap:4px}.menu button{text-align:left;border:0;border-radius:9px;background:transparent;color:#25313a;padding:12px;display:flex;align-items:center;gap:12px;width:100%;font-size:13px;font-weight:600}.menu button:hover{background:#dbe2e4}.menu button.active{background:#1e2b36;color:white}.num{font-size:11px;color:#75838a;font-weight:750;min-width:23px}.active .num{color:#ffb787}
+.sidefoot{margin:24px 12px;padding-top:20px;border-top:1px solid #d0d8db;color:#6c777c;font-size:12px}
+main{min-width:0;padding:35px clamp(22px,5vw,75px) 70px;max-width:1210px;width:100%}
+.hero{background:var(--nav);color:white;border-radius:18px;padding:clamp(27px,4vw,50px);position:relative;overflow:hidden;margin-bottom:31px;min-height:255px;display:flex;flex-direction:column;justify-content:center}
+.hero:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #40505c;border-radius:50%;right:-94px;top:-108px;box-shadow:0 0 0 44px #1a2832,0 0 0 45px #3a4d57,0 0 0 90px #16252e;opacity:.85}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#fca46c;position:relative}.hero h1{font-size:clamp(30px,4vw,52px);letter-spacing:-.045em;line-height:1.09;margin:14px 0;max-width:790px;position:relative}.hero p{color:#d7dfe2;position:relative;max-width:640px;font-size:17px;margin:0 0 18px}.hero .button{position:relative;align-self:flex-start}
+.button{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#191d21;font-weight:800;text-decoration:none;padding:10px 15px;border-radius:9px;border:0;font-size:13px}
+.button.secondary{background:#fff;border:1px solid #d3dadd;color:#25313a}.button:hover{filter:brightness(.96)}
+.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#788289;font-size:11px;margin-bottom:6px}
+h2{font-size:clamp(28px,3vw,38px);line-height:1.17;letter-spacing:-.035em;margin:0 0 13px}h3{font-size:18px;letter-spacing:-.02em;margin:0 0 8px}
+.lede{font-size:18px;color:#4a575e;max-width:780px;margin:0 0 25px}
+.section{display:none;animation:slide .25s ease-out}.section.active{display:block}@keyframes slide{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{padding:23px;border:1px solid var(--line);background:var(--paper);border-radius:12px;min-width:0}.card p{margin:5px 0 10px;color:#53616a}.card small{color:#78838a;font-size:12px}.card a{font-weight:700;text-underline-offset:3px}.card .index{font-weight:800;font-size:11px;color:#d66a2d;letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}
+.feature{border-top:3px solid var(--accent)}.darkcard{background:#233440;border-color:#233440;color:white}.darkcard p{color:#cfdbdf}.darkcard small{color:#b4c3c8}
+.sectionhead{margin:32px 0 14px;display:flex;gap:15px;align-items:center;justify-content:space-between}.sectionhead h3{font-size:22px;margin:0}
+.pill{border:1px solid #d0d6d9;border-radius:30px;padding:4px 10px;background:#fff;color:#657279;font-size:11px;font-weight:750}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:17px}.step .n{font-weight:800;color:#c65b2a;font-size:12px}.step strong{display:block;margin:8px 0 6px;font-size:14px}.step p{color:#657078;font-size:13px;margin:0}
+.note{background:#edf0f1;padding:16px 20px;border-left:4px solid #536775;margin:18px 0;border-radius:0 9px 9px 0;font-size:13px;color:#45555d}.note.warning{background:#fff4ed;border-color:var(--accent)}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:10px 0}details summary{font-weight:700;padding:15px 18px;cursor:pointer;list-style:none}details summary:after{content:"+";float:right;font-size:21px;line-height:1;color:#64747c}details[open] summary:after{content:"−"}details .details-body{padding:0 18px 17px;color:#506069}details p{margin:0 0 12px}
+kbd,code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#edf0f1;padding:2px 5px;border-radius:4px;font-size:.92em}
+.preview{padding:19px;background:#e4e8e9;border-radius:12px;display:grid;grid-template-columns:1.15fr 1fr;gap:15px;align-items:stretch;border:1px solid #d5dcde}
+.miniboard{background:#e7e7e7;border:2px solid #6e7477;display:grid;grid-template-columns:repeat(13,1fr);aspect-ratio:1;max-width:390px;width:100%;align-self:center;justify-self:center}
+.msq{border:.35px solid #adb1b2;background:#e3e3e3;display:grid;place-items:center;min-width:0;min-height:0}.msq.chess.light{background:#fafafa}.msq.chess.dark{background:#a7a9aa}.mpiece{font-size:clamp(10px,1.7vw,24px);font-family:"DejaVu Sans",serif;line-height:1}.mpiece.white{color:white;-webkit-text-fill-color:white;-webkit-text-stroke:.8px #181818}.mpiece.black{color:#171717;-webkit-text-stroke:.6px #eee}
+.panel{display:flex;flex-direction:column;gap:9px}.panel .fakepanel{background:#f8fafa;border:1px solid #cdd7db;border-radius:8px;padding:11px;font-size:13px}.fakepanel strong{display:block}.panel .fakebutton{background:#233440;color:white;border-radius:6px;display:inline-block;padding:6px 10px;margin-top:6px;font-size:11px}
+.term{display:inline-flex;align-items:center;gap:5px;border-radius:6px;background:#e5eaed;color:#425058;padding:3px 8px;font-size:11px;font-weight:750;letter-spacing:.03em}
+.status{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.status div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px}.status strong{display:block;font-size:18px}.status span{font-size:12px;color:#6b7980}
+.callout{display:flex;gap:15px;align-items:start;background:#1d2b34;color:white;border-radius:12px;padding:22px}.callout .symbol{font-size:31px;line-height:1}.callout p{margin:5px 0;color:#d1dce1}
+.linkrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.bottomnav{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:35px 0 0;padding-top:20px;border-top:1px solid #d3dadd}.bottomnav button{padding:9px 14px;border-radius:8px;background:white;border:1px solid #ced7db;color:#21313b;font-weight:700}.bottomnav button:disabled{opacity:.4;cursor:default}
+footer{font-size:12px;color:#7a878d;margin-top:40px}
+@media(max-width:950px){.layout{grid-template-columns:1fr}aside{height:auto;position:relative;padding:9px 12px;overflow-x:auto;border-right:0;border-bottom:1px solid #d8dddd}.sideheading,.sidefoot{display:none}.menu{flex-direction:row;min-width:max-content}.menu button{width:auto;padding:9px 11px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:22px 18px 50px}}
+@media(max-width:650px){.toplinks a{display:none}.hero{min-height:225px}.hero:before{opacity:.35}.grid,.grid.three,.preview{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.status{grid-template-columns:1fr 1fr}.miniboard{max-width:350px}.mpiece{font-size:clamp(12px,4.2vw,22px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.section{animation:none}}
+</style></head>
+<body>
+<header class="topbar"><a class="brand" href="#intro"><span class="mark">A</span><span><strong>ANDY / Docs</strong><small>Arena · Lab · Regelwerk</small></span></a><div class="toplinks"><span class="draft">DEMO · v0.1</span><a href="durchmarsch.html">Bisheriger Durchmarsch</a><a href="verstehenstest.html">Bisheriger Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration" target="_blank" rel="noopener">GitHub</a></div></header>
+<div class="layout">
+<aside><div class="sideheading">Dokumentation</div><nav class="menu" aria-label="Dokumentationsbereiche">
+<button class="active" data-page="intro" aria-current="page"><span class="num">01</span> ANDY entdecken</button>
+<button data-page="arena"><span class="num">02</span> Arena bedienen</button>
+<button data-page="lab"><span class="num">03</span> Lab nutzen</button>
+<button data-page="rules"><span class="num">04</span> Regelwerk</button>
+<button data-page="challenge"><span class="num">05</span> Warum so schwierig?</button>
+</nav><div class="sidefoot"><strong>Einfach benutzen. Bei Bedarf vertiefen.</strong><p>Du musst die vollständigen Spielregeln nicht kennen, um ANDY zu erleben.</p><p>Alle Inhalte dieser Seite sind eine <strong>Demobefüllung</strong>. Bedienabläufe werden mit der laufenden App abgeglichen; Regeln nur nach Engine-Prüfung veröffentlicht.</p></div></aside>
+<main>
+<section class="section active" id="intro">
+<div class="hero"><div class="kicker">01 / Willkommen in der ANDY Arena</div><h1>Zwei Spielwelten. Ein Brett. Viele Entscheidungen.</h1><p>ANDY verbindet Schach und Go zu einer gemeinsamen Herausforderung. In der Arena treten KI-Modelle gegeneinander an – und du kannst ihnen dabei zusehen.</p><button class="button" data-go="arena">So benutzt du die Arena →</button></div>
+<div class="eyebrow">Der Einstieg</div><h2>Was ist ANDY?</h2><p class="lede">ANDY ist Spiel, KI-Arena und Forschungslabor zugleich. Auf einem gemeinsamen Brett beeinflussen sich zwei unterschiedliche Strategiespiele.</p>
+<div class="grid three">
+<div class="card feature"><div class="index">01 · Spiel</div><h3>Schach trifft Go</h3><p>Schachfiguren bewegen sich auf Feldern. Go-Steine werden auf Gitterknoten gesetzt. Zusammen entsteht ein ungewohntes Spielgeschehen.</p></div>
+<div class="card feature"><div class="index">02 · Arena</div><h3>Modelle treten an</h3><p>KI-Modelle spielen Partien. Du kannst Züge verfolgen und dich durch aufgezeichnete Matches bewegen.</p></div>
+<div class="card feature"><div class="index">03 · Forschung</div><h3>Entscheidungen sichtbar machen</h3><p>Nicht nur das Ergebnis interessiert: Auch Fehlversuche, Ressourcenverbrauch und unterschiedliche Spielweisen sind spannend.</p></div>
+</div>
+<div class="sectionhead"><h3>So sieht die Idee aus</h3><span class="pill">Schematische Vorschau</span></div>
+<div class="preview"><div class="miniboard" id="miniboard" aria-label="Schematisches 13 mal 13 Brett mit einer inneren Schachzone"></div><div class="panel">
+<div class="fakepanel"><strong>Ein Brett, zwei Ebenen</strong>13×13-Gitter als Gesamtfläche. Im Inneren liegt die karierte 8×8-Schachzone.</div>
+<div class="fakepanel"><strong>Du musst nicht selbst spielen</strong>Du kannst ANDY zunächst einfach beobachten – etwa über ein Live-Match oder im Replay.</div>
+<div class="fakepanel"><strong>Mehr wissen?</strong>Die vollständigen Regeln werden separat als überprüfbare Referenz veröffentlicht.</div></div></div>
+<div class="callout" style="margin-top:20px"><div class="symbol">↗</div><div><strong>Erleben. Erforschen. Erahnen.</strong><p>Steige mit der Arena ein. Die Regeln kannst du nachschlagen, wenn du eine bestimmte Entscheidung genauer verstehen willst.</p></div></div>
+</section>
+
+<section class="section" id="arena">
+<div class="eyebrow">02 / Bedienungsanleitung</div><h2>Die ANDY Arena bedienen</h2><p class="lede">Vom Start eines Matches bis zum Replay: Hier findest du die Bedienelemente und die Informationen des Cockpits.</p>
+<div class="note warning"><strong>Demoinhalt:</strong> Die folgenden Schritte sind eine vorläufige Struktur für die Bedienungsanleitung. Namen und Funktionen einzelner Buttons werden noch gegen die jeweils aktuelle Arena-Version geprüft.</div>
+<div class="sectionhead"><h3>Ein Match starten</h3><span class="pill">Start · Mensch/KI · KI/KI</span></div>
+<div class="steps">
+<div class="step"><span class="n">01</span><strong>Spielmodus wählen</strong><p>Wähle den gewünschten Modus in der Arena.</p></div>
+<div class="step"><span class="n">02</span><strong>Teilnehmer festlegen</strong><p>Bestimme die beteiligten Spieler oder Modelle, soweit der gewählte Modus dies vorsieht.</p></div>
+<div class="step"><span class="n">03</span><strong>Match beginnen</strong><p>Starte die Partie und kontrolliere, dass die Arena den aktuellen Spielzustand zeigt.</p></div>
+<div class="step"><span class="n">04</span><strong>Geschehen verfolgen</strong><p>Beobachte Brett, Aktionsfolge und Informationen zu beiden Seiten.</p></div>
+</div>
+<div class="sectionhead"><h3>Was zeigt das Cockpit?</h3><span class="pill">Orientierung</span></div>
+<div class="grid">
+<div class="card"><div class="index">Brett</div><h3>Aktuelle Stellung</h3><p>Figuren und Steine zeigen den momentanen Spielzustand. Die Darstellung kann in der laufenden Arena um 180 Grad gedreht werden. Die logischen Koordinaten bleiben dabei gleich.</p></div>
+<div class="card"><div class="index">Kontrahenten</div><h3>Wer spielt gegen wen?</h3><p>Die Anzeige ordnet die beiden Seiten, ihre Farben und – je nach Cockpitansicht – weitere Informationen zu.</p></div>
+<div class="card"><div class="index">Aktionen</div><h3>Was ist gerade passiert?</h3><p>Die Aktionshistorie hilft dir, den Weg von einer Stellung zur nächsten nachzuvollziehen.</p></div>
+<div class="card"><div class="index">Ressourcen & Ergebnis</div><h3>Was kostet die Partie?</h3><p>Tokenbudget, Status- und Ergebnisanzeigen können sichtbar machen, ob die Partie auf dem Brett oder durch Wettkampfbedingungen entschieden wurde. Konkrete Werte und Labels werden noch abgeglichen.</p></div>
+</div>
+<div class="sectionhead"><h3>Ein Replay ansehen</h3><span class="pill">Schrittweise erkunden</span></div>
+<div class="steps">
+<div class="step"><span class="n">01</span><strong>Partie auswählen</strong><p>Öffne eine gespeicherte Partie über die Replay-Funktion.</p></div>
+<div class="step"><span class="n">02</span><strong>Zum Start springen</strong><p>Beginne bei der Ausgangsstellung oder einer interessanten Position.</p></div>
+<div class="step"><span class="n">03</span><strong>Züge durchgehen</strong><p>Nutze Vor-/Zurück-Steuerung oder den Replay-Slider.</p></div>
+<div class="step"><span class="n">04</span><strong>Situation untersuchen</strong><p>Halte bei einem Zug an und vergleiche Brett, Spielverlauf und Cockpitdaten.</p></div>
+</div>
+<div class="card" style="margin-top:17px"><h3>Häufige Fragen</h3>
+<details><summary>Warum ändern sich die Koordinaten beim Drehen nicht?</summary><div class="details-body"><p>Du drehst die Ansicht, nicht die Stellung. A1 bleibt ein bestimmtes Schachfeld; a1 bleibt ein bestimmter Go-Knoten. Nur ihre Bildschirmpositionen ändern sich.</p></div></details>
+<details><summary>Was ist der Unterschied zwischen Live-Ansicht und Replay?</summary><div class="details-body"><p>Die Live-Ansicht begleitet den aktuellen Matchzustand. Ein Replay erlaubt dir, eine bereits aufgezeichnete Zugfolge nachträglich Schritt für Schritt anzusehen.</p></div></details>
+<details><summary>Wo finde ich die Spielregeln?</summary><div class="details-body"><p>Unter „Regelwerk“ entsteht eine versionierte Referenz. Du brauchst sie nicht vollständig zu lesen, bevor du die Arena verwendest.</p></div></details></div>
+</section>
+
+<section class="section" id="lab">
+<div class="eyebrow">03 / Bedienungsanleitung</div><h2>Das ANDY Lab nutzen</h2><p class="lede">Das Lab hilft dir, eine Partie nicht nur anzusehen, sondern Entscheidungen, Verlauf und Ressourcen systematisch zu untersuchen.</p>
+<div class="note warning"><strong>Demobefüllung:</strong> Dieser Bereich beschreibt die geplante Leserführung. Exakte Lab-Funktionen und Feldbezeichnungen müssen noch anhand der aktuellen App geprüft werden.</div>
+<div class="grid">
+<div class="card feature"><div class="index">01 · Einstieg</div><h3>Eine Partie auswählen</h3><p>Öffne eine Partie im Lab und verschaffe dir zunächst einen Überblick über beteiligte Modelle, Verlauf und Ergebnis.</p></div>
+<div class="card feature"><div class="index">02 · Analyse</div><h3>Den Spielverlauf lesen</h3><p>Bewege dich zu interessanten Aktionen. Prüfe, welche Stellung der Entscheidung vorausging und was danach geschah.</p></div>
+<div class="card feature"><div class="index">03 · Ressourcen</div><h3>Token und Zeit einordnen</h3><p>Unterscheide Ergebnis, benötigte Modellressourcen und eventuelle Fehlversuche. Nicht jeder Verbrauch ist ein Strategiefehler.</p></div>
+<div class="card feature"><div class="index">04 · Interpretation</div><h3>Fragen an eine Partie stellen</h3><p>Welche Entscheidungen waren auffällig? Welche Ergebnisse lassen sich unmittelbar belegen? Was bleibt eine Hypothese?</p></div>
+</div>
+<div class="sectionhead"><h3>Welche Begriffe sollte ich kennen?</h3><span class="pill">Minimales Wissen</span></div>
+<details open><summary>Spielzustand</summary><div class="details-body"><p>Die vollständige Stellung zu einem bestimmten Zeitpunkt: Schachfiguren, Go-Steine und weitere für das Spiel relevante Angaben.</p></div></details>
+<details><summary>Aktion und Entscheidung</summary><div class="details-body"><p>Eine Modellentscheidung ist nicht automatisch identisch mit einer erfolgreich ausgeführten Brettaktion. Das ist insbesondere bei ungültigen oder wiederholten Versuchen wichtig.</p></div></details>
+<details><summary>Tokenbudget</summary><div class="details-body"><p>Eine Ressourcengrenze für das KI-Modell. Die genaue Zählweise hängt von Controller und Konfiguration ab und muss in der technischen Referenz dokumentiert werden.</p></div></details>
+<details><summary>Beobachtung oder Interpretation?</summary><div class="details-body"><p>„Das Modell hat einen ungültigen Zug vorgeschlagen“ kann beobachtbar sein. „Das Modell hat die Regel nicht verstanden“ ist dagegen eine Erklärung, die weitere Belege braucht.</p></div></details>
+<div class="callout" style="margin-top:21px"><div class="symbol">⌕</div><div><strong>Das wichtigste Prinzip im Lab</strong><p>Erst zeigen, was im Match tatsächlich passiert ist. Dann untersuchen, warum es passiert sein könnte.</p></div></div>
+</section>
+
+<section class="section" id="rules">
+<div class="eyebrow">04 / Technische Referenz</div><h2>Das ANDY-Regelwerk</h2><p class="lede">Hier entsteht die externe, überprüfbare Beschreibung aller tatsächlich implementierten Regeln – als kanonische Markdown-Quelle und inhaltsgleiche HTML-Ansicht.</p>
+<div class="note warning"><strong>Wichtiger Status:</strong> Diese Seite enthält <em>noch keine vollständige verifizierte Regelspezifikation</em>. Die unten dargestellte Gliederung ist ein Strukturentwurf. Ungeprüfte Designhypothesen werden nicht als Regeln veröffentlicht.</div>
+<div class="status"><div><strong>APS 0.1</strong><span>Geplante Arbeitsfassung</span></div><div><strong>Offen</strong><span>Engine-/Controller-Commit</span></div><div><strong>In Inventur</strong><span>Fachlicher Prüfstatus</span></div></div>
+<div class="sectionhead"><h3>Aufbau der Regelreferenz</h3><span class="pill">Inventar – noch keine Regelabnahme</span></div>
+<div class="grid">
+<div class="card"><div class="index">R-01</div><h3>Ontologie & Geometrie</h3><p>Schachfeld, Go-Knoten, Schachzone, Brettausrichtung und Koordinatenabbildung.</p><small>Prüfquelle: Engine-Zustandsmodell</small></div>
+<div class="card"><div class="index">R-02</div><h3>Setup & Phasen</h3><p>Initialzustand, Go-Setup und gültiger Ablauf der ersten Aktionen.</p><small>Prüfquelle: Engine + Controller</small></div>
+<div class="card"><div class="index">R-03</div><h3>Aktionen & Legalität</h3><p>Action-Schema, erlaubte Zugtypen, Prüfbedingungen und ungültige Aktionen.</p><small>Prüfquelle: Parser + Engine</small></div>
+<div class="card"><div class="index">R-04</div><h3>Kopplungsregeln</h3><p>Nachweisbare Wechselwirkungen zwischen den beiden Spielebenen.</p><small>Prüfquelle: Engine + reproduzierbare Testfälle</small></div>
+<div class="card"><div class="index">R-05</div><h3>Spielende & Ergebnisse</h3><p>Gewinnbedingungen, Abbrüche und Zuordnung von Engine-Status zu Arena-Anzeigen.</p><small>Prüfquelle: Engine + Controller</small></div>
+<div class="card"><div class="index">R-06</div><h3>Formate & Fehler</h3><p>JSON-Formate, Retry- und Timeout-Verhalten, Ressourcen- und Versionsangaben.</p><small>Prüfquelle: Controller + Schnittstelle</small></div>
+</div>
+<div class="card" style="margin-top:17px"><div class="index">Regelbeleg · Formatvorlage</div><h3>So wird eine Regel später nachgewiesen</h3><p><code>ID → Aussage → Bedingung → Aktion → Ergebnis → Code-Referenz → Testfall</code></p><p class="small">Damit können KIs die Regeln nachvollziehen und erklären. Menschen lesen denselben Inhalt im HTML. Ob spielende KIs das Regelwerk vor einem Match erhalten, bleibt ausdrücklich offen.</p></div>
+<div class="linkrow"><a class="button secondary" href="durchmarsch.html#geometry">Alter HTML-Prototyp (nicht verbindlich) →</a><a class="button secondary" href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener">Prüf-Checkliste →</a></div>
+</section>
+
+<section class="section" id="challenge">
+<div class="eyebrow">05 / Hintergründe & Forschungsfrage</div><h2>Warum vielleicht das schwerste Spiel der Welt?</h2><p class="lede">Weil ANDY zwei komplexe Strategiewelten verbindet – und wir noch nicht wissen, wie anspruchsvoll diese Kombination wirklich ist.</p>
+<div class="grid three">
+<div class="card feature"><div class="index">Komplexität</div><h3>Ein Brett, zwei Logiken</h3><p>Schach und Go verlangen unterschiedliche Arten von Planung. Ihre Kopplung kann die Bewertung einer Stellung verändern.</p></div>
+<div class="card feature"><div class="index">Interdependenz</div><h3>Entscheidungen wirken zusammen</h3><p>Eine Entscheidung in einer Ebene kann Folgen in der anderen haben. Welche Mechanismen tatsächlich gelten, dokumentiert die geprüfte Regelreferenz.</p></div>
+<div class="card feature"><div class="index">Knappheit</div><h3>Denken kostet Ressourcen</h3><p>KI-Spieler müssen unter vorgegebenen Ressourcenlimits Entscheidungen treffen. Nicht allein die Spielstärke entscheidet über einen Matchausgang.</p></div>
+</div>
+<div class="sectionhead"><h3>Was bedeutet „vielleicht“?</h3></div>
+<div class="callout"><div class="symbol">?</div><div><strong>Eine Forschungsfrage – kein Weltrekord</strong><p>Dass ANDY das „schwerste“ Brettspiel ist, ist nicht bewiesen. Wir verwenden diese Formulierung als Einladung, Schwierigkeit, Spielqualität und Ressourcenverbrauch zu untersuchen.</p></div></div>
+<div class="sectionhead"><h3>Was wir untersuchen wollen</h3><span class="pill">Offene Fragen</span></div>
+<details open><summary>Wie lassen sich Schwierigkeit und Spielstärke überhaupt messen?</summary><div class="details-body"><p>Etwa über legale Aktionen, erreichbare Spielziele, Entscheidungssituationen und reproduzierbare Vergleiche. Eine einzige Kennzahl reicht vermutlich nicht aus.</p></div></details>
+<details><summary>Welche Rolle spielt das Tokenbudget?</summary><div class="details-body"><p>Eine KI kann eine gute Entscheidung planen, aber dafür zu viele Ressourcen verbrauchen. Die Trennung zwischen Effektivität, Effizienz und weiteren Forschungsdimensionen benötigt klare Messdefinitionen.</p></div></details>
+<details><summary>Warum spielen mehrere KI-Modelle gegeneinander?</summary><div class="details-body"><p>Der Vergleich macht Unterschiede sichtbar – sofern Modellversion, Regeln, Budget, Farbausrichtung und Matchbedingungen dokumentiert sind.</p></div></details>
+<div class="linkrow"><button class="button" data-go="intro">Zur Übersicht zurück ↗</button><button class="button secondary" data-go="rules">Zur Regelreferenz →</button></div>
+</section>
+<div class="bottomnav"><button id="previous" type="button">← Zurück</button><span id="position" class="small">01 / 05</span><button id="following" type="button">Weiter →</button></div>
+<footer>ANDY / Docs · Demo v0.1 · Stand 11.11.2026 · Konzeptstruktur und Beispieltexte · Keine fachliche G1-Freigabe</footer>
+</main></div>
+<script>
+(()=>{"use strict";
+const keys=["intro","arena","lab","rules","challenge"], buttons=[...document.querySelectorAll(".menu button")],sections=[...document.querySelectorAll(".section")];
+function openPage(key,updateHash=true){
+ let index=keys.indexOf(key);if(index<0){key="intro";index=0}
+ buttons.forEach(b=>{const yes=b.dataset.page===key;b.classList.toggle("active",yes);if(yes)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+ sections.forEach(s=>s.classList.toggle("active",s.id===key));
+ document.getElementById("position").textContent=String(index+1).padStart(2,"0")+" / 05";
+ document.getElementById("previous").disabled=index===0;document.getElementById("following").disabled=index===keys.length-1;
+ if(updateHash&&location.hash!=="#"+key)history.replaceState(null,"","#"+key);
+ window.scrollTo({top:0,behavior:"instant"});
+}
+buttons.forEach(b=>b.addEventListener("click",()=>openPage(b.dataset.page)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>openPage(b.dataset.go)));
+document.getElementById("previous").addEventListener("click",()=>{let i=keys.indexOf(document.querySelector(".section.active").id);openPage(keys[Math.max(0,i-1)])});
+document.getElementById("following").addEventListener("click",()=>{let i=keys.indexOf(document.querySelector(".section.active").id);openPage(keys[Math.min(keys.length-1,i+1)])});
+window.addEventListener("hashchange",()=>openPage(location.hash.slice(1),false));
+const board=document.getElementById("miniboard"),black=["♜","♞","♝","♛","♚","♝","♞","♜"];
+for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+const sq=document.createElement("div"),inside=r>=2&&r<10&&c>=2&&c<10;
+sq.className="msq"+(inside?" chess "+((r+c)%2?"dark":"light"):"");let piece="",side="";
+if(inside){if(r===2){piece=black[c-2];side="black"}else if(r===3){piece="♟";side="black"}else if(r===8){piece="♟";side="white"}else if(r===9){piece=black[c-2];side="white"}}
+if(piece){const el=document.createElement("span");el.className="mpiece "+side;el.textContent=piece;sq.append(el)}
+board.append(sq)}
+openPage(location.hash.slice(1)||"intro",false);
+})();
+</script></body></html>
