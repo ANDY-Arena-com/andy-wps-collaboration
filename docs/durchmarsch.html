@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDY verstehen – Durchmarsch V1.6</title>
+<title>ANDY verstehen – Durchmarsch V1.7</title>
 <style>
 :root{--bg:#f7f7f5;--ink:#202226;--muted:#656a70;--line:#d6d7d6;--side:#ebebea;--accent:#242a32}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -57,8 +57,8 @@ pre{background:#eee;padding:14px;overflow:auto;font-size:12px}a{color:#343a45}
  #toc nav{display:flex!important;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:5px}
  #toc .chapter-link{flex:0 0 auto;white-space:nowrap;background:#f5f5f3;padding:8px 11px}
  .navtop{top:92px}
-}</style></head><body>
-<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.6</small></div></div><div class="header-links"><a href="verstehenstest.html">▶ Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
+}.mechanic-overlay{position:absolute;inset:0;z-index:10;pointer-events:none}.mechanic-arrow{position:absolute;left:50%;top:50%;width:11%;height:0;border-top:3px solid #171717;transform-origin:left center;transform:rotate(-45deg)}.mechanic-legend{font-size:14px;font-weight:600}.mechanic-cross{position:absolute;left:53.85%;top:46.15%;transform:translate(-50%,-50%);font-size:31px;color:#111;font-weight:bold;z-index:11}.mechanic-stone{position:absolute;left:53.85%;top:46.15%;transform:translate(-50%,-50%);width:4.3%;height:4.3%;border-radius:50%;background:#191919;border:1px solid #fff;z-index:12}.mechanic-progress{display:inline-block;padding:5px 10px;border-radius:12px;background:#e4e4e3;font-size:13px}</style></head><body>
+<header><div><b>ANDY <span style="font-weight:400">/ verstehen</span></b><div><small>WPS-02 · schneller HTML-Durchmarsch V1.7</small></div></div><div class="header-links"><a href="verstehenstest.html">▶ Verständnistest</a><a href="https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/WPS-02-CHECKLIST.md" target="_blank" rel="noopener noreferrer">☑ Arbeitscheckliste</a><small>Entwurf · 11.11.2026</small></div></header>
 <div class="shell"><aside id="toc" aria-label="Inhaltsverzeichnis"><h2>Inhaltsverzeichnis</h2><nav id="nav"><a class="chapter-link" data-key="intro" href="#intro">00 · Pitch</a><a class="chapter-link" data-key="contents" href="#contents">01 · Überblick</a><a class="chapter-link" data-key="goals" href="#goals">02 · Ziele & Sieg</a><a class="chapter-link" data-key="geometry" href="#geometry">03 · Brett & Koordinaten</a><a class="chapter-link" data-key="setup" href="#setup">04 · Startaufstellung</a><a class="chapter-link" data-key="turns" href="#turns">05 · Zugablauf</a><a class="chapter-link" data-key="opening" href="#opening">06 · Anfang</a><a class="chapter-link" data-key="middle" href="#middle">07 · Mitte</a><a class="chapter-link" data-key="ending" href="#ending">08 · Ende</a><a class="chapter-link" data-key="results" href="#results">09 · Ergebnisarten</a></nav><p>Erst Verständlichkeit prüfen, dann Regeln und Daten verifizieren. Keine Freigabe G1.</p></aside>
 <main><div class="navtop" aria-label="Kapitelnavigation"><button class="pill" id="prev">← Zurück</button><span id="progress">Kapitel</span><button class="pill" id="next">Weiter →</button></div><article id="content" aria-live="polite"></article>
 
@@ -88,16 +88,22 @@ const chapters=[
 <div class="grid"><div class="card"><h3>Schach · Felder A–H / 1–8</h3><p>Nur die innere <strong>8×8-Fläche</strong> ist kariert. Die Figuren stehen auf Feldern. <strong>A1</strong> liegt unten links in dieser Schachzone, <strong>H8</strong> oben rechts. Die Schachbuchstaben stehen an ihrem unteren, die Zahlen an ihrem linken Rand.</p></div>
 <div class="card"><h3>Go · Knoten a–m / 1–13</h3><p>Die Go-Ebene umfasst das <strong>gesamte 13×13-Gitter</strong>. Go-Steine liegen auf Schnittpunkten, nicht auf Schachfeldern. <strong>a1</strong> liegt unten links im Go-Gitter, <strong>m13</strong> oben rechts. Fünf Hauptknoten dienen zur Orientierung. <strong>Die Go-Steine zählen doppelt:</strong> Sie betreffen Go und beeinflussen zugleich die Schach-Ebene.</p></div></div>
 <div class="card"><h3>Zwei Bezeichnungen – zwei verschiedene Orte</h3><p><strong>E4</strong> ist ein Feld innerhalb der 8×8-Schachzone; <strong>e4</strong> bezeichnet einen Schnittpunkt des 13×13-Go-Gitters. Sie haben ähnliche Namen, sind aber <strong>weder dasselbe Spielelement noch automatisch derselbe räumliche Ort</strong>. Die Groß- und Kleinschreibung trennt beide Notationen.</p><p>Teste die drei Ansichten <strong>Schach</strong>, <strong>Go</strong> und <strong>Beides</strong> direkt über dem Brett. Auf dieser Seite bleiben alle Figuren ausgeblendet, damit du dich auf das Koordinatensystem konzentrieren kannst.</p></div>
+<div class="card"><h3>Qwens Rosetta-Brücke: Wo liegt A1 im Go-Gitter?</h3>
+<p>Ein Schachfeld ist eine <strong>Fläche zwischen vier Go-Knoten</strong>. Nach der vorgeschlagenen Ecken-Zuordnung liegt <strong>A1</strong> zwischen <strong>c3, d3, c4 und d4</strong>. Das Schachfeld <strong>E4</strong> hätte entsprechend die Ecken <strong>g6, h6, g7 und h7</strong>.</p>
+<div class="grid"><div class="card"><strong>Schachfeld A1</strong><p>Go-Ecken: c3 · d3 · c4 · d4</p></div><div class="card"><strong>Schachfeld E4</strong><p>Go-Ecken: g6 · h6 · g7 · h7</p></div></div>
+<p class="small"><strong>Vorläufige Geometrie-Hypothese:</strong> Diese Zuordnung stammt aus Qwens Designbeschreibung. Die exakte Darstellung auf dem Arena-Gitter müssen wir noch technisch abgleichen.</p></div>
 <div class="note">Vorläufige Koordinatendarstellung für dieses Handbuch: Die Bezeichnungen A–H / 1–8 (Schach) und a–m / 1–13 (Go) sowie die geometrische Zuordnung zur laufenden Engine müssen vor G1 anhand der Arena-Implementierung geprüft werden.</div>`},
 {key:'setup',short:'04 · Startaufstellung',title:'Hier beginnt die Partie.',tag:'Vollständige Grundstellung',body:`<p class="lede">ANDY beginnt mit allen 32 Schachfiguren. <strong>Bevor Schach gezogen wird, werden im Go-Setup 16 Steine gesetzt: acht schwarze und acht weiße.</strong></p>
 <div class="card"><h3>Wichtig: Die Steine zählen doppelt</h3><p>Die Go-Steine gehören zur Go-Ebene und beeinflussen zugleich das Geschehen auf der Schach-Ebene. <strong>Das bedeutet nicht, dass ihr Go-Punktwert einfach verdoppelt wird.</strong> Welche Schachzüge oder Felder durch einen Stein konkret beeinflusst werden, ist hier noch nicht erklärt und muss anhand der ANDY-Engine mit einem Vorher-Nachher-Beispiel belegt werden.</p></div>
 <div id="diagram"></div>
 <div class="card"><h3>Eine vollständige Vorführung</h3><p>Einmal <strong>„Demo starten“</strong> drücken. Anschließend erscheinen automatisch <strong>16 Go-Steine</strong> – Schwarz und Weiß abwechselnd, jeweils acht. <strong>Erst danach</strong> folgen drei beispielhafte Schachzüge: E2–E4, E7–E5, G1–F3. Am Ende bleibt die Stellung stehen.</p></div>
 <div class="note">Diese Zugfolge ist eine didaktische Illustration, <strong>keine engineverifizierte ANDY-Partie</strong>. Echte Replay-Stellungen mit Positions- und Matchreferenz folgen nach fachlicher Prüfung. Die konkrete Doppelwirkung der Go-Steine ist noch offen.</div>`},
-{key:'turns',short:'05 · Zugablauf',title:'Was geschieht in einem Zug?',tag:'Aktionsrhythmus',body:`<p class="lede">Jede Partiestellung lässt sich in drei Fragen zerlegen: <strong>Was liegt vor?</strong> – <strong>Was wird getan?</strong> – <strong>Was ist danach anders?</strong></p>
-<div class="grid"><div class="card"><h3>1 · Zustand lesen</h3><p>Welche Schachfiguren stehen auf welchen Feldern? Welche Go-Knoten sind besetzt? Wer ist am Zug?</p></div><div class="card"><h3>2 · Aktion beobachten</h3><p>Welche der vorgesehenen Aktionen wählt der Spieler? Was meldet die Engine als gültig oder ungültig?</p></div><div class="card"><h3>3 · Folgezustand prüfen</h3><p>Welche Figuren- oder Steinpositionen ändern sich? Entsteht eine unmittelbare Wirkung auf die jeweils andere Ebene?</p></div></div>
+{key:'turns',short:'05 · Die Doppelwirkung',title:'Ein Go-Stein verändert vielleicht einen Schachzug.',tag:'Vier Bilder · Mechanik zum Verstehen',body:`<p class="lede">Qwen vermutet eine besonders anschauliche Kopplung: Ein Go-Stein auf einem Kreuzungspunkt könnte eine Schachdiagonale unterbrechen. DeepSeek schlägt vor, die mögliche Wirkung in vier Bildern zu erzählen. <strong>Wir probieren die Erklärung aus – noch nicht die bestätigte Regel.</strong></p>
+<div class="card"><div class="eyebrow" id="mechanicCount">Bild 1 von 4</div><h2 id="mechanicTitle">1 · Die Ausgangslage</h2><p id="mechanicText">Ein weißer Läufer steht auf E4. Seine klassische Schachdiagonale in Richtung F5 ist zunächst frei.</p>
+<div class="controls"><button class="pill" id="mechanicBack" type="button">← Vorheriges Bild</button><button class="pill" id="mechanicNext" type="button">Nächstes Bild →</button></div></div>
 <div id="diagram"></div>
-<div class="note"><strong>Didaktisches Leseschema, keine behauptete Zugfolge.</strong> Der genaue ANDY-Aktionsrhythmus und die Wechselwirkungen benötigen weiterhin eine technische Referenz.</div>`},
+<div class="card"><h3>Warum ist das spannend?</h3><p>Ein Go-Stein liegt auf einem <strong>Gitterkreuz</strong>, der Läufer auf einem <strong>Schachfeld</strong>. Wenn Go-Knoten die möglichen Schachzüge verändern, entstehen zwei Wirkungen aus einer einzigen Setzung.</p><p>Du kannst oben vier Zustände miteinander vergleichen. **Der gestrichene Zug in Bild 3 ist vorerst eine Darstellung von Qwens Hypothese H1 und keine bestätigte illegale Aktion.**</p></div>
+<div class="note"><strong>Mechanik-Hypothese, kein Regelbeleg:</strong> Qwen und DeepSeek haben die Engine-Wirkung nicht geprüft. Auch die exakte Go-Koordinate des gezeigten Kreuzungspunktes muss mit der Arena abgeglichen werden. Bis dahin zeigen wir das Prinzip ausdrücklich im Konjunktiv.</div>`},
 {key:'opening',short:'06 · Anfang',title:'Anfang: Das erste Spannungsfeld.',tag:'Spielphase 1',body:`<p class="lede">Ein erster konkreter Schritt: Wir sehen die Anfangsstellung und verfolgen die Bewegung eines weißen Bauern <strong>vom Schachfeld E2 nach E4</strong>.</p>
 <div id="diagram"></div>
 <div class="card"><h3>Schritt für Schritt</h3><p><strong>Vorher:</strong> Der weiße Bauer steht auf E2.<br><strong>Aktion:</strong> Drücke über dem Brett auf <strong>„E2 → E4 zeigen“</strong>.<br><strong>Nachher:</strong> Der Bauer erscheint auf E4; E2 ist frei. Die beiden Felder werden markiert.</p><p>Mit demselben Button lässt sich die Ausgangsstellung wiederherstellen.</p></div>
@@ -116,7 +122,7 @@ const chapters=[
 <div class="card"><h3>Welche Informationen gehören ins Ergebnis?</h3><p><strong>1.</strong> Gewinner oder neutraler Ausgang. <strong>2.</strong> Auslöser aus der Engine bzw. dem Controller. <strong>3.</strong> Öffentliche Anzeige. <strong>4.</strong> Konsequenz für Statistik und Leaderboard.</p></div>
 <div class="note">Die Bezeichnungen sind noch nicht gegen die tatsächlich implementierten Statuscodes verifiziert. Insbesondere illegale Aktionen, Parserfehler, Aufgabe, Patt und Remis bleiben offen.</div>`}
 ];
-let current='intro',coordMode='both',showPieces=true,exampleStep=0;
+let current='intro',coordMode='both',showPieces=true,exampleStep=0,mechanicStep=0;
 const nav=document.getElementById('nav'),content=document.getElementById('content');
 nav.querySelectorAll('[data-key]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(a.dataset.key)}));
 let demoStep=0,demoTimer=null,demoRunning=false;
@@ -154,7 +160,7 @@ function draw(){
  board.replaceChildren();
  const setup=current==='setup',mode=setup?'both':coordMode;
  const isChess=mode==='chess'||mode==='both',isGo=mode==='go'||mode==='both';
- const visiblePieces=current==='geometry'?false:setup?true:showPieces;
+ const visiblePieces=current==='turns'?true:current==='geometry'?false:setup?true:showPieces;
  const goTop=document.getElementById('goTop'),goRight=document.getElementById('goRight');
  goTop.replaceChildren();goRight.replaceChildren();
  const letters='abcdefghijklm',files='ABCDEFGH';
@@ -165,6 +171,7 @@ function draw(){
    d.className='sq '+(inside?'chess '+((r+c)%2?'dark':'light'):'outer');
    if(current==='opening'&&exampleStep===1&&c===6&&(r===8||r===6))d.className+=' highlight';
    if(isChess&&((r===10&&c>=2&&c<10)||(c===1&&r>=2&&r<10))){const label=document.createElement('span');label.className='chess-label';label.textContent=r===10?files[c-2]:String(10-r);d.append(label)}
+   if(current==='turns'&&c===6&&r===6)d.className+=' highlight';
    if(visiblePieces&&c>=2&&c<10){
      let glyph='',side='';
      if(r===2){glyph=blacks[c-2];side='black'}if(r===3){glyph='♟';side='black'}
@@ -172,6 +179,7 @@ function draw(){
      if(r===6&&c===6&&current==='opening'&&exampleStep===1){glyph='♟';side='white'}
      if(r===9){glyph=whites[c-2];side='white'}
      if(setup){for(const mv of chessDemo.slice(0,Math.max(0,demoStep-goDemo.length))){if(mv.from[0]===c&&mv.from[1]===r)glyph='';if(mv.to[0]===c&&mv.to[1]===r){glyph=mv.glyph;side=mv.side}}}
+     if(current==='turns'){glyph=(c===6&&r===6)?'♝':'';side='white'}
      if(glyph){const p=document.createElement('span');p.className='piece '+side;p.textContent=glyph;d.append(p)}
    }
    board.append(d);
@@ -187,6 +195,13 @@ function draw(){
    stone.style.left=((item.c+1)/13*100)+'%';stone.style.top=((item.r+1)/13*100)+'%';
    stone.title='Go-Knoten '+item.name;layer.append(stone)
  }}
+ if(current==='turns'){
+ const scene=document.createElement('div');scene.className='mechanic-overlay';
+ const path=document.createElement('div');path.className='mechanic-arrow';path.style.left=(6.5/13*100)+'%';path.style.top=(6.5/13*100)+'%';path.style.width='10.87%';scene.append(path);
+ if(mechanicStep>=1){const stone=document.createElement('span');stone.className='mechanic-stone';stone.title='Beispiel-Go-Stein auf Kreuzung';scene.append(stone)}
+ if(mechanicStep>=2){path.style.borderTopStyle='dashed';const stop=document.createElement('span');stop.className='mechanic-cross';stop.textContent='×';scene.append(stop)}
+ document.getElementById('board').parentElement.append(scene);
+ }
  const moves=document.getElementById('moveControls');moves.replaceChildren();
  const add=(label,handler,disabled=false)=>{const b=document.createElement('button');b.className='pill';b.textContent=label;b.disabled=disabled;b.addEventListener('click',handler);moves.append(b)};
  if(current==='opening')add(exampleStep===0?'E2 → E4 zeigen':'Ausgangsstellung wiederherstellen',()=>{exampleStep=1-exampleStep;draw()});
@@ -205,8 +220,19 @@ function draw(){
  document.getElementById('legend').textContent=setup?'Automatische Demo: zuerst acht schwarze und acht weiße Go-Steine auf Gitterkreuzungen; danach drei Schachzüge.':mode==='chess'?'SCHACH: A–H und 1–8 bezeichnen Felder.':mode==='go'?'GO: a–m und 1–13 bezeichnen Knoten.':'BEIDES: Karierte Schachzone, Go-Gitter und getrennte Koordinaten.';
 }
 function open(key){
- const c=chapters.find(x=>x.key===(key==='coords'?'geometry':key))||chapters[0];if(current==='setup'&&c.key!=='setup')stopDemo();if(current!==c.key)exampleStep=0;current=c.key;
+ const c=chapters.find(x=>x.key===(key==='coords'?'geometry':key))||chapters[0];if(current==='setup'&&c.key!=='setup')stopDemo();if(current!==c.key){exampleStep=0;mechanicStep=0;}current=c.key;
  content.innerHTML='<div class="eyebrow">'+c.tag+' · Arbeitsstand / nicht G1-freigegeben</div><h1>'+c.title+'</h1>'+c.body;
+ if(current==='turns'){
+  const steps=[
+   ['1 · Die Ausgangslage','Ein weißer Läufer steht auf E4. Ohne Go-Stein betrachten wir die klassische Diagonale Richtung F5.'],
+   ['2 · Der Go-Stein','Ein schwarzer Go-Stein wird an eine Kreuzung gesetzt, über die die gezeigte Diagonale verläuft. Die Schachfigur bewegt sich dabei nicht.'],
+   ['3 · Die mögliche Wirkung','Qwens Hypothese: Wenn die Engine diese Kreuzung als Hindernis wertet, wäre die Schachdiagonale unterbrochen. Das Kreuz markiert die noch ungeprüfte Blockade.'],
+   ['4 · Das ANDY-Prinzip','Der gleiche Stein gehört zur Go-Ebene. Möglicherweise beeinflusst er zusätzlich die erlaubten Schachzüge. Ob und wie, entscheidet erst der Engine-Test.']
+  ];
+  const renderStep=()=>{document.getElementById('mechanicCount').textContent='Bild '+(mechanicStep+1)+' von 4';document.getElementById('mechanicTitle').textContent=steps[mechanicStep][0];document.getElementById('mechanicText').textContent=steps[mechanicStep][1];document.getElementById('mechanicBack').disabled=mechanicStep===0;document.getElementById('mechanicNext').disabled=mechanicStep===3;draw()};
+  document.getElementById('mechanicBack').addEventListener('click',()=>{mechanicStep=Math.max(0,mechanicStep-1);renderStep()});
+  document.getElementById('mechanicNext').addEventListener('click',()=>{mechanicStep=Math.min(3,mechanicStep+1);renderStep()});
+ }
  const box=document.getElementById('diagram');
  if(box){
   box.innerHTML=boardHTML();draw();
