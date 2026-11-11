@@ -69,6 +69,7 @@ const data=[
 const letters='abcdefghijklm',piecesB=['♜','♞','♝','♛','♚','♝','♞','♜'];
 const goMoves=[[1,1],[10,1],[1,10],[10,10],[3,1],[8,1],[3,10],[8,10],[1,3],[10,3],[1,8],[10,8],[0,5],[11,5],[5,0],[5,11]];
 let idx=0,choice=-1,shown=false,notes=Array(5).fill('Nicht beurteilt'),mode='all',timer=null,phase=0;
+const chessMoves=[{fc:6,fr:8,tc:6,tr:6,p:'♟',side:'white'},{fc:6,fr:3,tc:6,tr:5,p:'♟',side:'black'},{fc:8,fr:9,tc:7,tr:7,p:'♞',side:'white'}];
 const $=id=>document.getElementById(id);
 function stop(){if(timer!==null){clearInterval(timer);timer=null}}
 function board(){
@@ -86,6 +87,7 @@ function board(){
   if(showPieces&&inside){let p='',side='';
    if(r===2){p=piecesB[c-2];side='black'}if(r===3){p='♟';side='black'}
    if(r===8){p='♟';side='white'}if(r===9){p=piecesB[c-2];side='white'}
+   if(idx===3&&phase>16){for(const move of chessMoves.slice(0,phase-16)){if(move.fc===c&&move.fr===r)p='';if(move.tc===c&&move.tr===r){p=move.p;side=move.side}}}
    if(p){const t=document.createElement('span');t.className='piece '+side;t.textContent=p;cell.append(t)}
   }
   b.append(cell);
@@ -94,12 +96,12 @@ function board(){
  const points=[[3,3],[9,3],[6,6],[3,9],[9,9]];
  if(['all','compare','coordinates','setup','both'].includes(mode))for(const [c,r] of points){const dot=document.createElement('span');dot.className='dot';dot.style.left=(100*(c+1)/13)+'%';dot.style.top=(100*(r+1)/13)+'%';overlay.append(dot)}
  if(idx===1){const node=document.createElement('span');node.className='stone black';node.style.width='3%';node.style.height='3%';node.style.left=(100*4/13)+'%';node.style.top=(100*6/13)+'%';overlay.append(node)}
- if(['setup','both'].includes(mode))for(let n=0;n<phase;n++){const [c,r]=goMoves[n],stone=document.createElement('span');stone.className='stone '+(n%2?'white':'black');stone.style.left=(100*(c+1)/13)+'%';stone.style.top=(100*(r+1)/13)+'%';overlay.append(stone)}
+ if(['setup','both'].includes(mode))for(let n=0;n<Math.min(phase,16);n++){const [c,r]=goMoves[n],stone=document.createElement('span');stone.className='stone '+(n%2?'white':'black');stone.style.left=(100*(c+1)/13)+'%';stone.style.top=(100*(r+1)/13)+'%';overlay.append(stone)}
 }
-function setupAnimation(){stop();phase=0;board();timer=setInterval(()=>{phase=Math.min(16,phase+1);board();$('boardCaption').textContent='Go-Setzungen: '+phase+' / 16 · '+(phase===16?'Setup abgeschlossen, erst jetzt beginnt Schach.':'Schwarz und Weiß abwechselnd');if(phase===16)stop()},450)}
+function setupAnimation(){stop();phase=0;board();timer=setInterval(()=>{phase=Math.min(19,phase+1);board();$('boardCaption').textContent=phase<16?'Go-Setzungen: '+phase+' / 16 · Schwarz und Weiß abwechselnd':phase===16?'Go-Setup abgeschlossen: 8 schwarze und 8 weiße Steine. Jetzt folgen Schachzüge.':'Schach-Demozüge: '+(phase-16)+' / 3 · alle Go-Steine bleiben liegen';if(phase===19)stop()},450)}
 function load(){stop();choice=-1;shown=false;phase=0;const d=data[idx];mode=d.mode;$('heading').textContent=d.title;$('lead').textContent=d.lead;$('question').textContent=d.q;$('counter').textContent='Schritt '+(idx+1)+' von '+data.length;$('explanation').hidden=true;$('explanation').textContent=d.explain;$('next').textContent='Erklärung anzeigen';$('next').disabled=true;$('finish').hidden=true;$('boardCaption').textContent=idx===3?'Startet erst auf deinen Klick; du setzt keine Steine selbst.':'Monochrome Lernansicht · keine verifizierte Hybrid-Engine-Simulation';$('feedback').textContent=notes[idx]==='Nicht beurteilt'?'':notes[idx];$('choices').replaceChildren();
  d.options.forEach((label,j)=>{const btn=document.createElement('button');btn.className='option';btn.textContent=label;btn.addEventListener('click',()=>{choice=j;$('choices').querySelectorAll('button').forEach((b,k)=>b.classList.toggle('chosen',k===j));$('next').disabled=false});$('choices').append(btn)});
- $('boardControls').replaceChildren();if(idx===3){const b=document.createElement('button');b.textContent='▶ 16 Go-Setzungen zeigen';b.onclick=setupAnimation;$('boardControls').append(b)}
+ $('boardControls').replaceChildren();if(idx===3){const b=document.createElement('button');b.textContent='▶ Demo: 16 Go-Steine, dann 3 Schachzüge';b.onclick=setupAnimation;$('boardControls').append(b)}
  if(idx===1){const b=document.createElement('button');b.textContent='Figuren wieder zeigen';b.onclick=()=>{mode=mode==='all'?'compare':'all';board()};$('boardControls').append(b)}
  board()}
 function explain(){shown=true;$('explanation').hidden=false;$('next').textContent=idx===data.length-1?'Test beenden':'Nächster Schritt →'}
