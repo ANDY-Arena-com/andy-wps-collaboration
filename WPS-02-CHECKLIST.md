@@ -7,6 +7,15 @@
 
 > **So arbeiten wir:** Oliver und GPT machen zunächst einen schnellen gemeinsamen Durchmarsch. Wir führen Änderungswünsche hier dauerhaft zusammen, setzen sie direkt im HTML um und prüfen die Darstellung im Browser. Qwen und DeepSeek kommen bei konkreten Fachfragen hinzu. **Ein Häkchen bedeutet „umgesetzt“, nicht automatisch „im Browser geprüft“ oder „als offizielle ANDY-Regel bestätigt“.**
 
+## Verständnistest für unvorbereitete Leser
+
+- [x] **U01 · Eigene Demo veröffentlicht:** [HTML-Verständnistest V0.1](https://andy-arena-com.github.io/andy-wps-collaboration/verstehenstest.html) · eigenständige Teststrecke mit fünf Fragen, einer Erklärung erst nach der eigenen Antwort und Selbstbeurteilung „verstanden / noch unklar“.
+- [x] **U02 · Bestehendes Handbuch unverändert erhalten:** Link zum neuen Test ist im HTML-Header ergänzt, Hauptnavigation und bisherige Kapitel bleiben bestehen.
+- [ ] **U03 · Oliver als erster Testleser:** Alle fünf Schritte ohne Hilfe durchgehen und zum Schluss den Ergebnistext aus dem Test hier zurückgeben.
+- [ ] **U04 · Erkenntnisse aus dem Test:** Für jeden Schritt festhalten, was bereits ohne Erklärung klar ist, was die Erklärung verbessert und was auch danach unklar bleibt.
+- [ ] **U05 · Erst auf Grundlage von U03/U04 über Reihenfolge, zusätzliche Grafiken und Fachdetails entscheiden.**
+- [ ] **U06 · Browserfunktion prüfen:** Interaktive 16-Go-/3-Schach-Demo und Bericht-Kopierfunktion ausführen; Quelltext-Syntax allein ist kein Browsertest.
+
 ## Laufender gemeinsamer Test
 
 - [x] **T01 · Review-Auftrag an Qwen und DeepSeek vorbereitet:** [T01 – HTML V1.5, Kapitel 03/04](reviews/T01-QWEN-DEEPSEEK.md)
