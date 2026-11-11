@@ -34,6 +34,16 @@ Zwei Screenshots der **laufenden ANDY-Arena** zeigen die Standardansicht mit Wei
 - [ ] **R03 · Kapitel 03: Drehbutton als didaktische Ergänzung:** Erst nach korrekter Standardansicht einbauen; bei Drehung Schach- und Go-Koordinaten samt Figuren/Leitpunkten gemeinsam transformieren.
 - [ ] **R04 · Screenshot-Abgleich:** Aktuelle HTML-Standardansicht mit beiden Arena-Screenshots vergleichen, insbesondere fünf Leitpunkte, Schachzone, Abstand der Beschriftungen und Ausrichtung. Bildreferenzen liegen in Olivers Chat, nicht im Repository.
 
+### Zweite Rückmelderunde · Kandidat für die erste echte Kopplungsregel
+
+- [x] **K01 · Hypothesen H1/H2/H3 und didaktisches Vier-Bilder-Konzept dokumentiert:** [TEST-KOPPEL-01](tests/TEST-KOPPEL-01.md).
+- [x] **K02 · Geometrische Unstimmigkeit markiert:** Aus Qwens A1-Eckenregel folgen für E4 die Go-Ecken g6/h6/g7/h7; g7 grenzt damit an D4/E4/D5/E5. Qwens abweichende Zuordnung nicht ungeprüft übernehmen.
+- [ ] **K03 · Ecken-/Offset-Zuordnung gegen Arena/Engine prüfen:** Qwens „Rosetta-Tabelle“ erst nach Bestätigung in Kapitel 03 übernehmen.
+- [ ] **K04 · TEST-KOPPEL-01A/B:** Die Diagonalblockade (H1) mit reproduzierbaren Engine-Zuglisten und Kontrollstellung bestätigen oder widerlegen.
+- [ ] **K05 · TEST-KOPPEL-01C:** Prüfen, ob Schachfiguren Go-Freiheiten beeinflussen (H2); nicht voraussetzen.
+- [ ] **K06 · Verifiziertes Lehrbeispiel:** Nach erfolgreichen Tests DeepSeeks vier Schritte (Vorher, Go-Aktion, Wirkung, ANDY-Synthese) mit echten Zustandsdaten in das HTML-Handbuch integrieren.
+- [ ] **K07 · Weitergabe an Qwen/DeepSeek:** Gezielt das korrigierte Testprotokoll mit Hinweis auf den Koordinatenfehler schicken; noch keine Engine-Abnahme behaupten.
+
 ## A · Jetzt prüfen und korrigieren (höchste Priorität)
 
 - [ ] **A01 · Hauptnavigation im Browser prüfen:** Linke Kapitel-Navigation muss auf Desktop sichtbar bleiben; auf Mobilgeräten gut bedienbar. In V1.1 im Code vorhanden, aber nach Olivers Meldung über eine verschwundene Navigation noch nicht visuell bestätigt.
