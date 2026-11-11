@@ -7,6 +7,13 @@
 
 > **So arbeiten wir:** Oliver und GPT machen zunächst einen schnellen gemeinsamen Durchmarsch. Wir führen Änderungswünsche hier dauerhaft zusammen, setzen sie direkt im HTML um und prüfen die Darstellung im Browser. Qwen und DeepSeek kommen bei konkreten Fachfragen hinzu. **Ein Häkchen bedeutet „umgesetzt“, nicht automatisch „im Browser geprüft“ oder „als offizielle ANDY-Regel bestätigt“.**
 
+## Laufender gemeinsamer Test
+
+- [x] **T01 · Review-Auftrag an Qwen und DeepSeek vorbereitet:** [T01 – HTML V1.5, Kapitel 03/04](reviews/T01-QWEN-DEEPSEEK.md)
+- [ ] **T01-Q · Qwen-Feedback erhalten:** Setup 8+8, Leitpunkte, Doppelwirkung, drei Demo-Schachzüge
+- [ ] **T01-D · DeepSeek-Feedback erhalten:** Verständlichkeit, didaktische Führung und fehlende Visualisierung
+- [ ] **T01-I · Rückmeldungen mit Oliver priorisieren und in HTML + Checkliste übernehmen**
+
 ## A · Jetzt prüfen und korrigieren (höchste Priorität)
 
 - [ ] **A01 · Hauptnavigation im Browser prüfen:** Linke Kapitel-Navigation muss auf Desktop sichtbar bleiben; auf Mobilgeräten gut bedienbar. In V1.1 im Code vorhanden, aber nach Olivers Meldung über eine verschwundene Navigation noch nicht visuell bestätigt.
