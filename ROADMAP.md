@@ -41,8 +41,8 @@
 
 ## RM-08 · Sprachaufbau
 
-- [x] Deutsch bleibt führende Arbeitsversion (derzeit zehn Kapitel)
-- [x] Erste inhaltliche englische Vorschauseite veröffentlicht: `docs/andy-documentation-en.html`
+- [x] Deutsch bleibt führende Arbeitsversion (derzeit elf Kapitel)
+- [x] Englische Dokumentation im gemeinsamen DE/EN-Layout angelegt: elf Kapitel mit identischer Navigation, Designer- und Anbieterlogo-Galerien und kapitelgebundenem Sprachwechsel; fachliche Vollübersetzung weiter offen
 - [ ] Englische Vollübersetzung und Fachreview der Regel-, Score-, AQP- und Lab-Kapitel
 - [ ] Erst danach chinesische Dokumentation (`zh-Hans`), im Anschluss Japanisch/Koreanisch
 - [ ] Reziproke `hreflang`-Verknüpfung erst bei inhaltlich äquivalenten Sprachseiten einsetzen
