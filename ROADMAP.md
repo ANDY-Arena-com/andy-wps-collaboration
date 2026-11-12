@@ -14,7 +14,38 @@
 | RM-05 | Lab-Nachweiskette | Match-ID → Ereignisse → Metrik → AQP/Score-Version → Leaderboard | Geplant |
 | RM-06 | AQP-Kalibrierung | Einheitliche, öffentlich begründete Weiter-/Pause-/Retest-Kriterien | Geplant |
 | RM-07 | Strategy-Messung | Strategische Wendepunkte, Antizipation, Adaptivität und Kopplung anhand von Fällen analysieren | Forschung |
-| RM-08 | Internationalisierung | Doku DE, EN, ZH; Erweiterung JA und KO nach Review | Geplant |
+| RM-08 | Internationalisierung | DE als Master; EN-Übersetzung gestartet, ZH erst nach EN-Review; danach JA/KO | In Arbeit |
+| RM-09 | Öffentliche Datenintegrität | Match-ID = JSONL-Stammname, SHA-256, getrennte Replay-Ableitungen, Prüfstatus und perspektivisch signiertes Manifest | In Arbeit |
+| RM-10 | Anbieter- und Akteuridentität | Logo-/Markenrichtlinien prüfen, neutralen Fallback und Unabhängigkeitshinweis vor öffentlicher Freigabe sicherstellen | Offen |
+
+## RM-09 · JSONL-Integrität und nachvollziehbare Matchdaten
+
+**Bereits nachgerechnet am V0.7.2-Testpaket:** Original `andy_0c0f7413fdf6.jsonl` (494454 Bytes), SHA-256 `7f955acabc196c592c8b6a623fd9b644d9110e35f482c14fd6704a32682f093e`. Das Theater-JSON enthält denselben Original-Fingerprint, ist aber ein eigenständiges, abgeleitetes Artefakt.
+
+- [x] Neue Dokumentationsseite zu Originaldaten, Hashes und Verifikationsgrenzen als Kapitel 08 veröffentlicht
+- [ ] Originaldatei, Replay-Ableitungen und Verifikationsmanifest mit eigenen Hashes öffentlich dauerhaft zugänglich machen
+- [ ] Vorab festgelegte Manifest-Signierung / vertrauenswürdige Key-Veröffentlichung implementieren
+- [ ] Vollständige Engine-Validierung inklusive FEN, Go-Rekonstruktion, Captures und Abschluss dokumentieren
+- [ ] Versioniertes Replay-Build-Verfahren statt lokalem absolutem Dateipfad bereitstellen
+- [ ] JSONL-Originalsprache der Modelläußerungen in jeder Website-Sprache bewahren; abgeleitete Übersetzungen kennzeichnen
+- [ ] Originaldaten vor öffentlicher Freigabe auf Geheimnisse und personenbezogene Inhalte prüfen
+
+**Abgrenzung:** Datei-Hash ≠ Herkunftssignatur ≠ Regelkorrektheit ≠ Darstellungstreue. Vorhandene Daten und fehlende Prüfungen klar unterschiedlich kennzeichnen.
+
+## RM-10 · Anbieterlogos und Modellidentität
+
+- [x] Dokumentationshinweis zu Anbieteridentität, Akteuridentität, Unabhängigkeit, Fallbacks und Markenrichtlinien ergänzt
+- [ ] OpenAI-/Google-Logoassets, Nutzungssituation, Quelle und Richtlinien vor dem öffentlichen Einsatz prüfen; gegebenenfalls schriftliche Freigabe erfragen
+- [ ] Logos ohne Verzerrung, Umfärbung, Sponsor- oder Siegelwirkung darstellen; textbasierten oder neutralen Badge-Fallback bereitstellen
+- [ ] Theater-Fight-Card, Corners, Ceremony und Lab/Leaderboard auf konsistente Identität prüfen
+
+## RM-08 · Sprachaufbau
+
+- [x] Deutsch bleibt führende Arbeitsversion (derzeit zehn Kapitel)
+- [x] Erste inhaltliche englische Vorschauseite veröffentlicht: `docs/andy-documentation-en.html`
+- [ ] Englische Vollübersetzung und Fachreview der Regel-, Score-, AQP- und Lab-Kapitel
+- [ ] Erst danach chinesische Dokumentation (`zh-Hans`), im Anschluss Japanisch/Koreanisch
+- [ ] Reziproke `hreflang`-Verknüpfung erst bei inhaltlich äquivalenten Sprachseiten einsetzen
 
 ## RM-03 · Historische Matches qualifizieren (Priorität 1)
 
