@@ -84,6 +84,7 @@ Use GitHub Issues to discuss questions, report inconsistencies, or propose impro
 
 ## Project resources
 
+- [Roadmap – historical data audit, controlled AI matches & qualification](ROADMAP.md)
 - [ANDY Documentation – Beta](https://andy-arena-com.github.io/andy-wps-collaboration/andy-dokumentation-regeln-lab.html)
 - [Documentation and source files](docs/)
 - [Project collaboration checklist](WPS-02-CHECKLIST.md)
