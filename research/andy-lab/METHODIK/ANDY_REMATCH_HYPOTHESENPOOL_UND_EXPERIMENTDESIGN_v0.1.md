@@ -197,3 +197,56 @@ Die ursprünglichen **15 Hypothesen H1–H15** bleiben unverändert. Ergänzend 
 **Erforderliche Zusatzfelder für Matchauswertung:** Claim-Typ/self/opponent, exakte Äußerung und Event-ID, Sichtbarkeit/Informationsstand, Bedrohungs-/Alternativenprüfung mit echter ANDY-Engine, Forecast-Kondition und Horizont, unmittelbare und spätere Reaktion, Validierungsstatus. Vollständiges Codebuch, Messgrößen und Gegenhypothesen im verlinkten SSA-Methodenblatt.
 
 **Status:** Entwurf; bisher keine SSA-Claims aus den Rückkämpfen validiert. Zunächst bei 100k-Farbtauschserie explorativ messen; später präregistriert und mit unabhängigen Wiederholungen testen.
+
+
+## 12. Ergänzung 13.11.2026 – Infrastrukturabhängigkeit und Go-Spiegelantworten (INF)
+
+**Auslöser:** Die Projektleitung berichtet als **subjektive, bisher nicht systematisch vermessene Beobachtung**, dass diagonale Go-„Spiegelzüge“ besonders häufig erscheinen könnten, wenn beide Kontrahenten über **denselben API-Schlüssel** desselben Anbieters aufgerufen werden. Daraus folgt ausdrücklich **weder** ein nachgewiesener Zusammenhang **noch** ein Nachweis gemeinsamer Modellzustände oder Kommunikation zwischen Modellaufrufen.
+
+**Querverweis:** [ANDY Series Explorer & Opening/Pattern Atlas](../ANDY_SERIES_EXPLORER_OPENING_PATTERN_ATLAS_BLUEPRINT_v1.0.md) – künftiger Offline-Batch-Detektor für symmetrische Opening-Muster.
+
+### Ergänzende, konkurrierende Hypothesen
+
+| ID | Hypothese / Alternative | Status |
+|---|---|---|
+| **INF-H1 – Shared API Key Mirror Effect** | Bei gleicher Modellpaarung und konstanten Spielbedingungen treten in Go-Eröffnungen mehr **zeitlich nachvollziehbare diagonale Antwortspiegelungen** auf, wenn beide Modelle denselben API-Key verwenden, als wenn sie getrennte Keys verwenden. | Explorativ, ungeprüft |
+| **INF-H2 – Shared Project vs. Shared Key** | Beobachtete Unterschiede korrelieren eher mit gemeinsamem Providerprojekt, dessen Routing-/Quota-/Konfigurationseffekten als mit der Identität des API-Schlüssels selbst. | Konkurrierende Mechanismushypothese, ungeprüft |
+| **INF-H3 – Model-Family / Heuristic Confounding** | Spiegelmuster werden primär durch verwandte Modellfamilien, ähnliche Instruktionen oder unabhängige räumliche Heuristiken erklärt und bleiben auch bei getrennten Keys/Projekten bestehen. | Alternativerklärung, ungeprüft |
+| **INF-H4 – Rules/Position Baseline** | Häufige diagonale Go-Antworten entstehen überwiegend aufgrund der ANDY-Regeln, des Startzustands, der verfügbaren legalen Setzpositionen und der Zugreihenfolge – unabhängig vom Zugangskontext. | Null-/Alternativerklärung, ungeprüft |
+
+**Wichtige technische Trennung:** Ein API-Key authentifiziert Zugriffe; gemeinsame Nutzung desselben Keys ist **kein Beleg** dafür, dass zwei Aufrufe Speicher, Prompt-Historie oder Spielentscheidungen teilen. Quoten/Projektlimits können gegebenenfalls gemeinsam gelten. Unterschiedliche Anbieterpaare sind **kein isolierter Test** des Key-Effekts, weil gleichzeitig Modell und Provider wechseln.
+
+### Mess- und Codebuchvorschlag
+
+- **Betrachtungseinheit:** tatsächliche, ausgeführte Go-Antwortgelegenheiten in einer vorab fixierten Eröffnungsphase (z. B. erste 5/10/16/20 Go-Setzungen); nicht alle API-Calls und nicht alle Steine eines Endboards.
+- **Spiegelabbildungen auf 13×13 (0-basiert):** Hauptdiagonale `(x,y) -> (y,x)`; Gegendiagonale `(x,y) -> (12-y,12-x)`. Zusätzlich exakte Gegenfarbe- und Eigenfarbe-Varianten getrennt erfassen. Symmetrie-Transformationen nur vergleichen, soweit die vollständigen ANDY-Regeln sie zulassen.
+- **Mirror Response Rate (MRR):** Anzahl nach definiertem Reaktionsfenster tatsächlich gespielter spiegelkorrespondierender Go-Antwortzüge / Anzahl aller **regelkonform möglichen und vollständig beobachteten** Go-Antwortgelegenheiten. Reaktionsfenster (z. B. nächster eigener Go-Zug oder innerhalb 1–3 eigener Go-Züge) **vor** Serienprüfung festlegen; gleiche Antworten nicht mehrfach zählen.
+- **Von bloßer Brettsymmetrie trennen:** `static_occupancy_symmetry` ≠ `temporal_mirror_response`. Gespiegelte Stelle muss zum betreffenden Zeitpunkt zulässig gewesen sein, sonst nicht als „verpasste Antwort“ werten.
+- **Ausgabe:** MRR und zugehöriger Nenner, Anzahl Match-/Seriencluster, Unsicherheitsbereich, Haupt-/Gegendiagonalvariante, Effektgröße zwischen Versuchsarmen, Go-Setup-Fenster, Roh-Event-IDs und Konfigurationsklasse.
+- **Nullvergleich:** Regelkonforme, zustandsbedingte Zufalls-/Permutationstests oder geeignete Kontrollserien; keine Rückkehr des Zufallsspielers in die Arena notwendig. Nach Symmetrie und mehrfachen Hypothesenprüfungen Korrekturen/Sensitivitätsprüfung vorsehen.
+
+### Experimentdesign zur Unterscheidung der Erklärungen
+
+| Arm | Modelle und Matchbedingungen | Providerzugang |
+|---|---|---|
+| **A** | Flash × Argon, Ruleset/Prompts/Reasoning/Output/Retry/Budget identisch | Beide Aufrufe **derselbe API-Key** |
+| **B** | Dieselbe Paarung und Settings | **Zwei Keys, ein Anbieterprojekt** |
+| **C** | Dieselbe Paarung und Settings | **Zwei Keys, getrennte Anbieterprojekte** |
+| **D (optional, anderes Erkenntnisziel)** | Vergleichbare Spiele mit anderen Modellfamilien/Anbietern | Untersucht Modell-/Provider-Effekte, **nicht** isoliert den Key-Effekt |
+
+- Pro Arm mehrere **unabhängige** Matchserien mit Farbtausch; Zuordnung von Arm und Spielreihenfolge möglichst randomisieren/blocken, um Tageszeit, Quoten-/Serverlast und Modellupdates zu entkoppeln.
+- Effektive Modellversion, Adapter, API-Endpunkt, Account-/Projekt-Konfigurationskennung, Budget, Retry, Outputlimit, Prompt, Regeln, Sampling-Einstellungen und relevante Zeitstempel protokollieren; **niemals echte API-Keys in JSONL, GitHub, Logs oder Exporte schreiben**. Nur nicht-geheime, pseudonymisierte `key_group_id` und `project_group_id` verwenden.
+- Prüfen, ob projektübergreifende Versuchsarme technisch/organisatorisch zulässig und tatsächlich unabhängig sind; Kosten und Projektregeln berücksichtigen.
+- Bereits beobachtete Serien dienen zur **Hypothesengenerierung**; zukünftige Kontrollserien nach fixierter Operationalisierung zur Prüfung. Keine nachträgliche p-Wert-„Bestätigung“ am Entdeckungsdatensatz.
+- Entscheidungen innerhalb eines Matches und Rückkämpfe einer Serie sind korreliert; Clusterstruktur bei Unsicherheit und Aggregation berücksichtigen.
+- **Interpretationsgrenze:** Ein stabiler Unterschied zwischen Armen kann mit Infrastrukturbedingungen zusammenhängen, beweist ohne Mechanismenprüfung aber weder geteilte Gedanken noch koordinierte Entscheidungen.
+
+### Umsetzung im Offline Series Explorer
+
+**P1/Pattern-Detektor:** `static_diagonal_symmetry`, `temporal_mirror_response`, exakte vs zonenbasierte Spiegelung; separat nach Haupt-/Gegendiagonale, Akteur-/Farbperspektive, Go-Setup-Fenster.
+
+**P2/Serienvergleich:** Nach `key_group_id` und `project_group_id` gruppierte, anonymisierte Intra- und Cross-Series-MRR-Verteilungen sowie Konfigurationsvergleich; Nullmodell und Unsicherheit sichtbar.
+
+**P3/Semantik:** Erst später prüfen, ob Modelläußerungen explizit einen Spiegelplan ankündigen. Fehlende Äußerung ≠ fehlendes geometrisches Muster.
+
+**Übergreifender Forschungsstatus:** vier neue benannte INF-Hypothesen; zusammen mit H1–H15 und SSA-H1–H6 nun **25 Hypothesenbezeichnungen**, mit thematischen Überschneidungen und **ohne** Anspruch auf 25 unabhängige Tests.
