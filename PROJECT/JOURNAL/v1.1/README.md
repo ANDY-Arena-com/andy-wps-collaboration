@@ -11,6 +11,7 @@
 
 - [Gesamtkonzept](docs/ANDY-JOURNAL-GESAMTKONZEPT-v1.1.md) — Leitbild, Zielgruppen, Informationsarchitektur, Design, Content, Multimedia, Wissenschaftlichkeit, technische Leitplanken, Roadmap.
 - [Offene Entscheidungen](docs/ENTSCHEIDUNGEN-UND-OFFENE-PUNKTE.md) — Vorschläge, die vor Implementierung gemeinsam freigegeben oder geprüft werden müssen.
+- [Redaktioneller Themenspeicher aus ANDY-Dialogen](docs/REDAKTIONELLER_THEMENSPEICHER_AUS_ANDY_DIALOGEN_v0.1.md) — 27 priorisierte Story-Kandidaten, Serien, Belegbedarf und Ideen für die Making-of-Dokumentation (Backlog, keine Freigabe).
 - [Redaktionelle Match-Checkliste](docs/MATCH-ARTIKEL-CHECKLISTE.md) — Qualitätsprüfung für dokumentierte Partien.
 
 ## Geltungsbereich
