@@ -18,10 +18,10 @@
 ### SERIE I – BEHIND ANDY: Mensch, KI und die Entstehung eines Ökosystems
 
 **B01 · P1 · B/D – One Human. Multiple AIs. One Arena.**
-- **Kern:** Wie aus einer menschlich geführten Vision mit ChatGPT, DeepSeek, Qwen und weiteren Modellbeiträgen parallele Workstreams für App, Lab, Web, Journal, Marketing und GitHub/WPS entstanden.
+- **Kern:** Wie aus einer fachlich und technisch von einem erfahrenen Programmierer geführten Vision mit ChatGPT, DeepSeek, Qwen und weiteren Modellbeiträgen parallele Workstreams für App, Lab, Web, Journal, Marketing und GitHub/WPS entstanden. Die menschliche MVC-Architekturentscheidung und jahrzehntelange Programmiererfahrung waren nach ausdrücklicher Aussage des Projektleiters wesentliche Voraussetzungen für die Realisierung; die These, fehlende Programmierkenntnisse seien hier unerheblich gewesen, ist für diesen Fall ausdrücklich zurückgewiesen.
 - **Dramaturgie:** Vision → verteilte Aufgaben → Schnittstellenprobleme → gemeinsamer Masterplan → erstes integriertes Ökosystem.
 - **Belege:** GitHub-Commits/PRs, dokumentierte Rollen/Beiträge, datierte Releases, Screenshots, konkrete Review- und Umsetzungsschritte; Beiträge nicht pauschal einem Modell zuschreiben.
-- **Offen:** Chronologie und belegbarer Anteil je Akteur, Zeitaufwand, Vergleich mit traditionellen Teams. **Keine** Aussage „das Projekt hätte zwingend N Personen gebraucht“ ohne belastbare Grundlage.
+- **Offen:** Chronologie und belegbarer Anteil je Akteur, Zeitaufwand, menschliche Architekturvorgaben (einschließlich MVC), Vergleich mit traditionellen Teams. **Keine** Aussage „das Projekt hätte zwingend N Personen gebraucht“ ohne belastbare Grundlage.
 - **Format:** Große Making-of-Titelgeschichte mit interaktiver Projekt-Timeline; später YouTube-Essay.
 
 **B02 · P1 · H/B – The Paradox of Order: Wenn Ordnung neue Unordnung erzeugt**
@@ -245,3 +245,65 @@
 ---
 
 **Redaktioneller Leitgedanke:** *ANDY erzählt zwei Geschichten: Wie KI-Modelle im Spiel mit Unsicherheit umgehen – und wie Menschen und KI-Systeme gemeinsam ein Projekt bauen, das selbst mit Unsicherheit umgehen muss.*
+
+
+## H. Ergänzung aus dem App-/Engine-/Designer-Thread – 13. November 2026
+
+**Status dieser Ergänzung:** Redaktionelle Kandidaten/Belegaufträge, **keine Manuskripte und keine Publikationsfreigabe**. Die folgenden Beobachtungen stammen aus dem konkreten 8080-/8082-Entwicklungsdialog und sind vor Veröffentlichung an Commits, Patchartefakten, Code, Screenshots und gegebenenfalls Original-JSONL zu verifizieren. Bestehende Themen B01–B08, A05 und X03 werden ergänzt, nicht ersetzt.
+
+**Redaktionelle Korrektur zu B01 / X03 – Menschliche Fachkompetenz ist hier nicht austauschbar**
+- Der Projektleiter widerspricht ausdrücklich der zugespitzten These, man müsse nicht programmieren können, um diese Architektur zu entwickeln: Er bringt **jahrzehntelange Programmiererfahrung** mit und hat nach eigener Aussage das **MVC-Modell selbst vorgeschlagen**. Er sieht dies als entscheidende Voraussetzung dafür, dass ANDY realisiert werden konnte.
+- Ein späterer Artikel muss zwischen menschlicher **Architektur, Produktvision, Fachprüfung und Freigabe** sowie KI-gestützter **Codeproduktion, Variantenbildung, Fehleranalyse und Integration** trennen. Keine Geschichte vom „Nichtprogrammierer, der dank KI eine App baut“; die tatsächliche Arbeitsteilung anhand konkreter Belege rekonstruieren.
+- Quelle: ausdrückliche Richtigstellung im App-Thread vom 13.11.2026. Persönliche Zuschreibung vor Veröffentlichung abstimmen.
+
+**B09 · P1 · B/D – Vier CSS-Fixes später: Warum ein Farbfehler ein Architekturproblem war**
+- **Konkreter Fall:** Arena-Header, Sidebar, Burger und Theme-Buttons behielten trotz mehrerer THEME-04A-Fixes und REFAC teilweise alte Farben. Browserdiagnose belegte aktives `arena_shell`, zugleich abweichende berechnete Quasar-Buttonfarben. Später wurde die Theme-Auswahl als kompakter Picker neu gedacht.
+- **Learning:** Erfolgreicher Installer ist kein erfolgreicher UI-Test; wiederholte Override-Fixes können die eigentliche Zuständigkeitsfrage verdecken. Menschlicher Perspektivwechsel („Theme-Auswahl als Overlay?“) kann zielführender sein als weiteres CSS.
+- **Belege:** THEME-04A / FIX / REFAC / SHELL-BIND, Konsolenausgaben, Vorher-Nachher-Screenshots, Theme-Picker-01; präzise technische Ursachen nachprüfen.
+
+**B10 · P1 · B/D – PINK als Architektur-Stresstest**
+- **Konkreter Fall:** Ein viertes Brett-Theme sollte scheinbar nur eine weitere Palette sein. App und Designer enthielten jedoch mehrere Drei-Theme-Annahmen in Auswahl, Preview, Snapshot-Validierung und Apply. PINK wurde ergänzt, bestehende Freigaben mussten rückwärtskompatibel bleiben.
+- **Learning:** Ein spielerisches Feature kann versteckte Kopplungen sichtbarer machen als abstrakte Architektur-Diskussionen. ARENA steuert weiterhin nur die umgebende Oberfläche; Brett und Figuren behalten ihre eigene Theme-Auswahl.
+- **Belege:** PINK-01, PINK-01B, Screenshots, Test-Snapshots, Designer-/Theme-Code.
+
+**B11 · P1 · B/D – Gleicher Code, anderes Bild: der fehlende Applied-Designstand**
+- **Konkreter Fall:** SYNC-07 übertrug 8080-Code nach 8082, doch Farben, Schriftarten und 3D-Effekte sprangen zurück. Die freigegebene `docs/ui-designer/approvals/active_design.json` war ein gesondertes Artefakt. SYNC-07B/C legten zusätzlich Port- und Branchannahmen offen.
+- **Learning:** Reproduzierbarkeit benötigt Quellcode, Designfreigaben, Assets, Konfiguration und Daten-Abgrenzung. Entwicklung (8080) und Integration (8082) dürfen ihre Matcharchive/DBs nicht gegenseitig überschreiben.
+- **Belege:** SYNC-07 bis 07C, SHA-Audits, Git-Branch `integration/ui-lab-20261109`, Screenshotvergleich.
+
+**B12 · P1 · B/D – Ein guter Installer sagt auch Nein**
+- **Konkreter Fall:** Der SYNC-07-Installer erkannte 18 Updates, verweigerte aber die Änderung, weil `andy_board_view.py` auf 8082 fehlte. SYNC-07B blockierte wegen abweichendem Branch und lokal verändertem Approved Design.
+- **Learning:** Versions-Hashes, Prüflauf, Konfliktsperren, Backup und Rollback gehören zum Sicherheitsmodell von KI-generiertem Code – nicht nur zum Komfort. Ein korrektes `SKIP` beweist keine korrekte Bildschirmdarstellung.
+- **Belege:** Terminalprotokolle, Installer, Readmes, Rollbacktests.
+
+**B13 · P1 · B/D – Ein Thread kann viel Code schreiben, aber das Projektgedächtnis nicht ersetzen**
+- **Konkreter Fall:** Mehrfacher Threadwechsel wegen Kontextgrenzen; spezialisierte App-, Website-, Lab-, Designer- und Dokumentationsworkstreams; gezielte Quellsammler statt unkontrollierter Komplett-Synchronisation; konkrete Fehlversuche mit veralteten oder unvollständigen Quelldateien und ZIP-/Installer-Verwechslungen.
+- **Learning:** Übergaben brauchen stabile Fachbegriffe, Dateistände, SHA-Prüfungen und menschliche Integrationsentscheidungen. Thread/Thread-Kollaboration ist keine automatische gemeinsame Erinnerung.
+- **Belege:** Übergabebriefings, Collector-Skripte, Paket- und Installationslogs.
+
+**B14 · P1 · B/D – Engine, JSONL und Theater: Eine Partie, mehrere Darstellungen**
+- **Konkreter Fall:** Das Web-Theater V0.7.2–V0.7.7 wurde mit HTML/CSS/JS unabhängig von einer laufenden Python-Engine erprobt und anschließend als visuelle Referenz für die NiceGUI-App vorgeschlagen. Sachlicher Modus und inszenierte Arena haben unterschiedliche Aufgaben.
+- **Learning:** Engine, Eventprotokoll und Präsentationsschicht lassen sich entkoppeln; nur reale Ereignisse, keine erfundenen Sieger oder Züge. Website und App könnten gemeinsame Theaterkomponenten verwenden, sobald Datenadapter geprüft sind.
+- **Belege:** Theater-ZIPs, Replay-Schema, Schnittstellenentwürfe, Responsive-Screenshots. **Direkte App-Einbettung zum Stand des Dialogs Vorschlag, nicht als produktiv behaupten.**
+
+**B15 · P1 · B/D – Die KI kündigt den Sieg an: Wer bestätigt das Ergebnis?**
+- **Konkreter Fall:** Match `andy_1c77f49b3e17`, letzter legal ausgeführter Go-Zug `k1`, zuvor dokumentierte 71 schwarze Kontrollpunkte; terminaler Beleg in der bereitgestellten historischen JSONL fehlt. GO-END-01C (5/5) und 01D (9/9) Regressionstests führten zur strukturierten Winner-/Layer-/Reason-Projektion für neue Matches.
+- **Learning:** Modellbegründung ist keine Ergebnisautorität. Ein ausgeführter Zug plus angekündigter Sieg ersetzt nicht die enginebestätigte Endkontrolle. Replay, Lab und Leaderboard müssen denselben verifizierten Abschluss verwenden.
+- **Sperre:** Historischen Argon-Go-KO **nicht** als erwiesen darstellen, bevor Rekonstruktion mit passendem Ruleset erfolgt; Tests sind kein vollständiger Live-/SQLite-Nachweis. **Anschluss an A05/R01.**
+
+**B16 · P2 · B – UI-Entscheidungen aus Screenshots statt aus abstrakten Prompts**
+- **Konkreter Fall:** Brettposition und Podium, LIVE-01-Spielerpanels, Tokenbalken, Theater-Button, Sidebar, Ergebnisdialog und Designer-Apply wurden in zahlreichen kurzen Screenshot-/Feedback-Schleifen korrigiert. Der Projektleiter definierte die visuelle Sollwirkung und wies nicht passende Versionen zurück.
+- **Learning:** Abnahme ist ein eigener menschlicher Arbeitsschritt; visuelle Tests werden nicht durch Unit-Tests oder Installer-Logs ersetzt. Screenshots allein erklären jedoch keine CSS-Priorität – gemessene Browserwerte ergänzen sie.
+- **Belege:** Datiertes Screenshotmaterial, Freigabe-Snapshots, entsprechende Patches.
+
+**B17 · P2 · B/D – Ein Spiel, drei Datenwahrheiten?**
+- **Konkreter Fall:** Live-Snapshot, historische JSONL, SQLite-Replay und Leaderboard-Projektion führten zeitweise zu unterschiedlichen Ergebnisdarstellungen (`game_over`, `–`, keine KO-Wertung). Die Prüfung zeigte zusätzlich ein Ruleset-Gate `v1.0` gegenüber Runner `v1.1`.
+- **Learning:** Fachlich identische Begriffe benötigen dieselbe maschinenlesbare Semantik; reine Freitext-Verarbeitung und stillschweigende Datenvervollständigung sind riskant. Historische Evidenz getrennt von neuen Strukturfeldern behandeln.
+- **Belege:** GO-END-01A–01D, SQL-/Projection-Code, Original-JSONL und Tests.
+
+**B18 · P2 · H/B – Wann ist Beta gut genug?**
+- **Konkreter Fall:** Bewusste Entscheidung, die öffentliche HTML-Demo auch mit kleinen visuellen Restfehlern zu zeigen, ohne gleichzeitig den Spielcode freizugeben. Gleichzeitig ausdrückliche Grenze: echte Ereignisse und Ergebnisse nicht erfinden; Anbieterlogos nicht als angebliche Partnerschaft zeigen.
+- **Learning:** Produktmut und wissenschaftliche Sorgfalt können nebeneinander bestehen, wenn Fehlerarten, Evidenzstatus und Veröffentlichungsrisiken unterschieden werden.
+- **Belege:** Beta-Briefing, Theater-Stand V0.7.7, redaktionelle/technische Freigaben.
+
+**Mögliche erste App-Making-of-Staffel:** B09 → B10 → B12 → B11 → B15; B01 als längere Titelgeschichte erst nach menschlich freigegebener Rollen- und Architekturrekonstruktion. **Keiner dieser Vorschläge ersetzt die bestehenden redaktionellen Prioritäten oder WPS-Gates.**
