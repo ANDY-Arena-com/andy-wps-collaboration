@@ -37,7 +37,7 @@
 
 ## 4. Bekannte Ausgangslage (immer aktualisieren)
 
-- Arena: Website `andy-arena.com` mit DE/EN/ZH und Replay; Website V0.8.2.1 wurde als CSS-Cache-Fix bereitgestellt, ist nicht pauschal als plattformübergreifend abgenommen zu betrachten.
+- Arena: Website `andy-arena.com` mit DE/EN/ZH und Replay; Website **V0.8.2.2** ist der jüngste bereitgestellte vollständige ZIP-Patch: Im Theater-Replay erscheint neben dem bestehenden Ereigniszähler die tatsächliche verstrichene Matchzeit ([Release-/Fixbericht](WEB/WEBSITE_REPLAY_TIME_0822_2026-11-13.md)). Vorgänger V0.8.2.1 = CSS-Cache-Fix. V0.8.2.2 ist **nicht** als produktiv oder plattformübergreifend abgenommen zu betrachten; [Versionenkette](WEB/WEBSITE_RELEASE_EVIDENCE_2026-11-13.md), Windows-TLS-Issue #3 bleiben relevant.
 - Blog: `blog.andy-arena.com`, öffentliche Coming-Soon-`index.html`; WordPress dahinter; Blog wird separat entwickelt.
 - GitHub: `ANDY-Arena-com/andy-wps-collaboration`.
 - Pilot: sechsseitiges PDF zu Astra/Gemini 4 Argon; Forschungsausbau auf 18–24 Seiten und vergleichende Ausgabe vorgesehen.
