@@ -204,11 +204,24 @@ Mögliche Anwendungsfälle **(noch keine nachgewiesene Eignung)**:
 - Wie werden Mehrdeutigkeiten in Text-Claims von mehreren Annotatoren bewertet und aufgelöst?
 - Wie werden Corpus, Web, Blog und Research-PDFs langfristig versionsynchron gehalten?
 
+## Lab 2.0 – Verbindliche Prioritätenentscheidung vom 13.11.2026
+
+**SSOT und Umsetzungsbriefing:** [ANDY LAB 2.0 – Research Architecture v1.0](../research/andy-lab/ANDY_LAB_2_0_RESEARCH_ARCHITECTURE_v1.0.md)
+
+- **Prio 1:** Forschungsfragen, hypothesengeführte Mustererkennung und Evidenzentwicklung über wiederholte, vergleichbar konfigurierte Partien; fünf Felder: strategische Zielwahl, Lageeinschätzung/Antizipation, Adaptivität, Ressourcen/Umsetzung und Stabilität/Entwicklung.
+- **Prio 2 (on demand):** Sämtliche bisher bestehenden Lab-Daten, Diagramme und Funktionen aus Modellvergleich, Zuverlässigkeit, Experimente, Spielverlauf, Methodik und historische Daten **vollständig beibehalten**, als nachgeordnete Analysewerkzeuge verfügbar und aus Forschungsfragen erreichbar.
+- **Kein primäres Benchmark-/Intelligenztest-/Modellranking-Ziel.** Einzelne Matches und Modelle dienen als Quellen und Vergleichsvariablen, nicht als Lab-Hauptnavigation.
+- **Technik:** Rückwärtskompatible Evolution des vorhandenen Labs, einheitliche Datenbasis, kontrollierter Konfigurationsvergleich, transparente Daten-/Methodenversionen, Drill-down und wissenschaftliche Evidenz-/Unsicherheitskennzeichnung.
+- **Status:** Produktausrichtung verbindlich beschlossen; technische Umsetzung und empirische Bestätigung einzelner Thesen stehen aus.
+
+---
+
 ## 12. Änderungsprotokoll
 
 | Version | Datum | Änderung |
 |---|---|---|
 | 1.0 | 2026-11-13 | Erstfassung: verbindlicher gemeinsamer Projektkompass, Forschungs-/Corpus-/Publikationsarchitektur, Roadmap und Threadübergabe |
+| 1.0a | 2026-11-13 | Ergänzung Lab 2.0: hypothesenorientiertes Forschungsobservatorium (Prio 1); bisherige Lab-Analysen vollständig on demand (Prio 2) |
 
 ---
 **Kernsatz:** *ANDY soll nicht nur zeigen, wer gewinnt, sondern nachvollziehbar machen, welche Entscheidungen, Aussagen, Anpassungen und Ressourcen zu beobachtbaren Ergebnissen führen — und wie sicher wir unsere Erklärungen dafür begründen können.*
