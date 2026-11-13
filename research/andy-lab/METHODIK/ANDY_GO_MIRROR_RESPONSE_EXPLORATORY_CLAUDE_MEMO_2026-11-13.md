@@ -105,3 +105,15 @@ Definiere bei „unmittelbar“ ausdrücklich, ob der letzte **Go-Zug des Gegner
 - [Bestehender zentraler Hypothesenpool](ANDY_REMATCH_HYPOTHESENPOOL_UND_EXPERIMENTDESIGN_v0.1.md)
 
 **Leitlinie:** Erst systematisch zählen, dann Alternativerklärungen und regelkonforme Vergleichsoptionen prüfen; **nicht** aus geometrischer Wiederholung auf Absicht oder aus einem günstigen Ergebnis auf strategische Überlegenheit schließen.
+
+
+## Ergänzung – Musterähnlichkeit statt Musteridentität
+
+**Präzisierung der Forschungsfrage:** Wiederkehrende Muster müssen **nicht identisch** sein. Die exakte Mirror-Response-Metrik ist nur ein enger, gut prüfbarer Spezialfall. Der Pattern Atlas soll vor allem **Ähnlichkeitsfamilien** erkennen und untersuchen, auch wenn Koordinaten, Reihenfolge und Formen variieren.
+
+Drei getrennt auszuweisende Ebenen:
+1. **Exakte geometrische Spiegelantwort:** definierte Transformation des letzten gegnerischen Go-Zuges (bisherige Pilotmetrik).
+2. **Ungefähre räumliche Ähnlichkeit:** verwandte Strukturen nach Transformation, mit begrenzten Abweichungen in Positionen, Abständen, lokalen Ketten oder Randverteilung.
+3. **Funktionale/zeitliche Ähnlichkeit:** ähnliche territoriale Funktionen oder Entwicklungsverläufe (z. B. Randbesetzung, Barrieren, Gebietssicherung), auch ohne geometrisch passende Einzelzüge. Funktionale Gleichwertigkeit braucht eine explizite regel- und zustandsbasierte Operationalisierung.
+
+**Auswertungsprinzip:** Exakte Spiegelung, statische Stellungsähnlichkeit, zeitliche Antwortähnlichkeit und funktionale Ähnlichkeit **nicht zu einem ungeprüften Einzelscore vermischen**. Im Offline-Scanner sowohl vorab definierte Tests als auch explorative Musterentdeckung vorsehen; abgeleitete Musterfamilien in unabhängigen Partien bestätigen. Ähnlichkeit allein belegt weder Nachahmung noch strategische Absicht oder Sycophancy.
