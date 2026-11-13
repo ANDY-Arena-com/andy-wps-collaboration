@@ -303,3 +303,10 @@ Erst wenn die datengestützte geometrische/zeitliche Musterbasis stabil ist, den
 > **ANDY Series Explorer & Opening/Pattern Atlas:** Baue ein lokal/offline laufendes, read-only Tool für die Analyse von Rückkampfserien. Kern ist **nicht** die komplette Matchdauer, sondern die ersten relevanten Go-Setzungen (etwa Fenster 5/10/15/20, Setup-Phase getrennt) und die frühen Schachaktionen (5/10/20/30). Vergleiche (1) Go-Raum-/Reihenfolgemuster, (2) Chess-Zugfolgen und Stellungsmerkmale, (3) Go–Chess-Relationsmuster. Zeige pro Serie Opening Fingerprints, echte paarweise Similarity-Matrix, Divergenz nach Fenstergröße und ergänzend überlagerte Go-/Tokenkurven. Danach vergleiche Pattern-Familien **zwischen** Serien unter harmonisierten Konfigurationen. Farbtausch modellspezifisch normalisieren, Rohdaten niemals ändern, unvollständige Enden markieren, alle Scores mit Metrik/Version/Quelle erklären. Erst später semantische Claims und KI-Interpretation hinzufügen. Bestehendes Lab und Replay bleiben erhalten.
 
 **Leitsatz:** *Nicht nur wer gewinnt oder wie die Partie endet, sondern welche frühen Muster sich wiederholen, wo sie auseinanderlaufen und ob diese Muster über unterschiedliche Experimente hinweg Bestand haben.*
+
+
+## Anhang – Fortlaufender, noch nicht priorisierter Themenspeicher (13.11.2026)
+
+**Neue Beobachtungen und Hypothesenkandidaten zu frühen Go-/Schach-Symmetrien, Infrastrukturkontrollen und dem Verhältnis von strategischem Vorteil zu Ressourcen-TKO:** [ANDY Lab Forschungsideen-Sammlung – Symmetrie & „TKO trotz/wegen Nase vorn“](ANDY_LAB_FORSCHUNGSIDEEN_SAMMLUNG_SYMMETRIE_TKO_VORTEIL_v0.1.md).
+
+Dieses Zusatzdokument ist ausdrücklich ein **Backlog ohne Priorisierung**. Es erweitert die Ideensammlung, nicht den Nachweisstand der bisherigen Hypothesen. Implementierung erst nach einer späteren fachlichen Triage.
