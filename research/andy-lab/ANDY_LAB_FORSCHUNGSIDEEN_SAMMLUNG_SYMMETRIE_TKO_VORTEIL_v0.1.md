@@ -129,3 +129,33 @@ In der gezeigten Replay-Endstellung:
 5. Welche Beobachtungen eignen sich für eine prospektive Serie oder Working Paper?
 
 **Leitmotiv:** *Erleben → Erforschen → Erahnen → erneut prüfen.* Das Erahnen produziert ausdrücklich **falsifizierbare Ideen**, keine fertigen Forschungsergebnisse.
+
+
+## G. Ergänzung 13.11.2026 – Opponent-induced Behavioral Conformity / mögliche sycophancy-artige Imitation
+
+**Beobachtung / Anstoß:** Wiederkehrende, visuell vermutete Spiegelzüge in ANDY führten zu der Frage, ob die Nachahmung gegnerischer Setzungen auf einer aus dialogischen KI-Kontexten übertragenen Anpassungstendenz beruhen könnte: *„Ich mache/imitierte das, was dem Gegenüber zu gefallen scheint“* – obwohl das Gegenüber im Spiel ein Konkurrent ist.
+
+**Begriffsgrenze:** Klassische **Sycophancy** beschreibt übermäßige Anpassung an Erwartungen, Meinungen oder Präferenzen eines Nutzers/Gegenübers. Die räumliche Imitation eines gegnerischen Go-Zuges ist **allein kein Nachweis für Sycophancy**. Als neutrale Forschungskategorie zunächst **behavioral conformity / opponent-induced imitation** verwenden; „sycophancy-artig“ bleibt eine mögliche, gesondert prüfbare Mechanismushypothese.
+
+### Neue, vorläufige Themenhypothesen
+
+| ID | Forschungsfrage / Hypothesenkandidat | Alternativerklärungen |
+|---|---|---|
+| **SOC-H1 – Opponent-Induced Behavioral Conformity** | Übernehmen GPAI-Modelle in kompetitiven ANDY-Situationen gegnerische Go-Setzmuster über das durch Regeln, Geometrie und Stellung Erklärbare hinaus – auch ohne erkennbaren strategischen Mehrwert? | Strategisch sinnvolle symmetrische Antwort, legale Feldverteilung, räumliche Standardheuristiken, gemeinsame Prompts |
+| **SOC-H2 – Maladaptive Mirroring** | Steigt die Spiegelantwort-Häufigkeit auch dann, wenn der gespiegelte Zug regel-/enginegeprüft gegenüber legalen Alternativen objektiv nachteilig ist? | Stellung falsch bewertet, zufällige Fehlentscheidung, fehlende zugängliche Information |
+| **SOC-H3 – Social-Alignment Transfer** | Werden Musterübernahmen durch Hinweise auf die Absichten oder Erwartungen des Gegners bzw. durch explizite Anti-Imitations-Anweisungen verändert? | Priming-/Prompt-Effekt ohne sozialen Mechanismus, veränderte Entscheidungsinformation oder Token-Nutzung |
+
+**Status:** Neu gesammelte Hypothesenkandidaten, **nicht priorisiert, nicht validiert**, kein Beleg für Motiv, inneren Denkprozess oder tatsächlich übertragene Sycophancy. Sie ergänzen den Themen-Backlog; **keine automatische Erhöhung der Zahl formell präregistrierter Hypothesen** im zentralen Pool.
+
+### Denkbares Prüfdesign (für spätere Priorisierung)
+
+1. **Deskriptiv zuerst:** Mit dem Offline Pattern Detector tatsächliche zeitliche Spiegelantworten (Haupt-/Gegendiagonale, 180°-Rotation, exakte und lokale Spiegelung) in den ersten definierten Go-Aktionen aus Original-JSONL rekonstruieren. Statische Brettsymmetrie nicht als Reaktion zählen.
+2. **Nullmodell:** Verfügbarkeit legaler Spiegelpositionen, ANDY-Setup-/Regelzwänge, Farbe, Zugfolge, Stellung und Gegnerkontext kontrollieren; zufalls-/permutationsbasierte Baselines nur als Forschungsinstrument.
+3. **Maladaptive Alternative:** Nur mit vollständiger ANDY-Regel-/Engineprüfung und begründeter Bewertungsmethode feststellen, ob eine spiegelnde Aktion gegenüber Alternativen nachteilig war. Eine einzelne verlorene Partie beweist dies nicht.
+4. **Kontrollierte Kontexte:** Möglichst gleichwertige Entscheidungssituationen mit/ohne erkennbares gegnerisches Muster sowie gegebenenfalls mit/ohne kritische Anti-Imitations-Instruktion vergleichen; unterschiedliche Prompts als explizite Intervention behandeln. Nicht zwei tatsächlich verschiedene Brettpositionen als identische Lage ausgeben.
+5. **Evidenztrennung:** `observed_mirror`, `evaluated_action_quality`, `documented_model_claim`, `mechanism_hypothesis`; keine aus Modelläußerungen oder Geometrie abgeleiteten sicheren Aussagen über verborgene interne Gründe.
+6. **Serienvergleich:** Wiederholungen/Farbtausch, Modell-/Provider-/API-Projekt-Konfiguration und Matchcluster berücksichtigen; Entdeckungsdaten später nicht als unabhängigen Bestätigungstest behandeln.
+
+**Anschluss:** Geometrische OP-/PAT-Hypothesen, **INF-H1–INF-H4** zum API-/Anbieterkontext, **SSA** (Bewertung/Antizipation), **Adaptivität** und der [Opening & Pattern Atlas](ANDY_SERIES_EXPLORER_OPENING_PATTERN_ATLAS_BLUEPRINT_v1.0.md).
+
+**Sammlungsregel bleibt gültig:** Beobachtungen und mögliche Erklärungen aufnehmen – **jetzt nicht priorisieren oder implementieren**. Die spätere Entscheidung über Code, Experimentserien und Working Paper erfolgt separat.
