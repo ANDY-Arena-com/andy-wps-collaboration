@@ -14,6 +14,7 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 | 3 | `ANDY_Arena_KOMPLETT_V0814_SVG_Schattenfix(1).zip` | `b4c160f4d4bff434aeee03b246c7788d57c041444ab131467a6a75b4facfaae1` | V0.8.1.4: zusätzlicher SVG-Schattenfix (nur `theater/app.js`, `theater/START_HIER.html` gegenüber V0.8.1.3 verändert) |
 | 4 | `ANDY_Arena_KOMPLETT_V082_Mobile_Blog(1).zip` | `d1aaef523f45c12108a662022d9d8284467961703013f592bb081f059738e15c` | V0.8.2: Mobile DE/EN/ZH + separate Blog-Coming-Soon-Seite |
 | 5 | `ANDY_Arena_KOMPLETT_V0821_Mobile_CSS_Fix.zip` | `20f70ae083a31d4694ed8431c4f871113fa556fd072fbc977e4326e39bd6ce52` | V0.8.2.1: CSS-Dateiname versioniert + absichernde Desktop-Regel |
+| 6 | `ANDY_Arena_KOMPLETT_V0822_Replay_Zeitanzeige.zip` | `e7b19128c9e7563865beaa9ca3b14e1c0eafea4734c1d1e893520a14596946b4` | V0.8.2.2: Original-Matchzeit rechts neben vorhandenem Ereigniszähler ([Fixbericht](WEBSITE_REPLAY_TIME_0822_2026-11-13.md)) |
 
 **Herkunft:** Kopien der V0.8.1.2–V0.8.2-Pakete vom Projektleiter in die Analyse eingebracht; V0.8.2.1 als ebenfalls im Arbeitsverzeichnis vorhandenes ZIP separat mitgelesen. Diese Dokumentation archiviert **Metadaten und Diffs, nicht die ZIP-Binärdateien**.
 
@@ -25,6 +26,8 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 - **V0.8.2 → V0.8.2.1:** drei Sprachseiten geändert, `assets/style-v0821.css` hinzugefügt. Inhalt der neuen CSS-Datei ist laut Begleit-README identisch zum V0.8.2-`assets/style.css`; bestehende Theater-Dateien unverändert.
 - In **V0.8.2** referenzieren die drei Sprachseiten weiterhin `../assets/style.css?v=079` obwohl die neue Mobile-CSS erst mit diesem Release ausgeliefert wurde. Dies entspricht dem in [Issue #1](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/1) beschriebenen Cache-Risiko.
 - In **V0.8.2.1** zeigen die drei Sprachseiten auf `../assets/style-v0821.css` (neuer unverwechselbarer Dateiname).
+
+- **V0.8.2.1 → V0.8.2.2:** ausschließlich theaterbezogene Replay-Dateien für die Original-Matchzeitanzeige und ein wiederholbares Zeitstempel-Synchronisationsskript verändert bzw. ergänzt. DE/EN/ZH-Homepage, ursprüngliche Match-JSONL und Blog unverändert. Siehe [Fixbericht V0.8.2.2](WEBSITE_REPLAY_TIME_0822_2026-11-13.md). Vollständiges ZIP separat bereitgestellt, aber nicht als GitHub-Release-Asset committed.
 
 ## 3. Website vs. Browser-/Infrastrukturproblem
 
@@ -38,10 +41,10 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 |---|---|
 | Sind die ZIP-Bundles intern differenzierbar und ihre Folge rekonstruierbar? | **Ja**, mit den oben genannten Dateiunterschieden und Hashes. |
 | Ist V0.8.1.4 ein klarer Rollback-Kandidat? | **Ja**, dokumentierte letzte getestete Basis laut V0.8.2-README; vor Rollback tatsächliche Hostinger-Kompatibilität nochmals prüfen. |
-| Ist V0.8.2.1 der jüngste vorliegende technische Website-Patch? | **Ja** innerhalb der fünf hier verglichenen Bundles. |
-| Ist V0.8.2.1 nachweislich auf Hostinger produktiv? | **Nicht belegt**. |
-| Wurden alle drei Sprachen, Desktop, Mobile, Replay, Windows unter V0.8.2.1 vollständig live abgenommen? | **Nicht belegt**, siehe [Issue #2](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/2). |
-| Enthält dieses GitHub-Kollaborationsrepo den wiederherstellbaren exakten Webroot von V0.8.2.1? | **Hier nicht nachgewiesen**. Der Metadateneintrag ersetzt kein Release-Artefakt. |
+| Ist V0.8.2.2 der jüngste vorliegende technische Website-Patch? | **Ja**, seit 13.11.2026 als sechstes Paket. Original-Zeitanzeige ist lokal geprüft, Live-/Browserabnahme offen. |
+| Ist V0.8.2.2 nachweislich auf Hostinger produktiv? | **Nicht belegt**. |
+| Wurden alle drei Sprachen, Desktop, Mobile, Replay, Windows unter V0.8.2.2 vollständig live abgenommen? | **Nicht belegt**, siehe [Issue #2](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/2). |
+| Enthält dieses GitHub-Kollaborationsrepo den wiederherstellbaren exakten Webroot von V0.8.2.2? | **Hier nicht nachgewiesen**. Der Metadateneintrag ersetzt kein Release-Artefakt. |
 | Ist der Windows-TLS-Fehler eine nachgewiesene Website-CSS-Regression? | **Nein**; separat untersuchen. |
 
 ## 5. Vorgehen bei späterer Release-Freigabe
