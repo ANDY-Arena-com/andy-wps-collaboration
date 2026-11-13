@@ -175,3 +175,25 @@ Ein Matchresultat beschreibt nicht zuverlässig die zugrunde liegende Strategie.
 **Forschungsleitfrage:** *Do GPAI models display stable or adaptive preferences for different victory paths under novel coupled rules and constrained resources?*
 
 **Nicht behaupten:** Nachgewiesener Go-KO im Referenzmatch, nachgewiesene Modellstrategie, kausale Budgetwirkung, allgemeine Modellintelligenz oder Neuheit ohne externe Literaturprüfung.
+
+
+## 11. Ergänzung 13.11.2026 – Strategic Situational Awareness (SSA)
+
+**Neues eigenständiges Methodenblatt:** [ANDY Strategic Situational Awareness v0.1](ANDY_STRATEGIC_SITUATIONAL_AWARENESS_SSA_v0.1.md).
+
+Die ursprünglichen **15 Hypothesen H1–H15** bleiben unverändert. Ergänzend werden **sechs SSA-Hypothesen (SSA-H1–SSA-H6)** als neues, teilweise überlappendes Forschungsmodul aufgenommen. **21 bezeichnete Hypothesen**, aber **nicht 21 statistisch unabhängige Tests** (SSA-H4/H5 überschneiden sich thematisch mit H5/H9).
+
+| ID | Kurzthese / Fokus |
+|---|---|
+| **SSA-H1** | Self-Assessment Accuracy: Stimmt die protokollierte Einschätzung eigener Vorteile und Gefahren mit überprüfbaren Zuständen überein? |
+| **SSA-H2** | Opponent Threat Recognition: Wie früh werden gegnerische Gewinnchancen im vorhandenen Handlungsspielraum erkannt? |
+| **SSA-H3** | Overconfidence under Advantage: Werden gegnerische Risiken bei eigenem Teilspielvorsprung unterschätzt? |
+| **SSA-H4** | Awareness–Action Gap: Wird eine erkannte Gefahr rechtzeitig und angemessen beantwortet? |
+| **SSA-H5** | Calibration under Resource Pressure: Ändert sinkendes Tokenbudget die Lageeinschätzung? |
+| **SSA-H6** | Within-Match Reassessment: Revidieren Modelle Einschätzungen nach unerwarteten Gegneraktionen? |
+
+**Vier SSA-Ebenen:** (1) eigene Lage, (2) gegnerische Lage, (3) überprüfbare Prognose, (4) tatsächliche Handlung innerhalb der noch verfügbaren legalen Alternativen. Korrekte Bedrohungserkennung ist nicht dasselbe wie eine korrekt vorhergesagte konkrete Gegneraktion; erfolgreich verhinderte Risiken nicht als Falschprognose zählen.
+
+**Erforderliche Zusatzfelder für Matchauswertung:** Claim-Typ/self/opponent, exakte Äußerung und Event-ID, Sichtbarkeit/Informationsstand, Bedrohungs-/Alternativenprüfung mit echter ANDY-Engine, Forecast-Kondition und Horizont, unmittelbare und spätere Reaktion, Validierungsstatus. Vollständiges Codebuch, Messgrößen und Gegenhypothesen im verlinkten SSA-Methodenblatt.
+
+**Status:** Entwurf; bisher keine SSA-Claims aus den Rückkämpfen validiert. Zunächst bei 100k-Farbtauschserie explorativ messen; später präregistriert und mit unabhängigen Wiederholungen testen.
