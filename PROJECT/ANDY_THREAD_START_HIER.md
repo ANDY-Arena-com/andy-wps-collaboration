@@ -6,7 +6,8 @@
 
 1. **[ANDY 2.0 – Masterplan v1.0](ANDY_GESAMTKONZEPT_MASTERPLAN_v1.0.md)** – zentrale Vision, verbindliche Prinzipien, Forschungsarchitektur und Roadmap.
 2. Je nach Aufgabe: [Lab-Memo zu Intention, Antizipation und Responsivität](../research/andy-lab/ANDY_LAB_MEMO_Intentions_Antizipation_Responsivitaet_v0.1.md).
-3. Anschließend den tatsächlich vorhandenen Code, Branch, Commit, Original-JSONL oder letzten nachweislich funktionierenden Release untersuchen. **Nicht** auf Basis einer Chat-Zusammenfassung behaupten, dass eine Funktion existiert oder getestet ist.
+3. Bei Matcharchiv, Replay, Rückkämpfen, Lab-Import und Ergebnissen: [Match-Evidenzvertrag JSONL + JSON → SQLite v1.0](ANDY_MATCH_EVIDENCE_JSONL_JSON_SQLITE_v1.0.md).
+4. Anschließend den tatsächlich vorhandenen Code, Branch, Commit, Original-JSONL und – soweit vorhanden – den originalen Matchbericht JSON oder letzten nachweislich funktionierenden Release untersuchen. **Nicht** auf Basis einer Chat-Zusammenfassung behaupten, dass eine Funktion existiert oder getestet ist.
 
 ## 2. ANDY in 30 Sekunden
 
