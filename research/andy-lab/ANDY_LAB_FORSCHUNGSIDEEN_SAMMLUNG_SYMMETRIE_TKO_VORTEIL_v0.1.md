@@ -159,3 +159,8 @@ In der gezeigten Replay-Endstellung:
 **Anschluss:** Geometrische OP-/PAT-Hypothesen, **INF-H1–INF-H4** zum API-/Anbieterkontext, **SSA** (Bewertung/Antizipation), **Adaptivität** und der [Opening & Pattern Atlas](ANDY_SERIES_EXPLORER_OPENING_PATTERN_ATLAS_BLUEPRINT_v1.0.md).
 
 **Sammlungsregel bleibt gültig:** Beobachtungen und mögliche Erklärungen aufnehmen – **jetzt nicht priorisieren oder implementieren**. Die spätere Entscheidung über Code, Experimentserien und Working Paper erfolgt separat.
+
+
+## H. Extern berichteter Pilotbefund: reaktive Go-Spiegelantworten (13.11.2026)
+
+Die **explorative Claude-Auswertung an drei Match-Logs** (u. a. Astra 6/7 im Setup, Argon 8/54 im Hauptspiel und eine viergliedrige gleichartige Spiegelserie #20/#24/#28/#32) einschließlich der methodischen Einschränkungen und weiterer Prüfideen ist im eigenen [Memo zu unmittelbaren Go-Spiegelantworten](METHODIK/ANDY_GO_MIRROR_RESPONSE_EXPLORATORY_CLAUDE_MEMO_2026-11-13.md) dokumentiert. Die berichteten p-Werte sind **nicht von uns reproduziert**; die Stichprobe ist explorativ, kein belastbarer Signifikanznachweis. Noch keine Priorisierung.
