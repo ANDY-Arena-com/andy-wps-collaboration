@@ -2,6 +2,8 @@
 
 **Stand:** 13.11.2026 · **Status:** gemeinsames Kurzbriefing; Masterplan hat Vorrang
 
+> **Aktuelle App-/Serien-Übergabe (13.11.2026):** [8082 RESULT-02 / SERIES-02 Fixstand und SERIES-03-Folgearbeiten](ANDY_APP_8082_SERIES_HANDOFF_2026-11-13.md). Drei Regressionstests auf 8082 bestanden; Live-Abnahme und 8080-Sync noch offen. Diese Übergabe vor App-Arbeiten lesen.
+
 ## 1. Zuerst lesen
 
 1. **[ANDY 2.0 – Masterplan v1.0](ANDY_GESAMTKONZEPT_MASTERPLAN_v1.0.md)** – zentrale Vision, verbindliche Prinzipien, Forschungsarchitektur und Roadmap.
