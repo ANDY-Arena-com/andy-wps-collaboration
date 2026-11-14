@@ -230,3 +230,13 @@ Mögliche Anwendungsfälle **(noch keine nachgewiesene Eignung)**:
 ## Aktueller Website-Release-Stand (14.11.2026)
 
 **V0.8.3.6 – Final Release** ist der jüngste bereitgestellte vollständige Website-Stand und ersetzt V0.8.2.2 als Entwicklungsreferenz. [Konsolidierter Release-Nachweis und SHA-256](WEB/WEBSITE_RELEASE_V0836_2026-11-14.md). V0.8.3.5 wurde vom Projektleiter visuell positiv beurteilt; die abschließenden Headerkorrekturen von V0.8.3.6 sind technisch geprüft, die visuelle Endabnahme und das Hostinger-Deployment noch nicht nachgewiesen. Windows-TLS bleibt separat offen.
+
+## ANDY Academy – Lern- und Entwicklungsplan (14.11.2026)
+
+**Planreferenz:** [ANDY Academy – Road to Victory v0.1](ACADEMY/ANDY_ACADEMY_PLAN_v0.1.md).
+
+- Ergänzt Arena, App, Lab, Journal und Corpus um eine menschliche Lernperspektive: Regeln verstehen, Strategien ausprobieren, Wissen und Antizipation testen, mit KI-Coaching spielen und schließlich eigenständig gegen KI antreten.
+- Ausgangspunkt: Interactive Rulebook V0.0.2 (Offline-Pilot A–C, optionales Mini-Quiz als Overlay); technische Basis Website V0.8.4.2, siehe [Release-Nachweis](WEB/WEBSITE_RELEASE_V0842_2026-11-14.md). Keine produktive Integration.
+- Nächster Baustein: Demo D (Freiheiten, geschützte Gruppen und strategische Ankerpunkte). Vorgeschlagenes sechs-stufiges Sternesystem von Rookie bis Champion; konkrete Prüfstandards noch offen.
+- KI-Live-Coaching ist der nächste gemeinsame Konzeptionsschritt: menschliche Entscheidungshoheit, Engine als Regelautorität, abgestufte Hilfen, dokumentierte Trennung von assistierten und unassistierten Partien. Noch keine technische Integration beschlossen.
+- Status: Name und Entwicklungsziel im Dialog angenommen; Lernpfad, Tests und Live-Coach sind Arbeitsplan. Bestehende Projektprioritäten bleiben unverändert.
