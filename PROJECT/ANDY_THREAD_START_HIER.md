@@ -87,3 +87,8 @@ Abnahmekriterien und Rückfallversion:
 ## ANDY Lab – Gemeinsamer Erkenntniskern (14.11.2026)
 
 [CORE V0.1](../research/andy-lab/CORE/v0.1/README.md) ist von Projektleitung, ChatGPT, DeepSeek und Qwen im Dialog freigegeben. Erkenntnis als adaptive Stabilisierung ist die verbindende Mitte des Labs; Sweet Spot?, Competitive Mirroring, Dynamic Bonoma und Nested Competitive Networks bleiben konzeptionell. [Konsensmatrix](../research/andy-lab/CORE/v0.1/02_KONSENSMATRIX.md), [Mensch × KI](../research/andy-lab/CORE/v0.1/08_MENSCH_KI.md). Keine Änderung der bestehenden Messverfahren/Hypothesen-IDs; Datensammlung vor Kalibrierung.
+
+
+## Strategisches Memo – Dezentrale Erkenntnisökonomie (14.11.2026)
+
+[GAME 4 LAB → LAB 4 AI → AI 4 GAME · Memo V0.1](ANDY_MEMO_DECENTRALIZED_RESEARCH_ECONOMY_v0.1.md): freiwillig weltweit gespielte Matches als mögliche Quelle zusätzlicher API-Nachfrage und eines gemeinsamen, kuratierten Open Research Corpus; potenzieller Wert für Evaluation und Trainingsdaten, Anbieterförderung unter Wahrung der wissenschaftlichen Unabhängigkeit. Erfahrungswert 2–5 EUR je Partie, illustrative Skalierung, keine Preis-/Umsatzprognose. Strategische Perspektive, kein Implementierungsauftrag und keine Trainingsfreigabe.
