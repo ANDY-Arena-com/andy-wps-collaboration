@@ -234,3 +234,8 @@ Neben Observation Lab und Serial Lab tritt perspektivisch **Punch Lab – Contro
 ## Ergänzung 14.11.2026 – Iterative Entwicklung des neuen Labs
 
 Aktueller Entwicklungsfokus: [Best-of Requirements & A/B/C-Prozess v0.1](REQUIREMENTS/v0.1/README.md). A: Datenbasis durch Games erweitern, B: Lab-Prototyping aus den ergiebigsten manuellen Analysen, C: iterativer Test und Weiterentwicklung. [Versionierter Analysebestand](ANALYSES/README.md) dient als Referenz- und Abnahmefundus, zunächst nicht der Ableitung neuer Hypothesen oder Bewertungen. Bestehendes Lab ist zu schützen, aber keine zwingende UI-Blaupause; Pattern View und Analytical View gleichberechtigt. Req-Pool und erste Tests sind Entwürfe, kein freigegebener Implementierungsauftrag.
+
+
+## Ergänzung 14.11.2026 – Situation Challenge / Problemlösefähigkeit
+
+Eigenständiges zukünftiges Forschungsformat neben Observation Lab, Serial Lab und Punch Lab: verschiedene Akteure übernehmen dieselbe vollständige regelgültige Midgame-Situation und müssen sie erfassen und daraus unter vergleichbaren Ressourcenbedingungen das Beste machen. [Forschungsagenda §15 – SC](METHODIK/ANDY_REMATCH_HYPOTHESENPOOL_UND_EXPERIMENTDESIGN_v0.1.md#15-forschungsagenda--andy-situation-challenge--problemlösefähigkeit-sc). Versionierte Situation Library als möglicher gemeinsamer Fundus für Lab, Academy-Demos (Erleben) und Coach. Sichere vollständige Zustandsinitialisierung erst prüfen; keine Gleichsetzung mit dem bestehenden Resume-Pilot. Keine Änderung der fünf bisherigen Forschungsfelder oder des aktuellen Best-of-Requirements-Pools, kein Implementierungsauftrag.
