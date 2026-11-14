@@ -176,3 +176,31 @@ Lieferfolge (ZIP-Artefakte im App-Thread bzw. lokal beim Projektleiter, nicht Bi
 ## 10. Abnahme-Nachtrag 14.11.2026, 20:12 MEZ
 
 Projektleiter meldet: Der historische Rückkampf auf 8082 lief vollständig durch und wurde korrekt in die bestehende Serie aufgenommen. Damit ist der konkrete Kategorie-2-Live-Referenzfall operativ bestätigt (Benutzerbericht; neues Originaldateipaar und Export noch nicht unabhängig geprüft). Auf 8080 ist SERIES-PROFILES-01 installiert, Terminalnachweis 32/32 Tests bestanden. Die drei Folgepakete PROFILES-02 → UX-01 → HISTORICAL-REMATCH-01 müssen dort noch bestätigt werden. Paketmanifeste geprüft: 8080-Zielkette konsistent, 32 erwartete Dateien einschließlich SYNC-02; historischer Rematch-Adapter hat seinen eigenen lokalen Vorversionshash. Kein produktiver Schreibzugriff auf gemeinsames 8082-Archiv. Arena- und Designer-Code bleiben separat. Dieser Nachtrag hat Vorrang vor den älteren Statusangaben zum konkreten historischen Live-Test.
+
+## 11. SYNC-02 FINAL – technischer Abnahmecheckpoint (14.11.2026, abends)
+
+**Status: technisch abgeschlossen; Browser-Abnahme auf 8080 noch offen.** Dieser Nachtrag ersetzt die offenen Installationspunkte in Abschnitten 9 und 10, nicht die noch ausstehenden unabhängigen Daten-/Engine-Prüfungen.
+
+Terminalnachweise des Projektleiters auf dem lokalen Mac:
+
+| 8080-Paket | Ergebnis |
+|---|---|
+| SERIES-PROFILES-01 | 32 passed |
+| SERIES-PROFILES-02 | 44 passed |
+| SERIES-UX-01 | 48 passed |
+| SERIES-HISTORICAL-REMATCH-01 | 60 passed |
+| CHECK_ANDY_8080_SYNC_FINAL.py | 32/32 erwartete Dateien bestätigt |
+
+Die letzten drei Installer wurden im Environment cair4_env nacheinander erfolgreich ausgeführt und meldeten Backups sowie keine Änderungen an Originaldaten/DB und keine API-Aufrufe. Die Testzahlen sind aufeinanderfolgende Regressionsläufe, keine Summe unabhängiger Tests. Die abschließende 32-Dateien-Prüfung ist durch die Rückmeldung des Projektleiters bestätigt, nicht durch einen direkten Zugriff auf seinen Mac. Sie belegt den erwarteten Patch-Dateistand, nicht die Identität sämtlicher App-Dateien oder einen vollständigen Git-Merge.
+
+### Arbeitsfreigabe und bewusst unterschiedliche Rollen
+
+- **8082:** stabiler Forschungsbetrieb, Serien und Varianten spielen, kontrollierte historische Rückkämpfe, Evidence-ZIPs für das Lab. Konkreter historischer Live-Rückkampf erfolgreich und laut Projektleiter korrekt eingeordnet; neuer Export noch nicht unabhängig geprüft.
+- **8080:** Arena-Entwicklung auf synchronisierter Serien-/Evidenzbasis. ARENA-01/02 und Designer nicht durch Gesamtverzeichnis-Kopie ersetzen. Gemeinsames 8082-Archiv ausschließlich lesend; Schreibaktionen/produktive Starts bleiben auf 8082. Lokale Testpartien getrennt halten.
+- **Lab:** vorhandene und neue Evidence-Exporte explorativ auswerten; konkrete Forschungsprofile bei Bedarf anfordern. Serienverwaltung funktional vorerst einfrieren; Experiment Designer, persistente Profil-DB und weitergehende Forschungsautomatisierung separate Arbeitspakete.
+
+### Nächster Schritt
+
+8080 starten und Serienansicht (inkl. Detailmodals, Profile, Kategorie 2), Leaderboard, lesenden Archivzugriff sowie Arena visuell prüfen. Abweichungen gezielt beheben; laufende 8082-Partien nicht unterbrechen. Danach ARENA-02 visuell abnehmen, Fight Card, Figurenbewegung, gespiegelte Corners/Logos, objektive Alert-Zone (66 % Brettbreite), Licht/Finale und Designer-Anbindung entwickeln. Spätere Synchronisierung 8080 → 8082 nur selektiv nach Abnahme. Kein ungeprüfter Vollmerge.
+
+**GAME 4 LAB: 8082 produziert Evidenz, 8080 entwickelt die Experience, das Lab entwickelt Erkenntnisverfahren.**
