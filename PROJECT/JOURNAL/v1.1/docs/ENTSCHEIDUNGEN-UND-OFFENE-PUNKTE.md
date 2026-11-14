@@ -67,3 +67,8 @@
 - **Offen:** Tatsächliche Brand-Assets/CSS-Tokens, Game-Code-Zugriff und WordPress-Staging.
 - **Offen:** Wer welche Social-Media-Accounts betreut und welche Kanäle zum Launch tatsächlich existieren.
 - **Hinweis:** E3-Drittbegriff ist laut Masterplan offen; keine Journal-Kennzahl oder Ausschmückung daraus ableiten.
+
+
+## G. Konzeptnachtrag 14.11.2026 – News Activation
+
+Ereignisgesteuerte redaktionelle Prominenz im separaten WordPress-Journal aufnehmen (siehe [Gesamtkonzept §5.2](ANDY-JOURNAL-GESAMTKONZEPT-v1.1.md#52-ereignisgesteuerte-news-activation-konzeptnachtrag-14112026)). Keine neue Rubrik oder obligatorische News-Fläche. Für Phase B Backend-Steuerung, Vorschau, Freigabeprüfung, Rückkehr zum Normalbetrieb und Sprach-/Mobilzustände prüfen. Konkrete technische Umsetzung und Publikation bleiben offen; kein Eingriff in Arena oder Coming-Soon-Seite.
