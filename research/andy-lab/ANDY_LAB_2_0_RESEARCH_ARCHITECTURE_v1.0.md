@@ -224,3 +224,8 @@ Antworten müssen Quelle, Konfiguration, Datenstand und Unsicherheit benennen un
 ## Ergänzung 14.11.2026 – freigegebener Erkenntniskern V0.1
 
 [Gemeinsamer Erkenntniskern](CORE/v0.1/README.md) als übergreifende inhaltliche Mitte: Erkenntnis als adaptive Stabilisierung, Erleben (rot), Erforschen (grün), Erahnen (blau). Vier konzeptionelle Denkmodelle: Sweet Spot?, Competitive Mirroring, Dynamic Bonoma, Nested Competitive Networks; adaptive Erkenntnisannäherung als Klammer. Keine neue feste Messkategorie oder Änderung der fünf Forschungsfelder, Hypothesen-IDs, sechs Werkzeuge, Score-/AQP-Regeln oder Vergleichbarkeitsbedingungen. [Konsensmatrix](CORE/v0.1/02_KONSENSMATRIX.md). Die Umsetzung der Lab-App bleibt separat.
+
+
+## Ergänzung 14.11.2026 – Punch Lab (eigenständiges zukünftiges Forschungsfeld)
+
+Neben Observation Lab und Serial Lab tritt perspektivisch **Punch Lab – Controlled Destabilization & Adaptive Recovery**: Chaos gezielt verursachen, Lageanalyse, Neuorientierung, Ressourcenaufwand und relative Restabilisierung untersuchen. Siehe [Forschungsagenda, Abschnitt 14 – PL](METHODIK/ANDY_REMATCH_HYPOTHESENPOOL_UND_EXPERIMENTDESIGN_v0.1.md#14-forschungsagenda--punch-lab--controlled-destabilization--adaptive-recovery-pl). Die fünf bisherigen Felder bleiben bestehen; PL ist ein zusätzliches experimentelles Querschnittsfeld. Zunächst ungestörte Serien, später isolierte Interventionen mit Kontrollfortsetzungen; experimentelle Ergebnisse separat vom Arena-Leaderboard. Kein sofortiger App-Entwicklungsauftrag.
