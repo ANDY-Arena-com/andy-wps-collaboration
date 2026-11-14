@@ -229,3 +229,8 @@ Antworten müssen Quelle, Konfiguration, Datenstand und Unsicherheit benennen un
 ## Ergänzung 14.11.2026 – Punch Lab (eigenständiges zukünftiges Forschungsfeld)
 
 Neben Observation Lab und Serial Lab tritt perspektivisch **Punch Lab – Controlled Destabilization & Adaptive Recovery**: Chaos gezielt verursachen, Lageanalyse, Neuorientierung, Ressourcenaufwand und relative Restabilisierung untersuchen. Siehe [Forschungsagenda, Abschnitt 14 – PL](METHODIK/ANDY_REMATCH_HYPOTHESENPOOL_UND_EXPERIMENTDESIGN_v0.1.md#14-forschungsagenda--punch-lab--controlled-destabilization--adaptive-recovery-pl). Die fünf bisherigen Felder bleiben bestehen; PL ist ein zusätzliches experimentelles Querschnittsfeld. Zunächst ungestörte Serien, später isolierte Interventionen mit Kontrollfortsetzungen; experimentelle Ergebnisse separat vom Arena-Leaderboard. Kein sofortiger App-Entwicklungsauftrag.
+
+
+## Ergänzung 14.11.2026 – Iterative Entwicklung des neuen Labs
+
+Aktueller Entwicklungsfokus: [Best-of Requirements & A/B/C-Prozess v0.1](REQUIREMENTS/v0.1/README.md). A: Datenbasis durch Games erweitern, B: Lab-Prototyping aus den ergiebigsten manuellen Analysen, C: iterativer Test und Weiterentwicklung. [Versionierter Analysebestand](ANALYSES/README.md) dient als Referenz- und Abnahmefundus, zunächst nicht der Ableitung neuer Hypothesen oder Bewertungen. Bestehendes Lab ist zu schützen, aber keine zwingende UI-Blaupause; Pattern View und Analytical View gleichberechtigt. Req-Pool und erste Tests sind Entwürfe, kein freigegebener Implementierungsauftrag.
