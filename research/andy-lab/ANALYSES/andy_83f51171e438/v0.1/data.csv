@@ -1,0 +1,7 @@
+round,model,color,input_tokens,output_tokens,output_setup,output_chess,output_go,reasoning_reported,reasoning_present_calls,calls,executed_reported,chess_captures,material,go_control,go_captures,coverage
+0,Argon,W,73235,3240,271,1460,1509,,0,79,78,11,9,66,2,legacy_overlap
+0,Astra,B,73690,76874,1427,25445,50002,73324,85,88,77,10,8,62,8,legacy_overlap
+1,Argon,B,79308,3142,252,1414,1476,,0,84,80,8,26,47,2,partial
+1,Astra,W,74225,76359,1354,23603,51402,72571,84,87,80,5,23,66,3,partial
+2,Argon,W,78982,3091,260,1448,1383,,0,84,80,11,13,46,4,framed
+2,Astra,B,69095,81829,1306,33321,47202,78107,80,82,79,8,10,43,1,framed
