@@ -1,6 +1,6 @@
 # ANDY Lab – versionierter Serienanalysebestand
 
-14.11.2026 – zunächst Beobachtungen sammeln, später serienübergreifend Muster, Fragen, Hypothesen und Bewertungen ableiten. Keine voreilige Klassifizierung.
+14.11.2026 – primärer aktueller Zweck: manuelle Analysen als fachliche Prototypen und Referenzfälle für Requirements des **neuen** ANDY Lab sammeln. Hypothesen und Bewertungen erst später. [Best-of Requirements & iterativer A/B/C-Prozess v0.1](../REQUIREMENTS/v0.1/README.md).
 
 ## Ablagekonvention
 `ANALYSES/<series_id>/v<major>.<minor>/`: README.md mit Quellen-ID/Hash, Match-/Segment-IDs, Konfiguration, Methoden, Beobachtungen, Grenzen; maschinenlesbare CSV/JSON für belegte Kennzahlen und ggf. Verlaufspunkte. Jede neue Version als separater Snapshot, keine stille Überschreibung. Neue Exporte explizit referenzieren; identische Match-IDs nicht doppelt zählen. Fehlend ≠ null; Rohdaten getrennt halten, keine API-Secrets oder ungeprüfte Originalpakete veröffentlichen. Spätere Hypothesen/Interpretationen getrennt von Beobachtungsbestand und mit Versionsreferenz. Kein neuer App-Auftrag.
