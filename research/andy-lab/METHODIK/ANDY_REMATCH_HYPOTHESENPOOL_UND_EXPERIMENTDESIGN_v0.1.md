@@ -250,3 +250,24 @@ Die ursprünglichen **15 Hypothesen H1–H15** bleiben unverändert. Ergänzend 
 **P3/Semantik:** Erst später prüfen, ob Modelläußerungen explizit einen Spiegelplan ankündigen. Fehlende Äußerung ≠ fehlendes geometrisches Muster.
 
 **Übergreifender Forschungsstatus:** vier neue benannte INF-Hypothesen; zusammen mit H1–H15 und SSA-H1–H6 nun **25 Hypothesenbezeichnungen**, mit thematischen Überschneidungen und **ohne** Anspruch auf 25 unabhängige Tests.
+
+
+## 13. Ergänzung 14.11.2026 – Vermeidbare Instabilität / Avoidable Instability (VI)
+
+**Forschungsfrage:** Wann erzeugt ein GPAI-Akteur durch eine eigene Entscheidung zusätzliche, vermeidbare Instabilität, obwohl eine regelkonforme und im Gesamtsystem günstigere Handlung verfügbar gewesen wäre? Nicht jede Nichtnutzung einer Gelegenheit ist ein Fehler: bewusster Verzicht, Opfer, langfristige Strategie oder verdeckte Risiken können lokale Nachteile rechtfertigen.
+
+**Explorativer Ausgangsfall VI-CASE-001:** Screenshot der laufenden 8082-Arena vom 14.11.2026, 15:46:56 (Dateiname). Weiß Claude Opus 5.5, Schwarz GPT-6 Astra; Anzeige 179 KI-Aufrufe, 171 ausgeführte Züge, 8 Fehler/ungeklärt; Go-Kontrolle 48:45; Budget je 350.000, angezeigt verbraucht Weiß 246.852, Schwarz 150.523. Schwarzer König wurde laut sichtbarer Markierung verschoben; angezeigte Modellbegründung: „Weicht dem Schach aus und aktiviert den König zur Unterstützung des Freibauern f5.“ Projektleitung vermutet als Alternative, den weißen Turm mit dem schwarzen Bauern zu schlagen. Die konkrete Schlagnotation ist **nicht ohne Koordinaten-/Zustandsprüfung festlegbar**; maßgeblich sind der Zustand vor dem Königszug und die tatsächliche ANDY-Engine. Screenshot ist ein Hinweis, kein Nachweis einer verpassten legalen Gelegenheit. Match-ID, Event-ID, exakte Koordinaten, Chess-/Go-Aktionsphase, Legalität, Bedrohungslage vor der Aktion, Folgen und Matchresultat offen. Keine Aussage über die interne Absicht oder Qualität des Zuges. Screenshot bleibt lokale Referenz; nicht als Original-JSONL ausgegeben.
+
+| ID | Hypothese / Gegenhypothese | Status |
+|---|---|---|
+| VI-H1 | Modelle lassen in vergleichbaren Situationen verfügbare, robust günstigere Handlungsmöglichkeiten ungenutzt; daraus kann zusätzliche Verwundbarkeit oder Ressourcenbelastung entstehen. | Explorativ |
+| VI-H2 | Häufigkeit und Folgen solcher Entscheidungen unterscheiden sich mit Gegner, Spielphase, Budget und verfügbarer Information. | Explorativ |
+| VI-H0 | Die vermeintlich bessere Alternative ist illegal, erfordert eine nicht verfügbare Aktion, verschlechtert Schach-Go-Gesamtlage, ist strategisch riskanter oder nicht robust besser; keine vermeidbare Instabilität nachweisbar. | Gegenhypothese |
+
+**Prüfpfad:** Original-JSONL + JSON und historische Engine-Version zuordnen; Vorher-Zustand rekonstruieren; alle legalen Reaktionen auf das Schach prüfen (einschließlich Bauernschlag, falls legal); gespielte und alternative Aktion mit gleichen Annahmen über Gegnerantworten und Go-Kopplung untersuchen. Unmittelbare Folgen (Schachgebot, Material, Go-Kontrolle, neue Bedrohungen) und mittelfristige Folgen über ein vorab definiertes Fenster getrennt beurteilen. Alternativverläufe sind kontrafaktische Analysen, keine gespielten Ereignisse; bei unklarem Trade-off keine Dominanz behaupten. Beobachtete Modellbegründung getrennt von Interpretation und tatsächlichem Folgeverlauf ausweisen.
+
+**Klassifikation (Entwurf):** externe Störung; unvermeidbare Instabilität; strategisch in Kauf genommene Instabilität; potenziell vermeidbare Eigeninstabilität; unentscheidbar. Auch korrekt ausgeführte legale Züge können strategisch ungünstig sein (Dynamic Bonoma), aber nicht allein anhand ihres späteren Ergebnisses klassifizieren. Kein automatischer Fehlerpunkt oder Score-Abzug.
+
+**Serienanalyse:** Anzahl belastbar geprüfter Gelegenheiten als Nenner, Anteil potenziell vermeidbarer Entscheidungen, Folgen für Handlungsoptionen, Bedrohungen, Ressourcen und Erholungsdauer; Match-/Seriencluster, Alternativen und Unsicherheit anzeigen. Vergleich mit zustandsbedingt regelkonformer Zufallsreferenz nur bei gleicher Ausgangslage und Auswahlregel. Visueller Einstieg: Vorher-Brett, tatsächliche Aktion, alternative Aktion und Folgeposition nebeneinander; analytische Ansicht mit Legalität, Konsequenzen, Nennern und Gegenfällen. Beide Ansichten greifen auf dieselben Zustände und Event-IDs zu. Anonymisierte menschliche und KI-Deutungen optional vor Kenntnis des Ausgangs erfassen.
+
+**Bezüge:** H5, H7, H8, H10, SSA-H1/H2/H4; Forschungsfelder 02 Lageeinschätzung, 03 Adaptivität, 04 Ressourcen, 05 Stabilität; [Dynamic Bonoma](../CORE/v0.1/05_DYNAMIC_BONOMA.md), [Erkenntniskern](../CORE/v0.1/README.md). Bestehende IDs unverändert. VI-H0 ist Gegenhypothese, VI-H1/H2 sind zwei neue explorative Arbeitshypothesen, keine unabhängigen bestätigten Tests.
