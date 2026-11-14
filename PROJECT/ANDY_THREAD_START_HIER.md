@@ -37,7 +37,7 @@
 
 ## 4. Bekannte Ausgangslage (immer aktualisieren)
 
-- Arena: Website `andy-arena.com` mit DE/EN/ZH und Replay; Website **V0.8.2.2** ist der jüngste bereitgestellte vollständige ZIP-Patch: Im Theater-Replay erscheint neben dem bestehenden Ereigniszähler die tatsächliche verstrichene Matchzeit ([Release-/Fixbericht](WEB/WEBSITE_REPLAY_TIME_0822_2026-11-13.md)). Vorgänger V0.8.2.1 = CSS-Cache-Fix. V0.8.2.2 ist **nicht** als produktiv oder plattformübergreifend abgenommen zu betrachten; [Versionenkette](WEB/WEBSITE_RELEASE_EVIDENCE_2026-11-13.md), Windows-TLS-Issue #3 bleiben relevant.
+- Arena: Website `andy-arena.com` mit DE/EN/ZH und Replay; Website **V0.8.2.2** war der frühere vollständige ZIP-Patch: Im Theater-Replay erscheint neben dem bestehenden Ereigniszähler die tatsächliche verstrichene Matchzeit ([Release-/Fixbericht](WEB/WEBSITE_REPLAY_TIME_0822_2026-11-13.md)). Vorgänger V0.8.2.1 = CSS-Cache-Fix. V0.8.2.2 ist **nicht** als produktiv oder plattformübergreifend abgenommen zu betrachten; [Versionenkette](WEB/WEBSITE_RELEASE_EVIDENCE_2026-11-13.md), Windows-TLS-Issue #3 bleiben relevant.
 - Blog: `blog.andy-arena.com`, öffentliche Coming-Soon-`index.html`; WordPress dahinter; Blog wird separat entwickelt.
 - GitHub: `ANDY-Arena-com/andy-wps-collaboration`.
 - Pilot: sechsseitiges PDF zu Astra/Gemini 4 Argon; Forschungsausbau auf 18–24 Seiten und vergleichende Ausgabe vorgesehen.
@@ -70,3 +70,8 @@ Abnahmekriterien und Rückfallversion:
 ```
 
 **Regel bei Konflikten:** Aktuelle Primärdaten und geprüfter Code schlagen ältere Chat-Erinnerungen. Strategische Abweichungen gegenüber dem Masterplan bewusst dokumentieren, nicht stillschweigend einführen.
+
+
+## Aktueller Website-Release-Stand (14.11.2026)
+
+**V0.8.3.6 – Final Release** ist der jüngste bereitgestellte vollständige Website-Stand und ersetzt V0.8.2.2 als Entwicklungsreferenz. [Konsolidierter Release-Nachweis und SHA-256](WEB/WEBSITE_RELEASE_V0836_2026-11-14.md). V0.8.3.5 wurde vom Projektleiter visuell positiv beurteilt; die abschließenden Headerkorrekturen von V0.8.3.6 sind technisch geprüft, die visuelle Endabnahme und das Hostinger-Deployment noch nicht nachgewiesen. Windows-TLS bleibt separat offen.
