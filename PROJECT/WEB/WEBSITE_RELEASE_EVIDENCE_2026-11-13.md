@@ -41,7 +41,7 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 |---|---|
 | Sind die ZIP-Bundles intern differenzierbar und ihre Folge rekonstruierbar? | **Ja**, mit den oben genannten Dateiunterschieden und Hashes. |
 | Ist V0.8.1.4 ein klarer Rollback-Kandidat? | **Ja**, dokumentierte letzte getestete Basis laut V0.8.2-README; vor Rollback tatsächliche Hostinger-Kompatibilität nochmals prüfen. |
-| Ist V0.8.2.2 der jüngste vorliegende technische Website-Patch? | **Ja**, seit 13.11.2026 als sechstes Paket. Original-Zeitanzeige ist lokal geprüft, Live-/Browserabnahme offen. |
+| War V0.8.2.2 der jüngste technische Website-Patch am 13.11.2026? | **Ja**, seit 13.11.2026 als sechstes Paket. Original-Zeitanzeige ist lokal geprüft, Live-/Browserabnahme offen. |
 | Ist V0.8.2.2 nachweislich auf Hostinger produktiv? | **Nicht belegt**. |
 | Wurden alle drei Sprachen, Desktop, Mobile, Replay, Windows unter V0.8.2.2 vollständig live abgenommen? | **Nicht belegt**, siehe [Issue #2](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/2). |
 | Enthält dieses GitHub-Kollaborationsrepo den wiederherstellbaren exakten Webroot von V0.8.2.2? | **Hier nicht nachgewiesen**. Der Metadateneintrag ersetzt kein Release-Artefakt. |
@@ -55,3 +55,8 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 4. Erst **danach** einen produktiven Status, Release-Tag, Rollback-Version und Deployment-Zeitpunkt verbindlich setzen.
 
 **Leitsatz:** Ein mit Hash belegtes Paket ist nicht dasselbe wie ein nachweislich produktiver oder vollständig getesteter Website-Release.
+
+
+## Aktueller Website-Release-Stand (14.11.2026)
+
+**V0.8.3.6 – Final Release** ist der jüngste bereitgestellte vollständige Website-Stand und ersetzt V0.8.2.2 als Entwicklungsreferenz. [Konsolidierter Release-Nachweis und SHA-256](WEBSITE_RELEASE_V0836_2026-11-14.md). V0.8.3.5 wurde vom Projektleiter visuell positiv beurteilt; die abschließenden Headerkorrekturen von V0.8.3.6 sind technisch geprüft, die visuelle Endabnahme und das Hostinger-Deployment noch nicht nachgewiesen. Windows-TLS bleibt separat offen.
