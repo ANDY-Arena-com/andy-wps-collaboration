@@ -1,6 +1,8 @@
 # ANDY Lab 2.0 – Series Research Pipeline / Auftrag an Thread 1
 
 **14.11.2026 · V0.1 · Umsetzungsbriefing, kein implementierter Code.**
+> **Aktualisierung 14.11.2026:** P0 und P1 wurden für den modernen Referenzfall operativ umgesetzt und mit zwei Originalexporten abgenommen. Die aktuelle [App → Lab Übergabe](ANDY_APP_LAB_SERIES_HANDOFF_2026-11-14.md) dokumentiert den tatsächlichen Funktionsumfang und Exportvertrag, historische Kategorie-2-Serien, Versuchsprofile sowie offene Gates. Die nachstehende V0.1 bleibt als ursprüngliche Anforderung erhalten; nicht alle vorgeschlagenen Exportfelder/Prüfungen sind bereits implementiert.
+
 Priorität: zuerst vollständige portable Serien-Evidenz, dann Vorprüfung und explorative Spieldeutung im Lab-Chat, danach schrittweise halbautomatisierte App-Auswertung. Altes Lab vollständig erhalten (Prio 2). Pattern View und Analytical View gleichberechtigt, gemeinsam gefiltert.
 
 ## Quellen und Schutz
