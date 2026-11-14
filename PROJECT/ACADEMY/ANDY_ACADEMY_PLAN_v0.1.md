@@ -11,6 +11,8 @@ Die Academy entwickelt das Interactive Rulebook zu einer Lernumgebung, in der Me
 Die bestehenden App-, Lab-, Journal- und Corpus-Aufgaben bleiben bestehen. Academy verbindet Website-Lernmodule mit perspektivischem Mensch/KI-Spiel in der App.
 
 ## 2. Ausgangsstand und Evidenz
+
+**[Separates Clickdummy-Verzeichnis](ANDY_ACADEMY_CLICKDUMMIES.md):** Liste der tatsächlich bereitgestellten Einzel-HTML- und ZIP-Versionen V0.0.1/V0.0.2 mit detaillierter Funktionsmatrix A–C, neun Quizfragen, Dateistruktur, SHA-256, Testnachweisen und Abgrenzung zu geplanten Modulen. V0.0.2 ist der aktuelle Offline-Teststand; Mini-Quiz ist umgesetzt, Level-Prüfungen, Sterne und Live-Coaching sind noch Konzept.
 - Interactive Rulebook V0.0.1: Offline-Pilot A (Setup/Brettgeometrie), B (Go-Schlag/Kontrollsprung), C (Schach–Go-Phasenwechsel). ZIP SHA-256: 7035c0f01a4524c8baa4ca4df2ebad74ca3b6c2e21e24bbcc6ab35dda950fdd7.
 - V0.0.2: optionaler Mini-Quiz-Button mit Overlay, drei Fragen je Szenario, unmittelbares Feedback, Hub-Animation; Brettzustand bleibt erhalten. ZIP `ANDY_Interactive_Rulebook_V002.zip`, SHA-256: 0df206bf2a50613c7e963fb6d47ef488d298b65a36bb1896b7b257d34670f0e0. Integrität am 14.11. erneut geprüft. HTML und ZIP im Entwicklungsdialog; keine Binärarchivierung in GitHub nachgewiesen.
 - Website-Designreferenz: [V0.8.4.2](../WEB/WEBSITE_RELEASE_V0842_2026-11-14.md); keine Änderung an der produktiven Website.
