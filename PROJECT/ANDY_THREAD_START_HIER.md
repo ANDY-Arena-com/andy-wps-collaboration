@@ -75,3 +75,8 @@ Abnahmekriterien und Rückfallversion:
 ## Aktueller Website-Release-Stand (14.11.2026)
 
 **V0.8.4.2 – Final Polish** ist die jüngste vollständige Website-Entwicklungsreferenz, lokal visuell vom Projektleiter freigegeben. [Release-Nachweis, Prüfsumme und ANDY Player Identity Module](WEB/WEBSITE_RELEASE_V0842_2026-11-14.md). V0.8.3.6 bleibt historisch dokumentiert. Hostinger-Deployment, vollständige plattformübergreifende Abnahme und GitHub-Binärarchivierung bleiben offen; Windows-TLS ist separat zu behandeln.
+
+
+## ANDY Lab – Analysekompass V0.1 (14.11.2026)
+
+[Freigegebene Arbeitsgrundlage für die weitere Datensammlung](../research/andy-lab/ANALYSEKOMPASS/v0.1/README.md): Erleben (Rot), Erforschen (Grün), Erahnen (Blau); drei Stabilitätsstufen, Sweet Spot? (interpretiert/unkalibriert), Antizipation und Reaktion, Spielreihen, Model Behavior Cards und Challenger-Zusammenarbeit. Datensammlung vor Kalibrierung; keine endgültige Modellklassifikation. Ausgangstabelle und sechs SVG-Grafiken liegen im selben Verzeichnis.
