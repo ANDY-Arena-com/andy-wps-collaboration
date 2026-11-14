@@ -9,4 +9,5 @@
 | Serie | Modelle | Profil | Analyse |
 |---|---|---|---|
 | andy_83f51171e438 | Gemini 4 Argon × OpenAI Astra | 150k, A2, master, historical_category_2 | [v0.1 – 3 logische Partien](andy_83f51171e438/v0.1/README.md) |
+| andy_cc11a6598bcf | Gemini 4 Argon × OpenAI Astra | 350k, 4096, A2, master | [v0.1 – 2 logische Partien](andy_cc11a6598bcf/v0.1/README.md) |
 Weitere Serien bei tatsächlicher Auswertung ergänzen. Dieser Index beansprucht keine vollständige Erfassung aller bisherigen Serien.
