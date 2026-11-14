@@ -1,0 +1,12 @@
+# ANDY Lab – versionierter Serienanalysebestand
+
+14.11.2026 – zunächst Beobachtungen sammeln, später serienübergreifend Muster, Fragen, Hypothesen und Bewertungen ableiten. Keine voreilige Klassifizierung.
+
+## Ablagekonvention
+`ANALYSES/<series_id>/v<major>.<minor>/`: README.md mit Quellen-ID/Hash, Match-/Segment-IDs, Konfiguration, Methoden, Beobachtungen, Grenzen; maschinenlesbare CSV/JSON für belegte Kennzahlen und ggf. Verlaufspunkte. Jede neue Version als separater Snapshot, keine stille Überschreibung. Neue Exporte explizit referenzieren; identische Match-IDs nicht doppelt zählen. Fehlend ≠ null; Rohdaten getrennt halten, keine API-Secrets oder ungeprüfte Originalpakete veröffentlichen. Spätere Hypothesen/Interpretationen getrennt von Beobachtungsbestand und mit Versionsreferenz. Kein neuer App-Auftrag.
+
+## Index
+| Serie | Modelle | Profil | Analyse |
+|---|---|---|---|
+| andy_83f51171e438 | Gemini 4 Argon × OpenAI Astra | 150k, A2, master, historical_category_2 | [v0.1 – 3 logische Partien](andy_83f51171e438/v0.1/README.md) |
+Weitere Serien bei tatsächlicher Auswertung ergänzen. Dieser Index beansprucht keine vollständige Erfassung aller bisherigen Serien.
