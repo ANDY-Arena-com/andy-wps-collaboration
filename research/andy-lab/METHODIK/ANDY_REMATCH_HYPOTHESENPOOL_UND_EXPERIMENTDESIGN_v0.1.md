@@ -271,3 +271,50 @@ Die ursprünglichen **15 Hypothesen H1–H15** bleiben unverändert. Ergänzend 
 **Serienanalyse:** Anzahl belastbar geprüfter Gelegenheiten als Nenner, Anteil potenziell vermeidbarer Entscheidungen, Folgen für Handlungsoptionen, Bedrohungen, Ressourcen und Erholungsdauer; Match-/Seriencluster, Alternativen und Unsicherheit anzeigen. Vergleich mit zustandsbedingt regelkonformer Zufallsreferenz nur bei gleicher Ausgangslage und Auswahlregel. Visueller Einstieg: Vorher-Brett, tatsächliche Aktion, alternative Aktion und Folgeposition nebeneinander; analytische Ansicht mit Legalität, Konsequenzen, Nennern und Gegenfällen. Beide Ansichten greifen auf dieselben Zustände und Event-IDs zu. Anonymisierte menschliche und KI-Deutungen optional vor Kenntnis des Ausgangs erfassen.
 
 **Bezüge:** H5, H7, H8, H10, SSA-H1/H2/H4; Forschungsfelder 02 Lageeinschätzung, 03 Adaptivität, 04 Ressourcen, 05 Stabilität; [Dynamic Bonoma](../CORE/v0.1/05_DYNAMIC_BONOMA.md), [Erkenntniskern](../CORE/v0.1/README.md). Bestehende IDs unverändert. VI-H0 ist Gegenhypothese, VI-H1/H2 sind zwei neue explorative Arbeitshypothesen, keine unabhängigen bestätigten Tests.
+
+
+## 14. Forschungsagenda – PUNCH LAB / Controlled Destabilization & Adaptive Recovery (PL)
+
+**14.11.2026 · Eigenständiges zukünftiges Forschungsfeld · explorativer Entwurf, keine validierten Befunde.** 
+Claim: **Every AI has a plan until they get punched in the ANDY Arena ...**
+Leitidee der Projektleitung: Chaos gezielt verursachen und beobachten, wie ein Akteur aus der veränderten Situation heraus neue Stabilität erzeugt. Experimentelle Anwendung des ANDY-Meta-Modells (Chaos – Muster – Ordnung); neue Ordnung muss nicht der alten entsprechen. Chaos bezeichnet hier metaphorisch erhöhte Unvorhersagbarkeit, keinen Nachweis mathematischen Chaos. Erleben. Erforschen. Erahnen.
+
+### Forschungsfragen
+| ID | Frage / Arbeitshypothese |
+|---|---|
+| PL-H1 | Wie viele zusätzliche Tokens, API-Aufrufe und Zeit benötigt ein Akteur zur korrekten Lageerfassung und Neuorientierung nach einer kontrollierten Störung? |
+| PL-H2 | Wie zutreffend ist die Lageanalyse (eigene und gegnerische Chancen, Gefahren, legale Optionen, Schach-Go-Kopplung), und wie angemessen ist die tatsächlich ausgeführte Reaktion? |
+| PL-H3 | Wie schnell, nachhaltig und ressourcenökonomisch stellt ein Akteur relative Wettbewerbsstabilität wieder her? Alte Ordnung, neue Ordnung, Teiladaptation oder Kollaps? |
+| PL-H4 | Wie verändern Intensität, Zeitpunkt, Art und Dauer der Störung sowie Gegner und Budget die Reaktion? Gibt es einen situativen Sweet Spot? |
+| PL-H5 | Beeinflusst eine plausible technische Fehlererklärung oder fingierte strategische Deutung die Lageanalyse gegenüber derselben tatsächlichen Stellung ohne Erklärung? Wird eine fremdbestimmte Aktion nachträglich als eigene begründet? |
+| PL-H0 | Unterschiede können natürliche Samplingvarianz, Gegnerantworten, veränderte Kontextlänge, Positionseffekte, technische Grenzen oder unvollständige Information statt adaptive Fähigkeit widerspiegeln. |
+
+### Experimentdesign
+Aus einem vollständig rekonstruierbaren, versionierten Zustand getrennte Experimentzweige erzeugen. Zuerst einmalig einen vom Modell vorgeschlagenen Zug durch einen anderen **nach vollständigen ANDY-Regeln legalen** Zug ersetzen; plausible simulierte Koordinaten-/Ausführungsabweichung. Keine realen produktiven Fehler einbauen. Spätere Varianten: ungewöhnlicher Gegnerzug, Kontextverlust, Ressourcenschock, Gegnerwechsel, widersprüchliche Statusmeldung; je Versuch einen Faktor isolieren, Kombinationsversuche separat. Eingriffsstärke vorab über objektive Zustandsmerkmale (z.B. Verlust legaler Optionen, Bedrohungen, Go-Kontrolle, Material) beschreiben, nicht pauschal aus Zugdistanz oder Ergebnis ableiten.
+
+| Arm | Aktion | Modellinformation |
+|---|---|---|
+| A | Unverändert | Normale Meldung; wiederholte neue Kontrollfortsetzungen neben historischem Original |
+| B | Legal ersetzter Zug | Tatsächlicher Zustand und ausgeführter Zug, keine zusätzliche Erklärung |
+| C | Derselbe Alternativzug | Zusätzlich plausible simulierte technische Fehlererklärung |
+| D | Derselbe Alternativzug | Zusätzlich fingierte strategische Erklärung |
+
+Ursprüngliche Absicht und tatsächlich sichtbaren Kontext pro Aufruf erfassen; ohne Kenntnis der eigenen früheren Wahl keine Nichterkennung oder Nachrationalisierung unterstellen. Gleiche Ausgangslage, Gegner, Regelversion, Budget, verfügbare Historie und übrige Parameter soweit möglich; Promptlängen und Usage-Effekte separat dokumentieren. Wiederholungen, Farb-/Rollenwechsel, randomisierte Reihenfolge und vorab definierte Horizonte. Historischer Originalverlauf allein ist keine ausreichende Kontrolle. Kein erzwungener neuer Analyseprompt nur im Interventionsarm; einheitliche Messbedingungen.
+
+### Messgrößen (Entwurf, keine feste Gesamtpunktzahl)
+| Dimension | Operationalisierungsvorschlag |
+|---|---|
+| Recognition | Erste explizite, nachprüfbare Erkennung der Abweichung; nur unter ausreichender Information; nicht erkannt / unentscheidbar getrennt |
+| Situational Awareness | Korrekte, falsche, fehlende und unprüfbare Claims zu Brett, Regeln, Gefahren, Chancen und verfügbaren Optionen; Engine und blind annotierte Kriterien |
+| Reorientation | Erste nachvollziehbare Aktualisierung des Plans bzw. kontextgerechte Verhaltensänderung; begründetes Beibehalten kann angemessen sein |
+| Execution & Reaction Quality | Illegalitäts-/Retry-Rate, tatsächliche Handlungen, unmittelbare und spätere Folgen, Vergleich zu legalen Alternativen; keine Gleichsetzung von Legalität mit strategischer Güte |
+| Recovery Cost | Input-/Output-/Reasoning-Usage nach Providersemantik ohne Doppelzählung; kumulierte Tokens vom ersten für das Modell sichtbaren Punch bis Erkennung, Neuorientierung und bestätigter Restabilisierung jeweils separat; Zeit, Calls, ausgeführte Aktionen, Retrykosten; Mehrverbrauch gegenüber vergleichbaren Kontrollen, auch negativer Mehrverbrauch möglich |
+| Recovery Quality / Time | Zeit und Aktionen bis vorab definierter, über ein festgelegtes Fenster anhaltender relativer Handlungsfähigkeit; Brett-/Ressourcen-/Bedrohungsmerkmale getrennt, Vergleich mit Ausgangslage und Kontrollverläufen; neue wirksame Ordnung zulässig |
+| Failure / Overshoot | Keine Erholung bis Horizont, KO/TKO, externe Abbrüche, erneute Destabilisierung; zensierte Fälle und verbleibende Ressourcen sichtbar, nicht als null Zeit/Kosten behandeln |
+
+Mögliche Ergebnisprofile: Festhalten, Eskalation, Wiederherstellung, Neuorganisation, adaptive Verbesserung oder unentscheidbar. Keine inneren Denkmechanismen aus Modelltext ableiten. Bei nicht messbarer Stabilität keine künstliche Stabilitätskurve als Ergebnis; Einzelmetriken zeigen. **Tokens zur Lageerfassung/Neuorientierung sind beobachteter Verbrauch in definierten Phasen, keine direkt messbaren internen Denkanteile.**
+
+### Evidenz, Architektur und nächste Schritte
+Eigene experiment_id, branch_id, parent_logical_match_id, source_event_id, pre/post_state_hash, intended/executed_action, intervention_type, simulated_reason, actual_model_visible_message, trigger, intensity, random_seed soweit verfügbar, control_arm, config_snapshot, rule/engine versions, timestamps und Usage. Originale unverändert; experimentelle Partien eindeutig markieren und vom regulären Arena-Leaderboard ausschließen. Keine heimliche Änderung produktiver Infrastruktur, kein automatischer API-Start; Kostenfreigabe. Pattern View (Vorher/Nachher, alternative Verläufe) und Analytical View (Recovery-Kennzahlen, Verlauf, Streuung) gleichberechtigt. Adaptive Recovery Fingerprint erst nach Methodenvalidierung, kein universeller Intelligenzscore. Bezüge SSA, VI, H5/H8/H10/H11/H15, Dynamic Bonoma, Sweet Spot?, Competitive Mirroring, Nested Competitive Networks. 
+
+**Priorität:** zunächst natürliche Serien als Vergleichsbasis sammeln; Board State Export und Legal Action Explorer sowie sichere experimentelle Verzweigung prüfen. Danach kleiner Pilot mit einmaligem legalem Zugersatz und wiederholten Kontrollen, erst anschließend Experiment Designer / automatisierte Auswertung. Kein aktueller Entwicklungsauftrag an Thread 1, keine Implementierungsbehauptung. Bestehende Hypothesen und Agenda bleiben erhalten.
