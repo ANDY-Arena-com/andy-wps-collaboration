@@ -92,3 +92,8 @@ Abnahmekriterien und Rückfallversion:
 ## Strategisches Memo – Dezentrale Erkenntnisökonomie (14.11.2026)
 
 [GAME 4 LAB → LAB 4 AI → AI 4 GAME · Memo V0.1](ANDY_MEMO_DECENTRALIZED_RESEARCH_ECONOMY_v0.1.md): freiwillig weltweit gespielte Matches als mögliche Quelle zusätzlicher API-Nachfrage und eines gemeinsamen, kuratierten Open Research Corpus; potenzieller Wert für Evaluation und Trainingsdaten, Anbieterförderung unter Wahrung der wissenschaftlichen Unabhängigkeit. Erfahrungswert 2–5 EUR je Partie, illustrative Skalierung, keine Preis-/Umsatzprognose. Strategische Perspektive, kein Implementierungsauftrag und keine Trainingsfreigabe.
+
+
+## App → Lab – CACHE-01 / Usage Audit & Cache Control (14.11.2026)
+
+[Technisches Memo V0.1](ANDY_CACHE_01_IMPLEMENTATION_MEMO_v0.1.md) konsolidiert die Briefings von Gemini, Claude, DeepSeek und Qwen mit GPT-Review. **SYNC-03 (8082 → 8080) erfolgreich laut Projektleitung. Nächster Schritt: CACHE-01A, read-only/offline auf 8080.** Danach Usage Normalizer (korrigierter Testvertrag UN-01–17), versionierte Kosten, Cache Control, Prompt-Experimente und Lab-Integration. Historische Budgetlogik und Originaldaten unverändert; kein API-Aufruf ohne Freigabe. Provider-Mappings sind bis zum konkreten Endpoint-Audit vorläufig. [Tarif-Snapshot](../research/andy-lab/REQUIREMENTS/v0.1/API_COSTS_CACHE_2026-11.md).
