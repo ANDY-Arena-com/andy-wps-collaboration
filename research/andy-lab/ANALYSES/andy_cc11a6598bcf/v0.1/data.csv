@@ -1,0 +1,5 @@
+round,model,color,input_tokens,output_tokens,output_setup,output_chess,output_go,reasoning_reported,reasoning_present_calls,calls,executed_reported,chess_captures,material,go_control,go_captures,coverage
+0,Argon,W,101775,4002,254,1929,1819,,0,107,104,11,0,45,5,framed
+0,Astra,B,87329,89015,1794,25704,61517,84136,101,103,103,15,8,52,16,framed
+1,Argon,B,134220,4834,288,2151,2395,,0,132,116,11,0,50,3,framed
+1,Astra,W,102342,137594,1458,51916,84220,131745,115,117,117,15,18,65,15,framed
