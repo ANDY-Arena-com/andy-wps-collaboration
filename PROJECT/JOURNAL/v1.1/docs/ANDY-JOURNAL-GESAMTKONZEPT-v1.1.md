@@ -165,6 +165,25 @@ Die vier Rubriken bilden die **redaktionelle Hauptnavigation**, nicht eine feste
 | Nächste Fight Night | belegter Termin, Zeitzone, Zielseite | **nicht anzeigen**, wenn Termin unbestätigt |
 | Newsletter | tatsächlich bereitgestelltes Opt-in mit Datenschutzinformationen | nicht anzeigen |
 
+### 5.2 Ereignisgesteuerte News Activation (Konzeptnachtrag 14.11.2026)
+
+Das eigenständige WordPress-Journal soll relevante Nachrichten und besondere Forschungsergebnisse bei Bedarf prominent inszenieren können. **Keine fünfte Rubrik, keine permanente News-Section, kein automatisierter Newsfeed und kein Publikationszwang.** Die vier bestehenden Rubriken und der normale Magazinauftritt bleiben erhalten. News ist eine temporäre redaktionelle Aktivierung eines bestehenden Beitrags oder Themenschwerpunkts.
+
+| Modus | Redaktionelle Wirkung |
+|---|---|
+| Normalbetrieb | Homepage gemäß §5, ohne zusätzliche News-Fläche |
+| News | prominenter temporärer Teaser mit Verweis auf freigegebenen Beitrag |
+| Major News | freigegebene Nachricht übernimmt zeitweise den Hero |
+| Special Coverage | kuratierter Schwerpunkt mit mehreren Beiträgen, Analysen und verfügbaren Videos |
+
+**Redaktioneller Prozess:** Fachthreads können Nachrichtenkandidaten an den bestehenden redaktionellen Themenspeicher melden (Datum, Quelle, Relevanz, beobachtete Aussage, Prüfbedarf, zuständige Rubrik). Redaktion prüft Außenwirkung und Evidenz, formuliert die Nachricht, holt erforderliche fachliche/WPS-Freigaben und die ausdrückliche menschliche Publikationsfreigabe ein. Zuspitzung ist erwünscht, sofern die Überschrift durch die belegte Aussage gedeckt ist. Externe Herstellerangaben, eigene Beobachtungen, berechnete Befunde und Interpretationen trennen. Keine vorgegebene Veröffentlichungsfrequenz.
+
+**Illustratives Beispiel, ausdrücklich kein Befund:** „Caching verbessert die Leistung von DeepSeek und Qwen in der ANDY Arena um 50 %“. Vor einer tatsächlichen Veröffentlichung muss definiert und geprüft werden, ob beispielsweise Kosten, Latenz, ausgeführte Aktionen oder relative Siegquote gemeint sind, welcher Vergleichsmaßstab, welche Modelle, Stichprobe, Konfiguration, Cache-Treffer und Unsicherheiten vorliegen. Keine hypothetische Prozentzahl als Nachricht ausgeben; keine Verallgemeinerung auf Unternehmensleistung aus ANDY allein. Denkbare Kandidaten: CACHE-01, Subquadratic/API-Kosten, außergewöhnliche verifizierte Arena-Ergebnisse.
+
+**WordPress-Anforderung für Phase B:** Manuelle redaktionelle Steuerung im Backend ohne Codeänderung je Meldung: veröffentlichten/freigegebenen Beitrag oder kuratierten Schwerpunkt auswählen, Prominenzmodus, sprachspezifische Headline/Teaser und optional Start-/Endzeit setzen, Vorschau und ausdrückliche Aktivierung/Deaktivierung ermöglichen. Ohne gültigen freigegebenen Inhalt oder nach Deaktivierung/Ende automatisch zum normalen Homepage-Layout zurückkehren. Zeitsteuerung optional und erst nach technischer Prüfung; keine automatische Veröffentlichung von Entwürfen. Rubrik, kanonische Artikel-URL, Quellen, Korrekturstand und Sprachversionen bleiben erhalten. Nicht vorhandene Sprachfassungen nicht vortäuschen. Responsive Darstellung und bestehende Markenwelt beachten. Technische Wahl (Blockpattern, Beitragsmetadaten oder kleines Modul) erst nach WordPress-Bestandsaufnahme.
+
+**Abnahmeidee:** Normalbetrieb → News → Major News → Special Coverage → Normalbetrieb anhand freigegebener Testinhalte in Staging prüfen; unveröffentlichte Inhalte dürfen nie erscheinen; fehlender/abgelaufener Schwerpunkt fällt auf Normalbetrieb zurück; Mobilansicht und Sprachwechsel prüfen. Bestehende Arena und Coming-Soon-Seite bleiben unberührt. Kein Implementierungs- oder Publikationsnachweis.
+
 ---
 
 ## 6. Artikelseiten: das Herz des Journals
