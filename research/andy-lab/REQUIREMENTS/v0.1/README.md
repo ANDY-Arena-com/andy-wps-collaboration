@@ -57,3 +57,8 @@ Je Zyklus eine Zeile mit Datum, Analyse-Versionen, Nutzerfrage, Req-ID, Prototyp
 | 01 – 14.11.2026 | S150, S350, G01 archiviert | Best-of Req-Pool v0.1 | offen, keine Clickdummy-Abnahme | weitere Games parallel; ersten Series-Explorer-Clickdummy entwerfen und mit Projektleitung testen |
 
 Bezug zur bisherigen [Lab-Architektur](../../ANDY_LAB_2_0_RESEARCH_ARCHITECTURE_v1.0.md): dieser Arbeitsstand präzisiert die aktuelle Entwicklungsmethode für das neue Lab, ersetzt keine freigegebenen Schnittstellen oder Schutzanforderungen. Punch Lab und Hypothesenpool weiterhin separat, kein aktueller Implementierungsauftrag.
+
+
+## Ergänzender Requirements-Impuls – API-Kosten und Caching
+
+[API-Kosten und Prompt-Caching – Tarif-Snapshot November 2026](API_COSTS_CACHE_2026-11.md): temporäre Preisreferenz, providerabhängige Usage-Normalisierung, Cache-Read/Write, Kostenanalyse als Erweiterung LAB-R03/R11. Kein eigener freigegebener Requirement oder Implementierungsauftrag; Spielbudget unverändert.
