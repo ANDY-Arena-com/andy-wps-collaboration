@@ -153,7 +153,7 @@ Mögliche Anwendungsfälle **(noch keine nachgewiesene Eignung)**:
 
 - **Arena-Webseite:** `andy-arena.com`; UI-Prototyp mit DE/EN/ZH, Homepage/Fight Night und replaybasiertem Theater.
 - **Blog:** `blog.andy-arena.com`; WordPress separat, aktuelle öffentliche Coming-Soon-`index.html`, WordPress-`index.php`; derzeit `DirectoryIndex index.html index.php` in Blog-`.htaccess`. Umstellung beim Launch kontrolliert vornehmen; keine WP-Kerndateien überschreiben.
-- **Website-Releasehistorie:** V0.8.1.4 als früher getesteter Rückfallstand; V0.8.2 Mobile/Blog; V0.8.2.1 Cache-Fix; **V0.8.2.2 als jüngstes bereitgestelltes ZIP-Paket mit Replay-Zeitfeld neben Zug-/Ereigniszähler** ([technischer Fixbericht](WEB/WEBSITE_REPLAY_TIME_0822_2026-11-13.md)). Nur lokal/statisch geprüft; Hostinger-Live- und Windows-Abnahme offen.
+- **Website-Releasehistorie:** V0.8.1.4 als früher getesteter Rückfallstand; V0.8.2 Mobile/Blog; V0.8.2.1 Cache-Fix; **V0.8.2.2 als früheres bereitgestelltes ZIP-Paket mit Replay-Zeitfeld neben Zug-/Ereigniszähler** ([technischer Fixbericht](WEB/WEBSITE_REPLAY_TIME_0822_2026-11-13.md)). Nur lokal/statisch geprüft; Hostinger-Live- und Windows-Abnahme offen.
 - **Verifizierte Website-Paketkette (13.11.2026):** [ZIP-Dateivergleich, SHA-256, Änderungen V0.8.1.2–V0.8.2.2 und Abgrenzung zum späteren Windows-TLS-Problem](WEB/WEBSITE_RELEASE_EVIDENCE_2026-11-13.md). Technische Paketprüfung ≠ nachgewiesener produktiver Stand.
 - **Research-Code/Dokumentation:** GitHub, versioniert; Regeln und Engine-Version in jeder Publikation referenzieren.
 - **Markenbild:** ANDY-Original-Logo, Arena dunkel/cinematisch; Lab sachlich, Journal 70 % Science Editorial / 30 % Fight Club. Keine Anbieter-Partnerschaft suggerieren; Verwendung fremder Logos/Marken anhand Richtlinien und ggf. Erlaubnissen prüfen.
@@ -226,3 +226,7 @@ Mögliche Anwendungsfälle **(noch keine nachgewiesene Eignung)**:
 
 ---
 **Kernsatz:** *ANDY soll nicht nur zeigen, wer gewinnt, sondern nachvollziehbar machen, welche Entscheidungen, Aussagen, Anpassungen und Ressourcen zu beobachtbaren Ergebnissen führen — und wie sicher wir unsere Erklärungen dafür begründen können.*
+
+## Aktueller Website-Release-Stand (14.11.2026)
+
+**V0.8.3.6 – Final Release** ist der jüngste bereitgestellte vollständige Website-Stand und ersetzt V0.8.2.2 als Entwicklungsreferenz. [Konsolidierter Release-Nachweis und SHA-256](WEB/WEBSITE_RELEASE_V0836_2026-11-14.md). V0.8.3.5 wurde vom Projektleiter visuell positiv beurteilt; die abschließenden Headerkorrekturen von V0.8.3.6 sind technisch geprüft, die visuelle Endabnahme und das Hostinger-Deployment noch nicht nachgewiesen. Windows-TLS bleibt separat offen.
