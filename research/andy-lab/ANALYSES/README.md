@@ -11,3 +11,6 @@
 | andy_83f51171e438 | Gemini 4 Argon × OpenAI Astra | 150k, A2, master, historical_category_2 | [v0.1 – 3 logische Partien](andy_83f51171e438/v0.1/README.md) |
 | andy_cc11a6598bcf | Gemini 4 Argon × OpenAI Astra | 350k, 4096, A2, master | [v0.1 – 2 logische Partien](andy_cc11a6598bcf/v0.1/README.md) |
 Weitere Serien bei tatsächlicher Auswertung ergänzen. Dieser Index beansprucht keine vollständige Erfassung aller bisherigen Serien.
+
+## Serienübergreifende Analyse-Snapshots
+- [Globale JSONL-Bestandsanalyse 14.11.2026 – v0.1](GLOBAL/2026-11-14/v0.1/README.md): 24 technische IDs, 3261 Decision-Ereignisse; überlappt Einzelserien, nicht addieren.
