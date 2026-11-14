@@ -62,3 +62,8 @@ Bezug zur bisherigen [Lab-Architektur](../../ANDY_LAB_2_0_RESEARCH_ARCHITECTURE_
 ## Ergänzender Requirements-Impuls – API-Kosten und Caching
 
 [API-Kosten und Prompt-Caching – Tarif-Snapshot November 2026](API_COSTS_CACHE_2026-11.md): temporäre Preisreferenz, providerabhängige Usage-Normalisierung, Cache-Read/Write, Kostenanalyse als Erweiterung LAB-R03/R11. Kein eigener freigegebener Requirement oder Implementierungsauftrag; Spielbudget unverändert.
+
+
+## Research-Kandidat – Subquadratic und ökonomischer Wettbewerb
+
+[Subquadratic / Economic Competition View](SUBQUADRATIC_ECONOMIC_COMPETITION.md): API-Kandidat, getrennte Arena-/Lab-/agentische Einsatzpfade und Kosten-Leistungs-Vergleich als Erweiterungsimpuls zu R03/R11. Priorisierung offen.
