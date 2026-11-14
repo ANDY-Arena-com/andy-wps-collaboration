@@ -59,4 +59,4 @@ Die folgenden ZIP-Bundles wurden anhand ihrer enthaltenen Dateien, der README-Da
 
 ## Aktueller Website-Release-Stand (14.11.2026)
 
-**V0.8.3.6 – Final Release** ist der jüngste bereitgestellte vollständige Website-Stand und ersetzt V0.8.2.2 als Entwicklungsreferenz. [Konsolidierter Release-Nachweis und SHA-256](WEBSITE_RELEASE_V0836_2026-11-14.md). V0.8.3.5 wurde vom Projektleiter visuell positiv beurteilt; die abschließenden Headerkorrekturen von V0.8.3.6 sind technisch geprüft, die visuelle Endabnahme und das Hostinger-Deployment noch nicht nachgewiesen. Windows-TLS bleibt separat offen.
+**V0.8.4.2 – Final Polish** ist die jüngste vollständige Website-Entwicklungsreferenz, lokal visuell vom Projektleiter freigegeben. [Release-Nachweis, Prüfsumme und ANDY Player Identity Module](WEBSITE_RELEASE_V0842_2026-11-14.md). V0.8.3.6 bleibt historisch dokumentiert. Hostinger-Deployment, vollständige plattformübergreifende Abnahme und GitHub-Binärarchivierung bleiben offen; Windows-TLS ist separat zu behandeln.
