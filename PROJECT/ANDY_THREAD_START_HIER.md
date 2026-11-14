@@ -2,7 +2,7 @@
 
 **Stand:** 14.11.2026 · **Status:** gemeinsames Kurzbriefing; Masterplan hat Vorrang
 
-> **Aktuelle App → Lab Übergabe (14.11.2026):** [Serienbetrieb, Evidence Builder und Experiment-Profile](ANDY_APP_LAB_SERIES_HANDOFF_2026-11-14.md). Operativ bestätigter Live-Resume-Referenzfall, logischer Match-Resolver, zwei verifizierte Exportpakete (7 logische Partien / 8 Segmente im Mehrserienexport), Kategorie 2, Serienprofile und kompakter Serien-Manager; jüngster historischer Rückkampf im Test. Vor neuen App- oder Lab-Aufgaben lesen. Enthält tatsächliches Exportformat, Bedienwege, Analysegrenzen und Abnahme-Gates.
+> **Aktuelle App → Lab Übergabe (14.11.2026):** [Serienbetrieb, Evidence Builder und Experiment-Profile](ANDY_APP_LAB_SERIES_HANDOFF_2026-11-14.md). Operativ bestätigter Live-Resume-Referenzfall, logischer Match-Resolver, zwei verifizierte Exportpakete (7 logische Partien / 8 Segmente im Mehrserienexport), Kategorie 2, Serienprofile und kompakter Serien-Manager; historischer Rückkampf erfolgreich bestätigt; SYNC-02 technisch abgeschlossen (8080: 60 Regressionstests im letzten Installer, 32/32 Patch-Dateien bestätigt), Browser-Abnahme offen. 8082 Forschungsbetrieb, 8080 Arena-Entwicklung. Vor neuen App- oder Lab-Aufgaben lesen. Enthält tatsächliches Exportformat, Bedienwege, Analysegrenzen und Abnahme-Gates.
 >
 > **Historische App-/Serien-Übergabe (13.11.2026):** [8082 RESULT-02 / SERIES-02 Fixstand und SERIES-03-Folgearbeiten](ANDY_APP_8082_SERIES_HANDOFF_2026-11-13.md). Drei Regressionstests auf 8082 bestanden; Live-Abnahme und 8080-Sync noch offen. Diese Übergabe vor App-Arbeiten lesen.
 
