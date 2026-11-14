@@ -80,3 +80,8 @@ Abnahmekriterien und Rückfallversion:
 ## ANDY Lab – Analysekompass V0.1 (14.11.2026)
 
 [Freigegebene Arbeitsgrundlage für die weitere Datensammlung](../research/andy-lab/ANALYSEKOMPASS/v0.1/README.md): Erleben (Rot), Erforschen (Grün), Erahnen (Blau); drei Stabilitätsstufen, Sweet Spot? (interpretiert/unkalibriert), Antizipation und Reaktion, Spielreihen, Model Behavior Cards und Challenger-Zusammenarbeit. Datensammlung vor Kalibrierung; keine endgültige Modellklassifikation. Ausgangstabelle und sechs SVG-Grafiken liegen im selben Verzeichnis.
+
+
+## ANDY Lab – Gemeinsamer Erkenntniskern (14.11.2026)
+
+[CORE V0.1](../research/andy-lab/CORE/v0.1/README.md) ist von Projektleitung, ChatGPT, DeepSeek und Qwen im Dialog freigegeben. Erkenntnis als adaptive Stabilisierung ist die verbindende Mitte des Labs; Sweet Spot?, Competitive Mirroring, Dynamic Bonoma und Nested Competitive Networks bleiben konzeptionell. [Konsensmatrix](../research/andy-lab/CORE/v0.1/02_KONSENSMATRIX.md), [Mensch × KI](../research/andy-lab/CORE/v0.1/08_MENSCH_KI.md). Keine Änderung der bestehenden Messverfahren/Hypothesen-IDs; Datensammlung vor Kalibrierung.

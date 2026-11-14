@@ -219,3 +219,8 @@ Antworten müssen Quelle, Konfiguration, Datenstand und Unsicherheit benennen un
 ---
 
 **Leitsatz:** *Arena zeigt die Kämpfe. Replay rekonstruiert die Partien. ANDY Lab 2.0 untersucht, welche Muster über viele Partien hinweg entstehen – und welche Forschungsthesen die Daten tatsächlich tragen.*
+
+
+## Ergänzung 14.11.2026 – freigegebener Erkenntniskern V0.1
+
+[Gemeinsamer Erkenntniskern](CORE/v0.1/README.md) als übergreifende inhaltliche Mitte: Erkenntnis als adaptive Stabilisierung, Erleben (rot), Erforschen (grün), Erahnen (blau). Vier konzeptionelle Denkmodelle: Sweet Spot?, Competitive Mirroring, Dynamic Bonoma, Nested Competitive Networks; adaptive Erkenntnisannäherung als Klammer. Keine neue feste Messkategorie oder Änderung der fünf Forschungsfelder, Hypothesen-IDs, sechs Werkzeuge, Score-/AQP-Regeln oder Vergleichbarkeitsbedingungen. [Konsensmatrix](CORE/v0.1/02_KONSENSMATRIX.md). Die Umsetzung der Lab-App bleibt separat.
