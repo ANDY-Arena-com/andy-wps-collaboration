@@ -48,3 +48,13 @@ Kosten = Summe der disjunkten abrechenbaren Tokenkategorien mal jeweiliger Tarif
 Ergänzung zu LAB-R03 und R11: versionierte Tariftabelle; Bar-/Kurvenansichten uncached/read/write/output, Cache-Hit-Anteil (read / total input), Kosten je Phase/Match/Serie, tatsächliche vs geschätzte Kosten, Tarifdatum und Abdeckung, USD pro ausgeführter Aktion. Für App-Handoff später native usage payload, exakte Modell-ID, Provider/API/Tier, Zeit, Preisversion, Cache-TTL, Prompt-Präfixhash, pseudonyme Account-/Projektgruppe erfassen; keine Schlüssel oder geheimen Prompts veröffentlichen. Vergleich Cache-Hit/Miss bei gleicher Konfiguration und gleichem Promptinhalt kann zur Erklärung von Latenzunterschieden beitragen, ohne daraus mentale Vertrautheit abzuleiten.
 
 **Wichtig:** ANDY-Spielbudget, logische Tokenmenge und finanzielle Abrechnung trennen. Keine rückwirkende Regeländerung oder automatische Budgetentlastung für Cache-Tokens. Vor Änderungen Adapter und aktuelle Logs prüfen, insbesondere Gemini Thinking und Anthropic Cache-Felder. Historische Matchkosten nicht als exakt ausweisen. Kein neuer Implementierungsauftrag, kein API-Aufruf, keine Kostenfreigabe.
+
+
+## Nachtrag 14.11.2026 – Subquadratic
+
+| Modell | Input USD/MTok | Output USD/MTok | Cache Read USD/MTok |
+|---|---:|---:|---:|
+| subq-savant-1.4 | 0.10 | 0.50 | 0.01 |
+| subq-snap-1.2 | 0.04 | 0 | unbekannt |
+
+Quelle: https://docs.subq.ai/using-the-api/models/ (14.11.2026). Savant Early Access; Snap separate Decisions API, keine direkte Gleichsetzung mit generativen Modellen. Savant Reasoning in completion_tokens enthalten, cached_tokens Teil des Inputs. Cache-Schreib-/sonstige Gebühren hier nicht ermittelt. Details: [Research Memo](SUBQUADRATIC_ECONOMIC_COMPETITION.md).
