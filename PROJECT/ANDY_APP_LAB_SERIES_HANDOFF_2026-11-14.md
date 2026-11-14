@@ -171,3 +171,8 @@ Lieferfolge (ZIP-Artefakte im App-Thread bzw. lokal beim Projektleiter, nicht Bi
 - Lab arbeitet jetzt mit den vorhandenen Exports; App kehrt nach Sync und Abnahme zur Arena zurück. Experiment Designer und P3 erst als eigenes Arbeitspaket.
 
 **Kurzauftrag an den Lab-Thread:** Die Datenbasis ist verfügbar und exportierbar, einschließlich moderner Resume-Ketten. Prüfe zuerst die gelieferten ZIPs. Fordere weitere Serien und Profile gezielt anhand eines konkreten Analysebedarfs an. Keine allgemeine Theorie oder endgültige Modellbewertung aus diesen wenigen Partien ableiten.
+
+
+## 10. Abnahme-Nachtrag 14.11.2026, 20:12 MEZ
+
+Projektleiter meldet: Der historische Rückkampf auf 8082 lief vollständig durch und wurde korrekt in die bestehende Serie aufgenommen. Damit ist der konkrete Kategorie-2-Live-Referenzfall operativ bestätigt (Benutzerbericht; neues Originaldateipaar und Export noch nicht unabhängig geprüft). Auf 8080 ist SERIES-PROFILES-01 installiert, Terminalnachweis 32/32 Tests bestanden. Die drei Folgepakete PROFILES-02 → UX-01 → HISTORICAL-REMATCH-01 müssen dort noch bestätigt werden. Paketmanifeste geprüft: 8080-Zielkette konsistent, 32 erwartete Dateien einschließlich SYNC-02; historischer Rematch-Adapter hat seinen eigenen lokalen Vorversionshash. Kein produktiver Schreibzugriff auf gemeinsames 8082-Archiv. Arena- und Designer-Code bleiben separat. Dieser Nachtrag hat Vorrang vor den älteren Statusangaben zum konkreten historischen Live-Test.
