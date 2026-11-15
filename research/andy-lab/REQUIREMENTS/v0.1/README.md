@@ -67,3 +67,8 @@ Bezug zur bisherigen [Lab-Architektur](../../ANDY_LAB_2_0_RESEARCH_ARCHITECTURE_
 ## Research-Kandidat – Subquadratic und ökonomischer Wettbewerb
 
 [Subquadratic / Economic Competition View](SUBQUADRATIC_ECONOMIC_COMPETITION.md): API-Kandidat, getrennte Arena-/Lab-/agentische Einsatzpfade und Kosten-Leistungs-Vergleich als Erweiterungsimpuls zu R03/R11. Priorisierung offen.
+
+
+## Research-Kandidat – ANDY-ABC / Domain Isolation & Coupling
+
+[ANDY-ABC – Domain Isolation Memo](ANDY_ABC_DOMAIN_ISOLATION_MEMO.md): Chess only, Go only und Hybrid als experimentelle Vergleichsdimension; Domain Behavior Profile, Ressourcenökonomie und lokale Kompetenz vs. globale Wirksamkeit. Game Mode als Serienprofilmerkmal. DOMAIN-01/02 bei Thread 1; keine Implementierungsfreigabe oder neue Req-ID.
