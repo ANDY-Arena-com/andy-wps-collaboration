@@ -45,3 +45,7 @@ Die Version 1.1 ist auf den ANDY-2.0-Masterplan und die Governance der Working P
 
 - [Design & Editorial Guidelines 1.0](docs/ANDY-JOURNAL-GUIDELINES-v1.0.md) – erlebbar, erforschbar, erahnbar; Arena-Verwandtschaft und eigenständige Magazinbildwelt; Vermittlungsqualität als Testgegenstand.
 - [Public Beta – Arbeitspakete 1.0](docs/ANDY-JOURNAL-PUBLIC-BETA-ARBEITSPLAN-v1.0.md) – JRN-01–09, fünf Pilotartikel und iterative Abnahme; keine Live-Freigabe.
+
+## Plugin-Architektur und Match Library (15.11.2026)
+
+- [ANDY Journal – Plugin-Architektur v0.1](docs/ANDY-JOURNAL-PLUGIN-ARCHITEKTUR-v0.1.md) – erfolgreiche erste Praxistests von Academy und Replay, zentraler Player mit Match Center und individueller Artikeleinbindung, Game Packages und Roadmap; weitere Implementierung und Theme-Kompatibilitätsprüfung offen.
