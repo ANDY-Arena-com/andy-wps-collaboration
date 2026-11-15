@@ -1,5 +1,7 @@
 # ANDY Arena Website – V0.8.4.2 Final Polish
 
+**Aktualisierung 15.11.2026:** GitHub-Projektlink und Journal-Umbenennung; Journal-Aufruf bei Hostinger laut Projektleiter erfolgreich. Siehe [Nachtrag vom 15.11.2026](#nachtrag-vom-15112026--github-projektlink-und-journal). Die Versionsnummer bleibt V0.8.4.2.
+
 **Stand:** 14.11.2026. **Status:** lokale visuelle Designfreigabe durch Projektleiter („hammer!!!“) nach V0.8.4.2. Kein nachgewiesenes produktives Hostinger-Deployment und keine vollständige plattformübergreifende Regression.
 
 ## Release-Artefakt
@@ -29,3 +31,27 @@
 
 ## Offen
 Vollständiges ZIP dauerhaft archivieren; Hostinger-Backup und Deployment separat bestätigen; DE/EN/ZH, Mobile, Browser und vollständige Funktionstests dokumentieren. Windows-TLS bleibt separates Issue #3. Visuelle Designfreigabe ist kein Nachweis für vollständige technische Abnahme. Kein produktiver Eingriff in diesem Dokumentationsschritt.
+
+
+## Nachtrag vom 15.11.2026 – GitHub-Projektlink und Journal
+
+**Status:** Website-Paket V0.8.4.2 mit redaktionellen und Navigationskorrekturen. Der Projektleiter meldete am 15.11.2026, dass die Journal-Seite bei Hostinger jetzt funktioniert. Dieser Einzeltest ist keine vollständige technische Abnahme; ein unabhängiger Live-Dateiabgleich war nicht möglich.
+
+### Änderungen
+- Abschnitt 06 (Beta-Veröffentlichung): separaten Entwicklungsbutton entfernt; Link zum [GitHub-Projektbereich](https://github.com/ANDY-Arena-com/andy-wps-collaboration/tree/main/PROJECT) im Fließtext integriert. Weitere GitHub-Entwicklungslinks in mobiler Navigation und Footer auf denselben Projektbereich aktualisiert.
+- Beta-Code-Download weiterhin als noch nicht verfügbar gekennzeichnet; keine Veröffentlichung eines Beta-Spielcodes.
+- Blog → Journal in Desktop-Kopfzeile, mobiler Navigation, Footer und Coming-Soon-Landingpage; Deutsch, Englisch und Chinesisch berücksichtigt. Subdomain bleibt `blog.andy-arena.com`.
+- Gegen das ursprüngliche V0.8.4.2-Paket exakt vier Dateien geändert: `public_html/de/index.html`, `public_html/en/index.html`, `public_html/zh/index.html`, `BLOG_SUBDOMAIN_UPLOAD/index.html`. Die übrigen 51 Dateien sind byteidentisch. Replay, CSS, JavaScript, Matchdaten und SVGs bleiben unverändert.
+- Die Coming-Soon-Seite separat als `index.html` ins Webverzeichnis der Blog-Subdomain hochladen; die einzeln im Chat bereitgestellte Datei `ANDY_Journal_index.html` ist byteidentisch mit der Landingpage aus beiden Journal-Paketen.
+
+### Referenzartefakte (lokal verifiziert)
+| Paket | Größe | SHA-256 |
+|---|---:|---|
+| `ANDY_Arena_KOMPLETT_V0842_GitHub_Journal.zip` | 747848 Bytes | `12c2665fd1777e8d31e55c64bb4a5e74b97e4b2acc95fa6e39c376a6306e1ee6` |
+| `ANDY_Arena_KOMPLETT_V0842_GitHub_Journal_IndexFix.zip` | 747864 Bytes | `c68ff463ecadc8cb0fc46e04416179d89636667104a53edf0db1a139e703a580` |
+
+Beide ZIPs enthalten je 55 Dateien; Integritätsprüfung ohne Fehler. Die Journal-Variante verlinkt in allen drei Sprachen auf `https://blog.andy-arena.com/` (12 Links). Die IndexFix-Variante unterscheidet sich davon ausschließlich in diesen drei Sprach-HTML-Dateien und verlinkt ausdrücklich auf `https://blog.andy-arena.com/index.html`.
+
+Beim vorangegangenen Test erschienen zeitweise die WordPress-Standardseite und für den direkten HTML-Aufruf eine 404-Seite. Anschließend bestätigte der Projektleiter die Funktion auf Hostinger. Die genaue Serverursache und die tatsächlich hochgeladene Linkvariante sind nicht unabhängig verifiziert. Die reguläre Journal-Variante mit Subdomain-Root bleibt der empfohlene Referenzstand, sofern dieser Aufruf weiterhin funktioniert; IndexFix ist eine dokumentierte Alternativvariante. Keine Änderungen an WordPress oder Hostinger durch diesen GitHub-Dokumentationsschritt.
+
+**Noch offen:** Dauerhafte Binärarchivierung der ZIPs im Repository, unabhängiger Abgleich des produktiven Deployments inklusive exakter Linkvariante und vollständige Browser-/Mobil-/Sprachregression.
