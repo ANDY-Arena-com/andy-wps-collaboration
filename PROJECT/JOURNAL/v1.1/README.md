@@ -40,3 +40,8 @@ Vorgeschlagene Commit-Nachricht nach Review: `docs(journal): align concept v1.1 
 ## Projektübergreifender Abgleich
 
 Die Version 1.1 ist auf den ANDY-2.0-Masterplan und die Governance der Working Paper Series abgestimmt. Sie ersetzt diese **nicht**. Siehe [`docs/ABGLEICH-MASTERPLAN-v1.1.md`](docs/ABGLEICH-MASTERPLAN-v1.1.md). Die Statusangaben bezeichnen einen Konzeptentwurf, **keine** technische Umsetzung oder Publikationsfreigabe.
+
+## Public Beta – Guidelines und Arbeitsplan (15.11.2026)
+
+- [Design & Editorial Guidelines 1.0](docs/ANDY-JOURNAL-GUIDELINES-v1.0.md) – erlebbar, erforschbar, erahnbar; Arena-Verwandtschaft und eigenständige Magazinbildwelt; Vermittlungsqualität als Testgegenstand.
+- [Public Beta – Arbeitspakete 1.0](docs/ANDY-JOURNAL-PUBLIC-BETA-ARBEITSPLAN-v1.0.md) – JRN-01–09, fünf Pilotartikel und iterative Abnahme; keine Live-Freigabe.
