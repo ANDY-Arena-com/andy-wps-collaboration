@@ -136,3 +136,32 @@ Gestaltungs- und Technologieentwicklung kann nach Einrichtung der Factory unabh�
 - [Research Pipeline](ANDY_SERIES_RESEARCH_PIPELINE_SPEC_v0.1.md)
 
 **Abgrenzung:** Dieses freundlich freigegebene Architekturkonzept ist kein Nachweis eines bereits laufenden 8083-Servers. Queue, Autoplay, Import und Release-Konsolidierung sind noch Entwicklungsaufgaben. Keine Programmdateien, Datenbanken, Runs oder API-Anfragen durch diesen Doku-Commit verändert.
+
+
+## 10. Ergänzung 15.11.2026 – portable Standalone Factory und SYNC-05A
+
+**Ergänzende Anforderung der Projektleitung:** Factory als eigenständig installierbare Forschungsinstanz auf demselben oder einem anderen Rechner; später mehrere Factories aus demselben freigegebenen Release. Kein eigener Engine-Fork. Studio und Sandbox werden zum Betrieb nicht benötigt.
+
+Pareto-Umsetzung: zunächst portable Python-Installation mit dokumentierten, gepinnten Abhängigkeiten, reproduzierbarem Release-Manifest, konfigurierbarem Server-Port/Bind-Adresse, stabiler zufälliger Instanz-ID, eigenem Runtime-/Runs-/DB-/Queue-Verzeichnis und lokal bereitgestellten Provider-Secrets. Die Factory enthält Engine, Runner, API-Adapter, Serien, Replay, Queue, Autoplay und Evidenzexport; Designer und vollständiges Lab sind nicht notwendig. Freigegebenes Design als statische Ressource erhalten; Designer-Schreib-/Git-Aktionen in Factory deaktivieren. Docker erst später, kein neuer Cloud-Dienst im ersten Schritt. Browserzugriff zunächst lokal; Fernzugriff erst nach gesondertem Authentifizierungs-/TLS-/Netzwerkkonzept, kein öffentlich ungeschützter Matchstart.
+
+Pro Instanz Release-ID, Instanz-ID, Match-/Job-ID und experimentelles Profil in der Evidenz mitführen; bestehende IDs und historische Originale bewahren. Standardisierte Serienexporte und idempotenter, hashgeprüfter Import in ein gemeinsames Forschungsarchiv. Keine gemeinsame schreibbare SQLite-Datei über Rechnergrenzen. Für parallel betriebene Factories getrennt freigegebene Kostenkontingente aus einem Gesamtbudget; echte übergreifende Live-Kostensteuerung ist ein späterer Schritt. Keine automatischen Starts bei Installation. Beitragsmodell Dritter erst mit Datenschutz-/Lizenz-/Qualitätsprüfung.
+
+### Tatsächlich geprüfter SYNC-05A-Zwischenstand
+Quell-Audit-ZIP am 15.11.2026 eingelesen: ZIP-CRC fehlerfrei, 431/431 tatsächlich enthaltene Quell- und Assetdateien gemäß Manifest in Größe und SHA-256 geprüft. 236 Dateien aus 8080, 195 aus 8082; 241 unterschiedliche Pfade insgesamt: 173 inhaltlich identisch, 17 abweichend, 46 nur 8080 und 5 nur 8082. Zusätzlich eine in beiden Ständen hashidentische, vom Geheimnisfilter ausgelassene Testdatei (aus früherem Patcharchiv byteidentisch rekonstruierbar). Der statische AST-Syntaxcheck aller enthaltenen Python-Module ergab keine Syntaxfehler. Das ist kein vollständiger Regressionstest.
+
+Konkrete Merge-Befunde:
+- ANDY_app.py: Port hart codiert; Startskript ebenfalls an einen Port gebunden.
+- 8080: expliziter Leseschutz, aber Archivsuche abhängig von lokalen Ordnernamen; Leaderboard mit festem lokalem DB-Pfad. Serien-/Replay-Navigation teilweise auf Loopback-Port 8082 fixiert.
+- 8082: produktive Live-Resume-, Matcharchiv- und Serienstart-Funktionen, die 8080 bewusst nicht zulässt. Beide Verhaltensweisen über explizite Instanz-/Archivberechtigungen erhalten, nicht pauschal gegenseitig überschreiben.
+- 8080: Arena-Broadcast-Erweiterungen und OUTPUT-LIMIT-01 erhalten. 8082: Designer-Origin-Prüfung bereits portbezogen; HTML-Preview, Genehmigungsbranch und Git-Aktionen von Rolle und Deployment entkoppeln. Keine Sicherheitsprüfungen entfernen.
+- Audit-Filter hat das Python-Paket andy/infrastructure/archives sowie benötigte Designer-JSON-Ressourcen nicht exportiert. Die fehlenden Archive-Module werden tatsächlich importiert; vollständiger Merge aus diesem ZIP allein nicht freigabefähig. Audit V2 erweitert den Export nur für das benannte Codepaket und genau bezeichnete Designer-JSONs; weiterhin keine Runs/DBs/Secrets. Ausgewählte installierte Abhängigkeiten und Speicher-Linkflags ohne Zielpfade als Diagnostik. Die konkrete lokale V2-Ausgabe steht noch aus.
+
+### Abnahme SYNC-05 / FACTORY-01 (zusätzlich)
+1. Identischer freigegebener Codebestand, getrennte beschreibbare Datenspeicher; expliziter lesender Fremdarchivzugriff, keine implizite Zuordnung anhand Port/Ordnername.
+2. Offline-Lauf in frischem, beliebig benanntem Verzeichnis ohne Studio/Sandbox, mit separaten Testdaten und anderem Port; kein Provider-Call.
+3. Native Laufzeit-/Abhängigkeitsprüfung am Zielrechner, dokumentierte Installations- und Startschritte.
+4. Designer-Rechte nur in freigegebenen Entwicklungsrollen; Factory ohne Git-Schreibrechte betreibbar.
+5. Export aus zwei isolierten Instanzen und idempotenter Import in Testarchiv ohne Doppelzählung.
+6. Erst nach Offline- und lokaler Browser-Abnahme: begrenztes, ausdrücklich freigegebenes Live-Match und Autoplay-Pilot.
+
+**Status:** Audit-Zwischenstand, noch kein gemeinsamer Release. Kein Code, keine DBs und keine Partien durch diese Dokumentation geändert. Kein Docker- oder Multi-Host-Betrieb bereits implementiert.
