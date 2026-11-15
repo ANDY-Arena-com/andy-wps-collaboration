@@ -6,6 +6,8 @@
 
 Dieses Dokument ergänzt und aktualisiert den Ist-Stand von [Architektur V0.1](ANDY_FACTORY_THREE_INSTANCE_ARCHITECTURE_v0.1.md); die dort definierten Schutzprinzipien und der [Masterplan](ANDY_GESAMTKONZEPT_MASTERPLAN_v1.0.md) bleiben maßgeblich.
 
+> **Korrektur nach produktivem Hashvergleich (15.11.2026):** Studio 252/252 Kandidatendateien identisch; Sandbox nur 178/252, 23 abweichend und 51 fehlend, entsprechend dem geplanten Installationsumfang. Die frühere Meldung, beide Apps liefen, belegte keine erfolgreiche Sandbox-Installation. SYNC-05 ist für Sandbox erneut offen. Vor Factory-Implementierung vorhandenen Sandbox-Installer (Dry-run, Stillstand, Backup, Apply, 252/252 SHA-256, Neustart) ausführen und nochmals beide Instanzen prüfen. Keine laufende Partie abbrechen. Historische Zufallseinträge bleiben erhalten, aktive Neuauswahl muss ausgeschlossen sein.
+
 ## 1. Architektur auf einen Blick
 
 ```text
