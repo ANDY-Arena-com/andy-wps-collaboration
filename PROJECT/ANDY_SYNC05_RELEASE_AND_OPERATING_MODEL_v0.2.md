@@ -49,6 +49,29 @@ Durchgezogene Linien: aktuelles Betriebsmodell bzw. bestätigte Startfähigkeit;
 
 **Leitsatz:** 8080 gestaltet. 8082 experimentiert. 8083 produziert. ANDY Lab forscht.
 
+### Freigegebene Ziel-Funktionsmatrix (15.11.2026)
+
+Die Projektleitung stimmt der vorgeschlagenen Rollenverteilung zu. Diese Matrix ist ein **Entwicklungsziel**, keine Behauptung, dass alle Funktionen bereits rollenabhängig deaktiviert, implementiert oder vollständig abgenommen sind.
+
+| Funktion | STUDIO (8080) | SANDBOX (8082) | FACTORY (8083) |
+|---|:---:|:---:|:---:|
+| KI/KI | Ja | Ja | Ja |
+| Mensch/KI | Ja | Ja | – |
+| Replay | Ja | Ja | Ja |
+| Leaderboard | Ja | Ja | Ja |
+| Serienverwaltung | Ja | Ja | Ja |
+| Forschungsplanung | Ja | Ja | Ja |
+| Designer | Ja, freigegebener Branch | Lesend | – |
+| Lab | Ja | Ja | Optional |
+| Match Queue | – | Test | Ja |
+| Autoplay | – | Test, explizit freigegeben | Ja, explizit freigegeben |
+| Produktionsmonitor | – | Test | Ja |
+| Kostenkontrolle | Ja | Ja | Ja |
+| Live-Funding-/Budget-Preflight | gemeinsame lesende Schnittstelle | Test und Audit | Pflicht vor Autoplay und aktualisiert vor Matchstart |
+| Factory-Kostenfreigabe / Reservierungen | – | Test | Pflicht |
+
+Keine impliziten kostenpflichtigen Starts und keine automatische Erhöhung der lokalen Kostenfreigabe durch externes Auto-Funding. Der Produktionsmonitor trennt Provider-Guthaben/Abrechnungsart/Auto-Funding, die explizite ANDY-Kostenfreigabe und sportliche Tokenbudgets. Details und Abnahmekriterien: [FACTORY-BUDGET-01 / Funding & Preflight V0.1](ANDY_FACTORY_BUDGET_PREFLIGHT_v0.1.md).
+
 ## 2. Gemeinsamer Code ≠ gemeinsame Laufzeitdaten
 
 - Ein gemeinsamer fachlicher Codepfad für Engine, Runner, Arena, Replay, Serien, Evidenzadapter und Ergebnisdarstellung. Kein neuer Engine-Fork und keine zweite Serien-Engine.
@@ -129,7 +152,8 @@ Restabnahme: 44 Altfehler einzeln untersuchen; produktive Hashgleichheit und Rel
 | 2 | FACTORY-01 | 8083 unabhängig installiert, eigene Runtime, Daten und ID, manuelle Offline-Partie; kein Autoplay beim Start |
 | 3 | ARCHIVE-IMPORT-01 | kontrollierter Import aus Studio/Sandbox; Originale unverändert, Hashes/Provenienz, idempotente Projektion |
 | 4 | FACTORY-02 | persistente Match Queue; ein Worker, reservierte Job-/Match-ID; keine Doppelstarts |
-| 5 | FACTORY-03 | explizites Autoplay, Stop nach aktueller Partie, Ressourcen-/Kostenlimits und Blockierregeln |
+| 4a | FACTORY-BUDGET-01A–C | Provider-Capability-Audit, lesende Funding-Abfrage, lokales Kosten-Ledger, Budget-Tabelle und Preflight-Gates; Audit parallel zu FACTORY-01 möglich |
+| 5 | FACTORY-03 | explizites Autoplay, Stop nach aktueller Partie, Ressourcen-/Kostenlimits und Blockierregeln; Budget-Preflight zwingend vor automatischem kostenpflichtigen Betrieb |
 | 6 | FACTORY-04 | sicherer Wiederanlauf, Crash-/Reconnect-/Backup-Tests |
 | 7 | DOMAIN / REASONING / CORRECTION / CACHE | kontrollierte Experimente, getrennte Profile, keine ungeprüften Factory-Updates |
 
