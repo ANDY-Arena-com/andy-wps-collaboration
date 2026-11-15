@@ -1,7 +1,9 @@
 # ANDY – START HIER (für neue Threads und beteiligte KI-Systeme)
 
-**Stand:** 14.11.2026 · **Status:** gemeinsames Kurzbriefing; Masterplan hat Vorrang
+**Stand:** 15.11.2026 · **Status:** gemeinsames Kurzbriefing; Masterplan hat Vorrang
 
+> **Neue Architekturentscheidung (15.11.2026):** [ANDY Factory – Drei-Instanzen-Architektur V0.1](ANDY_FACTORY_THREE_INSTANCE_ARCHITECTURE_v0.1.md). Ziel: 8080 STUDIO (Arena/Designer), 8082 SANDBOX (technische Experimente), 8083 FACTORY (freigegebener autonomer Forschungsbetrieb). Zuerst **SYNC-05**: vollständiger beidseitiger Funktionsabgleich, gemeinsamer geprüfter Release; danach getrennte 8083-Instanz, kontrollierte Datenmigration, persistente Match Queue und begrenztes Autoplay auf der bestehenden Serial-Engine. SYNC-04 technisch bestätigt (201 Tests, 30/30 Zieldateien), OUTPUT-LIMIT-01 auf 8080 grün gemeldet. 8083 und Autoplay noch nicht implementiert. Dieses Memo aktualisiert die operativen Rollen und den nächsten App-Arbeitsschritt gegenüber den älteren Übergaben.
+>
 > **Aktuelle App → Lab Übergabe (14.11.2026):** [Serienbetrieb, Evidence Builder und Experiment-Profile](ANDY_APP_LAB_SERIES_HANDOFF_2026-11-14.md). Operativ bestätigter Live-Resume-Referenzfall, logischer Match-Resolver, zwei verifizierte Exportpakete (7 logische Partien / 8 Segmente im Mehrserienexport), Kategorie 2, Serienprofile und kompakter Serien-Manager; historischer Rückkampf erfolgreich bestätigt; SYNC-02 technisch abgeschlossen (8080: 60 Regressionstests im letzten Installer, 32/32 Patch-Dateien bestätigt), Browser-Abnahme offen. 8082 Forschungsbetrieb, 8080 Arena-Entwicklung. Vor neuen App- oder Lab-Aufgaben lesen. Enthält tatsächliches Exportformat, Bedienwege, Analysegrenzen und Abnahme-Gates.
 >
 > **Historische App-/Serien-Übergabe (13.11.2026):** [8082 RESULT-02 / SERIES-02 Fixstand und SERIES-03-Folgearbeiten](ANDY_APP_8082_SERIES_HANDOFF_2026-11-13.md). Drei Regressionstests auf 8082 bestanden; Live-Abnahme und 8080-Sync noch offen. Diese Übergabe vor App-Arbeiten lesen.
@@ -97,3 +99,8 @@ Abnahmekriterien und Rückfallversion:
 ## App → Lab – CACHE-01 / Usage Audit & Cache Control (14.11.2026)
 
 [Technisches Memo V0.1](ANDY_CACHE_01_IMPLEMENTATION_MEMO_v0.1.md) konsolidiert die Briefings von Gemini, Claude, DeepSeek und Qwen mit GPT-Review. **SYNC-03 (8082 → 8080) erfolgreich laut Projektleitung. Nächster Schritt: CACHE-01A, read-only/offline auf 8080.** Danach Usage Normalizer (korrigierter Testvertrag UN-01–17), versionierte Kosten, Cache Control, Prompt-Experimente und Lab-Integration. Historische Budgetlogik und Originaldaten unverändert; kein API-Aufruf ohne Freigabe. Provider-Mappings sind bis zum konkreten Endpoint-Audit vorläufig. [Tarif-Snapshot](../research/andy-lab/REQUIREMENTS/v0.1/API_COSTS_CACHE_2026-11.md).
+
+
+## Nächster App-Meilenstein – SYNC-05 / ANDY Factory (15.11.2026)
+
+[Architektur- und Entwicklungsauftrag V0.1](ANDY_FACTORY_THREE_INSTANCE_ARCHITECTURE_v0.1.md). Die bisherige Trennung in Arena-Entwicklung und Forschungsbetrieb wird zum Drei-Instanzen-Zielbild erweitert. Code-Sync und Archivmigration strikt trennen. Originaldaten und logische Match-IDs erhalten; keine neue Serial-Engine. Autoplay nur mit freigegebener Queue, Ressourcenlimits und sicherem Stopp. Nächster Schritt: lesender Audit der tatsächlichen lokalen Quellstände, keine kostenpflichtigen API-Aufrufe und keine Unterbrechung laufender Partien.
