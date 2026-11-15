@@ -3,6 +3,8 @@
  
 **Status:** Konzept freigegeben; Implementierung, Konsolidierung und Migration noch ausstehend. Dieses Memo konkretisiert den operativen App- und Forschungsbetrieb; der Masterplan bleibt übergeordnet.
 
+> **Betriebsupdate 15.11.2026:** [SYNC-05 / gemeinsamer Code und Drei-Instanzen-Betrieb V0.2](ANDY_SYNC05_RELEASE_AND_OPERATING_MODEL_v0.2.md) dokumentiert den nachfolgenden lokalen Rollout, Teststand, Startvertrag und die nächste Arbeitsreihenfolge. Beide Entwicklungsinstanzen starten laut Projektleitung; FACTORY bleibt geplant. Die folgenden V0.1-Abschnitte bewahren die historische Architekturentscheidung und ihre damaligen Audit-Befunde.
+
 ## 1. Ziel und Anlass
 
 ANDY braucht einen kontinuierlichen, reproduzierbaren Forschungsbetrieb, der nicht durch Arena-Entwicklung, API-Experimente oder häufige Neustarts unterbrochen wird. Die Projektleitung schlägt deshalb drei eigenständige Game-Instanzen vor:
