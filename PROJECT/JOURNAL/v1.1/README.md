@@ -49,3 +49,7 @@ Die Version 1.1 ist auf den ANDY-2.0-Masterplan und die Governance der Working P
 ## Plugin-Architektur und Match Library (15.11.2026)
 
 - [ANDY Journal – Plugin-Architektur v0.1](docs/ANDY-JOURNAL-PLUGIN-ARCHITEKTUR-v0.1.md) – erfolgreiche erste Praxistests von Academy und Replay, zentraler Player mit Match Center und individueller Artikeleinbindung, Game Packages und Roadmap; weitere Implementierung und Theme-Kompatibilitätsprüfung offen.
+
+## Content Manager und Publishing Workflow (16.11.2026)
+
+- [ANDY Content Manager – Workflow v0.1](docs/ANDY-CONTENT-MANAGER-WORKFLOW-v0.1.md) – Aculia-Transformation, modulare Design-/Content-Pakete, Inventory und Herkunftsregister, Dry Run, Rollback und späterer Demo-Cleanup nach Ersatz- und Abhängigkeitsprüfung. Konzept, Implementierung offen.
