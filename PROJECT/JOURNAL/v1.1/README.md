@@ -53,3 +53,7 @@ Die Version 1.1 ist auf den ANDY-2.0-Masterplan und die Governance der Working P
 ## Content Manager und Publishing Workflow (16.11.2026)
 
 - [ANDY Content Manager – Workflow v0.1](docs/ANDY-CONTENT-MANAGER-WORKFLOW-v0.1.md) – Aculia-Transformation, modulare Design-/Content-Pakete, Inventory und Herkunftsregister, Dry Run, Rollback und späterer Demo-Cleanup nach Ersatz- und Abhängigkeitsprüfung. Konzept, Implementierung offen.
+
+## Content Manager – Implementierungsstand und Übergabe (16.11.2026)
+
+- [Übergabe DESIGN-01](docs/ANDY-CONTENT-MANAGER-HANDOVER-2026-11-16.md) – Inventory v0.1.1 erfolgreich, Backup nutzerseitig bestätigt, 211 Referenzobjekte und unveränderte Hash-Paare über beide Exporte. Schreibender Import v0.2 und DESIGN-01 nicht erstellt; Release-Gate BLOCKED. Der neue Thread übernimmt die konkrete Implementierung und Prüfung. Keine Live-Freigabe.
