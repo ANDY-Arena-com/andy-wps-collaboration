@@ -1,0 +1,44 @@
+# ANDY Journal – RGB-Informationsarchitektur und Designbaseline
+Stand 17.11.2026 · Arbeitsbaseline: Content 0.5.0 / UI-Plugin 0.5.3 · interne Testinstallation, keine Publikationsfreigabe.
+
+Dieses Memo konkretisiert die ältere v1.1-Konzeption nach dem iterativen Test vom 16.–17.11.2026. Es ersetzt nicht den Masterplan, die WPS-Governance oder die ANDY-Dokumentation. Bei der Journal-Navigation hat der neuere, praktisch erprobte Stand Vorrang vor den vier früheren Rubriken. Quellen: Projektleiter-Feedback im Journal-Thread, tatsächlich erneut gelesenes Content-ZIP 0.5.0, Plugin 0.5.3 und Testprotokoll. Details zur Technik: [WP-Stand](ANDY-JOURNAL-WP-BASELINE-2026-11-17.md); Match-Experimente: [Match Stories](ANDY-JOURNAL-MATCH-STORIES-v0.4.md).
+
+## 1. Rolle und Ordnung
+Arena = Geschehen; Journal = redaktionelle Auseinandersetzung, interaktives Erleben, Zugang zu Forschung und Werkzeugen. Drei E bilden die Hauptnavigation, nicht bloß Werbeclaims. Gegenstand/Thema, Zugangsart und zeitliche Bezüge sind unterschiedliche Dimensionen. Ein Inhalt erhält eine primäre Rubrik; optionale Tags, weitere Unterkategorien und Verweise ergänzen sie. Keine erzwungene Trias pro Thema, keine Pflichtvernetzung, keine künstlichen Links oder leere Rubriken zur Symmetrie. Anfangs überwiegend eigenständige Inhalte akzeptieren; redaktionelle Beziehungen später ergänzen, wenn tatsächlich passend. Automatische Vorschläge erst als spätere Hilfe mit menschlicher Auswahl.
+
+| Welt | Unterrubriken im Pilot | Nutzen |
+|---|---|---|
+| Erleben – Rot #a92e38 | Replay, Academy | Zuschauen, mitfiebern, lernen, selbst handeln |
+| Erforschen – Grün #18734a | Research, Tools, Dokumentation, Making of | Befunde, eigene Untersuchungen, Grundlagen, Entwicklungsprozess |
+| Erahnen – Blau #245caf | Perspectives | Denkanstöße, Hypothesen, Szenarien und konzeptionelle Modelle |
+
+Farben sind Pilotwerte, keine abschließend normierten Original-Brand-Tokens. Navy/helle Leseflächen und Originalsignet verbinden die Welten. Playground/Interactive Experiences, Analytics, Theory, Hypotheses, Open Data u.a. bleiben mögliche spätere Unterrubriken – keine aktuell separaten Navigationseinträge. Making of dokumentiert auch Mensch-KI-Zusammenarbeit, empirisches Design und Werkstattprozesse. Tools: echte Werkzeuge mit Funktionsbeschreibung, Version, Screenshot, Anwendungsbeispiel, Download nur bei belegter Verfügbarkeit; aktuell kuratierte Einstiege zu Lab, Designer, Analysekompass, ANDY-Score/AQP, Originaldaten/Validierung und Lab-Anforderungen (nicht sechs verifizierte Software-Downloads). Dokumentation erschließt alle zwölf Kapitel der [ANDY Docs](https://andy-arena-com.github.io/andy-wps-collaboration/andy-dokumentation-regeln-lab.html), diese bleiben maßgeblich; keine konkurrierende Regelkopie.
+
+## 2. Seitentypen und Navigation
+Home → Welt-Gabelseite → Rubrik-Gabelseite → Detail. Alle drei E und jede aktive Unterrubrik haben eine Gabelseite (3 + 7 = 10 im Content 0.5.0); Home zusätzlich. Die 24 Journal-HTML-Seiten enthalten 13 Detail-/sonstige Contentseiten und 11 Einstiegs-/Gabelseiten inkl. Home; vier eigenständige Modul-HTMLs zusätzlich. Breadcrumb auf 23 Unterseiten mit anklickbaren übergeordneten Ebenen, Weltfarbakzent und aktuellem Titel, statt kontextlosem Zurück-Link. Logo verlinkt Home. Desktop: horizontale drei E mit Dropdowns, Home zusätzlich. Mobile: bis einschließlich 1100 CSS-px einzeiliger kompakter Header mit Logo und Burger; keine gequetschte Desktop-Menüleiste. Accordion: jeweils eine aufgeklappte Welt; sichtbare RGB-Zuordnung, Touchflächen, Schließen per X/außerhalb/Escape, Fokus und Tastatur beachten. Über 1100 px Desktop. Ziel: Navigation auf allen Seiten gleich; Menüziele identisch. Projektleiter bestätigte nach v0.5.3: „deutlich besser“. Keine vollständige physische Geräteabnahme daraus ableiten.
+
+## 3. Home
+Home weckt Interesse, nicht vollständige Inventarliste. Sieben manuell anwählbare Teaser im statischen RGB-Paket (Reihenfolge im tatsächlichen HTML): Sie kennen die Regeln. Aber nicht das Spiel.; Wenn der Zug nicht zur Begründung passt.; When Chess Meets Go; Wo würdest du deinen ersten Go-Stein setzen?; Beyond the Next Move; Sechs Steine mit einem Zug.; Ein Schach mit überraschender Folge. Pfeile und nummerierte Direktwahl; konstante Höhe je Breakpoint, einheitliche Bildfläche, weiche Überblendung von Text und Bild (550 ms in 0.5.0); keine Layoutsprünge. Desktop zweispaltig, auf Smartphone kompakt gestapelt, keine horizontale Überläufe. Keine Autoplay-Pflicht. Darunter drei sichtbare RGB-Einstiege („Drei Zugänge. Ein Gegenstand.“), mehrere Replay-Teaser vor Academy, Research/Tools/Docs/Making of, Perspectives. Nicht nur ein Spiel teasern. 5–10 echte Startinhalte je Rubrik als redaktionelles Ziel; fehlende Inhalte nur als Planung ausweisen. Home braucht nicht alle Inhalte.
+Historische native HOME-01-Variante: großflächiger Slider, native Aculia-WpSection/Owl-Fade, größere Logo-Darstellung, mobile Bildskalierung, transparent/blur Header als erprobtes Gestaltungskonzept. Nicht mit dem jetzigen statischen RGB-Frontend verwechseln. Native dynamische Publishing-Slots existieren als separate Implementierung; RGB-Home noch statisch.
+
+## 4. Contentseiten / visuelles System
+Direkt unter Header/Testhinweis: randloses, sehr breites und niedriges Key-Visual (Desktop-Ziel ca. 4:1), anschließend Breadcrumb, Rubriklabel, Überschrift, Teaser, Metadaten, Text in gut lesbarer Breite. Responsive Bildausschnitte, kein beliebiges Verzerren. Gleiches Layoutprinzip, aber eigene Atmosphäre: Replay authentische Arena/Sportjournalismus, gerichtetes Licht und Schatten, keine überladene Sci-Fi-/Fantasiewesenästhetik; Academy handlungsorientiert; Research präzise; Perspectives metaphorisch. Key-Visual weckt Interesse, echte Brettaufnahme schafft Authentizität; Illustration als solche kennzeichnen. Bilder der Spiele in Übersichten sollen wie verschiedene Veranstaltungsplakate derselben Arena wirken: konsistente Logos, Weiß/Schwarz, Typografie, Formate und Bedienung, individuell Motiv, Licht, Headline und Dramaturgie. Nicht jeder Artikel gleich lang, nicht jeder gleichermaßen vernetzt.
+
+## 5. Erlebnis als Hauptaktion
+**PLAY FIRST – STORY SECOND – DATA THIRD** ist der zuletzt erarbeitete Gestaltungsgrundsatz für Replay und sinngemäß Academy. Sichtbarer großer Play-Hook schon auf der Replay-Gabelseite und direkt oben im Detail; Bild und Button öffnen das jeweilige Match, Story als sekundäre Aktion. Keine Weiterleitung auf fremde Artikel oder Academy als Ersatzplayer. Vollbild/Dialog mit Rückkehr zur Leseposition; nur echte verfügbare Player als abspielbar ausgeben. Dies ist Zielstandard, aktuell noch nicht vollständig im RGB-Frontend umgesetzt.
+Academy: interaktive Lernmodule inline, ohne Zwangsvollbild/Extraseite; früh erste Handlung, Erklärung und Quiz. Research: Fragen, kleinere inline interaktive Grafiken, Zeitachsen, Brettstellungen, Daten-/Parametervergleiche, Methoden und Grenzen. Großes Fall-001-Modul ist Demo und kann später in gezielte Teilmodule zerlegt werden; Original erhalten. Perspectives kann ebenfalls interaktive theoretische Modelle verwenden. Optional Querverweise zwischen den Welten; keine obligatorische dreifarbige Related-Content-Leiste.
+
+## 6. Entwicklungsschritte
+| RGB-Content | Inhalt |
+|---|---|
+| 0.1 | Erste klickbare HTML-Home, Replay, drei Academy-Module, Research-Fall und fünf Perspectives |
+| 0.2 | Drei E als Hauptnav, Welt-/Rubrik-Gabelseiten, mehrere Replay-Einstiege |
+| 0.3 | Tools und Dokumentation, individuelle erste Key-Visuals, Bild vor Titel |
+| 0.4 | Fullwidth-Artikelbilder direkt oben, inline Academy/Research, kleine Research-Grafik, Overlay-Versuch |
+| 0.4.1 | Erster isolierter WP-Test; externe Home-Weiterleitung entfernt; lokale Schlüsselszenen als vorläufige Ersatzversuche (später verworfen) |
+| 0.5.0 | Breadcrumbs, stabiler Slider, Fade, Making of und erster Werkstattbericht; falsche Replay-Ersatzbuttons entfernt |
+| UI 0.5.1–0.5.3 | Standardansicht schaltbar; Responsive-Fix; echte Burger-/Accordion-Navigation |
+| Match Story 0.1–0.4 | Separates HTML-Labor, noch nicht in RGB-Content übernommen |
+
+## 7. QA und Freigabe
+Nutzerfeedback im echten WP-Test plus lokale Prüfungen getrennt festhalten. 0.5.3-Protokoll: simulierte WP-Funktionen 31/31; Chromium mit tatsächlicher PHP-Transformation und eingebetteten Assets: 320, 390, 528, 768, 1024, 1100, 1101, 1440 px; sieben Slides höhenstabil, Nav/Accordion, alle 24 Seiten mit gleicher Linkstruktur. Iframe-Inhalte, Safari, physische Mobilgeräte und vollständige Live-WP-Regression nicht damit geprüft. In diesem Dokumentationsschritt ZIP-CRC und alle 48 Content-Hashes erneut geprüft, keine neue Browser-Abnahme. Responsivität, Navigation, Play-Hook, Einbettung, Bildausschnitt, Spoiler und Rückkehr als feste Regressionstests. Keine Freigabe der öffentlichen Domain. 
