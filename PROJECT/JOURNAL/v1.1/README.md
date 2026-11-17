@@ -1,11 +1,22 @@
 # ANDY Journal — Gesamtkonzept v1.1
 
-**Status:** Konzeptbasis / zur gemeinsamen Freigabe  
+**Status:** Historische Konzeptbasis; aktueller Teststand siehe Nachtrag 17.11.2026  
 **Stand:** 13. November 2026  
 **Sprache:** Deutsch (Masterdokument)  
 **Ziel:** Eine versionierbare Grundlage für Konzeption, Design, Redaktion und spätere technische Realisierung des eigenständigen ANDY Journal.
 
 > **Leitsatz:** ANDY Journal ist die redaktionelle Schwester der ANDY Arena. Es erzählt die Geschichten hinter den KI-Duellen – vom faszinierenden Moment bis zur überprüfbaren Forschungsfrage.
+
+## Aktueller Arbeitsstand – 17.11.2026 (zuerst lesen)
+
+**WordPress-Testbaseline:** RGB Content 0.5.0 / RGB UI 0.5.3 / Journal Cockpit 0.1.0. Die neue RGB-Ansicht wurde nutzerseitig auf der Testinstallation erprobt; Burger/Accordion positiv bestätigt. Die native Aculia-Struktur bleibt erhalten. Keine öffentliche Freigabe.
+
+- [RGB-Informationsarchitektur und Designbaseline](docs/ANDY-JOURNAL-RGB-DESIGN-BASELINE-2026-11-17.md) – Home, sieben Slider-Teaser, Drei-E-Navigation, zehn Gabelseiten, Breadcrumbs, Mobile-Accordion, Key-Visuals und inline Interaktionen.
+- [WordPress-Implementierungsstand und Übergabe](docs/ANDY-JOURNAL-WP-BASELINE-2026-11-17.md) – Inventory, DESIGN-01, HOME-01, Publishing, Cockpit, RGB-Pilot, Paket-/Importlogik und Sicherheitsgrenzen.
+- [Match Stories – Play-first Blueprint v0.4](docs/ANDY-JOURNAL-MATCH-STORIES-v0.4.md) – Hook als Hauptaktion, Arena statt Sci-Fi, individuelle Match Cards, historische Modellklassen, progressive Spoiler-Logik, Zeitstempel; separates HTML-Experiment, nicht Teil der WP-Baseline. Vollständiger Originalplayer fehlt in diesem Pilot.
+- [Artefaktregister](docs/ANDY-JOURNAL-ARTEFAKTE-2026-11-17.md) – tatsächliche ZIP-Dateinamen, Versionen, Dateianzahlen, erneut berechnete SHA-256-Prüfsummen und QA-Nachweise. Keine Binärarchivierung erfolgt.
+
+**Geltung:** Die folgenden älteren Konzept- und Übergabedokumente bleiben als historische Entwicklungsgrundlage erhalten. Für die gegenwärtige Journal-Navigation, Rubriken, UI und WP-Implementierung gelten die neueren, oben verlinkten Memos; insbesondere ist die alte Vier-Rubriken-Navigation nicht der aktuelle Pilotstand. Masterplan, WPS-Governance und ursprüngliche Daten-/Freigaberegeln gelten unverändert. Arbeitsbaseline ≠ vollständige technische Abnahme ≠ öffentliche Publikationsfreigabe.
 
 ## Dokumente
 
@@ -54,6 +65,6 @@ Die Version 1.1 ist auf den ANDY-2.0-Masterplan und die Governance der Working P
 
 - [ANDY Content Manager – Workflow v0.1](docs/ANDY-CONTENT-MANAGER-WORKFLOW-v0.1.md) – Aculia-Transformation, modulare Design-/Content-Pakete, Inventory und Herkunftsregister, Dry Run, Rollback und späterer Demo-Cleanup nach Ersatz- und Abhängigkeitsprüfung. Konzept, Implementierung offen.
 
-## Content Manager – Implementierungsstand und Übergabe (16.11.2026)
+## Content Manager – historische Übergabe (16.11.2026, durch Nachtrag 17.11. ergänzt)
 
 - [Übergabe DESIGN-01](docs/ANDY-CONTENT-MANAGER-HANDOVER-2026-11-16.md) – Inventory v0.1.1 erfolgreich, Backup nutzerseitig bestätigt, 211 Referenzobjekte und unveränderte Hash-Paare über beide Exporte. Schreibender Import v0.2 und DESIGN-01 nicht erstellt; Release-Gate BLOCKED. Der neue Thread übernimmt die konkrete Implementierung und Prüfung. Keine Live-Freigabe.
