@@ -1,13 +1,21 @@
 # ANDY Journal — Gesamtkonzept v1.1
 
-**Status:** Historische Konzeptbasis; aktueller Teststand siehe Nachtrag 17.11.2026  
+**Status:** Historische Konzeptbasis; aktueller Teststand siehe Nachtrag 19.11.2026  
 **Stand:** 13. November 2026  
 **Sprache:** Deutsch (Masterdokument)  
 **Ziel:** Eine versionierbare Grundlage für Konzeption, Design, Redaktion und spätere technische Realisierung des eigenständigen ANDY Journal.
 
 > **Leitsatz:** ANDY Journal ist die redaktionelle Schwester der ANDY Arena. Es erzählt die Geschichten hinter den KI-Duellen – vom faszinierenden Moment bis zur überprüfbaren Forschungsfrage.
 
-## Aktueller Arbeitsstand – 17.11.2026 (zuerst lesen)
+## Launch-Plan und Research-Erweiterung – 19.11.2026 (aktueller Arbeitsstand)
+
+- [Public Beta / Launch Control v0.1](docs/ANDY-JOURNAL-PUBLIC-BETA-LAUNCH-CONTROL-v0.1.md) – Zielbild, BETA und Orientierung, 30 Basis-Inhalte, Interaktionsprofile, Soll-/Ist-Sitemap, interner WP-Entwurfsworkflow und Design-QA. Separates Plugin v0.1.0 bereitgestellt; tatsächliche WP-Abnahme offen. 
+- RGB Content / UI 0.6.0 als neuer Teststand mit drei Research-Dossiers (Crossover-Muster, AI Continuity Research, Entscheidungsverhalten), vollständigem Crossover-Artikel und reversibler Versionswahl 0.5.0/0.6.0. 28 Ist-Seiten; keine Publikationsfreigabe. Endgültige Rubrikensortierung offen. Artefakt-Hashes im Launch-Memo.
+- [ARP und Resume Research](../../ANDY_RESUME_RESEARCH_ARP_v0.1.md) als fachliche Grundlage für AI Continuity Research; die Journal-Inhalte und Befunde benötigen gesonderte redaktionelle/fachliche Prüfung.
+
+Die frühere Baseline 17.11. bleibt als Rückweg und Referenz erhalten. Die Launch-Planung ersetzt keine Masterplan-/WPS-Gates. BETA-Kennzeichnung im öffentlichen Frontend, echte Replay-Anbindung und native Publikationsintegration sind noch offene Launch-Aufgaben.
+
+## Arbeitsstand – 17.11.2026 (historische Baseline)
 
 **WordPress-Testbaseline:** RGB Content 0.5.0 / RGB UI 0.5.3 / Journal Cockpit 0.1.0. Die neue RGB-Ansicht wurde nutzerseitig auf der Testinstallation erprobt; Burger/Accordion positiv bestätigt. Die native Aculia-Struktur bleibt erhalten. Keine öffentliche Freigabe.
 
