@@ -43,3 +43,20 @@ Docs/Koordination: Navigation, verständliche Research Case, beidseitiger Vertra
 
 ## 7. Startabnahme
 Ein neuer Besucher versteht den Fall ohne Methodikstudium, kann nach Gate 0 mindestens ein Filter-/Grafikexperiment ausführen, dessen Export wiedererkennen und die offene Frage benennen. Ergebnis-/Quellenkonsistenz, Sprachparität, Offline/keine zusätzlichen API-Calls, Browser-/Mobiltest. Öffentliche Docs-Preview darf vor App-Abnahme online sein, aber mit ehrlichem Status. Keine festen Wochenfristen oder Vollausbau als Eintrittsbedingung.
+
+
+## 8. Story-driven Lab Development – redaktionelle Priorisierung (Ergänzung Projektleitung 20.11.2026)
+Storytelling ist zentraler Erfolgsfaktor des Labs. Bei der Auswahl neuer Use Cases hat verständlicher Newswert Vorrang vor fachlicher Detailtiefe, niemals vor Datenintegrität, sachlicher Richtigkeit oder belegbaren Aussagen. Kein Sensationalismus und keine erzwungene Story; Gegenbefunde und ergebnisoffene Fragen sind publizierbar. Gate 0 (#12) bleibt unangetastet.
+
+Jeder priorisierte Case benötigt vor Umsetzung einen redaktionellen Pitch: Arbeitstitel, überraschende Beobachtung mit Quelle, verständliche offene Leitfrage, visuelle Kernidee, Relevanz außerhalb der Arena, konkrete Lab-Interaktion, mögliche Journal-Ausgabe, Gegenhypothesen/Publikationsgrenzen. Fachmethodik in verlinkten Deep Dives. Keine Behauptung einer bereits gemessenen Nachfrage nach einzelnen Stories.
+
+Erste Story-Kandidaten (Arbeitstitel, nicht freigegebene Tatsachenbehauptungen):
+- CASE-CONFIG-01 / Same Models. Different Outcomes. – Warum verändern sich Ergebnisse bei denselben Gegnern? S150/S350 als erster durchgängiger Case bleibt gesetzt; Konfigurationsunterschiede sichtbar, kein isolierter Budgeteffekt.
+- The Price of Thinking – Kann zusätzliche Analyse die Handlungsfähigkeit gefährden? Grok/Astra erst nach Prüfung der Usage-/Accounting-Semantik und konkreter Ereignisse; keine ungeprüfte Tokenzahl oder Overthinking-Diagnose.
+- Intelligence after Interruption – Was passiert bei einer Wiederaufnahme mit veränderten Ressourcen? Fable/Astra als experimentelle Fortsetzung, nicht unabhängiger Neustart; Engine-/Interventionseffekte getrennt.
+- When Winning Is Not Enough – Wann steht lokaler Brettvorteil im Konflikt mit globaler Handlungsfähigkeit? Geeignete Ereignisfenster, Endgründe und legale Alternativen verifizieren.
+- Beyond the Arena – Welche funktional vergleichbaren Prozesse finden wir in Healthcare, Commerce, Compliance oder Organisationsnetzwerken? Exemplarisch, keine direkte Übertragbarkeit.
+
+Auswahlkriterien: Überraschung, allgemeine Relevanz, visuelle Verständlichkeit, eigenständige Untersuchbarkeit, Quellenreife, Wiederverwendbarkeit der benötigten App-Funktion. Story-Kandidaten ohne ausreichende Evidenz bleiben Fragen/Backlog. Ein Good-Looking-Chart ohne interessante Frage ist kein priorisierter Use Case. Ein interessanter Fall ohne validierte Metrik darf als dokumentierte Beobachtung mit offenen Fragen erscheinen.
+
+App ↔ Docs ↔ Journal: Story-Pitch → echte Daten/Grafik → Explorer/Builder-Interaktion → reproduzierbarer Export → Journal-Erzählung mit Rücklink in Lab und Doku → neue Fragen. Pro Iteration mindestens einen redaktionell verständlichen, fachlich abgesicherten Story-Pfad abnehmen. Arena behält eigenständigen Erlebniswert. Keine zusätzlichen API-Calls oder Änderungen an Originaldaten.
