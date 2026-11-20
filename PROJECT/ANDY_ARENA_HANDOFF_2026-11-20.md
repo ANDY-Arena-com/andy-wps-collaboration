@@ -44,3 +44,12 @@ LAB-SYNC-01 ist nächste Priorität (Issue #12). SQLite-Projektion und JSON/JSON
 
 ## Prozess-Learning
 Regressionstest ANDY_REGRESSION01: 86 bestanden, 25 fehlgeschlagen (viele ältere String-/Designverträge, drei Mock-Kontextfehler, fehlende AP2-Baseline, Architekturimport). Nicht als grüne Gesamtabnahme darstellen; keine kosmetische Reparatur der Alt-Tests als Ersatz für Browser-Funktionstests. Keine wiederholten manuellen Kompletttests durch den Nutzer. Feature-spezifische Prüfungen, sichtbare Diffs, Backup/rollback und Prüfsummen. Historische Sonderfälle dürfen zugunsten des Fortschritts ausgeklammert werden, systematische Fehler nicht. Keine eigenmächtige Änderung bereits akzeptierter UI. 
+
+
+## Aktualisierung am Tagesabschluss (20.11.2026, nach Studio-Abnahme)
+
+**Verbindlicher neuer Übergabe- und Sync-Bericht:** [ANDY_ARENA_RELEASE_SYNC_2026-11-20.md](./ANDY_ARENA_RELEASE_SYNC_2026-11-20.md).
+
+Seit der ursprünglichen Übergabe umgesetzt: neue Living-Lab-/Daten-&-Statistik-Modals, Ablösung des alten Lab-Menüpunkts, DATA-PURGE-02C sowie schrittweise Replay-Löschung DATA-PURGE-03 bis 03H. Code-Sync 8082 → 8080 mit PARITY02-Audit und PARITY03 (12 relevante Module), anschließend STUDIO-LAB-NAV-01 für die Studio-Freigabe der Lab-Modals. Studio-Screenshot bestätigt Daten & Statistik auf 8080 mit eigenen Archivdaten (94 Partien). 8083 unverändert. Kein Daten-/DB-/JSONL-/Secret-Sync.
+
+**Offen:** Modellidentitäten (LAB-SYNC-02), Refund-/Research-Löschsonderfälle, abschließende Quellcode-/Laufzeitparität sowie restliche Integritätschecks. Die frühere Formulierung „LAB-SYNC-01 nächste Priorität“ ist historisch: ein lesender LAB-SYNC-01-Abgleich wurde inzwischen durchgeführt; die weitere Modellharmonisierung bleibt offen. Keine erneute Komplettübernahme oder UI-Neugestaltung ohne explizite Freigabe.
