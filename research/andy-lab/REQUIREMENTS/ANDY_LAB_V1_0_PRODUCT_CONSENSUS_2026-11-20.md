@@ -27,6 +27,10 @@ Neue Fälle, Gegenbeispiele, Kennzahlen und Methoden sollen bestehende Sichtweis
 
 Living Lab bezeichnet hier das ANDY-Produkt- und Entwicklungsprinzip, keine beanspruchte externe Zertifizierung. Die unmittelbare Priorität LAB-LEADERBOARD-DATA-SYNC-01 (#12) bleibt unverändert.
 
+## 2b. Story-driven Lab Development
+
+Festlegung der Projektleitung vom 20.11.2026: überraschendes Ereignis → spannende Frage → visuelle Untersuchung → Geschichte im Journal → neue Fragen und Experimente. Dieser Erkenntnis- und Entwicklungszyklus konkretisiert GAME 4 LAB; er verbindet reale Beobachtungen mit wiederverwendbaren Lab-Auswertungen, Dokumentation und Journal. Der vollständige Wortlaut und die Prozessgrenzen stehen im [Making-of-Protokoll, Abschnitt 7](../../../PROJECT/ANDY_MAKING_OF_LIVING_LAB_MULTI_PERSPECTIVE_DEVELOPMENT_v0.1.md#7-story-driven-lab-development--festlegung-der-projektleitung-20112026). Keine vorweggenommene Erklärung, kein Storytelling auf Kosten der Datenintegrität; auch Gegenbeispiele und offene Ergebnisse sind wertvoll. Produktanforderungen und Priorität #12 bleiben unverändert.
+
 ## 3. Lab V1.0: sofortiger Nutzen UND Self-Service
 - Dashboard: fest strukturierte, automatisch aus dem aktuellen lokalen Korpus berechnete Standardgrafiken; kein leeres CMS.
 - Explorer: jede Standardgrafik führt zu Filtern, Vergleichen und Drill-down; Macro (Gesamtbestand/Tendenzen), Meso (Serien/Konstellationen), Micro (Partie/Event/Hotspot), auch umgekehrt vom Einzelfall zu übergreifenden Untersuchungen.
