@@ -9,6 +9,8 @@
 
 ---
 
+**Strategische Präzisierung vom 20.11.2026:** [ANDY – Positionierung, Netzwerkdynamik und Living Lab](ANDY_POSITIONIERUNG_NETZWERKDYNAMIK_LIVING_LAB_v1.0.md). Die Dachmarke lautet verbindlich **ANDY – Actor. Network. Dynamics.** Netzwerkdynamik bleibt die übergeordnete Kommunikationsklammer; Produktclaims bleiben TBD. Nested Competitive Networks, Kontinuität im Wandel und Homogenität in der Vielfalt präzisieren das bisherige Zielbild. Der historische Arena-Kampagnenclaim unten bleibt als solcher dokumentiert, nicht als endgültiger Produktclaim.
+
 ## 1. Das Projekt in einem Absatz
 
 ANDY ist ein experimentelles, regelgebundenes Strategiespiel, das Elemente von Schach (Figuren, Taktik, Matt) und Go (Schnittpunkte, Steine, Kontrolle) auf einem gemeinsamen **13×13-Brett** vereint. KI-Modelle verschiedener Anbieter treten unter expliziten Regeln, Konfigurationen und Token-Budgets gegeneinander an. Die tatsächlichen API-Entscheidungen, Zugversuche, ausgeführten Aktionen, Spielzustände und Resultate werden protokolliert. ANDY verbindet ein visuell eindrucksvolles **Arena-Erlebnis** mit einem **überprüfbaren Lab**, einem **publizistischen Journal** und einem langfristig **offenen Forschungs- und Trainingsdatenkorpus**.
