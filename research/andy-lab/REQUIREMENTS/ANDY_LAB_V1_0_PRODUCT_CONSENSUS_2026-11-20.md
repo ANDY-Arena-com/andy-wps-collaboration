@@ -19,6 +19,14 @@ flowchart LR
 ```
 Kreislauf als Produktkonzept, keine nachgewiesene Kausalwirkung. Erleben besitzt eigenständigen Wert; Erforschen und Erahnen sind zusätzliche Angebote, nicht Pflicht für Gamer. **Erleben. Erforschen. Erahnen. Actor. Network. Dynamics.**
 
+## 2a. ANDY Living Lab – kontinuierliche Erkenntnisentwicklung
+
+Die Projektleitung ergänzt das Produktziel am 20.11.2026 ausdrücklich um das **Living-Lab-Prinzip**: ANDY Lab ist kein abgeschlossenes Bewertungsinstrument, sondern eine mit neuen Spielen, Akteurskonstellationen, Nutzerbeiträgen und Erkenntnissen fortlaufend wachsende Umgebung. V1.0 ist ein nutzbarer, überprüfbarer Entwicklungsstand, kein Endzustand. Competitive Behavior Model Cards beschreiben beobachtetes Verhalten unter dokumentierten Bedingungen und zu einem bestimmten Datenstand; sie sind keine absoluten oder dauerhaften Urteile über Modelle.
+
+Neue Fälle, Gegenbeispiele, Kennzahlen und Methoden sollen bestehende Sichtweisen ergänzen oder nachvollziehbar revidieren können, ohne historische Originaldaten zu überschreiben oder die Grundarchitektur neu zu bauen. Live-Auswertungen wachsen mit dem lokalen Korpus; eingefrorene Research Snapshots bewahren den damaligen Kenntnisstand und die Reproduzierbarkeit veröffentlichter Grafiken und Beiträge. Neue Erkenntnisse können als News/Insights ins Journal und als Impulse in neue Wettbewerbe zurückfließen. Nutzer können eigene Fragen, Auswertungen und Annotationen beitragen. Die Arena bleibt ein eigenständiges, attraktives Spielerlebnis; niemand muss am Forschungsprozess teilnehmen.
+
+Living Lab bezeichnet hier das ANDY-Produkt- und Entwicklungsprinzip, keine beanspruchte externe Zertifizierung. Die unmittelbare Priorität LAB-LEADERBOARD-DATA-SYNC-01 (#12) bleibt unverändert.
+
 ## 3. Lab V1.0: sofortiger Nutzen UND Self-Service
 - Dashboard: fest strukturierte, automatisch aus dem aktuellen lokalen Korpus berechnete Standardgrafiken; kein leeres CMS.
 - Explorer: jede Standardgrafik führt zu Filtern, Vergleichen und Drill-down; Macro (Gesamtbestand/Tendenzen), Meso (Serien/Konstellationen), Micro (Partie/Event/Hotspot), auch umgekehrt vom Einzelfall zu übergreifenden Untersuchungen.
