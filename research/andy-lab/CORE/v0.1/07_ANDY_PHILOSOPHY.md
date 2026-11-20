@@ -23,3 +23,16 @@ Direkter Wettbewerb, systemischer Wettbewerb und Hyperwettbewerb als gekoppelte 
 ![Hyperwettbewerbsmatrix](assets/philosophy-matrix-de.svg)
 
 Heuristische Matrix aus adaptiver Stabilisierungskraft und Umweltveränderung/Wettbewerbsdruck. Die Quadranten und der mögliche Entwicklungspfad sind konzeptionelle Entwürfe, keine feststehenden Klassifikationen. Die vier SVGs sind Neuzeichnungen der freigegebenen visuellen Entwürfe; keine behauptete Originalreproduktion früherer Darstellungen.
+
+## Philosophischer Anker – Fibonacci und die Optimierung der Voraussetzungen
+20.11.2026 · Ergänzung auf ausdrücklichen Wunsch der Projektleitung, aus dem persönlichen Prolog „Die Optimierung der Voraussetzungen“ abgeleitet.
+
+![Fibonacci-Spirale](assets/fibonacci-anchor.svg)
+
+**Kontinuität bei zunehmender Komplexität.** Nicht allein Ent- und Neuvernetzung, sondern die Wahrung von Identität und relationaler Stabilität unter wachsenden Anforderungen steht im Zentrum. In der Fibonacci-Folge entsteht jedes neue Glied aus den beiden vorherigen; das Verhältnis aufeinanderfolgender positiver Glieder nähert sich dem Goldenen Schnitt. Die geometrische Darstellung aus Fibonacci-Quadraten und Viertelkreisen ist eine Annäherung an eine Goldene Spirale. Sie symbolisiert Emergenz, rekursive Weiterentwicklung und strukturelle Kontinuität – kein universelles Evolutionsgesetz und kein empirischer Stabilitätsnachweis.
+
+Drei komplementäre Perspektiven: Matroschka = strukturelle Verschachtelung; Flywheel = prozessuale Rückkopplung; Fibonacci-Spirale = evolutionäre Weiterentwicklung bei relationaler Kontinuität. Die Spirale ist ein übergeordneter persönlicher philosophischer Anker, kein zusätzliches kalibriertes Denk- oder Messmodell.
+
+Der Prolog versteht Intelligenz als theoretische Netzwerkeigenschaft und Evolution als Kaskade der Selbststabilisierung durch neue Grenzen und Schnittstellen: Membran, Replikation, menschliche symbolische und normative Schnittstellen, agentische Netzwerke. Die Metapher des kristallin-ökologischen Netzwerks und die Ethik als Circuit Breaker machen die Ambivalenz sichtbar: Stabilisierung eines Netzes kann Selbstbestimmung und Nachvollziehbarkeit eines anderen beeinträchtigen. Lokale Stabilität ist nicht globale Stabilität. Die Optimierung der eigenen Voraussetzungen darf ihre Existenzgrundlage nicht aufzehren. Diese philosophischen Thesen sind keine bestätigte biologische Stufenlehre oder empirische Aussage über sämtliche KI-Systeme.
+
+Auch auf ANDY selbst bezogen: Story-driven Lab Development optimiert mit jeder Iteration nicht nur den Erkenntnisbestand, sondern die Voraussetzungen künftiger Erkenntnisgewinnung. **Das Lab entwickelt seine Fähigkeit, Erkenntnisse zu entwickeln.** Datenintegrität, menschliche Gestaltung und die Revidierbarkeit von Interpretationen bleiben dabei erhalten. Der vollständige persönliche Prolog wird hier nicht reproduziert.
