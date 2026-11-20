@@ -51,6 +51,45 @@ Die These, dass diese Arbeitsteilung frühzeitigen konzeptionellen Lock-in vermi
 
 Vorschlag: pro Iteration Quellen und Versionen der Einzelentwürfe, Unterschiede, Synthesebegründung, verworfene Alternativen, menschliche Entscheidungen, tatsächliche Prototypen, Fehler und Abnahmen erfassen. Wo möglich Aufwand für Recherche, Prüfung, Koordination und Nacharbeit dokumentieren. Keine behauptete Zeitersparnis oder Überlegenheit ohne geeignete Vergleichsdaten. Keine privaten Rohdialoge, Zugangsdaten oder nicht freigegebenen Forschungsinhalte veröffentlichen. Dieser Text ist ein Prozessprotokoll und noch kein fertiger Journalartikel.
 
+## 7. Story-driven Lab Development – Festlegung der Projektleitung, 20.11.2026
+
+Die Projektleitung legt den folgenden Entwicklungsprozess fest (Wortlaut):
+
+**Ein überraschendes Ereignis**
+
+Etwas geschieht, womit wir nicht gerechnet haben.
+
+**Eine spannende Frage**
+
+Warum ist das passiert? Was könnte dahinterstecken?
+
+**Eine visuelle Untersuchung**
+
+Das Lab macht mögliche Zusammenhänge sichtbar.
+
+**Eine Geschichte im Journal**
+
+Menschen verstehen, warum die Beobachtung relevant ist.
+
+**Neue Fragen und Experimente**
+
+Die Geschichte erzeugt Interesse an weiteren Wettbewerben.
+
+```mermaid
+flowchart LR
+  E["Überraschendes Ereignis"] --> F["Spannende Frage"]
+  F --> V["Visuelle Untersuchung"]
+  V --> J["Geschichte im Journal"]
+  J --> N["Neue Fragen und Experimente"]
+  N --> E
+```
+
+### Konsequenzen für die Entwicklung (konzeptionelle Ableitung)
+
+Der Story-Zyklus konkretisiert das GAME 4 LAB-Flywheel auf Ebene einzelner Erkenntnisprozesse. Analyse identifiziert eine interessante Beobachtung; das Lab macht daraus eine überprüfbare, wiederverwendbare Analyseform; die Dokumentation erklärt Nutzung und Grenzen; das Journal vermittelt die Relevanz. Die nächste Fragestellung kann weitere Spiele, Konfigurationsvariationen oder Gegenproben anregen. Die Rückkopplung ist ein Zielbild, kein bereits gemessener Motivationseffekt.
+
+Story-driven bedeutet nicht, Daten nach einer vorgegebenen Erzählung auszuwählen: auch Gegenbeispiele, unklare Ergebnisse und gescheiterte Hypothesen sind mögliche Geschichten. Beobachtung, Berechnung und Interpretation bleiben getrennt. Aus einem interessanten Fall wird, wo sinnvoll, ein allgemeines Lab-Template, kein einmaliger Sonderchart. Die Eigenständigkeit der Arena, der Self-Service-Nutzen des Labs, der A/B/C-Entwicklungszyklus und die Priorität des Datenfundaments (#12) bleiben bestehen.
+
 ## Quellen und Anschluss
 
 - [Strategische Positionierung](ANDY_POSITIONIERUNG_NETZWERKDYNAMIK_LIVING_LAB_v1.0.md)
