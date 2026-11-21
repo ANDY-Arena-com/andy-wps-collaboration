@@ -53,3 +53,12 @@ Regressionstest ANDY_REGRESSION01: 86 bestanden, 25 fehlgeschlagen (viele älter
 Seit der ursprünglichen Übergabe umgesetzt: neue Living-Lab-/Daten-&-Statistik-Modals, Ablösung des alten Lab-Menüpunkts, DATA-PURGE-02C sowie schrittweise Replay-Löschung DATA-PURGE-03 bis 03H. Code-Sync 8082 → 8080 mit PARITY02-Audit und PARITY03 (12 relevante Module), anschließend STUDIO-LAB-NAV-01 für die Studio-Freigabe der Lab-Modals. Studio-Screenshot bestätigt Daten & Statistik auf 8080 mit eigenen Archivdaten (94 Partien). 8083 unverändert. Kein Daten-/DB-/JSONL-/Secret-Sync.
 
 **Offen:** Modellidentitäten (LAB-SYNC-02), Refund-/Research-Löschsonderfälle, abschließende Quellcode-/Laufzeitparität sowie restliche Integritätschecks. Die frühere Formulierung „LAB-SYNC-01 nächste Priorität“ ist historisch: ein lesender LAB-SYNC-01-Abgleich wurde inzwischen durchgeführt; die weitere Modellharmonisierung bleibt offen. Keine erneute Komplettübernahme oder UI-Neugestaltung ohne explizite Freigabe.
+
+
+## VERBINDLICHE PROZESS-ÄNDERUNG 21.11.2026 — vor jedem weiteren ANDY-App-Eingriff lesen
+
+**Pflichtdokument für alle neuen Threads:** [ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md](./ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md).
+
+Auslöser: wiederholte Regressionen bei Designer-Test/Preview/Apply, Replay-Slider und Unterschiede im Studio-/Sandbox-Laufzeitverhalten. Die Ursache des Designer-Preview-HTTP-403 wurde auf neue lokale Schreibschutz-/Branch-Gates eingegrenzt; Preview auf 8082 funktioniert nach Rollenfix wieder. **Designer Apply ist am 21.11. weiterhin NICHT abgenommen:** Session `open`, 6 Test-Snapshots, ältere Approval-Datei ist auf Integrationsbranch unversioniert (`?? docs/ui-designer/approvals/active_design.json`), kein neuer Approval-Commit belegt; nach Apply erscheinen bisher wieder alte Figurenpositionen. **Nicht als erledigt melden.**
+
+**Sofortige Arbeitsregel:** Erst Ist-Zustand und vollständige Abhängigkeiten prüfen, dann minimalen Fix mit Dry Run, Backup, Rollback und echten Ende-zu-Ende-Regressionstests. Kein weitergehender Patch, solange eine bestehende Funktion gebrochen ist. Syntax/Installer-Erfolg ist keine Funktionsabnahme. **Keine neuen ANDY-App-Features vor Designer-Stabilisierung und definiertem Regression-Gate.** 8080 und 8083 nicht für diese Reparatur anfassen. Die Verantwortung für Prozess und Testdesign liegt beim Assistenten.
