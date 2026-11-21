@@ -1,5 +1,7 @@
 # ANDY 2.0 — Verbindlicher Entwicklungs-, Regression- und Release-Prozess (21.11.2026)
 
+> **NEUER BESTÄTIGTER REGRESSIONSFALL (21.11., 15:39):** [SYNC-FEATURE-GATE-01: identischer Code, unterschiedliche Funktion](./ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md). **Studio 8080 neuer Aktivitäts-Launcher repariert und im Browser bestätigt.** Ursache: `pilot = instance().role == 'sandbox' and instance().port == 8082 ...` stand identisch auf beiden Instanzen und deaktivierte 8080. **Künftig jedes Feature-Gate für tatsächlich konfigurierte Rollen/Ports/Modi als Laufzeitvertrag prüfen, nicht nur Hash-Diffs.** Studio-Shell-Änderung nicht beim nächsten Sync überschreiben. Designer-Apply/Replay/Gesamtregression **nicht pauschal als abgenommen** kennzeichnen.
+
 **Status:** verbindliche Arbeitsanweisung für künftige ANDY-App-Arbeit und Threadwechsel.  
 **Entscheidender Grundsatz:** **Ein Schritt vorwärts zählt erst, wenn die bereits funktionierenden Abläufe nachweislich erhalten bleiben.**
 
@@ -114,3 +116,13 @@ Sofort stoppen, Ursachenanalyse statt Weiterpatchen, wenn:
 - Vorfalldiagnose: Terminalausgaben und Screenshot-Abnahmen aus ANDY-App-Thread vom 21.11.2026; lokale Daten und Screenshots **nicht** durch dieses Dokument in GitHub hochgeladen.
 
 **Prozess-Eigentümerschaft:** Der Assistent muss diese Gates aktiv durchführen und korrekt über nicht ausgeführte Prüfungen berichten. Der Nutzer entscheidet über neue Funktionalität, kritische Änderungen und die Browser-Abnahme; er ist nicht der Ersatz für eine fehlende automatische Teststrategie.
+
+## 7. Verbindlicher Zusatz: FEATURE-GATE-01 / Runtime-Contract nach erfolgreich behobenem Fall
+
+Die Untersuchung vom 21.11.2026 hat eine im klassischen Dateiabgleich **unsichtbare** Fehlerklasse nachgewiesen: `andy_v1_shell.py` enthielt in 8082 und 8080 dieselbe `pilot`-Bedingung, die ausschließlich `sandbox:8082` freigab. Daher war der neue Start-/Aktivitäts-Launcher in 8080 trotz vorhandenem Code nicht aktiv. Nach dem minimalen Installer `STUDIO-LAUNCHER-01` bestätigte der Nutzer im Screenshot von 15:39 Uhr den neuen Dialog „Aktivität auswählen“ auf 8080.
+
+**Zusätzliche verpflichtende Release-Prüfung:** Unabhängig von Diffs **alle aktivierenden Bedingungen** (Rolle, Port, Mode, Feature-Gates, Launcher-Argumente, angewendete Designer-Freigaben) unter dem echten gestarteten Profil und unter Negativprofilen auswerten. Für jede betroffene Funktion Aufrufweg und Browser-Ergebnis prüfen. Jede bewusste Instanzabweichung mit Begründung und Regressionstest dokumentieren; `factory:8083` nicht verändern. Synonyme wie „identischer Code“ niemals als „identisches Verhalten“ ausgeben.
+
+[**Fallprotokoll mit Beweiskette, Installer-Kontrakt und offenem Teststand**](./ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md).
+
+**Chronologie beachten:** Die Diagnose in Abschnitt 2 und die Prioritäten in Abschnitt 5 sind der Zustand **vor** der späteren Studio-Launcher-Reparatur. Der Launcher auf 8080 ist jetzt gezielt bestätigt; vollständiger Designer-Apply-/Replay-/App-Regressionsabschluss dagegen weiterhin nicht nachgewiesen. Bei Threadwechsel diese aktuelle Ergänzung als maßgeblich verwenden.
