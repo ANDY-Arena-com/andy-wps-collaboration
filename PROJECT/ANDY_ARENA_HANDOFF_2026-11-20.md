@@ -1,6 +1,9 @@
 # ANDY 2.0 — Übergabe Arena / Studio, 20.11.2026
 
 
+> **⚠️ AKTUELLER OBSERVER-STAND 21.11.2026 (BIS ORIENTATION19) — BEI NEUEM THREAD ZUERST LESEN:** [ANDY_OBSERVER_STATUS_HANDOFF_2026-11-21.md](./ANDY_OBSERVER_STATUS_HANDOFF_2026-11-21.md). Observer ist inzwischen ein direkt in Sandbox **8082** integriertes, stabiles **iframe-Research-Werkzeug** mit Replay Pulse/Inspector, Home/Modi, klickbarem Marker→Replay/Brett, 13×13-Geometry, Mirror-Alerts und Spiegel-Stilen für **wenige Steine / große Flächen**. Letzte Fixkette **MIRROR16 → STYLES17 → ORIENTATION18 → ORIENTATION19** (Orientierung des Mini-Bretts; expliziter Umkehr-Browsertest noch offen). **Keine 8080-/8083-Freigabe, keine Signifikanz-Bestätigung der Spiegelverdachtsfälle!** Die funktionierende iframe-Architektur nicht wieder ersetzen. Originaldateien nur mit SHA-Check anfassen; siehe separates Statusdokument.
+
+
 > **⚠️ PFLICHT-UPDATE 21.11.2026 — VOR JEDEM NEUEN THREAD UND SYNC LESEN:** Der fehlende **neue Start-Launcher auf Studio 8080 ist BEHOBEN und per Browser-Screenshot bestätigt**. Ursache war eine **in beiden Instanzen identische** `pilot`-Feature-Gate-Bedingung in `andy_v1_shell.py`, die nur `sandbox:8082` zuließ. STUDIO-LAUNCHER-01 hat das Gate **ausschließlich in Studio 8080** für `studio:8080` ergänzt; Factory 8083 bleibt ausgeschlossen. **Die Studio-Shell-Datei deshalb keinesfalls blind von 8082 überschreiben!** Die vollständige App-Regressionsabnahme ist weiter **OFFEN**. **Verbindliche Fallanalyse und zukünftige Release-Gates:** [ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md](./ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md); [ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md](./ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md).
 
 ## Auftrag für den nächsten Thread
