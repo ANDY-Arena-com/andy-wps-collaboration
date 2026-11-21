@@ -1,5 +1,8 @@
 # ANDY 2.0 — Übergabe Arena / Studio, 20.11.2026
 
+
+> **⚠️ PFLICHT-UPDATE 21.11.2026 — VOR JEDEM NEUEN THREAD UND SYNC LESEN:** Der fehlende **neue Start-Launcher auf Studio 8080 ist BEHOBEN und per Browser-Screenshot bestätigt**. Ursache war eine **in beiden Instanzen identische** `pilot`-Feature-Gate-Bedingung in `andy_v1_shell.py`, die nur `sandbox:8082` zuließ. STUDIO-LAUNCHER-01 hat das Gate **ausschließlich in Studio 8080** für `studio:8080` ergänzt; Factory 8083 bleibt ausgeschlossen. **Die Studio-Shell-Datei deshalb keinesfalls blind von 8082 überschreiben!** Die vollständige App-Regressionsabnahme ist weiter **OFFEN**. **Verbindliche Fallanalyse und zukünftige Release-Gates:** [ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md](./ANDY_SYNC_FEATURE_GATE_CASE_2026-11-21.md); [ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md](./ANDY_DEVELOPMENT_REGRESSION_POLICY_2026-11-21.md).
+
 ## Auftrag für den nächsten Thread
 LAB-SYNC-01 vorbereiten und durchführen, nachdem der finale Codeabgleich 8082 → 8080 bestätigt wurde. Keine erneute Arena-Neugestaltung. Der Nutzer hat die wiederholten Regressionen und eigenmächtigen Änderungen ausdrücklich beanstandet. Nur konkret beauftragte Änderungen, minimale Diffs, keine neuen Overlays oder Refactorings ohne Freigabe. Praktische ausführbare Batches statt wiederholter Absichtserklärungen.
 
