@@ -1,5 +1,7 @@
 # ANDY Journal — EINZIGE AKTUELLE SYSTEMÜBERSICHT
 
+> **Neu: [Plugin-, Werkzeug- und Contentpaketregister vom 22.11.2026](ANDY-JOURNAL-PLUGIN-UND-PAKETREGISTER-2026-11-22.md)** – Nachweis, Zuständigkeit, Keep/Archiv-Kandidaten und offene Identifikationslücken. **Noch keine Deinstallationsfreigabe.**
+
 **Datum:** 22.11.2026 · **Entscheidungsstatus:** Entwicklungs-FREEZE / Architektur-Inventur. **Dies ist ein Ist-/Abweichungsregister, keine Freigabe und keine neue Plugin-Spezifikation.** 
 
 > **Leseregel:** Die älteren Architektur- und Release-Dokumente bleiben als *Historie* erhalten. Diese Datei ist der Einstieg für den **heute bekannten** Stand. Auf diesem Stand darf kein neues Plugin- oder Layout-Release gegründet werden, bevor die aufgeführten offenen Punkte durch Quellcode/Laufzeitprüfung geklärt sind.
