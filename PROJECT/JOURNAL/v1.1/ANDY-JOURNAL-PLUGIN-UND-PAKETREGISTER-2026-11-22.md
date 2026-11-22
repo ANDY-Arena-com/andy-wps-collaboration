@@ -141,3 +141,18 @@ Die verbleibenden **vier der 14 aktiven Plugins** sind mit den uns vorliegenden 
 Eine **vollständig autoritative aktuelle Plugin-/MU-Liste und der vollständig installierte Code aller Komponenten** sind bislang nicht exportiert. Die Screenshots und JSON-Berichte erlauben die obige fachlich belastbare **Teilübersicht**, aber **keine sichere Aussage, dass jedes Plugin erkannt wurde**, keine konkrete Liste aller vier unbekannten Drittanbieter und keine sofortige Uninstall-Freigabe. **Bis dahin: keine Deinstallation.**
 
 Dies ist bewusst **kein** neuer Plugin-Release. Frühere Produktiv-/Vorschauabweichungen sind durch diese Dokumentation nicht behoben. Der Benutzer entscheidet nach Sichtung, was tatsächlich aus der Navigation verschwindet oder technisch deaktiviert wird.
+
+## 9. Korrektur aus tatsächlichem RGB-Frontend (18:55) – Bestehende Funktion NICHT neu bauen
+
+Die Nutzer-Screenshots vom 22.11.2026 um 18:55 **belegen konkret den vorhandenen Funktionsstand der RGB-Inhaltswelt**; dies korrigiert jede Interpretation der früheren Tabellen, die diese Funktionen als „nur geplant“ oder „noch zu entwickeln“ behandeln könnte.
+
+| RGB-Runtime 0.6.0 / UI 0.6.1 | Sichtbarer bereits vorhandener Bestand | Verbindliche Einordnung |
+|---|---|---|
+| RGB-Home / Perspectives | bereits publizierte Pilot-Teaser zu „When Chess Meets Go“, „The Fragility of Balance“, „When the Rules Change“ mit Bildern, Rubrik-/Alle-Inhalte-Navigation | **Existierender Content**, keine Pflicht zu neuen Demo-Posts oder neuem Grid |
+| `?andy_rgb_asset=a-z.html` | **28 Schlagwörter**, **15 zugeordnete Pilotseiten**; Suche, Filter nach den drei E, Buchstabenfilter, thematische Verweise | **Existierende A–Z-Funktion**; nicht als neues Plugin/Tag-Datenmodell erneut entwickeln |
+| `?andy_rgb_asset=sitemap.html` | **28 vorhandene Pilotseiten** als Hierarchie mit Home, drei E, Gabelseiten und Beiträgen | **Existierende Sitemap**; nicht als neue öffentliche Funktion erneut entwickeln |
+| RGB-Home-Footer | **Sitemap** und **A–Z / Themen** verlinkt | Funktion ist bereits umgesetzt; der Integrator-2E-Footer ist dafür **keine neue Inhaltsfunktion**, sondern allenfalls eine *visuell/nativ noch nicht übernommene Linkplatzierung* |
+
+**Architekturrelevante Unterscheidung:** Die sichtbare RGB-Implementierung ist eine eigenständige HTML-/CSS-/JS-Runtime und funktioniert in **deren** Oberfläche. Sie ist **nicht automatisch** Bestandteil der nativen Aculia-/Elementor-Seite #14 oder des Drafts #1362. Unsere Aufgabe ist **Übernahme/Anbindung mit belegtem Quellbezug**, nicht paralleler Neubau. Die Editorial-v2-Sitemap ist eine **alternative redaktionelle Zuordnung**, keine bereits migrierte Ablösung der RGB-Sitemap. Falls später andere Oberrubriken verwendet werden, ist ein dokumentiertes Mapping zu den 28 bestehenden Seiten erforderlich.
+
+**Wichtige technische Sperre:** RGB-Quellregister (Keys/Routen/Tag-Zuordnungen) vor einer nativen Migration unverändert sichern; keine zweite A–Z-Datenbank, keine doppelte Sitemap, keine Neuanlage identischer Beiträge, keine erneute Footer-Sitemap. Zuerst echte Funktionszuordnung und Linktest, *danach* Darstellungswechsel. **Kein Plugin-Update / kein WP-Apply durch dieses Register.**
