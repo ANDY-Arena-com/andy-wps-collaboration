@@ -78,3 +78,14 @@ Es gibt nicht „acht neue Plugins“: Die acht Kacheln des Content Managers bü
 - [Plugin-Architektur](docs/ANDY-JOURNAL-PLUGIN-ARCHITEKTUR-v0.1.md)
 
 **Weitere technische Entscheidungen gehören zuerst hierher. Keine gleichberechtigten konkurrierenden „Masterpläne“ fortschreiben.**
+
+
+## Ergänzung 22.11.2026 – gezielte Korrektur von 2E, noch keine Live-Abnahme
+
+Auf ausdrückliche Nutzeranweisung wurde **kein neues Plugin und keine neue Homepage**, sondern ein lokales Update des vorhandenen `andy-journal-integrator` erstellt: **Version 0.2.5 / `ANDY-WP-PLUGIN-Integrator-v0.2E-KORREKTUR.zip`**, SHA-256 `b8fffaa3e3cc966d408e648e598de17438713cb9de56c88a8a2dfd2f4dd9b859`. Das öffentliche GitHub-Repository enthält weiterhin **keine Binärdatei**; das ZIP wurde im Chat ausgeliefert.
+
+**Genau behobene Code-Mängel des bisherigen 2E:** (1) negative Positionierung der ursprünglichen Owl-Sliderpfeile über der Viererreihe → eigene reservierte Steuerleiste, welche die Originalpfeile auslöst; (2) Flex-/Höhenabgleich bislang nur an Elementor-Außenhüllen → Aculia-Inner-Box/Content/CTA einbezogen; (3) weißer Fight-Night-Titel auf weißer Aculia-Fläche → Titel- und Tab-Sektionen zusammen gekennzeichnet, dunkler Hintergrund, versteckte Elementor-Overlays und lesbare Inhalts-Panels; (4) Behind-ANDY- und Themen-/Sitemap-/A–Z-Einfügung bisher von enger Footer-Klassenliste abhängig → Vorrang für tatsächliches Elementor-Template **#455**, Fallbacks für Theme-Strukturen. Wortlauter Tyson-Claim verbleibt **direkt vor** Fight Night. 
+
+**Tests lokal:** PHP-Lint auf 5 Dateien, Node-Syntax, alte 45 negativen/Static- und 13 positiven PHP-Stubs, 21 neue Scope-/Bestandsschutzchecks und 18 synthetische DOM-Checks, ZIP-CRC und Pluginversionsprüfung **bestanden**. Es gibt **keine** neue reale Hostinger- oder Elementor-Browserabnahme; die Korrektur gilt **nicht als abgenommen**. Screenshot-/Responsivetest mit 2E an/aus erforderlich. 
+
+**Grenzen:** Scope nur im authentifizierten Preview-Draft **#1362**, keine persistente Elementor-/Theme-Änderung und keine Migration der RGB-Inhalte. **Aculia-Demo-Bilder, CHAMISTRY-Posts und Platzhalter-Kontaktdaten bleiben technisch weiterhin vorhanden.** Die frühere LIVE-/FREEZE-Grenze für neue Teilprojekte und Publikation gilt unverändert; diese Reparatur korrigiert ausschließlich das bereits ausgelieferte 2E im bestehenden Plugin und setzt keine öffentliche Änderung frei.
