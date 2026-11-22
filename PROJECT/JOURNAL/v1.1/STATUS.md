@@ -107,3 +107,15 @@ Der Nutzer hat den **tatsächlichen Pluginquellcode** als `andy-content-manager.
 **Lokale QA:** PHP-Lint, 29 PHP-Stubassertions und ZIP-CRC bestanden. **WordPress-Installation/End-to-End-Abnahme steht aus.** Es wurde **nichts** auf Hostinger installiert, gelöscht, deaktiviert oder publiziert. Kein neues Frontend-Layout/Content-Migration.
 
 **Zusätzliche eindeutige Codeursache:** `argb_front_decision()` im RGB Pilot liefert die RGB-Homepage nur bei **querylosen** Root-URLs aus (`count($query)===0`); bei `/?utm_source=...` fällt die Auslieferung auf WordPress/Aculia zurück. Dieser Router-Bug ist **nachgewiesen, aber im Cockpit-Update bewusst nicht verändert**. Separate, explizite Freigabe erforderlich.
+
+## 22.11.2026 – RGB Pilot 0.6.2: Aculia-Root plus vorhandene RGB-Unterseiten (lokal vorbereitet)
+
+**Neue konkrete Nutzerentscheidung:** Der bisherige RGB-7-Slide-Hero ist **nicht** die künftig gewünschte Staging-Startseite. Die gewünschte Homepage ist die **vorhandene Aculia-Home #14 mit halbtransparentem Header und eigenem WpSection-Slider**. Der Integrator-Draft **#1362** bleibt separat unveröffentlicht, kein dritter Homepage-Kandidat. Die bereits implementierten RGB-Seiten, A–Z und Sitemap müssen aber erhalten bleiben.
+
+**Technischer Befund aus dem echten RGB-Plugin 0.6.1:** Betriebsmodus `off` gibt zwar `/` an Aculia ab, sperrt aber auch `?andy_rgb_asset=...`; deshalb nicht einfach auf `off` umschalten. Der bisherige Standardmodus `staging` liefert bei leerem Root-Query den RGB-Index aus, während `/?utm_source=...` bereits an WordPress durchgereicht wird.
+
+**Gezielter WordPress-Plugin-Updatevorschlag – derselbe RGB-Pluginordner, keine neue Plugininstallation:** `ANDY-WP-PLUGIN-RGB-Pilot-v0.6.2-ACULIA-ROOT.zip`, SHA256 `2d0cdb2f6271f52873e2e19a26600a942091ed0b5812fcc9fd91c2b892f3af98`. Ein zusätzlicher Modus `content` bewirkt `/` und `/?utm_source=...` → native Aculia-Root, `?andy_rgb_asset=sitemap.html`, `a-z.html` und normale registrierte Artikel/Assets → unveränderte RGB-Auslieferung; `?andy_rgb_asset=index.html` bewusst gesperrt (keine zweite öffentliche RGB-Home). Die private Admin-Vorschau des RGB-Index bleibt erhalten. Andere Betriebsarten unverändert. Gespeicherte Original-Daten, Elementor und die übrigen sechs Plugin-Dateien bleiben unverändert.
+
+**Explizite Aktivierung nötig:** Die Installation des ZIPs allein ändert den Betrieb nicht. Administrator wählt anschließend unter **Werkzeuge → ANDY RGB Pilot → Standardansicht** die neue Option `Aculia-Home + vorhandene RGB-Unterseiten`; Cache-/Browserabnahme steht aus. 0.6.1-Rollback-Paket vorhanden; vor Rückinstallation Modus auf einen früher bekannten Wert zurücksetzen, weil 0.6.1 den neuen Modus als `off` interpretiert.
+
+**Lokale QA:** 21 PHP-Routingfälle und PHP-Lint bestanden; ZIP-CRC und 54 Hashregistereinträge verifiziert. **Noch nicht auf Hostinger installiert, keine reale Browser-/Cache-Abnahme.** Die Cockpit-Version 0.2.0 hat den Integrator-Link unter „Archiv & Diagnose“, aber dessen tatsächliche Installation ist nicht bestätigt. Kein anderes Plugin wurde verändert.
