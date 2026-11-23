@@ -1,5 +1,7 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **VERBINDLICHES VERSIONS-/INSTALLATIONSGATE (23.11.2026):** [Release-, Versions- und Import-Gate v0.1](docs/ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md). **Nutzer-Screenshot: Home Composer 0.1.15 ist in WordPress installiert; Upload 0.1.13 ist älter und darf nicht installiert werden.** Alle 0.1.13-Links hier sind **historische Dokumentation**, keine Installationsfreigabe. Content-ZIP L02 ist **kein WordPress-Plugin**. Der Home-Thread ist alleiniger Owner des Home Composer.
+
 > **NEUER OPERATIVER HANDOVER 23.11.2026:** [**WordPress Content Manager + Home Composer 0.1.13 · Module, Pluginstände, Fight-Night-CMS, Speicherorte, Bugs und Rückweg**](docs/ANDY-JOURNAL-CMS-UND-HOME-COMPOSER-HANDOVER-2026-11-23.md). **Für die heutige öffentliche Composer-Testseite diesen Stand lesen.** Die nachfolgende Bestandsaufnahme vom 22.11. dokumentiert die historische Aculia-/Integrator-Problemlage und ist **keine aktuelle Composer-Releasebeschreibung**. Die Live-Versionen aller übrigen Plugins sind weiterhin nur teilweise unabhängig bestätigt.\n\n
 > **Neu: [Plugin-, Werkzeug- und Contentpaketregister vom 22.11.2026](ANDY-JOURNAL-PLUGIN-UND-PAKETREGISTER-2026-11-22.md)** – Nachweis, Zuständigkeit, Keep/Archiv-Kandidaten und offene Identifikationslücken. **Noch keine Deinstallationsfreigabe.**
 
