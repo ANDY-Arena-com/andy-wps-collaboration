@@ -1,5 +1,7 @@
 # ANDY Content Composer – Parallele Entwicklung & Academy L02 Pilot v0.1
 
+> **Installations- und Versions-Gate (23.11.2026):** Der Nutzer hat auf Hostinger **Home Composer 0.1.15 installiert**; ein Upload von 0.1.13 wäre ein unzulässiger Downgrade. Der Content-Thread darf **kein** Home-Composer-ZIP ausgeben oder installieren. Dieses L02-ZIP ist ein **Daten-/Content-Paket**, kein WP-Plugin; Import erst bei geprüftem Academy-/Content-Renderer und kompatibler Importfunktion. **Verbindliches Vorgehen:** [WordPress Release- und Import-Gate](../docs/ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md).
+
 **Stand:** 23. November 2026  
 **Typ:** Arbeitsvertrag + konkretes Content-Beispiel  
 **Status:** Content-Prototyp/ZIP und visuelle Vorschau lokal erzeugt, **keine Hostinger-/WP-Installation und kein funktionsfähiger Academy-Player im Paket**.
