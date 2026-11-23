@@ -1,5 +1,7 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **CONTENT-02 (23.11.):** [ANDY Content Composer v0.1.1 · Academy-Titelbild vollbreit direkt unter Header](content/ANDY-CONTENT-COMPOSER-02-ACADEMY-HERO-v0.1.1-2026-11-23.md) – Nachfolge von **Content Composer 0.1.0**, **nicht** Home Composer. Kein automatisches Update von WP-Daten oder weiteren Plugins; auf Hostinger noch ungetestet.
+
 > **CONTENT-01: INSTALLIERBARER CONTENT COMPOSER v0.1.0 (23.11.2026):** [Release, ZIP-Hashes, Funktionen, Academy-L02-Import, Abnahme und Grenzen](content/ANDY-CONTENT-COMPOSER-01-RELEASE-v0.1.0-2026-11-23.md). **Eigenes Plugin `andy-journal-content-composer`, NICHT der bestehende Home Composer 0.1.15+.** Die Content-Version ist lokal geprüft, **noch nicht auf Hostinger installiert**; L02-Renderer bleibt unverifiziert.
 
 > **VERBINDLICHES VERSIONS-/INSTALLATIONSGATE (23.11.2026):** [Release-, Versions- und Import-Gate v0.1](docs/ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md). **Nutzer-Screenshot: Home Composer 0.1.15 ist in WordPress installiert; Upload 0.1.13 ist älter und darf nicht installiert werden.** Alle 0.1.13-Links hier sind **historische Dokumentation**, keine Installationsfreigabe. Content-ZIP L02 ist **kein WordPress-Plugin**. Der Home-Thread ist alleiniger Owner des Home Composer.
