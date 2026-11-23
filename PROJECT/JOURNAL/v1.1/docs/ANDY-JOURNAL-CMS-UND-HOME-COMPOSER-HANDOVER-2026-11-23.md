@@ -3,7 +3,7 @@
 > **HISTORISCHER HANDOVER, NICHT ALS UPDATE-ANLEITUNG VERWENDEN.** Am 23.11.2026 zeigt der WordPress-Installationsvergleich **installiert: Home Composer 0.1.15 / hochgeladen: 0.1.13**. Damit sind dieses Dokument und das darin genannte 0.1.13-ZIP **nicht mehr die aktuelle Installationsbasis**. **Downgrade abbrechen.** Vor jeder Änderung das [verbindliche Release- und Import-Gate](ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md) durchführen und den aktuellen Home-Thread-Release prüfen. Die technischen Informationen zu 0.1.13 bleiben als **Quellhistorie** erhalten; 0.1.15-Code wurde hier nicht geprüft.
 
 **Stand:** 23.11.2026, abendlicher Übergabestand nach FIGHT-CMS-10  
-**Kanonischer Arbeitsstand Home Composer:** `andy-home-composer` **v0.1.13**, `FIGHT-CMS-10`  
+**Historischer, hier dokumentierter Quellstand Home Composer:** `andy-home-composer` **v0.1.13**, `FIGHT-CMS-10`; **WordPress zeigte anschließend v0.1.15 als installiert.**  
 **Zweck:** Technische und operative **Übergabe an einen neuen Chat/Thread**, der ohne ursprünglichen Verlauf die vorhandenen Funktionen erhalten und die nächsten Änderungen *am selben Plugin* durchführen kann.  
 **Belegbasis:** Die am 23.11. lokal vorliegenden **Plugin-ZIPs und der Quellcode** (insb. Composer 0.1.13, Content Manager 0.4.8, Cockpit 0.2.0, RGB 0.6.3), GitHub-Inventar/STATUS vom 22.11. und Nutzer-Screenshots/Rückmeldungen der öffentlichen Testsite. **Kein Zugriff auf das live installierte PHP/WordPress-Datenbank-Snapshot**. „Im ZIP vorhanden“ ist nicht automatisch „genau diese Version läuft auf Hostinger“.
 
@@ -11,7 +11,7 @@
 
 ## 1. Schnellstart für einen Nachfolge-Thread
 
-1. Aktuelles Quellartefakt **`ANDY-WP-PLUGIN-Home-Composer-v0.1.13-FIGHT-CMS-10.zip`** benutzen und seine enthaltene Plugin-Version/Header **0.1.13** kontrollieren. **Nicht** ein altes 0.1.x-ZIP oder den Einzel-Klickdummy als Ausgangspunkt nehmen.
+1. **STOP – dieser Abschnitt dokumentiert den historischen 0.1.13-Stand.** **Niemals 0.1.13 als aktuelle Installationsbasis verwenden**, solange WordPress 0.1.15 oder neuer meldet. Vor jedem neuen Build den wirklich installierten Quellstand beim Home-Thread übernehmen, Version und Schema prüfen und das [Release-/Import-Gate](ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md) vollständig durchlaufen.
 2. **Niemals gespeicherte WordPress-Optionswerte durch neue Defaults ersetzen.** Die Modulkonfiguration einschließlich Reihenfolge/Farben liegt im CMS und **nicht im Plugin-ZIP**.
 3. Vor jeder Änderung aktuellen Hostinger-Stand prüfen (aktive Plugin-/MU-/Theme-Versionen, Options-Snapshot, Medien/Posts); die ZIPs sind nur die zuletzt erzeugten Lieferstände.
 4. In WordPress: **ANDY Journal → Home Composer**, ggf. **Werkzeuge → Home Composer**; Modul-Expander starten **geschlossen**. Separate Expander für öffentliche Testseite, Header/Top-Hero und Fight Night CMS-Demo.
