@@ -1,5 +1,6 @@
-# ANDY Journal — EINZIGE AKTUELLE SYSTEMÜBERSICHT
+# ANDY Journal — Systemübersicht und Übergaben
 
+> **NEUER OPERATIVER HANDOVER 23.11.2026:** [**WordPress Content Manager + Home Composer 0.1.13 · Module, Pluginstände, Fight-Night-CMS, Speicherorte, Bugs und Rückweg**](docs/ANDY-JOURNAL-CMS-UND-HOME-COMPOSER-HANDOVER-2026-11-23.md). **Für die heutige öffentliche Composer-Testseite diesen Stand lesen.** Die nachfolgende Bestandsaufnahme vom 22.11. dokumentiert die historische Aculia-/Integrator-Problemlage und ist **keine aktuelle Composer-Releasebeschreibung**. Die Live-Versionen aller übrigen Plugins sind weiterhin nur teilweise unabhängig bestätigt.\n\n
 > **Neu: [Plugin-, Werkzeug- und Contentpaketregister vom 22.11.2026](ANDY-JOURNAL-PLUGIN-UND-PAKETREGISTER-2026-11-22.md)** – Nachweis, Zuständigkeit, Keep/Archiv-Kandidaten und offene Identifikationslücken. **Noch keine Deinstallationsfreigabe.**
 
 **Datum:** 22.11.2026 · **Entscheidungsstatus:** Entwicklungs-FREEZE / Architektur-Inventur. **Dies ist ein Ist-/Abweichungsregister, keine Freigabe und keine neue Plugin-Spezifikation.** 
