@@ -130,7 +130,7 @@ Kein neues Dateiformat für die Match-Rohquellen. Das geplante **Story-Paket** d
 
 **Primär für diese Synthese:**
 - [ANDY App Development: FIGHT-NIGHT-01-Antwort](ANDY_FIGHT_NIGHT_01_APP_RESPONSE_2026-11-23.md) – vollständige A–F-Rückmeldung und JSON-Strukturvorschlag.
-- **G-Analyzer: FIGHT-NIGHT-01 – Match Stories, Research Evidence & Fight-Night-Teaser**, Textantwort im Journal-Thread vom 23.11.2026, noch nicht als eigenständiger Quelltext im Repository archiviert; diese Datei enthält die nachvollziehbare Synthese.
+- [**G-Analyzer: FIGHT-NIGHT-01 – Originalantwort**](ANDY_FIGHT_NIGHT_01_ANALYZER_RESPONSE_2026-11-23.md) – am 23.11.2026 im Journal-Thread übermittelter Originaltext, unverändert archiviert; diese Datei enthält die Synthese.
 - [S350 Serienanalyse v0.1](../research/andy-lab/ANALYSES/andy_cc11a6598bcf/v0.1/README.md) – IDs, Rundenindex, Konfiguration, Runner-Ergebnis, Calls, Actions, FEN und Archivbezug.
 - [G-Analyzer-Handoff 23.11.](ANDY_G_ANALYZER_THREAD_HANDOFF_2026-11-23.md) – Economy-Screenshot, Usage-/Kostenstatus und wissenschaftliche Grenzen.
 - [Match Evidence v1.0](ANDY_MATCH_EVIDENCE_JSONL_JSON_SQLITE_v1.0.md) – gemeinsames JSONL+JSON- und Provenienzprinzip.
