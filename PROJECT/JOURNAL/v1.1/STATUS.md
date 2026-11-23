@@ -1,5 +1,7 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **CONTENT-03 / 23.11.2026:** [Content Composer v0.1.2 – Journal-Header nach Home-Designwerten (lesend), Bildmodi ohne Seitenlücken](content/ANDY-CONTENT-COMPOSER-03-HEADER-AND-IMAGE-FIT-v0.1.2-2026-11-23.md). Eigenes Plugin `andy-journal-content-composer`. **Home Composer bleibt unverändert**. Quelle lokal geprüft, Hostinger-Abnahme offen.
+
 > **CONTENT-02 (23.11.):** [ANDY Content Composer v0.1.1 · Academy-Titelbild vollbreit direkt unter Header](content/ANDY-CONTENT-COMPOSER-02-ACADEMY-HERO-v0.1.1-2026-11-23.md) – Nachfolge von **Content Composer 0.1.0**, **nicht** Home Composer. Kein automatisches Update von WP-Daten oder weiteren Plugins; auf Hostinger noch ungetestet.
 
 > **CONTENT-01: INSTALLIERBARER CONTENT COMPOSER v0.1.0 (23.11.2026):** [Release, ZIP-Hashes, Funktionen, Academy-L02-Import, Abnahme und Grenzen](content/ANDY-CONTENT-COMPOSER-01-RELEASE-v0.1.0-2026-11-23.md). **Eigenes Plugin `andy-journal-content-composer`, NICHT der bestehende Home Composer 0.1.15+.** Die Content-Version ist lokal geprüft, **noch nicht auf Hostinger installiert**; L02-Renderer bleibt unverifiziert.
