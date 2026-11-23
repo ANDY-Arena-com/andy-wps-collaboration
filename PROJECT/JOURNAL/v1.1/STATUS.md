@@ -139,3 +139,9 @@ Der Nutzer hat den **tatsächlichen Pluginquellcode** als `andy-content-manager.
 **Offene wirkliche Altbestandteile:** Der nicht verifizierte Aculia-Video-/Replaykasten, das native Blog-Grid (inkl. ggf. „CHAMISTRY“), Newsletter und Social-Icons werden bewusst nicht willkürlich umgedeutet. Dies ist eine **teilweise echte native Contentmigration**, keine vollständige Endabnahme.
 
 **QA:** Lokaler PHP-Syntaxcheck aller 8 PHP-Dateien, synthetische 43-Edit-Fixture, 10 Positiv-, fünf Negativ- und vier Zusatzchecks; ZIP-CRC, Versions-/Bestandsvergleich bestanden. **Noch nicht** auf Hostinger installiert, keine echte Elementor-Rendering-/Browser-Abnahme; bei Drift der Originalseite/Footers wird der Import gesperrt. Vor Install/Apply Backup und explizite Nutzerfreigabe erforderlich.
+
+## 23.11.2026 – Fight Night: gemeinsame App-/Analyzer-Auswertung und Match Panorama (nur Dokumentation)
+
+Die beiden Rückmeldungen auf **FIGHT-NIGHT-01** wurden fachlich zusammengeführt. [Gemeinsame Auswertung, Golden-Match-Evidenz und Modulidee **Match Panorama**](../../ANDY_FIGHT_NIGHT_01_JOINT_FINDINGS_AND_MATCH_PANORAMA_2026-11-23.md).
+
+**Kern:** Match-Evidenz (Original-JSONL+JSON) → messbare Signale/Analyzer-Fragen → eigenständige redaktionelle Story-ID → Fight-Night-Teaser / Series Story / Research Story / Panorama. Für Astra × Gemini 4 Argon (andy_0c0f7413fdf6; S350-Runde 1 = zweite Partie) liegen dokumentierte Runner-Mattmeldung, 249 Decisions vs. 233 ausgeführte Aktionen und tarifbasierte Kostenschätzungen vor; unabhängige Engine-Verifikation und neue Original-JSONL-Abnahme bleiben offen. **Match Panorama** ist ein geplanter breiter, optional vollständig textfreier, verlinkter Screenshot-/Replay-Bildbaustein mit verifizierter Bildprovenienz. **Kein Plugin-, WordPress-, Schema- oder Veröffentlichungs-Release** durch diese Dokumentation.
