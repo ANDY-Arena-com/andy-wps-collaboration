@@ -1,5 +1,7 @@
 # ANDY Journal Content Composer 0.1.0 – CONTENT-01 Release
 
+> **NEUER RELEASE:** [Content Composer 0.1.1 / ACADEMY-HERO-02](ANDY-CONTENT-COMPOSER-02-ACADEMY-HERO-v0.1.1-2026-11-23.md) verschiebt auf Academy-Beiträgen das Featured Image **über** den Artikel in ein vollbreites Hero. Diese Seite dokumentiert die historische Basis 0.1.0.
+
 **Stand:** 23.11.2026  
 **Zuständigkeit:** Content-Thread. **Home-Thread bleibt allein zuständig für `andy-home-composer/*`.**  
 **Status:** Plugin-ZIP lokal erzeugt und PHP-/ZIP-/Importer-Offlinetests bestanden. **Auf Hostinger noch nicht installiert oder abgenommen.**
