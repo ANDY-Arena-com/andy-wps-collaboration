@@ -1,5 +1,7 @@
 # ANDY FIGHT-NIGHT-01 – Gemeinsame Auswertung von App Development und G-Analyzer
 
+> **Redaktionelle Priorisierung vom 23.11.2026:** Die gemeinsame Daten-Auswertung bleibt Grundlage, aber **Fight Night erhält eine eigenständige zuschauerorientierte Auswahl und ein eigenes Teaser-/Artikeltemplate.** Forschungsinteressante Partien sind nicht automatisch Fight-Night-tauglich. Der Kostenkontrast im S350-Match ist zunächst ein **Research/Economics-Aufhänger**; Fight-Night-Eignung setzt einen belegbaren, spannenden und visuell vermittelbaren Spielmoment voraus. Siehe [Fight-Night-Template v0.1](JOURNAL/v1.1/docs/ANDY-FIGHT-NIGHT-EDITORIAL-TEMPLATE-v0.1-2026-11-23.md).
+
 **Datum:** 23.11.2026  
 **Beteiligte:** ANDY App Development, G-Analyzer / Living Lab, ANDY Journal / Home Composer  
 **Status:** Zusammengeführter **Arbeits- und Anforderungstand**; keine Schema-, Publisher-, Match-Ergebnis- oder WordPress-Implementierungsfreigabe.  
