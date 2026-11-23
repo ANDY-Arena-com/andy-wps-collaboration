@@ -1,5 +1,7 @@
 # ANDY JOURNAL – WordPress Content Manager, Home Composer & Plugin-Handover
 
+> **HISTORISCHER HANDOVER, NICHT ALS UPDATE-ANLEITUNG VERWENDEN.** Am 23.11.2026 zeigt der WordPress-Installationsvergleich **installiert: Home Composer 0.1.15 / hochgeladen: 0.1.13**. Damit sind dieses Dokument und das darin genannte 0.1.13-ZIP **nicht mehr die aktuelle Installationsbasis**. **Downgrade abbrechen.** Vor jeder Änderung das [verbindliche Release- und Import-Gate](ANDY-WORDPRESS-RELEASE-UND-IMPORT-GATE-v0.1-2026-11-23.md) durchführen und den aktuellen Home-Thread-Release prüfen. Die technischen Informationen zu 0.1.13 bleiben als **Quellhistorie** erhalten; 0.1.15-Code wurde hier nicht geprüft.
+
 **Stand:** 23.11.2026, abendlicher Übergabestand nach FIGHT-CMS-10  
 **Kanonischer Arbeitsstand Home Composer:** `andy-home-composer` **v0.1.13**, `FIGHT-CMS-10`  
 **Zweck:** Technische und operative **Übergabe an einen neuen Chat/Thread**, der ohne ursprünglichen Verlauf die vorhandenen Funktionen erhalten und die nächsten Änderungen *am selben Plugin* durchführen kann.  
