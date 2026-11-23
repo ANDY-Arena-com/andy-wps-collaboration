@@ -1,5 +1,7 @@
 # ANDY Journal Content Composer v0.1.1 – ACADEMY-HERO-02
 
+> **NEUER RELEASE:** [Content Composer 0.1.2 / CONTENT-03](ANDY-CONTENT-COMPOSER-03-HEADER-AND-IMAGE-FIT-v0.1.2-2026-11-23.md) behebt die Aculia-Demo-Header-Zuordnung auf Contentposts und ergänzt Bildanpassungsmodi. Diese Seite bleibt als historische Beschreibung 0.1.1 erhalten.
+
 **Datum:** 23.11.2026  
 **Status:** Lokaler WordPress-Plugin-Release, **nicht auf Hostinger installiert oder abgenommen**.  
 **Änderungsbasis:** Vorhandenes v0.1.0-Plugin-ZIP; **kein** Home-Composer-Source-Fork.  
