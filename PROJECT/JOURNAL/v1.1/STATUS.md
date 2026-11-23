@@ -1,5 +1,7 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **NEU – INTERAKTIVE BIBLIOTHEK / RESEARCH-PILOT (23.11.2026):** [Architektur- und Umsetzungsplan für wiederverwendbare Academy-, Research- und Replay-Module](content/ANDY-INTERAKTIV-BIBLIOTHEK-01-RESEARCH-PLAN-2026-11-23.md). Basis ist der geprüfte **Content Composer 0.1.2**, Research-Quellkennung **`research.html`** („Wenn der Zug nicht zur Begründung passt.“). **Konzept, noch kein Plugin-Update.** Home Composer bleibt beim anderen Thread.
+
 > **CONTENT-03 / 23.11.2026:** [Content Composer v0.1.2 – Journal-Header nach Home-Designwerten (lesend), Bildmodi ohne Seitenlücken](content/ANDY-CONTENT-COMPOSER-03-HEADER-AND-IMAGE-FIT-v0.1.2-2026-11-23.md). Eigenes Plugin `andy-journal-content-composer`. **Home Composer bleibt unverändert**. Quelle lokal geprüft, Hostinger-Abnahme offen.
 
 > **CONTENT-02 (23.11.):** [ANDY Content Composer v0.1.1 · Academy-Titelbild vollbreit direkt unter Header](content/ANDY-CONTENT-COMPOSER-02-ACADEMY-HERO-v0.1.1-2026-11-23.md) – Nachfolge von **Content Composer 0.1.0**, **nicht** Home Composer. Kein automatisches Update von WP-Daten oder weiteren Plugins; auf Hostinger noch ungetestet.
