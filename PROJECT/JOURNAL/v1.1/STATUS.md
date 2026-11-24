@@ -1,5 +1,8 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **Aktueller Entwicklungscheckpoint 24.11.2026 (Tagesabschluss): [WP-ARCH R0.5](ARCHITECTURE/WP-ARCHITECTURE-R0.5.md).** Home Composer 0.1.37; Content Composer 0.1.26 nutzerseitig erfolgreicher Academy-Import und Content→Overview, 0.1.28 jüngstes Perspectives-Paket (positives Nutzerfeedback, detaillierte Live-Abnahme offen). 22 Release-Schritte samt ZIP-Prüfsummen; Academy A–D (18 Lektionen/Vorlagen), Perspectives (6 DE/EN-Paare und Overview), **problem-driven Crossover vor Research**, gemeinsame Content-Quelle. Ältere Versionsangaben unten sind historische Referenzen, keine Installationsanweisung. Release-Gate gilt unverändert; keine öffentliche Freigabe.
+
+
 > **NEU – INTERAKTIVE BIBLIOTHEK / RESEARCH-PILOT (23.11.2026):** [Architektur- und Umsetzungsplan für wiederverwendbare Academy-, Research- und Replay-Module](content/ANDY-INTERAKTIV-BIBLIOTHEK-01-RESEARCH-PLAN-2026-11-23.md). Basis ist der geprüfte **Content Composer 0.1.2**, Research-Quellkennung **`research.html`** („Wenn der Zug nicht zur Begründung passt.“). **Konzept, noch kein Plugin-Update.** Home Composer bleibt beim anderen Thread.
 
 > **CONTENT-03 / 23.11.2026:** [Content Composer v0.1.2 – Journal-Header nach Home-Designwerten (lesend), Bildmodi ohne Seitenlücken](content/ANDY-CONTENT-COMPOSER-03-HEADER-AND-IMAGE-FIT-v0.1.2-2026-11-23.md). Eigenes Plugin `andy-journal-content-composer`. **Home Composer bleibt unverändert**. Quelle lokal geprüft, Hostinger-Abnahme offen.

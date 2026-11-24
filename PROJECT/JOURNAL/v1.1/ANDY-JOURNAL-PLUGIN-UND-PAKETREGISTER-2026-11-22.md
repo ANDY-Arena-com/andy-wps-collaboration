@@ -1,5 +1,8 @@
 # ANDY Journal – Plugin-, Werkzeug- und Contentpaketregister
 
+> **Aktueller Entwicklungscheckpoint 24.11.2026 (Tagesabschluss): [WP-ARCH R0.5](ARCHITECTURE/WP-ARCHITECTURE-R0.5.md).** Home Composer 0.1.37; Content Composer 0.1.26 nutzerseitig erfolgreicher Academy-Import und Content→Overview, 0.1.28 jüngstes Perspectives-Paket (positives Nutzerfeedback, detaillierte Live-Abnahme offen). 22 Release-Schritte samt ZIP-Prüfsummen; Academy A–D (18 Lektionen/Vorlagen), Perspectives (6 DE/EN-Paare und Overview), **problem-driven Crossover vor Research**, gemeinsame Content-Quelle. Ältere Versionsangaben unten sind historische Referenzen, keine Installationsanweisung. Release-Gate gilt unverändert; keine öffentliche Freigabe.
+
+
 **Stand 22.11.2026, 18:49 CET · Status: Bestands- und Bereinigungsvorschlag, KEINE Deinstallation.**
 
 Dieses Dokument ist die aktuelle, **nachgewiesene Teilinventur**. Es trennt installierte Plugins, in Plugins enthaltene Module, durch Pakete einmalig vorgenommene Änderungen, redaktionelle Bestände, WordPress-Objekte und sichtbare Menüs. Es ist keine Behauptung, dass ein vollständiger, aktueller WP-Plugin-Export vorliegt. **Nicht durch Screenshots/Live-Inventur belegte Details sind ausdrücklich offen.**

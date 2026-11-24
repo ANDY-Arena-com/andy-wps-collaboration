@@ -1,5 +1,8 @@
 # ANDY Journal — Gesamtkonzept v1.1
 
+> **Aktueller Entwicklungscheckpoint 24.11.2026 (Tagesabschluss): [WP-ARCH R0.5](ARCHITECTURE/WP-ARCHITECTURE-R0.5.md).** Home Composer 0.1.37; Content Composer 0.1.26 nutzerseitig erfolgreicher Academy-Import und Content→Overview, 0.1.28 jüngstes Perspectives-Paket (positives Nutzerfeedback, detaillierte Live-Abnahme offen). 22 Release-Schritte samt ZIP-Prüfsummen; Academy A–D (18 Lektionen/Vorlagen), Perspectives (6 DE/EN-Paare und Overview), **problem-driven Crossover vor Research**, gemeinsame Content-Quelle. Ältere Versionsangaben unten sind historische Referenzen, keine Installationsanweisung. Release-Gate gilt unverändert; keine öffentliche Freigabe.
+
+
 **Status:** Historische Konzeptbasis; aktueller Teststand siehe Nachtrag 19.11.2026  
 **Stand:** 13. November 2026  
 **Sprache:** Deutsch (Masterdokument)  

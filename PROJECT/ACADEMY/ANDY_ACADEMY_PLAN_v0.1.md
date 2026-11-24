@@ -1,4 +1,7 @@
 # ANDY Academy – Road to Victory
+
+> **Fortschreibung 24.11.2026:** [Journal WP-ARCH R0.5](../JOURNAL/v1.1/ARCHITECTURE/WP-ARCHITECTURE-R0.5.md), Abschnitt 4. Academy als native DE/EN-Lernumgebung mit vier Bereichen A Regeln, B Tools, C Auswertung, D Installation; 3 Original-Demos und 15 zusätzliche redaktionelle Lektionsvorlagen (18 insgesamt, kein vollständiger öffentlicher Bestand behauptet). Nutzer bestätigt Import und Content→Overview. Niveau-Filter nur A; B/C/D Video-/Aufgabenformate ohne individuelles Niveau. Kompetenzstufen/Sterne bleiben separate, noch nicht implementierte Prüfungslogik. Rulebook-Thread verantwortet fachliche Szenarien und Validierung, Journal-Thread CMS/Navigation. Neue interaktive Demos, Regel-ID-Vertrag und echte Videos offen. Der nachfolgende ursprüngliche Plan bleibt erhalten.
+
 **Version:** 0.1 · **Stand:** 14.11.2026 · **Status:** Name und Entwicklungsziel im Projektdialog angenommen; Lernstufen und technische Ausgestaltung Arbeitsplan, noch nicht implementiert.
 **Leitmotiv:** Learn the Rules. Master the Game. Challenge the AI.
 
