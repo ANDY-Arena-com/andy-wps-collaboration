@@ -39,6 +39,10 @@
 - Optionales Aftermatch (neue, separat nachgewiesene Modelläußerungen) und Social-Assets aus Snapshot.
 - Kontrollierter Snapshot-Update/Sync nur bei explizitem Folgeentscheid, kein laufender API-/WordPress-Live-Kanal als Default.
 
+## Gemeinsame Einleitung / Story-Kontext (zusätzlicher V1-Punkt)
+
+Der globale **BMC-R16-Expander** wird im bestehenden WP-/WHY-/Composer-System als eine gemeinsame DE/EN-Redaktionskomponente verwendet. Noch keine Duplikate pro Modell, keine Veränderung des APP-Match-JSON. Die Kapitelanker der dokumentierten ANDY-Regeln und die offizielle DE-/EN-Vorschau müssen auf Staging und Live geprüft werden. [UX, wissenschaftliche Formulierungen und Textentwurf](08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md).
+
 ## Test- und Abnahmematrix
 
 | Test-ID | Fall | Erwartung |
@@ -68,6 +72,10 @@
 | BMC-T23 | Modellvergleich/„#1“-Konfiguration im UI | abgelehnt: kein Vergleich, keine Rankings |
 | BMC-T24 | Bonoma/Sweet-Spot ohne Eventbeleg | nicht veröffentlicht als verifiziert; `not_evaluated` oder Interpretationshinweis |
 | BMC-T25 | sehr wenige Spiele / hohe Zeit-/Kostenlast | transparent als Coverage/Aufwand statt negatives Modellurteil |
+| BMC-T26 | Allgemeiner Info-Expander auf jeder GPAI-Card | DE/EN, standardmäßig geschlossen, mobile, Tastatur und Screenreader korrekt |
+| BMC-T27 | global verwalteter Info-Text | einmal gepflegt/versioniert; keine Daten- oder Sprachpartner-Duplikate |
+| BMC-T28 | Dokumentationslinks mit Deep-Links | #intro/#rules/#lab/#challenge/#score in WP-Staging/Live und EN nachweislich erreichbar |
+| BMC-T29 | Guardrails zu Neuheit, Voraussetzungen und Business | keine behauptete identische effektive Konfiguration, garantiertes Nicht-Vortraining oder unbewiesener Business-Transfer; keine GPAI-Texte für Spezialreferenzen |
 
 ## Sicherheit, Regression, Arbeitsteilung
 
