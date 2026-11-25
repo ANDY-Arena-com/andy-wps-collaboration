@@ -60,3 +60,10 @@ Nutzerbeobachtung: Astra-Profil zeigt KO-Siege gegen Argon am 10.11.; die zugeh�
 ## 6. Grundlagen und nächste Stufe
 [Lab-Architektur 13.11.](../ANDY_LAB_2_0_RESEARCH_ARCHITECTURE_v1.0.md) · [Requirements R01–R11](v0.1/README.md) · [CORE](../CORE/v0.1) · [S350](../ANALYSES/andy_cc11a6598bcf/v0.1/README.md) · [S150](../ANALYSES/andy_83f51171e438/v0.1/README.md).
 Vorhandene Requirements und A/B/C-Prozess erhalten, dieser Beschluss ergänzt bzw. präzisiert das Zielbild (Dashboard + Explorer + Builder und Journal-Nutzen). Nach Daten-/Ergebniskonsistenz: vorhandene Standardgrafiken inventarisieren, priorisierte nutzbare Visualisierungen und modularen Builder schrittweise umsetzen. Keine technische Entscheidung über Framework/DB, keine feste Zeitplanung oder vollständige V1.0-Freigabe. 
+
+
+## Nachtrag 25.11.2026 — Behavior Model Card als Standalone-Produkt
+
+Die Projektleitung hat die Card nach der Lab-V1.0-Planung präzisiert: **keine direkten Modellvergleiche innerhalb der Behavior Model Card, kein Ranking und kein Gegenmodell als Referenzachse**. Die Card zeigt empirische Spielhistorie genau **eines** Modells, Aktionen/API-Entscheidungen, eigene API-Geschwindigkeit, Input/Output/Reasoning-Ressourcen, Versuchsbedingungen und Evidenz-/Erhebungsabdeckung. Gegner sind Matchkontext, keine Wertungsreferenz. Die im übrigen Lab-Konzept vorgesehenen Paarungs-/Interaktionsanalysen bleiben **eigene Research-Ansichten** und werden nicht still in eine Modell-Card gezogen.
+
+**Neuer kanonischer Produktstand / Requirements / Export Contract / Evidenzkompass / WordPress-Handoff:** [Behavior Model Card V1](../BEHAVIOR_MODEL_CARD/v1.0/README.md). Bonoma, Sweet Spot, Nested Networks, Stabilität und SSA bleiben theoriebezogene, vorläufige Annotationen neben den Messdaten; keine automatische Diagnose. Der freigegebene Kern des Dokuments vom 20.11. bleibt historisch unverändert; dieser Nachtrag erweitert ihn ohne Änderung des ursprünglichen Lab-Sync-Prioritätsentscheids.
