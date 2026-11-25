@@ -4,6 +4,9 @@
 **Adressaten:** ANDY App/Analyzer/Lab, ANDY Journal/WordPress, Editorial, Data/Evidence und Social.
 **Grundentscheidung:** **Standalone-Verhaltensprofil genau eines Modells**, aus nachweislich realen ANDY-Partien. **Keine direkten Modellvergleiche, keine Konkurrenzbalken, keine Rankings, kein Intelligenzscore.** Gegner sind ausschließlich Matchkontext und ggf. Quelle eines Ereignisses, niemals die Referenzachse der Card.
 
+
+**Zentrales Umsetzungsticket:** [GitHub Issue #15 – APP-Exporter → Journal/WordPress](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/15) (Planung, keine technische Abnahme).
+
 ## Produktidee
 
 Eine Behavior Model Card erzählt *nicht*, welches Modell besser ist, sondern **was dieses Modell unter welchen Bedingungen tatsächlich getan hat**, mit welcher Geschwindigkeit, mit welchen Ressourcen und über wie viele logisch unabhängige Partien. Sie wächst mit neuen dokumentierten Spielen, ohne historische Beobachtungen zu überschreiben.
