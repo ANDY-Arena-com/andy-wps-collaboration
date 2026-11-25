@@ -1,0 +1,348 @@
+{
+  "schema": "andy.behavior-card",
+  "schema_version": "1.0-draft",
+  "subject": {
+    "model_label": "Gemini 4 Argon",
+    "provider_label": "Google",
+    "model_api_id": null,
+    "identity_status": "historical_log_name_only"
+  },
+  "snapshot": {
+    "snapshot_id": "bmc-gemini-4-argon-s150-s350-pilot-v1",
+    "generated_at_utc": null,
+    "source_data_as_of": "2026-11-14",
+    "exporter_version": null,
+    "metric_registry_version": "1.0-draft",
+    "type": "historical_analysis_example_not_app_export"
+  },
+  "scope": {
+    "selection": "five_documented_logical_matches_s150_s350",
+    "logical_match_count": 5,
+    "model_appearances": 5,
+    "groups": [
+      {
+        "id": "S150",
+        "logical_matches": 3,
+        "token_budget_per_side": 150000,
+        "output_cap": 2048
+      },
+      {
+        "id": "S350",
+        "logical_matches": 2,
+        "token_budget_per_side": 350000,
+        "output_cap": 4096
+      }
+    ]
+  },
+  "metrics": {
+    "api_decisions": {
+      "value": 486,
+      "unit": "decision",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "executed_actions": {
+      "value": 458,
+      "unit": "action",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "execution_rate": {
+      "value": 94.24,
+      "unit": "percent",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "input_tokens": {
+      "value": 467520,
+      "unit": "token",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "output_tokens": {
+      "value": 18309,
+      "unit": "token",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "output_input_ratio": {
+      "value": 3.92,
+      "unit": "percent",
+      "status": "BERECHNET",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 5,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "active_api_seconds_all_matches": {
+      "value": null,
+      "unit": "second",
+      "status": "OFFEN",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 1,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "actions_per_active_api_hour_all_matches": {
+      "value": null,
+      "unit": "action/hour",
+      "status": "OFFEN",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 1,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "reported_reasoning_tokens": {
+      "value": null,
+      "unit": "token",
+      "status": "OFFEN",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 0,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    },
+    "cost_usd_all_matches": {
+      "value": null,
+      "unit": "USD",
+      "status": "OFFEN",
+      "metric_version": "bmc-1.0-draft",
+      "coverage": {
+        "covered_matches": 0,
+        "total_matches": 5
+      },
+      "source_ids": [
+        "s150_analysis_v0.1",
+        "s350_analysis_v0.1"
+      ]
+    }
+  },
+  "speed_observations": [
+    {
+      "match_id": "andy_0c0f7413fdf6",
+      "api_decisions": 132,
+      "executed_actions": 116,
+      "own_api_seconds": 2664.3,
+      "actions_per_own_api_hour": 156.7,
+      "mean_api_seconds_per_decision": 20.2,
+      "source_id": "observer_economy_2026-11-23",
+      "coverage_status": "one_of_five_matches",
+      "verification_status": "UI_observation_not_reaudited_original_jsonl"
+    }
+  ],
+  "matches": [
+    {
+      "match_id": "andy_83f51171e438",
+      "series_id": "S150",
+      "role": "white",
+      "branch_type": "original",
+      "api_decisions": 79,
+      "executed_actions": 78,
+      "input_tokens": 73235,
+      "output_tokens": 3240,
+      "frame_status": "partial",
+      "ruleset_version": "unknown",
+      "model_api_id": null,
+      "original_jsonl_sha256": null,
+      "original_json_sha256": null
+    },
+    {
+      "match_id": "andy_93f0d66382aa",
+      "series_id": "S150",
+      "role": "black",
+      "branch_type": "original",
+      "api_decisions": 84,
+      "executed_actions": 80,
+      "input_tokens": 79308,
+      "output_tokens": 3142,
+      "frame_status": "partial",
+      "ruleset_version": "unknown",
+      "model_api_id": null,
+      "original_jsonl_sha256": null,
+      "original_json_sha256": null
+    },
+    {
+      "match_id": "andy_7278d457e3f6",
+      "series_id": "S150",
+      "role": "white",
+      "branch_type": "original",
+      "api_decisions": 84,
+      "executed_actions": 80,
+      "input_tokens": 78982,
+      "output_tokens": 3091,
+      "frame_status": "framed",
+      "ruleset_version": "v1.1",
+      "model_api_id": null,
+      "original_jsonl_sha256": null,
+      "original_json_sha256": null
+    },
+    {
+      "match_id": "andy_cc11a6598bcf",
+      "series_id": "S350",
+      "role": "white",
+      "branch_type": "original",
+      "api_decisions": 107,
+      "executed_actions": 104,
+      "input_tokens": 101775,
+      "output_tokens": 4002,
+      "frame_status": "framed",
+      "ruleset_version": "v1.1",
+      "model_api_id": null,
+      "original_jsonl_sha256": null,
+      "original_json_sha256": null
+    },
+    {
+      "match_id": "andy_0c0f7413fdf6",
+      "series_id": "S350",
+      "role": "black",
+      "branch_type": "original",
+      "api_decisions": 132,
+      "executed_actions": 116,
+      "input_tokens": 134220,
+      "output_tokens": 4834,
+      "frame_status": "framed",
+      "ruleset_version": "v1.1",
+      "model_api_id": null,
+      "original_jsonl_sha256": null,
+      "original_json_sha256": null
+    }
+  ],
+  "conditions": [
+    {
+      "series_id": "S150",
+      "token_budget_per_side": 150000,
+      "output_cap": 2048,
+      "retry_limit_variants": [
+        4,
+        5,
+        4
+      ],
+      "x_go_moves": 1,
+      "awareness": "A2",
+      "strategy": "master",
+      "reasoning_effort": "default",
+      "ruleset_coverage": "partly_unknown"
+    },
+    {
+      "series_id": "S350",
+      "token_budget_per_side": 350000,
+      "output_cap": 4096,
+      "max_decisions": 500,
+      "max_illegal_retries": 5,
+      "x_go_moves": 1,
+      "awareness": "A2",
+      "strategy": "master",
+      "reasoning_effort": "default",
+      "ruleset_coverage": "v1.1_reported"
+    }
+  ],
+  "interpretations": [],
+  "provenance": {
+    "source_kind": "historical_derived_analyses",
+    "source_refs": [
+      {
+        "id": "s150_analysis_v0.1",
+        "url": "https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/research/andy-lab/ANALYSES/andy_83f51171e438/v0.1/README.md"
+      },
+      {
+        "id": "s350_analysis_v0.1",
+        "url": "https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/research/andy-lab/ANALYSES/andy_cc11a6598bcf/v0.1/README.md"
+      },
+      {
+        "id": "observer_economy_2026-11-23",
+        "url": "https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/PROJECT/ANDY_G_ANALYZER_THREAD_HANDOFF_2026-11-23.md"
+      }
+    ],
+    "original_jsonl_hashes_available_in_this_example": false,
+    "original_json_hashes_available_in_this_example": false,
+    "identity_deduplication": "historical_series_reports",
+    "caveat": "Original match files not re-read for this example; no independent historical engine replay"
+  },
+  "publication": {
+    "status": "draft",
+    "approved": false,
+    "locales": [
+      "de",
+      "en"
+    ],
+    "social_ready": false,
+    "wordpress_import_ready": false
+  },
+  "links": {
+    "behavior_card_url": null,
+    "journal_story_url": null,
+    "replay_url": null,
+    "lab_url": null
+  },
+  "quality": {
+    "source_coverage": "historical_analysis_only",
+    "speed_coverage_games": 1,
+    "total_games": 5,
+    "open_issues": [
+      "S150 partial framing and overlapping segment",
+      "historical API model identity incomplete",
+      "own API latency only evidenced for one match",
+      "cost/route/price coverage insufficient",
+      "no independent engine verification"
+    ]
+  }
+}
