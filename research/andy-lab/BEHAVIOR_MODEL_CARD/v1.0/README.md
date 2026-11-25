@@ -26,6 +26,7 @@ Die Card ist **kein amtliches Anbieterprofil**. Angaben zu Modellen, APIs, Token
 | [06_ENGINEERING_ROADMAP_TESTS.md](06_ENGINEERING_ROADMAP_TESTS.md) | Implementierungsreihenfolge, Security/Release/Regression und Tests |
 | [07_PILOTDATEN_QUELLEN_STATUS.md](07_PILOTDATEN_QUELLEN_STATUS.md) | belegter Gemini-4-Argon-Pilot mit fünf logischen Partien und nachweisbaren Grenzen |
 | [examples/behavior_card_argon_v1_draft.json](examples/behavior_card_argon_v1_draft.json) | **Illustration des Vertrags**, keine produktive exporterzeugte Datei |
+| [schema/behavior_card_v1_draft.schema.json](schema/behavior_card_v1_draft.schema.json) | maschinenlesbarer JSON-Schema-Draft, noch kein freigegebener Importvertrag |
 
 **Referenz-Demo:** `ANDY_BEHAVIOR_MODEL_CARD_V1.html` (offlinefähiger HTML-Clickdummy vom 25.11.2026, derzeit im ursprünglichen Chat-/Handoff-Paket; **nicht als in GitHub eingecheckt behaupten**). Der Entwurf zeigt Überblick, Spieltempo, Ressourcen, Verhalten und Evidenz; Filter 5 Spiele / S150 / S350. Die Spezifikation hier ist die Grundlage für spätere Reimplementierung, kein behaupteter Plugin-Release.
 
