@@ -209,6 +209,12 @@ Die Quellprüfung deckte zugleich einen **neuen Koordinationsfehler an der Umgeb
 
 Quellnachweis: [PRE-STAGING-01A-Audit](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01A-PLUGIN-MENUE-HOOK-AUDIT-2026-11-25.md), Archiv-SHA-256 `4277fcb18aa60d55b3e7e940d23143088b402addf7344abf8432610ed0fe420a`. Kein WP-/Plugin-Update oder Publikationsereignis durch diesen Nachtrag.
 
+### Entwicklungsnachtrag PRE-STAGING-01B · Von der Architekturentscheidung zum überprüfbaren Release
+
+Am 25.11.2026 wurde die in MO12 formulierte Governance erstmals in **konkreten Plugin-Code** übersetzt, und zwar aus dem tatsächlich exportierten WordPress-Quellstand: **Journal Cockpit 0.2.1**, **RGB Pilot 0.6.4** und **Home Composer 0.1.39**, jeweils mit Original-Rollback-ZIP. Das Cockpit verlinkt nun 21 bestehende Werkzeuge in fünf Gruppen, statt neue Fach-Engines zu schaffen. Die ursprünglich voneinander unabhängigen Host-Checks wurden für Production und die **ausdrücklich gekennzeichnete** spätere Staging-Umgebung harmonisiert. Die Admin-Berechtigung bleibt bestehen; Staging-Vorschau für Nicht-Administratoren erfordert nachweislich eingerichteten externen Zugriffsschutz. Ein alleiniger `noindex`-Header reicht nicht.
+
+**Beobachtbares Teilergebnis:** 103 isolierte, lokale Prüfungen bestanden; die vorhandenen Home-/RGB-Routingfunktionen und eingebetteten Assets wurden nicht umgebaut. **Nicht behaupten:** eine bereits erfolgte Hostinger-Installation, Staging-Isolation oder Produktivfreigabe. Der Schritt illustriert, dass eine gute Mensch-KI-Kollaboration nicht mit dem Verfassen eines Beschlusses endet: Sie liefert überprüfbare, umkehrbare Artefakte und benennt die weiterhin offenen Integrationsbedingungen. [Release-/Abnahmeprotokoll](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01B-UMGEBUNGEN-UND-COCKPIT-RELEASE-2026-11-25.md).
+
 **Leitsatz für das spätere Making of:** **Nicht die Anzahl der Werkzeuge entscheidet, sondern ob ihre Zusammenarbeit verständlich, überprüfbar und umkehrbar bleibt.**
 
 **Redaktionelle Folge:** MO12 als neuen Backlog-Eintrag vormerken, später mit Original-Screenshots, tatsächlicher Cockpit-Vorher/Nachher-Abnahme und Versionsregister ausformulieren. Keine WordPress-Importänderung oder Veröffentlichung aus diesem GitHub-Kommentar.
