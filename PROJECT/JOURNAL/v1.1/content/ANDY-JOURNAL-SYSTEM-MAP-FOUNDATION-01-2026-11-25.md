@@ -1,6 +1,9 @@
 # ANDY Journal – SYSTEM-MAP-FOUNDATION-01
 **25.11.2026 · Fachlicher Handoff Content-/Konzept-Thread an Technik-Thread · v0.1 · Anforderung, keine Implementierungs- oder Publikationsfreigabe**
 
+> **Technischer Eingangsnachtrag (25.11.2026):** Der Technik-Thread hat die schlanke Foundation als [**lokales Content-Composer-0.1.30-Update**](../ARCHITECTURE/ANDY-JOURNAL-SYSTEM-MAP-FOUNDATION-01-TECHNICAL-RELEASE-2026-11-25.md) implementiert: vorhandene Story-/Sprach-/Themen-IDs lesen, DE/EN-Relationen mit Prädikaten, Aussagearten, Belegreferenzen, Provenienz und Revisionen **intern** pflegen. WHY bleibt in Launch Control, WordPress-Posts bleiben Contentquelle. **74/74 isolierte Tests**, Plugin-ZIP und 0.1.29-Rollback lokal geprüft; **noch keine WP-Installation oder öffentliche Map/Exporte**. Lokale `andy.native.<WP-ID>`-Keys werden nicht als portable Graph-IDs verwendet. 01C2B-Sicherheitsgate bleibt vorrangig.
+
+
 Ergänzt [WHY & Progressive Content Release 01](ANDY-JOURNAL-WHY-PROGRESSIVE-CONTENT-RELEASE-01-2026-11-25.md) und [Coming-Soon-Content-Handoff](ANDY-COMING-SOON-CONTENTKONZEPT-HANDOFF-2026-11-25.md). **Bitte die semantische Basis früh in die aktuelle Konsolidierung einplanen**, damit die ersten DE/EN-Leseproben bereits vernetzte Inhalte sind. Kein zweites CMS und kein komplexes Graph-System als Launch-Voraussetzung. Aktuelle Plugin-Stände und technische Ownership im Technik-Thread prüfen. Der Content-Thread ändert keine Plugins.
 
 ## 1. Kommunikative Leitlinie und Zielbild
