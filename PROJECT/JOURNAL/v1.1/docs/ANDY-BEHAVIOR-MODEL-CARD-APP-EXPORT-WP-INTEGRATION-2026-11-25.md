@@ -2,6 +2,9 @@
 
 **Stand 25.11.2026.** **Status:** Produkt-/Schnittstellenkonzept zum Abstimmen mit APP- und Journal-Threads. **Keine Plugin-Installation, kein WordPress-Datenimport, kein Live-Release.**
 
+
+**Zentrales Umsetzungsticket:** [GitHub Issue #15 – APP-Exporter → Journal/WordPress](https://github.com/ANDY-Arena-com/andy-wps-collaboration/issues/15) (Planung, keine technische Abnahme).
+
 ## Auftrag und Navigationsziel
 
 Ein Modell erhält eine **eigenständige**, aus realen dokumentierten ANDY-Spielen kumulierte **Behavior Model Card**: Spiele, eigene Aktionen/API-Entscheidungen, Geschwindigkeit, Input-/Output-Relation, Ressourcen, Versuchsbedingungen, Evidenzqualität und ggf. revidierbare Bonoma-/Sweet-Spot-/Nested-Networks-Hypothesen. **Kein Modellranking, keine direkte Gegenüberstellung mit anderen Modellen.** Gegnernamen nur in den Details einer konkreten realen Partie.
