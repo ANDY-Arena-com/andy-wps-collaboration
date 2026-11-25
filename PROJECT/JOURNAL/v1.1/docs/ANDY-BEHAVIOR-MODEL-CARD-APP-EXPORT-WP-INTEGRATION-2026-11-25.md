@@ -31,6 +31,14 @@ Ein Modell erhält eine **eigenständige**, aus realen dokumentierten ANDY-Spiel
 
 **Sicherheit:** JSON-Import zunächst ausschließlich auf `staging.journal.andy-arena.com`, Schema- und Versionsprüfung, Dry-run/Preview, Idempotenz/Revisionskonflikte, Rollback, Adminautorisierung, Schutz von REST/Feeds/Caches. Kein Hostinger-Gesamt-Publish und kein blindes Stage↔Live-DB-Sync. Live nach bewusster redaktioneller und technischer Freigabe über bestehendes Launch Control.
 
+## Gemeinsamer Info-Expander „Warum ANDY?“ (neue Must-Anforderung BMC-R16)
+
+Alle Cards allgemeiner KI-Modelle erhalten vor/bei den KPIs einen **globalen, standardmäßig zugeklappten DE-/EN-Bereich**: Was ist die gemeinsame Aufgabe? Wie müssen allgemeine Modelle die gekoppelten Schach-Go-Regeln und einen neuen Spielzustand verarbeiten und mit begrenzten Ressourcen/ihren zugelassenen Werkzeugen Aktionen umsetzen? Warum ist das im Unternehmenskontext eine interessante Frage, ohne dass ANDY Geschäftseignung beweist? **Gleiche Basisregeln bedeuten nicht nachweislich identisches Vorwissen, tatsächliche Modellversion, Providerroute, Budgets oder Toolzugriff.** Kein als Tatsache behauptetes „nie trainiert/nie gesehen“.
+
+Linkziel vom Nutzer: [ANDY-Dokumentation · Einführung](https://andy-arena-com.github.io/andy-wps-collaboration/andy-dokumentation-regeln-lab.html#intro), weitere Kapitel: Regeln `#rules`, Lab `#lab`, Komplexität `#challenge`, AQP `#score`. In Repo-HTML sind diese Anker vorhanden; **externe GitHub-Pages-Funktion vor Staging-Release browserprüfen**, weil der öffentliche Abruf in der Recherche nicht gelang. AQP erklärt auch, warum nicht alle Modelle gleich viele Partien erreichen.
+
+**Eine einzige zentrale Content-/WHY-Redaktionskomponente für alle Karten**, kein Modell-/Match-JSON-Duplikat. Die individuellen Versuchsbedingungen verbleiben in den Card-/Matchdetails; das APP-Exporter-Format bleibt faktenzentriert. **Volltext DE/EN, Links, Accessibility und QA:** [BMC-R16 / Info-Expander](https://github.com/ANDY-Arena-com/andy-wps-collaboration/blob/main/research/andy-lab/BEHAVIOR_MODEL_CARD/v1.0/08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md).
+
 ## Visuelle Anforderungen für eine Website-Card
 
 - **Hero:** Modellname, Zeitraum, Anzahl echter Partien, Aktionenzähler, eigener API-Entscheidungszähler.
