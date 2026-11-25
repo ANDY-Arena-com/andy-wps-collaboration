@@ -141,3 +141,6 @@ Vom Projektleiter ergänzt: Cybersecurity, Compliance/XAI und Datenresonanzpunkt
 | Datenresonanzpunkt | Vom Projektleiter benannter eigenständiger Themenpunkt; genaue Definition und GitHub-Referenz noch zuzuordnen. | Im geprüften Main-Repository kein eindeutiger Begriffstreffer; keine Definition ergänzen oder mit Competitive Mirroring gleichsetzen. Bis zur Quellenzuordnung als offener Themenanker führen. |
 
 Alle drei Themen sind für Perspectives (blau, Transfer) vorgemerkt. Spätere empirische Untersuchungen gehören in Research (grün). Kein Wechsel der bisherigen Prioritäten.
+
+## 12. Making of – Entwicklungscheckpoint 25.11.2026
+[Story-Katalog und Entwicklungsstand](../content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md). Eigenständige neutralgraue Meta-Ebene mit RGB-Akzenten. 10 DE/EN-Story-Paare im Add-on 0.1.0/0.1.1; MO11 „Der Mensch als Orchestrator“ als neuer Entwurf. Home-Bridge auf vorhandener Rail, Content→Overview→Home, keine Änderungen an den parallel bearbeiteten Composern. Staging-Aufbau, Rollen von ChatGPT, DeepSeek, Qwen und Hostinger-KI, GitHub als Wissensbasis und Rolling-Handoff-Test dokumentiert. Genaue Live-Abnahme der Bridge und Ausgang des Handoff-Tests offen. Keine Binärarchivierung oder Publikationsfreigabe.

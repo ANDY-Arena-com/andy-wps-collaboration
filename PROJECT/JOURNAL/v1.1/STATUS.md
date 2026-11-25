@@ -1,5 +1,8 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **Making of · 25.11.2026:** [Story-Katalog und Entwicklungsstand v0.1](content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md). 10 vorbereitete DE/EN-Paare MO01–MO10, neuer Entwurf MO11 „Der Mensch als Orchestrator“ (noch nicht importiert), separates Add-on 0.1.0/0.1.1 mit Home-Bridge, SHA-256 und offene Abnahme; Rolling Handoff und Staging-Aufbau dokumentiert. Keine Publikationsfreigabe.
+
+
 > **Aktueller Entwicklungscheckpoint 24.11.2026 (Tagesabschluss): [WP-ARCH R0.5](ARCHITECTURE/WP-ARCHITECTURE-R0.5.md).** Home Composer 0.1.37; Content Composer 0.1.26 nutzerseitig erfolgreicher Academy-Import und Content→Overview, 0.1.28 jüngstes Perspectives-Paket (positives Nutzerfeedback, detaillierte Live-Abnahme offen). 22 Release-Schritte samt ZIP-Prüfsummen; Academy A–D (18 Lektionen/Vorlagen), Perspectives (6 DE/EN-Paare und Overview), **problem-driven Crossover vor Research**, gemeinsame Content-Quelle. Ältere Versionsangaben unten sind historische Referenzen, keine Installationsanweisung. Release-Gate gilt unverändert; keine öffentliche Freigabe.
 
 
