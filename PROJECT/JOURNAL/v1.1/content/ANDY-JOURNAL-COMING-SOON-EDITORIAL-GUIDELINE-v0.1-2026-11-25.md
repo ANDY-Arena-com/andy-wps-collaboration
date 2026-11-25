@@ -65,9 +65,9 @@ Home-Klammer und Bereichs-WHYs DE/EN → vorhandene Fight Night und Academy inve
 - [Coming-Soon-Handoff](ANDY-COMING-SOON-CONTENTKONZEPT-HANDOFF-2026-11-25.md)
 - [Fight Night Editorial Template](../docs/ANDY-FIGHT-NIGHT-EDITORIAL-TEMPLATE-v0.1-2026-11-23.md)
 - [Match Stories Blueprint](../docs/ANDY-JOURNAL-MATCH-STORIES-v0.4.md)
-- [Gemeinsame Match-Auswertung](../../ANDY_FIGHT_NIGHT_01_JOINT_FINDINGS_AND_MATCH_PANORAMA_2026-11-23.md)
-- [Academy-Plan](../../ACADEMY/ANDY_ACADEMY_PLAN_v0.1.md)
-- [Academy-Demo-Inventar](../../ACADEMY/ANDY_ACADEMY_CLICKDUMMIES.md)
+- [Gemeinsame Match-Auswertung](../../../ANDY_FIGHT_NIGHT_01_JOINT_FINDINGS_AND_MATCH_PANORAMA_2026-11-23.md)
+- [Academy-Plan](../../../ACADEMY/ANDY_ACADEMY_PLAN_v0.1.md)
+- [Academy-Demo-Inventar](../../../ACADEMY/ANDY_ACADEMY_CLICKDUMMIES.md)
 - [Lab-Produktkonsens / Flywheel](../../../../research/andy-lab/REQUIREMENTS/ANDY_LAB_V1_0_PRODUCT_CONSENSUS_2026-11-20.md)
 - [ANDY Philosophy](../../../../research/andy-lab/CORE/v0.1/07_ANDY_PHILOSOPHY.md)
 
