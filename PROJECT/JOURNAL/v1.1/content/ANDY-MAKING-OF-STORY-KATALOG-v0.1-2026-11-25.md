@@ -1,5 +1,5 @@
 # ANDY Journal – Making of: Story-Katalog und Entwicklungsstand
-**25.11.2026 · v0.1 · Redaktioneller Arbeitsbestand, keine Publikationsfreigabe**
+**25.11.2026 · v0.1 mit Nachtrag MO12 · Redaktioneller Arbeitsbestand, keine Publikationsfreigabe**
 
 ## 1. Leitidee
 ANDY erforscht Netzwerkdynamik und entsteht selbst durch Netzwerkdynamik. Das Making of dokumentiert Erfolge, Irrtümer, Korrekturen, Arbeitsteilung, Koordination, Kontextverlust und Lernen. Neutralgraue Meta-Ebene mit RGB-Akzenten; weder ausschließlich Research noch Perspectives. Vier Themenbereiche: Co-Creation, Entwicklungsprinzipien, Fehler & Erkenntnisse, Kontinuität & Lernen. Zunächst editierbare Stichpunkte, keine fertigen Essays.
@@ -169,3 +169,38 @@ Vereinfachte Skizze; keine Behauptung direkter KI-zu-KI-Kommunikation oder ident
 
 ## 5. Weiterführung
 MO11 später als Importinkrement ergänzen, vorhandene redaktionelle Edits erhalten. Konkrete Episoden sammeln und erst später ausformulieren. Quellen/Datum, Rollen, sichtbare Ergebnisse, Fehler, Korrektur, Abnahmestatus festhalten. Keine privaten Rohdialoge, internen Matchdaten oder vertraulichen Infrastrukturinformationen veröffentlichen. Kein neues Plugin und keine Änderung an WordPress durch diesen Commit.
+
+## 6. MO12 – Vom Werkzeug-Wildwuchs zur Betriebszentrale (25.11.2026)
+
+**Entwicklungsprinzipien · Fehler & Erkenntnisse · Kontinuität & Lernen.** Warum funktionierende Komponenten noch keine verständliche, sichere Betriebsarchitektur ergeben.
+
+**Status:** Von der Projektleitung als Weichenstellung ausdrücklich bestätigt und zur GitHub-Dokumentation beauftragt. **Redaktioneller Story-Entwurf, noch nicht in `stories.json` oder WordPress importiert; keine Publikationsfreigabe und kein nachgewiesener Performancegewinn.** Verbindlicher technischer Beschluss: [PRE-STAGING-01 – Admin- und Launch-Governance](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-ADMIN-UND-LAUNCH-GOVERNANCE-2026-11-25.md).
+
+### Beobachtete Episode
+- Nach vielen kurzen Entwicklungsiterationen zeigt WordPress am 25.11.2026 **20 Plugin-Einträge (18 aktiv, 2 inaktiv)**, zugleich mehrere Verwaltungswege: **ANDY Journal**, **Beiträge** und **Werkzeuge**. Eine Werkzeugzentrale verweist auf bereits vorhandene Funktionen; ihr Kachelbestand stellt nicht zusätzliche Plugins dar.
+- Zwei technisch verschiedene Funktionen tragen nahezu denselben Namen **ANDY Content Manager**. Neben einem aktiven Content Composer 0.1.29 erscheint eine alte inaktive Version 0.1.4; der Home Composer wird in der Pluginliste als 0.1.38, in einem Admin-Screenshot als 0.1.37 gezeigt. Das sind **Prüfpunkte**, noch keine Hinweise auf defekte Laufzeit.
+- Die Projektleitung fragt nach Redundanz und Verständlichkeit und bestätigt eine neue Governance: **ein Cockpit als Betriebszentrale**, die existierende Fachfunktionen verlinkt statt sie erneut zu bauen. Zuvor hatte sie die Trennung von Live, Staging und Coming Soon über alle drei Contentebenen gefordert.
+- Die Umstellung auf `journal.andy-arena.com` wird vom Nutzer als im Backend, Editing und Frontend funktionsfähig gemeldet. Eine getrennte Staging-Instanz ist erst geplant und **nicht nachweislich eingerichtet**.
+
+### Menschliche Perspektive
+- Der Mensch erkennt, wann das schnelle Ergänzen einzelner Werkzeuge zu administrativer Unübersichtlichkeit führt und eine **Strukturentscheidung** wichtiger wird als das nächste Feature.
+- Die bewusste Entscheidung ist **nicht** „Plugins reduzieren um jeden Preis“, sondern Verantwortung, Freigaberechte und Navigationswege zu ordnen. Bewährte Mechaniken sollen erhalten bleiben.
+- Die Idee einer gemeinsamen Home für Live/Staging mit DE/EN-Coming-Soon-Inhalten schützt die gewachsene visuelle Identität; das Veröffentlichungsgedächtnis schützt bereits einmal publizierte Inhalte vor Verwechslung mit neuen Entwürfen.
+- Der Mensch setzt eine Reihenfolge: erst Inventur und klonfähiger Ausgangsstand, dann Staging-Kopie, anschließend sichere experimentelle Bereinigung.
+
+### KI-Arbeitsperspektive
+- Die Aufgabe verschiebt sich von **Featureproduktion** zur **Schnittstellen-, Zuständigkeits- und Governanceanalyse**. Namen, Menüs, Module und eigenständige Pluginordner sind getrennte Einheiten; sichtbare Dopplungen beweisen nicht doppelte Datenhaltung oder Frontendlast.
+- Eine bereits implementierte Cockpit-0.2.0-Option zur reversiblen Menübereinigung muss zuerst geprüft werden; sie neu zu implementieren wäre das Gegenteil von Kontinuität. Ausblenden eines Menüs, Deaktivieren von Code und Löschen von Daten sind unterschiedliche Handlungen.
+- Eine tragfähige Antwort unterscheidet **Architekturbeschluss**, **historische Dokumentation**, **lokale Tests** und **reale WordPress-Abnahme**. Die installierten Versionen, Codepfade, Hooks und Abhängigkeiten müssen vor schreibenden Eingriffen geprüft werden.
+- Kein KI-Akteur sollte aus der Pluginanzahl ungeprüfte Performancebefunde ableiten oder sich anmaßen, überflüssige Komponenten ohne Nutzungsaudit zu entfernen.
+
+### Learning & offene Fragen
+- **Entwicklungsparadox:** Modulare Arbeitsteilung ermöglicht Geschwindigkeit, erzeugt jedoch mit wachsender Zahl von Schnittstellen **Koordinationskosten und Benennungsdrift**. Die Lösung besteht nicht zwingend in weniger Modulen, sondern in **einem erkennbaren Einstieg und klaren Ownership-Grenzen**.
+- **Konsistenz durch Datenfluss:** Content → Gabelseite → Home soll auf einer gemeinsamen Quelle beruhen. Launch-Freigaben ergänzen diesen Datenfluss, ohne `post_status` zu überschreiben. Neue Entwürfe werden beim Bereichsstart nicht automatisch öffentlich; bewusst zurückgezogene Beiträge bleiben zurückgezogen.
+- **Reversibilität als Qualitätskriterium:** Einstellungen, Direktlinks, Legacy-RGB-Routen, Editor-Daten und Rückwege sind Teil des Produkts, nicht bloßer Implementierungsballast.
+- **Offene Evidenz:** Verbessert die Cockpit-Harmonisierung die Fehlerquote bzw. die Zeit zur Bedienung? Was zeigen Messungen zu Query-/Asset-/Cache-Last tatsächlich? Wie verhält sich Publication Control bei REST, Sitemaps, Feed, Sprachpartnern und Cache? Keine Wirkung vor entsprechenden Messungen behaupten.
+- **Anschluss an frühere Stories:** MO02 (Content als Quelle), MO06 (Rolling Handoff), MO09 (Test ≠ Resultat), MO11 (Mensch als Orchestrator). Dass die Perspectives-Weiterentwicklung nach Thread-Wechsel lokal installierbare Updates hervorgebracht hat, ist ein beobachtbares Continuity-Teilergebnis; die vollständige Live-Abnahme bleibt separat.
+
+**Leitsatz für das spätere Making of:** **Nicht die Anzahl der Werkzeuge entscheidet, sondern ob ihre Zusammenarbeit verständlich, überprüfbar und umkehrbar bleibt.**
+
+**Redaktionelle Folge:** MO12 als neuen Backlog-Eintrag vormerken, später mit Original-Screenshots, tatsächlicher Cockpit-Vorher/Nachher-Abnahme und Versionsregister ausformulieren. Keine WordPress-Importänderung oder Veröffentlichung aus diesem GitHub-Kommentar.
