@@ -72,3 +72,7 @@ Home-Klammer und Bereichs-WHYs DE/EN → vorhandene Fight Night und Academy inve
 - [ANDY Philosophy](../../../../research/andy-lab/CORE/v0.1/07_ANDY_PHILOSOPHY.md)
 
 Nutzerseitige Screenshots und Review-Texte vom 25.11.2026 dienen als interne Arbeitsreferenz; keine Rohdialoge oder Browserbilder ins öffentliche Repository. Dieses Dokument konsolidiert die redaktionellen Entscheidungen, keine technische Umsetzung oder empirische Validierung.
+
+## 10. Publikationsprozess – Word/PDF (25.11.2026)
+
+[ANDY Publication Bible – Word-first v0.1](https://github.com/ANDY-Arena-com/andy-working-papers/blob/main/PUBLICATION-BIBLE-v0.1.md) ist die gemeinsame Prozessreferenz für Info Drafts, Working Papers und White Papers. Editierbare Word-Master je Sprache, menschliche Redaktion und Freigabe, PDF-Export aus dem freigegebenen Word-Stand; anschließend sichere Research-Download-Integration und semantische Beziehungen. Die bestehenden WPS- und Launch-Gates gelten weiter. Die Vorlagen und die technische Integration sind spätere Arbeitspakete, keine Launch-Pflicht. Die bisherigen PDF-/Word-Designpiloten sind keine freigegebenen Publikationen.
