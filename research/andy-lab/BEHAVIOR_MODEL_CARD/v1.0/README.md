@@ -13,6 +13,8 @@ Eine Behavior Model Card erzählt *nicht*, welches Modell besser ist, sondern **
 
 Die Card ist **kein amtliches Anbieterprofil**. Angaben zu Modellen, APIs, Tokenverbrauch und Latenzen werden aus historischen Spielprotokollen entnommen und mit ihrem Nachweisstatus gekennzeichnet. Aussagen über proprietäre innere Denkprozesse sind ausgeschlossen.
 
+**Gemeinsamer Kontext:** Auf jeder allgemeinen KI-Card erklärt ein zentraler, aufklappbarer DE/EN-Baustein die besondere Schach-Go-Aufgabe und die Rolle allgemeiner KI-Werkzeuge. Gleicher Regelrahmen, aber keine behauptete identische effektive Konfiguration und kein verifizierter „unbekanntes Vortraining“-Nachweis; Link zur öffentlichen ANDY-Dokumentation.
+
 **Primärsicht:** Anzahl Spiele → ausgeführte Aktionen und API-Entscheidungen → tatsächliches eigenes Spieltempo → Input/Output/Reasoning-Ressourcen → Spielverlauf und Regelereignisse → Versuchsbedingungen, Quellen und offene Datenlücken.
 
 **Sekundärsicht:** Bonoma-Dynamik, Sweet Spot/Overthinking, Stabilität A/B/C, Antizipation, Recovery/Kollaps und Aftermatch-Reflexion. Immer als eigenständige, vorläufige, ereignisgebundene Interpretationen, nie aus der Tokenmenge oder Siegquote automatisch als Modellcharakteristik etikettieren.
@@ -30,6 +32,7 @@ Die Card ist **kein amtliches Anbieterprofil**. Angaben zu Modellen, APIs, Token
 | [07_PILOTDATEN_QUELLEN_STATUS.md](07_PILOTDATEN_QUELLEN_STATUS.md) | belegter Gemini-4-Argon-Pilot mit fünf logischen Partien und nachweisbaren Grenzen |
 | [examples/behavior_card_argon_v1_draft.json](examples/behavior_card_argon_v1_draft.json) | **Illustration des Vertrags**, keine produktive exporterzeugte Datei |
 | [schema/behavior_card_v1_draft.schema.json](schema/behavior_card_v1_draft.schema.json) | maschinenlesbarer JSON-Schema-Draft, noch kein freigegebener Importvertrag |
+| [08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md](08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md) | verbindlicher globaler DE/EN-Info-Expander „Warum ANDY?“, Grundlagen und Business-Analogie |
 
 **Referenz-Demo:** `ANDY_BEHAVIOR_MODEL_CARD_V1.html` (offlinefähiger HTML-Clickdummy vom 25.11.2026, derzeit im ursprünglichen Chat-/Handoff-Paket; **nicht als in GitHub eingecheckt behaupten**). Der Entwurf zeigt Überblick, Spieltempo, Ressourcen, Verhalten und Evidenz; Filter 5 Spiele / S150 / S350. Die Spezifikation hier ist die Grundlage für spätere Reimplementierung, kein behaupteter Plugin-Release.
 
