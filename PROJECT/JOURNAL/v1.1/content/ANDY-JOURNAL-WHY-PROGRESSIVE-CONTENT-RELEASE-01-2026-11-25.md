@@ -163,3 +163,14 @@ AND (
 ## 13. Weiterführender fachlicher Handoff: System Map (25.11.2026)
 
 [ANDY JOURNAL – SYSTEM-MAP-FOUNDATION-01](ANDY-JOURNAL-SYSTEM-MAP-FOUNDATION-01-2026-11-25.md) ergänzt die bisherige WHY-03-Perspektive um einen **frühen schlanken semantischen Datenvertrag**, eine gemeinsame öffentliche Projektion für visuelle System Map und maschinenlesbare Exporte sowie den späteren Lab-Anschluss. Die Graph-Basis soll bereits bei den ersten vernetzten Leseproben berücksichtigt werden; kein komplexes Graph-System als Launch-Pflicht. Die bestehenden WHY-Modi und 01C2-Sicherheitsgates bleiben unverändert. Technische Detailentscheidung und Abnahme beim Technik-Thread.
+
+
+## Technischer Nachtrag: ein Journal statt separater Coming-Soon-Site (25.11.2026)
+
+Die Nutzerabnahme der privaten Home-Composer-Vorschau ergab einen konzeptionellen Fehlgriff: **Die bestehende Implementation 0.1.40–0.1.42 stellte Content als neue Coming-Soon-Abschnitte mit eigener Struktur dar**, statt die eigentlichen Journal-Module mit zunächst erklärenden Inhalten zu befüllen. Das entsprach ausdrücklich nicht dem Ziel.
+
+**Präzisierte Leitlinie:** *Eine einzige, dauerhaft gültige Home-/Gabelseiten-/Artikel-Architektur; zu Beginn dominiert WHY, mit wachsender Freigabe steigt der WHAT-Anteil.* Die visuelle Private Preview darf Claim, Hero, originale Modul- und Kartenlayouts, Farben, Positionen und DE/EN-Struktur nicht durch ein paralleles Coming-Soon-Design austauschen.
+
+Der Technik-Thread hat deshalb [Home Composer 0.1.43 – JOURNAL-IN-PLACE-PREVIEW-01](../ARCHITECTURE/ANDY-JOURNAL-IN-PLACE-PREVIEW-01-HOME-COMPOSER-0.1.43-2026-11-25.md) als **lokalen, noch nicht auf Staging abgenommenen Release-Kandidaten** erstellt: derselbe Renderer wie die originale Home, redaktionelle WHY/Coming-Soon-Zusätze ausschließlich **innerhalb der bestehenden Module**. 61 isolierte JS-Assertions und Syntax-/ZIP-Test bestanden, kein echter Browsernachweis. Das ist **noch keine öffentliche Freigabe**; 01C2B einschließlich Content-/Sprach-/REST-/Cache-Gate bleibt vorrangig. Die bereits funktionierende Staging/Live-Adminnavigation bleibt unabhängig davon erhalten.
+
+**Konsequenz für den Content-Thread:** Bitte die geplanten DE/EN-Texte weiter **bereichs- und ggf. themenbezogen** in der vorhandenen WHY/Publication-Datenhaltung pflegen, nicht als vollständigen zweiten Satz Home-Texte oder neue Coming-Soon-Seiten. Konkrete freigegebene Beispielartikel werden später in genau diesen Journal-Modulen bzw. nativen WP-Routen präsentiert.
