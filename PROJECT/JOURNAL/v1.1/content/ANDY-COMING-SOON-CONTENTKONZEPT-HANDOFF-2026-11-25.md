@@ -1,5 +1,7 @@
 # ANDY Journal – Coming Soon: redaktioneller Content-Handoff (DE/EN)
 
+> **WHY & PROGRESSIVE CONTENT RELEASE 01 – Fachlicher Nachtrag (25.11.2026):** Das parallel erarbeitete Konzept ist als [eigener, ergänzender Fach- und technischer Integrationsvertrag](ANDY-JOURNAL-WHY-PROGRESSIVE-CONTENT-RELEASE-01-2026-11-25.md) dokumentiert. Es **erweitert** dieses ursprüngliche Coming-Soon-Textbriefing: eine dauerhafte, in vier Modi darstellbare DE/EN-WHY-Ebene auf Home, Gabelseite und Content; Coming-Soon-Bereiche mit gezielt freigegebenen *echten* Leseproben; GAME 4 LAB / ANDY Flywheel als konzeptioneller Rahmen. **Keine technische Implementierung oder Veröffentlichung aus diesem Nachtrag.** Redaktionsarbeit weiterhin ohne Plugin-/Live-Änderungen.
+
 **25.11.2026 · Auftrag für den separaten Content-/Konzept-Thread · v0.1 · Redaktionelles Briefing, keine öffentliche Freigabe**
 
 > **Konkreter Auftrag:** Ein konsistentes, hochwertiges, zweisprachiges **Coming-Soon-Contentkonzept** für die *bereits vorhandene* ANDY-Journal-Home und ihre fünf öffentlichen Themen-/Gabelbereiche ausarbeiten. **Kein neues WordPress-Plugin, keine separate Coming-Soon-Homepage, kein Eingriff in Website oder Veröffentlichungszustände.**
