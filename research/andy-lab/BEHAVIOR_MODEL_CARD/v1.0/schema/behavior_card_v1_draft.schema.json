@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://andy-arena.com/schema/andy.behavior-card/1.0-draft",
+  "$id": "urn:andy:behavior-card:1.0-draft",
   "title": "ANDY Behavior Card Export 1.0-draft",
   "type": "object",
   "required": [
