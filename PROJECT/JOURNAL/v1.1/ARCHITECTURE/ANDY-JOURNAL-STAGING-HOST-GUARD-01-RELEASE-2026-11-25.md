@@ -52,3 +52,8 @@ Nach der Hostinger-Staging-Erstellung zeigt der Home Composer auf der Staging-Ad
 - [Pippi-Environment-Switch](ANDY-JOURNAL-ENVIRONMENT-SWITCH-EDITOR-01-2026-11-25.md)
 - [Staging/Live-Sync-Vertrag](ANDY-JOURNAL-STAGING-LIVE-SINGLE-WORKSPACE-SYNC-CONTRACT-2026-11-25.md)
 - [Security Preflight](ANDY-JOURNAL-PRE-STAGING-01C2B0-SECURITY-PREFLIGHT-2026-11-25.md)
+
+## Nutzerbestätigung: STAGING-01-Infrastrukturabgleich (25.11.2026)
+
+Hostinger bestätigt eigenständige WordPress-Installationen und Datenbanken, auf Staging `home`/`siteurl` jeweils **`https://staging.journal.andy-arena.com`** sowie ausschließlich dort eine einmalige `WP_ENVIRONMENT_TYPE=staging`-Definition, zur Laufzeit validiert. Live nicht geändert; **kein** „Publish to Live“. **Noch nicht nachgewiesen:** externer Zugriffsschutz durch anonymen HTTP-Test auf HTML, REST, Medien und Cache; Hostinger meldet aktiven internen Staging-Zugriffsschutz, aber keinen separaten Apache-Basisschutz. **Noch offen:** Unterdrückung von `wp_mail()` und ggf. direkten SMTP-/API-Mailern, WordPress-/Hostinger-System-Cron und produktiven Webhook-/API-Nebenwirkungen. Diese Sicherheitsgates vor nichtreversiblen Staging-Tests schließen. Nach Isolationsabnahme beiden Staging-Plugins 0.1.42/0.2.3 installieren; anschließend identische Versionen auf Live nach Backup. Kein Live-Transfer oder Freigabe-Adapter durch diese Bestätigung.
+
