@@ -64,4 +64,4 @@
 
 Gemini 4 Argon, historischer S350-Match `andy_0c0f7413fdf6`: **132 eigene API-Entscheidungen, 116 ausgeführte Aktionen, 2.664,3 s eigene API-Zeit** aus lokalem Observer-Beleg. Daraus **156,7 ausgeführte Aktionen/Stunde eigener API-Zeit**; **20,2 s/Call**. Dies ist **nur 1 Spiel**, keine 5-Spiele-Geschwindigkeit und kein reiner Hardware-/Modellbenchmark.
 
-Quellen: [S350](../ANALYSES/andy_cc11a6598bcf/v0.1/README.md) ist unter diesem Verzeichnislink nicht direkt erreichbar; kanonisch [S350-Matchanalyse](../../ANALYSES/andy_cc11a6598bcf/v0.1/README.md) und [Observer-Handoff](../../../../PROJECT/ANDY_G_ANALYZER_THREAD_HANDOFF_2026-11-23.md). Ein vollständiger eigener JSONL-Latenzaudit steht noch aus.
+Quellen: [S350-Matchanalyse](../../ANALYSES/andy_cc11a6598bcf/v0.1/README.md) und [Observer-Handoff](../../../../PROJECT/ANDY_G_ANALYZER_THREAD_HANDOFF_2026-11-23.md). Ein vollständiger eigener JSONL-Latenzaudit steht noch aus.
