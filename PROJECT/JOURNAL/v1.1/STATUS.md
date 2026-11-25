@@ -1,5 +1,7 @@
 # ANDY Journal — Systemübersicht und Übergaben
 
+> **PRE-STAGING-01 / 25.11.2026 (NEUE LEITENTSCHEIDUNG):** [Zentrale ANDY-Journal-Betriebszentrale, Admin-Harmonisierung und Launch/Publication Governance](ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-ADMIN-UND-LAUNCH-GOVERNANCE-2026-11-25.md). Die Cockpit-Oberfläche wird einziger fachlicher ANDY-Admin-Einstieg; vorhandene Fachfunktionen bleiben bestehen. Domainwechsel nach `journal.andy-arena.com` nutzerseitig als funktionsfähig gemeldet, separate Staging-Kopie noch nicht nachgewiesen. Nutzerliste: HC 0.1.38, CC 0.1.29 aktiv sowie CC 0.1.4 inaktiv, Content Manager 0.4.8, Cockpit 0.2.0, Launch Control 0.1.0, RGB 0.6.3. **Kein Pluginausbau, keine Menü-/Daten-Löschung, kein Staging- oder Live-Release aus dem Beschluss.** Making of: [MO12 „Vom Werkzeug-Wildwuchs zur Betriebszentrale“](content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md#6-mo12--vom-werkzeug-wildwuchs-zur-betriebszentrale-25112026). Ältere Inventuren im Anschluss sind historische Quellen und nicht als aktuelle Versionsangaben zu lesen.
+
 > **Making of · 25.11.2026:** [Story-Katalog und Entwicklungsstand v0.1](content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md). 10 vorbereitete DE/EN-Paare MO01–MO10, neuer Entwurf MO11 „Der Mensch als Orchestrator“ (noch nicht importiert), separates Add-on 0.1.0/0.1.1 mit Home-Bridge, SHA-256 und offene Abnahme; Rolling Handoff und Staging-Aufbau dokumentiert. Keine Publikationsfreigabe.
 
 
