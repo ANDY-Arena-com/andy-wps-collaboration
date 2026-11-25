@@ -221,6 +221,12 @@ Nach der realen Installation des Cockpits 0.2.1 und der sichtbaren Bestätigung 
 
 Der Fall konkretisiert die MO12-These: Eine gute Betriebszentrale ist nicht Besitzerin sämtlicher Systeme. Sie macht Zuständigkeiten und Werkzeuge auffindbar, ohne fremde Daten oder Registrierungen zu übernehmen. **Stand 25.11.: 13 lokale Prüfungen erfolgreich, 0.2.2 noch nicht in WordPress installiert oder abgenommen.** [Quell-/Releaseprotokoll](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01B2-COCKPIT-TEMPLATE-NAVIGATION-2026-11-25.md).
 
+### Entwicklungsnachtrag PRE-STAGING-01C1 · Erst erinnern, dann freigeben
+
+Die Projektleitung lässt nach der Harmonisierung der bestehenden Cockpit- und Home-Plugins die zentrale Publication & Launch Control weiterentwickeln. Der nächste technische Schritt erhält einen bewussten Sicherheitskompromiss: **Zuerst fünf DE/EN-Bereichsplanungen und ein nach Opt-in beobachtetes Veröffentlichungsgedächtnis; noch keine Änderung öffentlicher Erreichbarkeit.** Das aus dem real installierten Launch-Control-Quellstand 0.1.0 abgeleitete **0.2.0-Update** dokumentiert lediglich `internal`, `coming_soon`, `live` als geplante Zustände und ergänzt einen manuell gesetzten Rückzugsmarker. Es ist lokal mit **42 Assertions** geprüft, aber auf WordPress noch nicht installiert oder im Browser abgenommen.
+
+**Making-of-Learning:** Ein System kann weder zuverlässig „nie veröffentlicht“ aus einem alten Entwurfsstatus schließen noch darf es eine Bereichspause mit dem bewussten Zurückziehen eines Artikels verwechseln. Historie beginnt am beobachtbaren Ereignis; Unsicherheit über frühere Zustände bleibt ausdrücklich erhalten. Zugleich ist eine optische Coming-Soon-Karte ohne URL-/REST-/Cache-Schutz **keine** Veröffentlichungskontrolle. Die Trennung zwischen dokumentierter Absicht und wirksamer Freigabe macht die Architektur auch für spätere Mensch-KI-Übergaben überprüfbar. [Technischer Release-/Stop-Gate-Vertrag](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01C1-PUBLICATION-PLANNING-RELEASE-2026-11-25.md).
+
 **Leitsatz für das spätere Making of:** **Nicht die Anzahl der Werkzeuge entscheidet, sondern ob ihre Zusammenarbeit verständlich, überprüfbar und umkehrbar bleibt.**
 
 **Redaktionelle Folge:** MO12 als neuen Backlog-Eintrag vormerken, später mit Original-Screenshots, tatsächlicher Cockpit-Vorher/Nachher-Abnahme und Versionsregister ausformulieren. Keine WordPress-Importänderung oder Veröffentlichung aus diesem GitHub-Kommentar.
