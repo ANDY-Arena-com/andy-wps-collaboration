@@ -1,5 +1,7 @@
 # ANDY Journal — Gesamtkonzept v1.1
 
+> **PRE-STAGING-01 · 25.11.2026 – ARCHITEKTURBESCHLUSS:** [Admin-Harmonisierung, Launch/Publication Governance und künftige Staging-Trennung](ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-ADMIN-UND-LAUNCH-GOVERNANCE-2026-11-25.md). Eine Cockpit-Betriebszentrale, vorhandene Fachplugins behalten, DE/EN-Home identisch in Live und Staging, Coming-Soon-/Freigabelogik mit Veröffentlichungsgedächtnis. Nutzer bestätigt Domainmigration nach `journal.andy-arena.com` für Backend/Editing/Frontend; Staging noch nicht abgenommen. Pluginliste 25.11.: 20 Einträge (18 aktiv, 2 inaktiv); HC 0.1.38 und CC 0.1.29 laut Pluginliste. **Beschluss, noch kein Plugin-Release oder Bereinigungsfreigabe.** [Making-of-Kommentar MO12](content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md#6-mo12--vom-werkzeug-wildwuchs-zur-betriebszentrale-25112026).
+
 > **Making of · 25.11.2026:** [Story-Katalog und Entwicklungsstand v0.1](content/ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md). 10 vorbereitete DE/EN-Paare MO01–MO10, neuer Entwurf MO11 „Der Mensch als Orchestrator“ (noch nicht importiert), separates Add-on 0.1.0/0.1.1 mit Home-Bridge, SHA-256 und offene Abnahme; Rolling Handoff und Staging-Aufbau dokumentiert. Keine Publikationsfreigabe.
 
 
