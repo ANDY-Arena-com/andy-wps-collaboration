@@ -40,6 +40,8 @@ Reale ANDY-Partien liefern eine ungewöhnlich dichte Abfolge aus API-Entscheidun
 
 **BMC-R15 – Nutzbare V1-Oberfläche (Must).** Übersicht, Spieltempo, Ressourcen, Verhalten, Evidenz; interaktive Filter, erklärende Tooltipps, Mobile/Keyboard/Accessibility, Nullzustände, Provenienz und Quellen. Keine analytischen Diagramme mit Fantasiewerten.
 
+**BMC-R16 – Universeller Info-Expander „Warum ANDY? Die gemeinsame Herausforderung“ (Must).** Jede veröffentlichte Behavior Card für allgemeine KI-Modelle enthält vor oder unmittelbar bei den Hauptkennzahlen einen standardmäßig geschlossenen, barrierefreien, responsiven **DE/EN-Expander** mit gemeinsamer Aufgabenidee (kombiniertes Schach+Go, Regeln und Zustand, Handlungen, Ressourcen, zugelassene Tools), verifizierten Dokumentationslinks und ausdrücklich begrenzter Business-Analogie. **Gleicher Regelrahmen ≠ identische effektive Bedingungen; eine tatsächlich völlig unbekannte Vortrainingserfahrung ist nicht beweisbar.** Allgemeine redaktionelle Inhalte zentral/versioniert im bestehenden WP-Content-/WHY-System verwalten, **nicht in jede modellbezogene APP-JSON kopieren**. Für Spezial-/Zufallsreferenzen andere Darstellung oder keine GPAI-Einführung. Volltext, Links und Tests [in der Expander-Spezifikation](08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md).
+
 ## 3. Explizite Nicht-Ziele
 
 - Kein Modellvergleich, Anbieter-Ranking, universeller Intelligenz- oder Leistungsscore.
@@ -67,3 +69,4 @@ Reale ANDY-Partien liefern eine ungewöhnlich dichte Abfolge aus API-Entscheidun
 5. Self-play, Resume-Segmente, Refund, historische Version, Fehlerklassen, partielle Quellen und Replay-Link-Fehlen bestehen Regression.
 6. WP-Staging-Import ändert keine anderen Plugins, Posts, Sprachpartner, Originaldateien oder Live-Daten.
 7. Redaktion/Projektleitung hat konkrete öffentliche Zahlen, Metaphern, Quellen und Datenschutz freigegeben.
+8. Jede allgemeine KI-Card hat den redaktionell freigegebenen DE-/EN-Info-Expander, überprüfte Kapitel-Links und klare Kennzeichnung der Business-Analogie.
