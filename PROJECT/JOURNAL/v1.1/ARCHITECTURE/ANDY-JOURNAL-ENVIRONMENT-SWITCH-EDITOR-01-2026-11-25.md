@@ -57,3 +57,23 @@ ANDY Journal · Home Composer
 **Jetzt:** UX-Ziel dokumentieren und als neues Cockpit-/Home-Composer-Inkrement aufnehmen, ohne an der Live-Publikationslogik zu drehen. **Technischer nächster Schritt:** 01C2B-Sicherheitsadapter unter geschütztem Test, Staging-Klon und Abnahme; danach den einfachen Zwei-Site-Navigator einführen. Optional schon vorher eine *passive* Anzeige des aktuellen Standorts vorbereiten.
 
 **Making-of-Lernpunkt:** Die Projektleitung fordert eine räumlich verständliche Oberfläche statt drei technisch unterschiedlich motivierter Links: Nicht Funktionen/Sprachen/Umgebungen vermischen; die visuelle Metapher muss die tatsächliche Datentrennung abbilden, nicht nur suggerieren.
+
+## Implementierungsnachtrag – Home Composer 0.1.41 / 25.11.2026
+
+**Status:** Ein reales, einzelnes WordPress-Update **Home Composer 0.1.40 → 0.1.41 (PIPPI-ENVIRONMENT-SWITCH-01)** wurde auf Grundlage des vollständigen vorherigen 0.1.40-ZIPs gebaut. **Lokal geprüft, noch nicht in Hostinger installiert oder browserseitig abgenommen.**
+
+Der bestehende Home-Composer-Admin zeigt jetzt die gewünschte Reihenfolge **1. Umgebung (Staging / Live), 2. Sprache (DE / EN), 3. Ansicht (Bearbeiten / Home-Vorschau / Coming Soon · privat)**. Die zwei großen Umgebungsbuttons ersetzen die Home-Composer-Ansicht mit drei konkurrierenden Preview-Links. Die früheren lokalen Preview-URLs bleiben erhalten. Der Launch-Control-Admin verlinkt kompakt in den Home Composer, anstatt nochmals drei große Vergleichsbuttons zu zeigen.
+
+**Live solange Staging fehlt:** Klick auf **Staging** öffnet im selben Home-Composer-Admin eine explizit gekennzeichnete **nicht editierbare Zwischenansicht**. Der eigentliche Live-Editor wird dort **nicht** ausgeliefert, damit keine Production-Daten fälschlich unter „Staging“ bearbeitet werden. Beim Rückwechsel auf Live bleiben die echten DE/EN-Editoren/gespeicherten Module wie vorher. **Staging ist weiterhin nicht bestätigt eingerichtet.**
+
+**Nach dem tatsächlichen geschützten Klon:** Der Administrator kann unter **Staging-Verknüpfung** den festen Ziel-Link `https://staging-journal.andy-arena.com/wp-admin/admin.php?page=andy-home-composer` manuell einschalten (Option `andy_hc_stage_link_ready_v01`, Default **aus**, separate Bestätigungscheckbox/Nonce/Adminrecht). Diese Bestätigung ist **keine technische Remote-Sicherheitsprüfung**. Auf der echten Staging-Instanz, die bereits durch die bisherige Host-/WP-Umgebungskontrolle erkannt wird, ist Staging aktiv und Live verlinkt zum getrennten Live-Backend. **Keine** Remote-API, Cross-Site-Datenbank, Übertragung, Synchronisation oder Statusänderung durch die Buttons.
+
+**Quelländerungen:** drei vorhandene Dateien geändert (Haupt-PHP, Admin-Hinweis der privaten Vorschau, readme) und drei kleine neue Dateien (PHP-Navigation, CSS, Release-README); übrige Originaldateien bytegleich. **31/31 isolierte PHP-Assertions**, alle **6 PHP-Dateien** Syntax OK, bestehendes JS Syntax OK, ZIP-CRC, WordPress-Pluginroot und bytegleiches 0.1.40-Rollback erfolgreich geprüft. Ein headless Chromium-Visuallauf war lokal **nicht abschließbar**; reale WP-/Browser-/Responsive-/Cache-Abnahme steht aus.
+
+**Chat-Artefakte (Binär-ZIPs nicht in GitHub):**
+- `INSTALL-IN-WORDPRESS-ANDY-Home-Composer-0.1.41-PIPPI-ENVIRONMENT-SWITCH-01.zip` · SHA-256 `eba3a99c65cb917a84a38212c974ff0307b140b1545fe4a818a5bc899f80a4e6`.
+- `ROLLBACK-ANDY-Home-Composer-0.1.40-PIPPI-ENVIRONMENT-01.zip` · SHA-256 `f53a0d11e30ef817afbf0d7c104ddaa02399fc8d2fb4f3977b54897392f4d361`.
+- `ANDY-ENVIRONMENT-SWITCH-01-HOME-COMPOSER-0.1.41-RELEASE-2026-11-25.md`.
+
+**Nächste Abnahme:** vollständiges Hostinger-Backup, reales Installieren des einzelnen 0.1.41-ZIPs, in Live beide Sprachen/Editoren/Previews vergleichen, Staging-Platzhalter auf fehlende Bearbeitungsformulare prüfen; noch **keinen** Staging-Link als real freischalten. Erst nach eigenständigem, extern geschütztem STAGING-01 und Host-/DB-Prüfung zur echten Zwei-Site-Navigation wechseln. Release-Gate PRE-STAGING-01C2B für wirksame öffentliche Inhalte bleibt unverändert.
+
