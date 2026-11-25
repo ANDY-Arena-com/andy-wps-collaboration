@@ -77,3 +77,6 @@ Content-Thread liefert Gesamtstory DE/EN, WHY für fünf Bereiche, erste eigenst
 - [PRE-STAGING Governance](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-ADMIN-UND-LAUNCH-GOVERNANCE-2026-11-25.md)
 
 **Bitte aus technischer Sicht zunächst Datenmodell/Ownership, Schnittstellen, Sicherheitsgate und minimale Inkremente rückmelden. Dieses Dokument ist der fachliche Arbeitsauftrag, kein Plugin-Release.**
+
+## Redaktionelle Fortschreibung (25.11.2026)
+[Coming Soon Editorial Guideline v0.1](ANDY-JOURNAL-COMING-SOON-EDITORIAL-GUIDELINE-v0.1-2026-11-25.md): Zielgruppen und Contenttypen, Astra–Argon als erstes vernetztes Beispiel, Erkenntnishistorie (Festigung/Relativierung), Academy-Auswahl und Außenkommunikation. Redaktionelle Ergänzung, keine Änderung der technischen Gates.
