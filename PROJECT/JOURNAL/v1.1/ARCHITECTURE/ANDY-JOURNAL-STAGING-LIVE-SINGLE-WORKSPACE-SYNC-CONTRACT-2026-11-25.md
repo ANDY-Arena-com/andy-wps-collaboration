@@ -92,3 +92,8 @@ Die zwingende technische Priorität bleibt **PRE-STAGING-01C2B**: korrekte Zugri
 - Keine gleichzeitige automatische Zwei-Wege-Replikation und kein impliziter Publikationsstatuswechsel.
 
 **Status dieses Vertrags:** Architektur dokumentiert; weder ein installiertes Transferplugin noch eine produktive Synchronisation ist damit behauptet.
+
+## Iststand der echten Staging-Instanz (25.11.2026)
+
+Hostinger hat inzwischen **`staging.journal.andy-arena.com`** als echte eigenständige WordPress-Installation mit separater Datenbank bestätigt; WordPress `home`/`siteurl` sind auf diesen Host eingestellt und `WP_ENVIRONMENT_TYPE=staging` wurde ausschließlich dort gesetzt/verifiziert. **Der ältere Planname `staging-journal.andy-arena.com` in früheren Abschnitten ist historisch und nicht die aktive Ziel-URL.** Externer, auch für REST/Uploads/Cache wirksamer Anonym-Schutz noch nicht separat getestet; ausgehende WordPress-/direkte SMTP-/API-Mailer und WP-/System-Cron noch nicht vollständig isoliert. Bis zum erfolgreichen Side-Effect-/Zugriffstest keine automatisierten oder nicht reversiblen Staging-Experimente. **Kein** pauschaler Staging→Live-Publish; selektiver Diff-/Transfervertrag bleibt unverändert.
+
