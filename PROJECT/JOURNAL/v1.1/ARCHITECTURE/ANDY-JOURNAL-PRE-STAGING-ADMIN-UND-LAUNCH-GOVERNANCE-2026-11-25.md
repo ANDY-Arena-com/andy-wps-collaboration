@@ -56,13 +56,13 @@ Der Cockpit-0.2.0-Release dokumentiert bereits einen **standardmäßig abgeschal
 
 Optional später: **Teilweise live** als *abgeleitete Anzeige* statt viertem widersprüchlichem Status. **Nicht jedes Plugin** braucht eine Coming-Soon-Funktion; **öffentliche ANDY-Module/Bereiche** beziehen ihren Anzeigezustand aus *einer* zentralen Steuerung. Die Gabelseite und der Home-Teaser dürfen nicht unabhängig falsche Verfügbarkeiten melden.
 
-**Publikationsgedächtnis:** Bereichs-Freigabe ist von \`post_status\` getrennt. Dauerhaft und revisionsfähig erfassen, ob/wann ein Beitrag erstmals öffentlich war, wann er pausiert wurde und ob er *redaktionell zurückgezogen* wurde. **Neue Entwürfe werden nie durch Bereichsaktivierung veröffentlicht; zurückgezogene Beiträge nie ungefragt reaktiviert.** Bei historisch unbekannten Altfällen „ungeklärt“ statt „nie publiziert“ annehmen. Ein/aus betrifft Anzeige und Zugriff, nicht automatische Statusmutation.
+**Publikationsgedächtnis:** Bereichs-Freigabe ist von `post_status` getrennt. Dauerhaft und revisionsfähig erfassen, ob/wann ein Beitrag erstmals öffentlich war, wann er pausiert wurde und ob er *redaktionell zurückgezogen* wurde. **Neue Entwürfe werden nie durch Bereichsaktivierung veröffentlicht; zurückgezogene Beiträge nie ungefragt reaktiviert.** Bei historisch unbekannten Altfällen „ungeklärt“ statt „nie publiziert“ annehmen. Ein/aus betrifft Anzeige und Zugriff, nicht automatische Statusmutation.
 
 Prüfen: Home, Gabel-/Sub-Gabelseiten, direkte Permalinks, WP-Suche, REST, Feeds, XML-Sitemaps, Sprachpartner/DE-EN, Preview-Rechte, CDN/LiteSpeed-Cache sowie alte RGB-Routen. Eine „versteckte Karte“ allein schützt keinen bereits öffentlichen Inhalt.
 
 ## 4. Zielarchitektur
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
     R["Redaktion: native WP-Posts / DE+EN"]
     R --> C["Content Composer: Templates, Metadaten, Sprache"]
@@ -75,7 +75,7 @@ flowchart TD
     K --> C
     K --> H
     K --> X["Bestehende Fachwerkzeuge / Diagnose / RGB"]
-\`\`\`
+```
 
 **Entwicklungsweg:** GitHub als Projektgedächtnis → geprüftes Handoff/Quellstand → lokales Plugin-ZIP → **geschütztes Staging mit eigener Datenbank** → QA/DE-EN/Mobil/Sicherheit → ausdrückliche Freigabe → gezieltes Deployment auf Live → Monitoring/Abnahme → GitHub + Rolling Handoff. **Kein vollständiges Hostinger-Staging-Publish ohne separates Datenbank- und Inhalts-Diff-/Backup-Gate**, da Live-Inhalte sonst überschrieben werden können.
 
