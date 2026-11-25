@@ -1,5 +1,7 @@
 # ANDY Journal – WHY & Progressive Content Release 01
 
+> **Technischer Umsetzungshinweis – WHY-01A / PRE-STAGING-01C2A (25.11.2026):** [Launch Control 0.2.1 als lokaler Release-Candidate](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01C2A-WHY-01A-RELEASE-2026-11-25.md). Der **dauerhafte WHY-Editor für fünf Home-Bereiche** (DE/EN, vier Modi, getrennte Daten) und eine **diagnostische** Einzelfreigabe-Kandidatenliste wurden implementiert und isoliert getestet. **Der öffentliche WHY-Renderer wird noch nicht aufgerufen; die Freigabeentscheidung schützt noch keine URLs.** WHO/WHY-01 in Gabel-/Contentseiten und PREVIEW-CONTENT mit echter öffentlicher Wirkung folgen erst nach 01C2B-Sicherheitsgate und Staging-Abnahme. Dieses Dokument bleibt fachliche Quelle; keine rückwirkende Behauptung einer vollständigen Feature-Freigabe.
+
 **25.11.2026 · Fachlicher Input aus dem parallelen Content-/Konzept-Thread, durch die Projektleitung zur technischen Kenntnis gegeben.**  
 **Status:** Zukunftsanforderung für redaktionelle und technische Abstimmung, **noch keine Plugin-Implementierung, öffentliche Freigabe oder Staging-Abnahme**. Die zehn Kapitel unten halten das übermittelte Konzept in seiner Gliederung fest; ergänzende technische Integrationsregeln folgen in §11.
 
