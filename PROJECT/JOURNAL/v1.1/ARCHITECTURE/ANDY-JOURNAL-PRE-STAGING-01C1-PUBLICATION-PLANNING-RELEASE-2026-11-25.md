@@ -1,5 +1,7 @@
 # ANDY Journal · PRE-STAGING-01C1 – Publication & Coming Soon (sichere Vorbereitungsphase)
 
+> **Installations-Nachtrag / 25.11.2026:** Ein aktueller Nutzer-Screenshot zeigt **ANDY Journal · Launch Control 0.2.0** unter `journal.andy-arena.com/wp-admin/admin.php?page=andy-launch-control&tab=publication`; der neue Tab ist sichtbar und das **Fight Night**-Planformular zeigt `Intern` sowie DE/EN-Titelfelder. Das korrigiert den **historischen** Release-Status „nicht installiert“ zum Zeitpunkt der ZIP-Erstellung: **Installation und Admin-Erreichbarkeit sind jetzt nutzerseitig belegt**. Keine unabhängige Datenbank-/Speicherprüfung, kein 01C2-Zugriffsschutz, keine Publikationsfreigabe. Redaktioneller Parallelauftrag: [Coming-Soon-Content-Handoff](../content/ANDY-COMING-SOON-CONTENTKONZEPT-HANDOFF-2026-11-25.md).
+
 **Stand:** 25.11.2026 · **Status:** WordPress-Plugin-Update lokal erstellt und geprüft; **nicht installiert, nicht live abgenommen, kein öffentlicher Launch**.
 
 **Basis:** Tatsächlich aus Hostinger exportierter Plugin-Code **ANDY Launch Control 0.1.0**; [PRE-STAGING Governance](ANDY-JOURNAL-PRE-STAGING-ADMIN-UND-LAUNCH-GOVERNANCE-2026-11-25.md) und [Menü-/Hook-Audit](ANDY-JOURNAL-PRE-STAGING-01A-PLUGIN-MENUE-HOOK-AUDIT-2026-11-25.md). Ziel: zentrale Planung statt zweites CMS oder zweites Home-Plugin. Stand des übrigen Systems laut Nutzer: Cockpit 0.2.3, RGB Pilot 0.6.4, Home Composer 0.1.39, Content Composer 0.1.29.
