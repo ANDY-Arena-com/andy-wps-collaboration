@@ -215,6 +215,12 @@ Am 25.11.2026 wurde die in MO12 formulierte Governance erstmals in **konkreten P
 
 **Beobachtbares Teilergebnis:** 103 isolierte, lokale Prüfungen bestanden; die vorhandenen Home-/RGB-Routingfunktionen und eingebetteten Assets wurden nicht umgebaut. **Nicht behaupten:** eine bereits erfolgte Hostinger-Installation, Staging-Isolation oder Produktivfreigabe. Der Schritt illustriert, dass eine gute Mensch-KI-Kollaboration nicht mit dem Verfassen eines Beschlusses endet: Sie liefert überprüfbare, umkehrbare Artefakte und benennt die weiterhin offenen Integrationsbedingungen. [Release-/Abnahmeprotokoll](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01B-UMGEBUNGEN-UND-COCKPIT-RELEASE-2026-11-25.md).
 
+### Entwicklungsnachtrag PRE-STAGING-01B2 · Kleine Oberfläche, klare Grenzen
+
+Nach der realen Installation des Cockpits 0.2.1 und der sichtbaren Bestätigung von **21/21 Werkzeugzugängen** entdeckt die Projektleitung weitere fünf historisch eigenständige Template-Hauptmenüs (Block, Footer, Header, Slider, Section). Sie entscheidet sich nicht für eine neue Template-Verwaltung, sondern für das **Zusammenfassen vorhandener Editor-Einstiege** unter Home & Design. Das lokale Cockpit-Inkrement 0.2.2 implementiert eine **standardmäßig deaktivierte, reversible** Sidebar-Bereinigung und erkennt vorhandene WordPress-Menüs zur Laufzeit, statt unbekannte WpSection-Slugs zu erfinden. Die Sicherheitsregel lautet: **Wenn nicht alle fünf eindeutig erkannt werden, bleibt die ursprüngliche Navigation sichtbar.**
+
+Der Fall konkretisiert die MO12-These: Eine gute Betriebszentrale ist nicht Besitzerin sämtlicher Systeme. Sie macht Zuständigkeiten und Werkzeuge auffindbar, ohne fremde Daten oder Registrierungen zu übernehmen. **Stand 25.11.: 13 lokale Prüfungen erfolgreich, 0.2.2 noch nicht in WordPress installiert oder abgenommen.** [Quell-/Releaseprotokoll](../ARCHITECTURE/ANDY-JOURNAL-PRE-STAGING-01B2-COCKPIT-TEMPLATE-NAVIGATION-2026-11-25.md).
+
 **Leitsatz für das spätere Making of:** **Nicht die Anzahl der Werkzeuge entscheidet, sondern ob ihre Zusammenarbeit verständlich, überprüfbar und umkehrbar bleibt.**
 
 **Redaktionelle Folge:** MO12 als neuen Backlog-Eintrag vormerken, später mit Original-Screenshots, tatsächlicher Cockpit-Vorher/Nachher-Abnahme und Versionsregister ausformulieren. Keine WordPress-Importänderung oder Veröffentlichung aus diesem GitHub-Kommentar.
