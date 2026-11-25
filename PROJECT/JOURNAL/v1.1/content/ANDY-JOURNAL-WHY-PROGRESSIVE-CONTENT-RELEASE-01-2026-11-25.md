@@ -159,3 +159,7 @@ AND (
 - [Making-of-Katalog / MO12](ANDY-MAKING-OF-STORY-KATALOG-v0.1-2026-11-25.md)
 
 **Dokumentation und technische Einordnung sind kein WordPress-Release, keine Beitragsfreigabe und kein Beleg, dass Content-/WHY-Entwürfe bereits öffentlich sind.**
+
+## 13. Weiterführender fachlicher Handoff: System Map (25.11.2026)
+
+[ANDY JOURNAL – SYSTEM-MAP-FOUNDATION-01](ANDY-JOURNAL-SYSTEM-MAP-FOUNDATION-01-2026-11-25.md) ergänzt die bisherige WHY-03-Perspektive um einen **frühen schlanken semantischen Datenvertrag**, eine gemeinsame öffentliche Projektion für visuelle System Map und maschinenlesbare Exporte sowie den späteren Lab-Anschluss. Die Graph-Basis soll bereits bei den ersten vernetzten Leseproben berücksichtigt werden; kein komplexes Graph-System als Launch-Pflicht. Die bestehenden WHY-Modi und 01C2-Sicherheitsgates bleiben unverändert. Technische Detailentscheidung und Abnahme beim Technik-Thread.
