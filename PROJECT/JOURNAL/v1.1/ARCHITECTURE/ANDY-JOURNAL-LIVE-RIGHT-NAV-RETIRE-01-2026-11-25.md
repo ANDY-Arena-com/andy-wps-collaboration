@@ -36,3 +36,6 @@ Bei der nächsten konsolidierten Home-Composer-Version `hcSharedHeader()` und `h
 - Staging-Home unverändert. Live-Änderung sofort durch Entfernen des CSS rückbaubar.
 
 Status: **CSS-Hotfix zum manuellen Einfügen bereitgestellt**, keine Remote-Installation oder Browserabnahme behauptet.
+## Nutzerabnahme
+
+**25.11.2026, ca. 19:48 Uhr MEZ:** Nutzer bestätigt nach Anwendung auf Live: **„ok, funzt“**. Damit ist die Live-CSS-Ausblendung des rechten Drawers praktisch bestätigt. Dies ist eine **visuelle Ausblendung**, keine Entfernung der Navigation aus dem Plugin-Code. Staging bleibt davon unberührt; native Entfernung erst bei zukünftigem konsolidiertem Release.
