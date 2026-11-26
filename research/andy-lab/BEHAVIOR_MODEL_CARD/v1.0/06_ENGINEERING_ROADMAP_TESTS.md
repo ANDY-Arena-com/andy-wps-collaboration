@@ -77,6 +77,19 @@ Der globale **BMC-R16-Expander** wird im bestehenden WP-/WHY-/Composer-System al
 | BMC-T28 | Dokumentationslinks mit Deep-Links | #intro/#rules/#lab/#challenge/#score in WP-Staging/Live und EN nachweislich erreichbar |
 | BMC-T29 | Guardrails zu Neuheit, Voraussetzungen und Business | keine behauptete identische effektive Konfiguration, garantiertes Nicht-Vortraining oder unbewiesener Business-Transfer; keine GPAI-Texte für Spezialreferenzen |
 
+## Forschungs-Erweiterung: g-Signature / ACT 01 (nicht Teil des implementierten V1)
+
+Siehe [ACT-01-/g-Signature-Brücke](09_G_SIGNATUR_ACT01_FORSCHUNGSBRUECKE.md). Die Leseexperimente des vorhandenen Buchstaben-Codes sind **nicht** mit empirischer Validierung sechs gewichteter Verhaltenskanten gleichzusetzen. Zunächst eigene Rollensemantik, Kantenmetrik, Renderer, Parameterlesung, Kontextkontrollen und Anti-Leakage definieren.
+
+| Test-ID | Erweiterungsfall | Erwartung |
+| --- | --- | --- |
+| BMC-T30 | vollständiges K₄ und definierte Version | vier Knoten, sechs Kanten, explizite Legende |
+| BMC-T31 | ACT-01-Altgrammatik | P/S/C/K 2px/8px mit Prüftrit bleibt unverändert; kein Metrik-Overload |
+| BMC-T32 | gewichtete Kanten, nulls, Resize | deterministische Metrik→Zeichen-Regel; unknown ≠ weak; Lesbarkeit auch klein testen |
+| BMC-T33 | Bildlesung | Parameter-Erstlesung vs. Kontext-/Interpretationskorrektur getrennt |
+| BMC-T34 | Signature-informed Adaptation | Baseline/Self/Self+Other/neutraler Kontrollarm; alte Snapshots ohne Testleck |
+| BMC-T35 | Interpretation vs. Wirkung | keine automatische strategische Diagnose und kein Anpassungserfolg ohne Eventbeleg |
+
 ## Sicherheit, Regression, Arbeitsteilung
 
 **APP:** Codesync/Port-Rollen getrennt, 8082 zunächst ohne Eingriff in laufende Arena, 8080 erst eigener freigegebener Regression-Gate, 8083 protected. Kein Schreibzugriff auf Original-JSONL/JSON oder produktive Resultate, Backup/Dry-run/Rollback bei späterem Code-Release.
