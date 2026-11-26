@@ -66,7 +66,11 @@ Geplanter Social-Baustein ist **ein Export-Preset**, kein automatischer Posting-
 `{snapshot_id, subject, fact:{value,unit,denominator,period,conditions,status}, source_url, review_status, locale, suggested_caption, image_alt, asset_ref}`.
 Keine neue Quelle; Image-Layout darf visuell variieren, Zahlen bleiben identisch. LinkedIn-/Instagram-Text kann redaktionell zugespitzt werden, **ohne** eine hypothetische Bonoma-/Overthinking-Deutung als bestätigte Modelleigenschaft auszugeben.
 
-## F. Journal-Thread-Schutz
+## F. Perspektive: g-Signature und ACT-01-Bildsprache (Research, noch kein V1-Must)
+
+Das Zeichen ist das vollständige **g-Netzwerk K₄** mit vier Knoten und sechs möglichen Relationen, kein beliebig deformiertes Marketinglogo. ACT-01 hat eine explizite visuelle Grammatik `P/S/C/K` und Leseversuche dokumentiert: **Kantenstärke 2px/8px** als eines von vier Codeattributen, in Experiment 002 drei Mal 17/17 Zeichen und 68/68 Parameter bei bekannter Grammatik; zugleich dokumentierte Wahrnehmungs-/Kontextfehler. **Das bestehende `K` ist ein Prüftrit, kein Verhaltenswert.** Eine spätere gewichtete sechs-Kanten-Behavior-Signature benötigt ein **eigenes versioniertes Schema**, real beobachtbare Relationen, eigene Null-/Coverage-Darstellung und unabhängige visuelle Decoder-Tests. **Nicht** als vorhandene validierte Spiel-/Strategie-Kennzahl darstellen. [Forschungsbrücke ACT 01 → Signature](09_G_SIGNATUR_ACT01_FORSCHUNGSBRUECKE.md).
+
+## G. Journal-Thread-Schutz
 
 Die aktuelle Fight-Night-Demo `andy-fn-demo-claude-grok-2` ist **fiktiv**, ihre Beispielkennzahlen und Illustration sind **kein reales Spiel**. Nicht als Datenquelle des App-Exporters verwenden. Bestehendes Editorial/WHY/Content-Composer/Freigabesystem erhalten; Behavior-Importer erst bei definiertem Auswertungs-/Sicherheitsgate.
 
