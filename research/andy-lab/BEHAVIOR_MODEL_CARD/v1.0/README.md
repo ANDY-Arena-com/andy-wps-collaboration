@@ -33,6 +33,7 @@ Die Card ist **kein amtliches Anbieterprofil**. Angaben zu Modellen, APIs, Token
 | [examples/behavior_card_argon_v1_draft.json](examples/behavior_card_argon_v1_draft.json) | **Illustration des Vertrags**, keine produktive exporterzeugte Datei |
 | [schema/behavior_card_v1_draft.schema.json](schema/behavior_card_v1_draft.schema.json) | maschinenlesbarer JSON-Schema-Draft, noch kein freigegebener Importvertrag |
 | [08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md](08_GEMEINSAME_HERAUSFORDERUNG_INFO_EXPANDER.md) | verbindlicher globaler DE/EN-Info-Expander „Warum ANDY?“, Grundlagen und Business-Analogie |
+| [09_G_SIGNATUR_ACT01_FORSCHUNGSBRUECKE.md](09_G_SIGNATUR_ACT01_FORSCHUNGSBRUECKE.md) | ACT-01-Whitepaper, nachgewiesene visuelle Lesetests, Linienstärke und künftige gewichtete K₄-Behavior-Signature |
 
 **Referenz-Demo:** `ANDY_BEHAVIOR_MODEL_CARD_V1.html` (offlinefähiger HTML-Clickdummy vom 25.11.2026, derzeit im ursprünglichen Chat-/Handoff-Paket; **nicht als in GitHub eingecheckt behaupten**). Der Entwurf zeigt Überblick, Spieltempo, Ressourcen, Verhalten und Evidenz; Filter 5 Spiele / S150 / S350. Die Spezifikation hier ist die Grundlage für spätere Reimplementierung, kein behaupteter Plugin-Release.
 
