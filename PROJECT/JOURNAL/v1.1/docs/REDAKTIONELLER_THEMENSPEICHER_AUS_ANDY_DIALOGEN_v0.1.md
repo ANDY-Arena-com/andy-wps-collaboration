@@ -307,3 +307,13 @@
 - **Belege:** Beta-Briefing, Theater-Stand V0.7.7, redaktionelle/technische Freigaben.
 
 **Mögliche erste App-Making-of-Staffel:** B09 → B10 → B12 → B11 → B15; B01 als längere Titelgeschichte erst nach menschlich freigegebener Rollen- und Architekturrekonstruktion. **Keiner dieser Vorschläge ersetzt die bestehenden redaktionellen Prioritäten oder WPS-Gates.**
+
+
+## Nachtrag 27.11.2026 – Perspectives / Crossover
+
+**X06 · P1 (Vorschlag) · H/R – Beyond the Answer: From AI Output to Reliable Action**
+- **WHY:** Praxisfragen aus dem Krankenkassenumfeld zur qualitätsgesicherten GenAI-Nutzung: Herausforderungen, Umgang mit Ergebnissen und benötigte Unterstützung.
+- **Kanonische Konzeptreferenz:** [Crossover-Forschungsmemo v0.1](../../../../research/andy-lab/CROSSOVER/GENAI_QUALITY_LITERACY_HEALTH_INSURANCE_v0.1.md).
+- **Content-Familie:** Perspectives als Einstieg; Research R01 (From Claims to Consequences), Making of B07/B12/B15, Academy C (Auswertung / AI Quality Literacy) als mögliche Vertiefungen. Anschluss an X02/X03. Konkrete Story-/System-Map-IDs erst nach Registry-Prüfung.
+- **Grenze:** methodische Analogie, keine empirisch validierte Übertragung, keine Rechts- oder Leistungsberatung; keine personenbezogenen Daten. Externe Fachquellen und domänenspezifische Prüfung vor Publikation. Keine automatische Übernahme in WordPress und keine Änderung der Academy-Sternelogik.
+- **NEXT:** Praxisinterviews und synthetische, fachlich kuratierte Prüfaufgaben als möglicher Pilot; Kriterien für Fehlererkennung, Zeit inklusive Prüfung und Eskalation vorab definieren.
