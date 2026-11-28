@@ -1,0 +1,8 @@
+# MULTI-RUNTIME-05 CURRENT – Studio-Abnahme
+Stand 28.11.2026, ca. 16:39 CET.
+
+Ziel: ein Master-Ordner cair4_andy_game_ui, identischer UI-/Modell-Funktionsumfang auf 8080–8083, pro Prozess getrennte laufende Spielsessions, gemeinsamer lokaler Datenbestand. Keine Factory in diesem Abnahmeschritt.
+
+Der erste Installer brach wegen abweichendem Modellregister-Quellstand ab. Nutzer verlangt ausdrücklich keine Rekonstruktion. CURRENT-Installer wurde nach Upload ANDY_MASTER_CURRENT.zip bereitgestellt; laut Implementierungsbericht sieben Quelldateien, keine Datenänderung, Modellregister und Spielsteuerung unverändert. Administrative Schreibrechte bleiben auf 8080. Nutzer bestätigte UI 8080/8081 1:1 identisch und anschließend Testmodus, Live-Spiel und gemeinsame Archivierung. Screenshot zeigt Gemini 3.8 Flash vs Gemini 3 Flash (13 Züge, 15 KI-Aufrufe, 17 Ereignisse, 1:29, TKO Budget) und SubQ Savant 1.4 vs Z.ai GLM-5.3 (3 Züge, 5 KI-Aufrufe, 7 Ereignisse, 0:57, TKO Budget). Keine Rohprotokollprüfung in diesem Dokumentationsschritt. Unabhängiges Pausieren gleichzeitig laufender Partien und Prüfung aller Ports 8082/8083 nicht ausdrücklich bestätigt. Keine pauschale Aussage zur Usage aller Modelle.
+
+Nächster Schritt: wiederverwendbarer Factory-Clone-Batch aus dem tatsächlich aktuellen Master, erst nach Abschluss laufender Partien bzw. konsistentem Snapshot, keine bestehende Factory überschreiben, lokale API-Konfiguration sicher übernehmen, unabhängige Speicherpfade und lokale Publikation prüfen. Frühere Factory-Isolationsabnahme war nur infrastrukturell; alte Factory hatte reduzierte UI und Usage-Abbrüche. Keine alte Baseline rekonstruieren. Observer-Klickdummy V2 separat, keine produktive Observer-UI-Änderung ohne Freigabe. Forschungsroadmap unverändert.
